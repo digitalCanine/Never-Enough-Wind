@@ -90,9 +90,16 @@
       "note": "same default seed again"
     }
   ],
-  "spawn_server_hint": "only server with pentachoron/abyss/world_city dimensions and 400 max players",
+  "spawn_server_hint": "only server listing pentachoron and the abyss dimensions, 400 max players",
   "todo": [
     "overworld and nether of era and arch",
     "the nether and end of the rest"
-  ]
+  ],
+  "dimensions": {
+    "minecraft:abyss_minewind": "abyssal event",
+    "minecraft:abyss_minewind_city": "abyssal event",
+    "minecraft:world_city": "probably chillspawn, listed on every subserver",
+    "minecraft:enc": "unknown, listed on every subserver",
+    "minecraft:pentachoron": "unknown"
+  }
 }
