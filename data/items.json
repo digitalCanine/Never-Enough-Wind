@@ -3,7 +3,8 @@
   "notes": [
     "match on id, custom name and lore, not translated names",
     "1.20.4 nbt is in minecraft:custom_data on 1.21",
-    "enchant lines are fake lore"
+    "enchant lines are fake lore",
+    "no lore: check the enchant and a colored non italic name, anvil renames have neither"
   ],
   "types": {
     "essence": {
@@ -78,11 +79,13 @@
         },
         {
           "item": "minecraft:sunflower",
-          "name": "Minewind Gold Coin"
+          "name": "Minewind Gold Coin",
+          "enchant": "minecraft:sharpness"
         },
         {
           "item": "minecraft:glowstone_dust",
-          "name": "Ancient Gold Powder"
+          "name": "Ancient Gold Powder",
+          "enchant": "minecraft:luck_of_the_sea"
         },
         {
           "item": "minecraft:iron_nugget",
@@ -91,7 +94,8 @@
         },
         {
           "item": "minecraft:amethyst_shard",
-          "name": "Shard of Midas"
+          "name": "Shard of Midas",
+          "enchant": "minecraft:luck_of_the_sea"
         }
       ]
     },
