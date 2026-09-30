@@ -38,7 +38,7 @@
         "item": "minecraft:tripwire_hook",
         "lore_regex": "^Opens midas chest",
         "name_regex": "^(?:(?<key>.+?) )?(?:Midas Key|Key of Midas)$",
-        "note": "only midas keys dumped so far"
+        "note": "all keys are midas keys. key group = name in prices.json keys minus 'Key'"
       }
     },
     "glamour": {
@@ -206,7 +206,6 @@
   },
   "unknown_yet": [
     "how to tell jester gear from auc gear once a player adds essences to auc gear (maybe inherent essences look different)",
-    "non midas keys",
     "communist potato and other castle stuff"
   ]
 }
