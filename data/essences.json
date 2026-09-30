@@ -351,6 +351,9 @@
   {
    "id": "bee_aggression",
    "name": "Bee Aggression",
+   "also_called": [
+    "Increased Bee Aggression"
+   ],
    "key": "chaos",
    "kind": "buff",
    "applies_to": [
@@ -1486,14 +1489,6 @@
    "status": "unverified"
   },
   {
-   "id": "fast_infinity",
-   "name": "Fast Infinity",
-   "key": "dimensional",
-   "kind": "buff",
-   "details": "Increaeses Infinity Block spread speed?",
-   "status": "unverified"
-  },
-  {
    "id": "fast_potion_recharge",
    "name": "Fast Potion Recharge",
    "key": "chaos",
@@ -2251,36 +2246,6 @@
    "status": "unverified"
   },
   {
-   "id": "holy_branch_attack",
-   "name": "Holy Branch (Attack)",
-   "key": "inferno",
-   "kind": "spell",
-   "requirements": [
-    "Meele"
-   ],
-   "effects": [
-    "Meele",
-    "Magic",
-    "Summon"
-   ],
-   "status": "unverified"
-  },
-  {
-   "id": "holy_branch_cast",
-   "name": "Holy Branch (Cast)",
-   "key": "inferno",
-   "kind": "spell",
-   "requirements": [
-    "Holy"
-   ],
-   "effects": [
-    "Meele",
-    "Magic",
-    "Summon"
-   ],
-   "status": "unverified"
-  },
-  {
    "id": "honey_cannon",
    "name": "Honey Cannon",
    "key": "chaos",
@@ -2766,6 +2731,13 @@
     "3": "X"
    },
    "status": "unverified"
+  },
+  {
+   "id": "increased_max_daggers",
+   "name": "Increased Max Daggers",
+   "kind": "buff",
+   "max_level": "3+",
+   "status": "confirmed"
   },
   {
    "id": "increased_maximum_daggers",
@@ -5301,189 +5273,6 @@
     "1": "C"
    },
    "status": "unverified"
-  }
- ],
- "non_essence_effects": [
-  {
-   "name": "Increased Velocity",
-   "global_cap": 1,
-   "requirements": [
-    "Projectile"
-   ],
-   "effects": [
-    "Acceleration"
-   ]
-  },
-  {
-   "name": "Grenade",
-   "global_cap": 1,
-   "requirements": [
-    "Splash(?)"
-   ],
-   "effects": [
-    "Magic",
-    "Explosion(?)"
-   ],
-   "source": "Grenade"
-  },
-  {
-   "name": "Orc Fork",
-   "global_cap": 1,
-   "requirements": [
-    "Projectile"
-   ]
-  },
-  {
-   "name": "Training Sword",
-   "global_cap": 1,
-   "requirements": [
-    "Meele"
-   ]
-  },
-  {
-   "name": "Emperia",
-   "global_cap": 1,
-   "requirements": [
-    "Meele"
-   ]
-  },
-  {
-   "name": "Multipass"
-  },
-  {
-   "name": "Hoofer Stick",
-   "requirements": [
-    "Meele",
-    "Projectile"
-   ]
-  },
-  {
-   "name": "Iron Golem Potion",
-   "requirements": [
-    "Splash"
-   ]
-  },
-  {
-   "name": "Greater Invis Potion",
-   "requirements": [
-    "Splash"
-   ]
-  },
-  {
-   "name": "Acid Potion",
-   "requirements": [
-    "Splash"
-   ]
-  },
-  {
-   "name": "Love Strike",
-   "requirements": [
-    "Meele",
-    "Projectile"
-   ],
-   "effects": [
-    "Heal(?)"
-   ],
-   "source": "Cupids"
-  },
-  {
-   "name": "Minibow",
-   "effects": [
-    "Projectile(?)",
-    "Arrow(?)"
-   ],
-   "source": "Minibow"
-  },
-  {
-   "name": "Orc Soul",
-   "source": "Orc Set"
-  },
-  {
-   "name": "Holy Soul",
-   "source": "Bible/Cross"
-  },
-  {
-   "name": "Syba's Touch"
-  },
-  {
-   "name": "Wind Elytra"
-  },
-  {
-   "name": "Infinity Block"
-  },
-  {
-   "name": "Goku Potion",
-   "source": "Level Pot",
-   "trigger": "Food/Buff",
-   "details": "Discontinued"
-  },
-  {
-   "name": "Chameleon",
-   "source": "Talpa"
-  },
-  {
-   "name": "Lightning Rod",
-   "source": "Lightning rod Helm"
-  },
-  {
-   "name": "Orc Set I"
-  },
-  {
-   "name": "Bandit Set I"
-  },
-  {
-   "name": "Blood Set I"
-  },
-  {
-   "name": "Archer Set I"
-  },
-  {
-   "name": "Wizard Set I"
-  },
-  {
-   "name": "Knight Set I"
-  },
-  {
-   "name": "Druid Set I"
-  },
-  {
-   "name": "Alchemist Set I"
-  },
-  {
-   "name": "Edge  Set I"
-  },
-  {
-   "name": "Meele Reflection"
-  },
-  {
-   "name": "Robin Set I"
-  },
-  {
-   "name": "Blinding Headshot"
-  },
-  {
-   "name": "Midas Key"
-  },
-  {
-   "name": "Holy Branch"
-  },
-  {
-   "name": "Throwing Dagger"
-  },
-  {
-   "name": "Ender Bone"
-  },
-  {
-   "name": "Astral Hook"
-  },
-  {
-   "name": "Gapple Rod"
-  },
-  {
-   "name": "Glass Cannon"
-  },
-  {
-   "name": "Glass Cannon Pane"
   }
  ]
 }

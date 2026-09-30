@@ -143,20 +143,6 @@ for sname, sh in sheets.items():
             continue
         cheat[norm(e['name'])] = e
 
-non_essence = []
-for rn, r in sorted(sheets['Non-Essence-Essences']['rows'].items()):
-    if rn < 3 or not r.get('B'):
-        continue
-    non_essence.append({k: v for k, v in {
-        'name': r['B'],
-        'global_cap': num(r.get('C')),
-        'requirements': [r[c] for c in 'DEF' if r.get(c)] or None,
-        'effects': [r[c] for c in 'GHI' if r.get(c)] or None,
-        'source': r.get('J'),
-        'trigger': r.get('K'),
-        'details': r.get('L'),
-    }.items() if v is not None})
-
 trig_rows = sheets['Triggers']['rows']
 triggers = {}
 for col, name in trig_rows[1].items():
@@ -198,9 +184,16 @@ cm = resolve(cheat, list(base), 'cheat->explanations')
 for k, c in cheat.items():
     tgt = cm[k]
     if tgt not in base:
-        report['in cheat sheet, not in explanations'].append(c['name'])
-        base[tgt] = {'name': c['name']}
+        # cheat sheet only, not a real essence
+        report['cheat sheet only (dropped)'].append(c['name'])
+        continue
     base[tgt]['_cheat'] = c
+
+# seen in dumps, missing from the sheets
+EXTRA = [{'name': 'Increased Max Daggers', 'kind': 'buff', 'min_level_seen': 3}]
+ALSO_CALLED = {'Bee Aggression': ['Increased Bee Aggression']}
+for x in EXTRA:
+    base[norm(x['name'])] = {'name': x['name'], '_extra': x}
 
 essences = []
 for k, e in sorted(base.items(), key=lambda kv: kv[1]['name'].lower()):
@@ -215,11 +208,13 @@ for k, e in sorted(base.items(), key=lambda kv: kv[1]['name'].lower()):
     max_level = p.get('cap') if isinstance(p.get('cap'), int) else range_max if range_max else c.get('max_level')
     if p.get('key') and c.get('key') and p['key'] != c['key']:
         report['key disagrees'].append(f"{e['name']}: prices={p['key']} cheat={c['key']}")
+    x = e.get('_extra', {})
     out = {
         'id': ident(e['name']),
         'name': e['name'],
+        'also_called': ALSO_CALLED.get(e['name']),
         'key': p.get('key') or c.get('key'),
-        'kind': c.get('kind'),
+        'kind': c.get('kind') or x.get('kind'),
         'applies_to': e.get('applies_to') or None,
         'levels': lv,
         'max_level': max_level,
@@ -234,8 +229,10 @@ for k, e in sorted(base.items(), key=lambda kv: kv[1]['name'].lower()):
         'price': p.get('price'),
         'price_note': p.get('price_note'),
         'max_level_conflict': known if len(ints) > 1 else None,
-        'status': 'unverified',
+        'status': 'confirmed' if x else 'unverified',
     }
+    if x.get('min_level_seen'):
+        out['max_level'] = f"{x['min_level_seen']}+"
     essences.append({k2: v for k2, v in out.items() if v is not None})
 
 ids = collections.Counter(x['id'] for x in essences)
@@ -251,7 +248,6 @@ json.dump({
     ],
     'triggers': triggers,
     'essences': essences,
-    'non_essence_effects': non_essence,
 }, open(f'{OUT}/essences.json', 'w'), ensure_ascii=False, indent=1)
 
 # blocks
@@ -350,7 +346,7 @@ json.dump({
 }, open(f'{OUT}/prices.json', 'w'), ensure_ascii=False, indent=1)
 
 json.dump(report, open(os.path.join(OUT, '..', 'tools', 'data', 'last_report.json'), 'w'), ensure_ascii=False, indent=1)
-print('essences', len(essences), 'non-essence', len(non_essence), 'blocks', len(blocks), 'keys', len(keys))
+print('essences', len(essences), 'blocks', len(blocks), 'keys', len(keys))
 print('essence tiers', list(ess_tiers), 'block tiers', list(block_tiers))
 for k, v in report.items():
     print(f'-- {k}: {len(v)}')

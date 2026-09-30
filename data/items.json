@@ -12,7 +12,7 @@
       "item": "minecraft:knowledge_book",
       "name_regex": "^Essence of (?<essence>.+)$",
       "lore_kind_regex": "the essence of an? (?<kind>\\w+)\\.",
-      "level": "last lore line, name + roman level",
+      "level": "4th lore line, name + roman level",
       "status": "confirmed",
       "note": "read the lore, books can be renamed"
     },
