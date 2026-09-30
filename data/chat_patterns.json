@@ -154,7 +154,6 @@
   "unknown_yet": [
     "boss daily line (something like 'daily blood spilled')",
     "line announcing a new spawn government, and the Anarchy wording",
-    "/clan find <tag> reply format",
-    "whether events also use titles, action bar or boss bars (check the DebugTool log)"
+    "/clan find <tag> reply format"
   ]
 }
