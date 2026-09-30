@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "trade_gui": {
+    "note": "trade window buttons",
+    "items": [
+      {
+        "item": "minecraft:black_stained_glass_pane",
+        "name": "Border"
+      },
+      {
+        "item": "minecraft:light_blue_stained_glass_pane",
+        "name": "Lock Offer"
+      },
+      {
+        "item": "minecraft:yellow_stained_glass_pane",
+        "name": "Item check pending"
+      },
+      {
+        "item": "minecraft:lime_stained_glass_pane",
+        "name_regex": "^(?<name>\\S+)'s offer is locked$"
+      }
+    ]
+  },
+  "dated": {
+    "last_lore_line_regex": "^(January|February|March|April|May|June|July|August|September|October|November|December) \\d{4}$",
+    "note": "release month"
+  }
+}
