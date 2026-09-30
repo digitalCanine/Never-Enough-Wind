@@ -1,16 +1,16 @@
 {
  "schema_version": 1,
  "received": "2026-09-29",
- "unit": "ember",
+ "unit": "degg",
  "notation": {
-  "ember": 1,
-  "d": 4,
-  "s": 256,
-  "sh": 6912,
-  "ch": 186624
+  "ember": 0.25,
+  "d": 1,
+  "s": 64,
+  "sh": 1728,
+  "ch": 46656
  },
  "notes": [
-  "embers: [min, max], min 0 = or less",
+  "deggs: [min, max], min 0 = or less",
   "essence and block letters are different scales"
  ],
  "price_tiers": {
@@ -20,93 +20,93 @@
    },
    "X": {
     "price": "1-2 Sheggs",
-    "embers": [
-     6912,
-     13824
+    "deggs": [
+     1728,
+     3456
     ]
    },
    "SSS": {
     "price": "15s-26s",
-    "embers": [
-     3840,
-     6656
+    "deggs": [
+     960,
+     1664
     ]
    },
    "SS": {
     "price": "9s-15s",
-    "embers": [
-     2304,
-     3840
+    "deggs": [
+     576,
+     960
     ]
    },
    "S": {
     "price": "7s-9s",
-    "embers": [
-     1792,
-     2304
+    "deggs": [
+     448,
+     576
     ]
    },
    "AAA": {
     "price": "7s",
-    "embers": [
-     1792,
-     1792
+    "deggs": [
+     448,
+     448
     ]
    },
    "AA": {
     "price": "6s",
-    "embers": [
-     1536,
-     1536
+    "deggs": [
+     384,
+     384
     ]
    },
    "A": {
     "price": "5s",
-    "embers": [
-     1280,
-     1280
+    "deggs": [
+     320,
+     320
     ]
    },
    "BBB": {
     "price": "4s",
-    "embers": [
-     1024,
-     1024
+    "deggs": [
+     256,
+     256
     ]
    },
    "BB": {
     "price": "3s",
-    "embers": [
-     768,
-     768
+    "deggs": [
+     192,
+     192
     ]
    },
    "B": {
     "price": "2s",
-    "embers": [
-     512,
-     512
+    "deggs": [
+     128,
+     128
     ]
    },
    "CCC": {
     "price": "1s Or Less",
-    "embers": [
+    "deggs": [
      0,
-     256
+     64
     ]
    },
    "CC": {
     "price": "32d Or Less",
-    "embers": [
+    "deggs": [
      0,
-     128
+     32
     ]
    },
    "C": {
     "price": "16d Or Less",
-    "embers": [
+    "deggs": [
      0,
-     64
+     16
     ]
    },
    "TBD": {
@@ -116,58 +116,58 @@
   "block": {
    "AAA": {
     "price": "7s",
-    "embers": [
-     1792,
-     1792
+    "deggs": [
+     448,
+     448
     ]
    },
    "AA": {
     "price": "6s",
-    "embers": [
-     1536,
-     1536
+    "deggs": [
+     384,
+     384
     ]
    },
    "A": {
     "price": "5s",
-    "embers": [
-     1280,
-     1280
+    "deggs": [
+     320,
+     320
     ]
    },
    "BBB": {
     "price": "4s",
-    "embers": [
-     1024,
-     1024
+    "deggs": [
+     256,
+     256
     ]
    },
    "BB": {
     "price": "3s",
-    "embers": [
-     768,
-     768
+    "deggs": [
+     192,
+     192
     ]
    },
    "B": {
     "price": "2s",
-    "embers": [
-     512,
-     512
+    "deggs": [
+     128,
+     128
     ]
    },
    "CC": {
     "price": "1s - 1,5 s",
-    "embers": [
-     256,
-     384
+    "deggs": [
+     64,
+     96
     ]
    },
    "C": {
     "price": "32d Or Less",
-    "embers": [
+    "deggs": [
      0,
-     128
+     32
     ]
    }
   }
@@ -176,145 +176,145 @@
   {
    "name": "Tempest Key",
    "price": "4.5s",
-   "embers": [
-    1152,
-    1152
+   "deggs": [
+    288,
+    288
    ]
   },
   {
    "name": "Paradox Key",
    "price": "4.5s",
-   "embers": [
-    1152,
-    1152
+   "deggs": [
+    288,
+    288
    ]
   },
   {
    "name": "Dimensional Key",
    "price": "2.5s",
-   "embers": [
-    640,
-    640
+   "deggs": [
+    160,
+    160
    ]
   },
   {
    "name": "Inferno Key",
    "price": "2.5s",
-   "embers": [
-    640,
-    640
+   "deggs": [
+    160,
+    160
    ]
   },
   {
    "name": "Jester Key",
    "price": "2s",
-   "embers": [
-    512,
-    512
-   ]
-  },
-  {
-   "name": "Chaos Key",
-   "price": "1.5s",
-   "embers": [
-    384,
-    384
-   ]
-  },
-  {
-   "name": "Malphas Key",
-   "price": "32d",
-   "embers": [
+   "deggs": [
     128,
     128
    ]
   },
   {
+   "name": "Chaos Key",
+   "price": "1.5s",
+   "deggs": [
+    96,
+    96
+   ]
+  },
+  {
+   "name": "Malphas Key",
+   "price": "32d",
+   "deggs": [
+    32,
+    32
+   ]
+  },
+  {
    "name": "Belphegor Key",
    "price": "12d",
-   "embers": [
-    48,
-    48
-   ]
-  },
-  {
-   "name": "Wild Key",
-   "price": "4d",
-   "embers": [
-    16,
-    16
-   ]
-  },
-  {
-   "name": "Wizard Key",
-   "price": "4d",
-   "embers": [
-    16,
-    16
-   ]
-  },
-  {
-   "name": "Aura Key",
-   "price": "3d",
-   "embers": [
+   "deggs": [
     12,
     12
    ]
   },
   {
-   "name": "Demon Key",
-   "price": "1d",
-   "embers": [
+   "name": "Wild Key",
+   "price": "4d",
+   "deggs": [
     4,
     4
+   ]
+  },
+  {
+   "name": "Wizard Key",
+   "price": "4d",
+   "deggs": [
+    4,
+    4
+   ]
+  },
+  {
+   "name": "Aura Key",
+   "price": "3d",
+   "deggs": [
+    3,
+    3
+   ]
+  },
+  {
+   "name": "Demon Key",
+   "price": "1d",
+   "deggs": [
+    1,
+    1
    ]
   },
   {
    "name": "Summoner's Key",
    "price": "1d",
-   "embers": [
-    4,
-    4
+   "deggs": [
+    1,
+    1
    ]
   },
   {
    "name": "Giant Key",
    "price": "Less than 1d",
-   "embers": [
+   "deggs": [
     0,
-    4
+    1
    ]
   },
   {
    "name": "Blood Key",
    "price": "Less than 1d",
-   "embers": [
+   "deggs": [
     0,
-    4
+    1
    ]
   },
   {
    "name": "Abyssal Key",
    "price": "Less than 1d",
-   "embers": [
+   "deggs": [
     0,
-    4
+    1
    ]
   },
   {
    "name": "Legendary Key",
    "price": "Less than 1d",
-   "embers": [
+   "deggs": [
     0,
-    4
+    1
    ]
   },
   {
    "name": "Midas Key",
    "price": "Less than 1d",
-   "embers": [
+   "deggs": [
     0,
-    4
+    1
    ]
   }
  ],

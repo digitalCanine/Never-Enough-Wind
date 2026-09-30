@@ -11,11 +11,12 @@ report = collections.defaultdict(list)
 
 ITEMS = {i.split(':', 1)[1] for i in json.load(open('items.json'))}
 
-# price text -> ember range
-UNIT = {'d': 4, 'degg': 4, 'deggs': 4,
-        's': 256, 'stegg': 256, 'steggs': 256,
-        'sh': 6912, 'shegg': 6912, 'sheggs': 6912,
-        'ch': 186624, 'chegg': 186624, 'cheggs': 186624}
+# price text -> degg range
+UNIT = {'e': 0.25, 'ember': 0.25, 'embers': 0.25,
+        'd': 1, 'degg': 1, 'deggs': 1,
+        's': 64, 'stegg': 64, 'steggs': 64,
+        'sh': 1728, 'shegg': 1728, 'sheggs': 1728,
+        'ch': 46656, 'chegg': 46656, 'cheggs': 46656}
 
 def price_range(text):
     if not text:
@@ -32,14 +33,14 @@ def price_range(text):
         return None
     lo = float(a) * UNIT[ua or unit]
     hi = float(b) * UNIT[unit] if b else lo
-    lo, hi = round(lo), round(hi)
-    return [0 if upper_only else lo, hi]
+    whole = lambda x: int(x) if x == int(x) else x
+    return [0 if upper_only else whole(lo), whole(hi)]
 
 def tier(letter, text):
     t = {'price': text.strip()}
     r = price_range(text)
     if r:
-        t['embers'] = r
+        t['deggs'] = r
     return t
 
 # names
@@ -349,22 +350,22 @@ for row in list(csv.reader(open(f'{SRC}/Debug_Keys/prices-2.csv')))[1:]:
         k = {'name': row[0].strip(), 'price': row[1].strip()}
         r = price_range(row[1])
         if r:
-            k['embers'] = r
+            k['deggs'] = r
         else:
             report['key price not parsed'].append(row[1])
         keys.append(k)
 
 for t in list(ess_tiers.values()) + list(block_tiers.values()):
-    if 'embers' not in t:
+    if 'deggs' not in t:
         report['tier price not parsed (fine if its not a number)'].append(t['price'])
 
 json.dump({
     'schema_version': 1,
     'received': '2026-09-29',
-    'unit': 'ember',
-    'notation': {'ember': 1, 'd': 4, 's': 256, 'sh': 6912, 'ch': 186624},
+    'unit': 'degg',
+    'notation': {'ember': 0.25, 'd': 1, 's': 64, 'sh': 1728, 'ch': 46656},
     'notes': [
-        'embers: [min, max], min 0 = or less',
+        'deggs: [min, max], min 0 = or less',
         'essence and block letters are different scales',
     ],
     'price_tiers': {'essence': ess_tiers, 'block': block_tiers},

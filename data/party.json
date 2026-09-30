@@ -3,7 +3,7 @@
   "team": {
     "name_regex": "^[0-9a-f]{24}$",
     "status": "confirmed",
-    "notes": "hidden team, members = roster. first 8 hex = creation time. same id per party"
+    "notes": "hidden team, members = roster, online only. first 8 hex = creation time. same id per party"
   },
   "loot_multiplier": {
     "from": "party_join / party_leave chat patterns",
@@ -20,10 +20,5 @@
       "afk"
     ],
     "notes": "fake players for the player count"
-  },
-  "unknown_yet": [
-    "your own leave message",
-    "if offline members stay in the team",
-    "any party list command reply"
-  ]
+  }
 }

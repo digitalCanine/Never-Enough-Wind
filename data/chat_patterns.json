@@ -75,7 +75,7 @@
     {"id": "castle_take", "category": "castle_result", "event": "castle", "regex": "^(?<clanName>[A-Za-z0-9 ]{1,64}) \\((?<clan>[A-Za-z0-9]{1,4})\\) take the Minewind City from (?<oldClanName>[A-Za-z0-9 ]{1,64}) \\((?<oldClan>[A-Za-z0-9]{1,4})\\)!", "flags": ["i"], "status": "unverified", "note": "ends castle"},
     {"id": "government_lifted", "category": "spawn_government", "regex": "(?<form>Fascism|Communism|Capitalism|Anarchy).+has been lifted", "status": "unverified"},
     {"id": "party_join", "category": "party", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) joined party! Max loot multiplier is now (?<multiplier>\\d+)%\\.$", "status": "confirmed"},
-    {"id": "party_leave", "category": "party", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) left party\\. Max loot multiplier is now (?<multiplier>\\d+)%\\.$", "status": "confirmed", "note": "other players only, own leave not seen"},
+    {"id": "party_leave", "category": "party", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) left party\\. Max loot multiplier is now (?<multiplier>\\d+)%\\.$", "status": "confirmed", "note": "not sent to the one leaving"},
     {"id": "welcome", "category": "welcome", "regex": "^Welcome (?<name>[A-Za-z0-9_]{2,16})!$", "status": "confirmed", "note": "sent twice sometimes"},
     {"id": "vote", "category": "vote", "regex": "^/vote -> (?<name>[A-Za-z0-9_]{2,16}): (?<body>.*)$", "status": "unverified"},
     {"id": "sharpen", "category": "sharpen", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) sharpened (?<item>.*) to \\+(?<level>\\d+)!$", "status": "unverified"},
@@ -152,7 +152,6 @@
     ]
   },
   "unknown_yet": [
-    "your own party leave line, and any party list command reply",
     "boss daily line (something like 'daily blood spilled')",
     "line announcing a new spawn government, and the Anarchy wording",
     "/clan find <tag> reply format",
