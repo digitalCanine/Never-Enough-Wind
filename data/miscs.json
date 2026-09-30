@@ -1,7 +1,6 @@
 {
   "schema_version": 1,
   "trade_gui": {
-    "note": "trade window buttons",
     "items": [
       {
         "item": "minecraft:black_stained_glass_pane",

@@ -59,7 +59,6 @@
       ]
     },
     "currency": {
-      "note": "used by spawn traders",
       "items": [
         {
           "item": "minecraft:dragon_egg",
@@ -70,8 +69,7 @@
         {
           "item": "minecraft:fire_charge",
           "name": "Ember",
-          "lore": "Fossilized dragon fire",
-          "note": "0.25 degg"
+          "lore": "Fossilized dragon fire"
         },
         {
           "item": "minecraft:nether_star",
@@ -173,8 +171,7 @@
         },
         {
           "item": "minecraft:ender_eye",
-          "name": "Aura Stone",
-          "note": "soulbound"
+          "name": "Aura Stone"
         },
         {
           "item": "minecraft:stick",

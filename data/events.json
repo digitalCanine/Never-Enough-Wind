@@ -43,8 +43,7 @@
     {
       "id": "bait",
       "display": "Bait (fishing)",
-      "rewards": null,
-      "notes": "ends with 'Fishing event ends!'"
+      "rewards": null
     },
     {
       "id": "free_for_all",
@@ -59,8 +58,7 @@
     {
       "id": "castle",
       "display": "Battle for Minewind (Castle)",
-      "rewards": null,
-      "notes": "winner sets spawn policy"
+      "rewards": null
     }
   ],
   "tab_header": {

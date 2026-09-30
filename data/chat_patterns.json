@@ -36,9 +36,9 @@
   "patterns": [
     {"id": "dm_received", "category": "dm_received", "regex": "^(?<name>[A-Za-z0-9_.]+) >> (?<body>.+)$", "status": "unverified", "note": "name can have a clan prefix"},
     {"id": "dm_sent", "category": "dm_sent", "regex": "^>> (?<name>[A-Za-z0-9_.]+): (?<body>.+)$", "status": "unverified"},
-    {"id": "clan_chat", "category": "clan_chat", "regex": "^\\[(?<clan>\\w+)\\] (?<name>\\S+): (?<body>.+)$", "status": "confirmed", "note": "clan chat, /c"},
+    {"id": "clan_chat", "category": "clan_chat", "regex": "^\\[(?<clan>\\w+)\\] (?<name>\\S+): (?<body>.+)$", "status": "confirmed"},
     {"id": "server_muted", "category": "server_muted", "regex": "^❤", "status": "unverified", "note": "server muted player"},
-    {"id": "countdown_generic", "category": "event_countdown", "regex": "^(?<event>.+?) begins in (?<time>1 hour|\\d+ hours?|\\d+ minutes?|\\d+ seconds?)\\.", "flags": ["i"], "status": "unverified", "note": "catches any event"},
+    {"id": "countdown_generic", "category": "event_countdown", "regex": "^(?<event>.+?) begins in (?<time>1 hour|\\d+ hours?|\\d+ minutes?|\\d+ seconds?)\\.", "flags": ["i"], "status": "unverified"},
     {"id": "countdown_snovasion", "category": "event_countdown", "event": "snovasion", "regex": "^Snovasion Event begins in (?<time>1 hour|\\d+ minutes?|\\d+ seconds?)\\.", "status": "unverified"},
     {"id": "countdown_labyrinth", "category": "event_countdown", "event": "labyrinth", "regex": "^Labyrinth Event begins in (?<time>1 hour|\\d+ minutes?|\\d+ seconds?)\\.$", "flags": ["i"], "status": "unverified"},
     {"id": "countdown_beef", "category": "event_countdown", "event": "beef", "regex": "^Beef Event begins in (?<time>1 hour|\\d+ minutes?|\\d+ seconds?)\\.$", "flags": ["i"], "status": "unverified"},
@@ -73,7 +73,7 @@
     {"id": "end_free_for_all", "category": "event_end", "event": "free_for_all", "regex": "^Free-For-All event ends!$", "flags": ["i"], "status": "unverified"},
     {"id": "castle_hold", "category": "castle_result", "event": "castle", "regex": "^(?<clanName>[A-Za-z0-9 ]{1,64}) \\((?<clan>[A-Za-z0-9]{1,4})\\) hold the Minewind City!$", "flags": ["i"], "status": "unverified", "note": "ends castle"},
     {"id": "castle_take", "category": "castle_result", "event": "castle", "regex": "^(?<clanName>[A-Za-z0-9 ]{1,64}) \\((?<clan>[A-Za-z0-9]{1,4})\\) take the Minewind City from (?<oldClanName>[A-Za-z0-9 ]{1,64}) \\((?<oldClan>[A-Za-z0-9]{1,4})\\)!", "flags": ["i"], "status": "unverified", "note": "ends castle"},
-    {"id": "government_lifted", "category": "spawn_government", "regex": "(?<form>Fascism|Communism|Capitalism|Anarchy).+has been lifted", "status": "unverified", "note": "not an event, castle winner's spawn policy ending"},
+    {"id": "government_lifted", "category": "spawn_government", "regex": "(?<form>Fascism|Communism|Capitalism|Anarchy).+has been lifted", "status": "unverified"},
     {"id": "party_join", "category": "party", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) joined party! Max loot multiplier is now (?<multiplier>\\d+)%\\.$", "status": "confirmed"},
     {"id": "party_leave", "category": "party", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) left party\\. Max loot multiplier is now (?<multiplier>\\d+)%\\.$", "status": "confirmed", "note": "other players only, own leave not seen"},
     {"id": "welcome", "category": "welcome", "regex": "^Welcome (?<name>[A-Za-z0-9_]{2,16})!$", "status": "confirmed", "note": "sent twice sometimes"},
@@ -88,9 +88,9 @@
     {"id": "system_bugs", "category": "system", "regex": "^Report bugs at Minewind\\.com/bugs$", "status": "unverified"},
     {"id": "system_unknown_command", "category": "system", "regex": "^Unknown command\\. Type \"/help\" for help\\.$", "status": "unverified"},
     {"id": "system_nick_taken", "category": "system", "regex": "^Nick is already taken$", "status": "unverified", "note": "chat name isnt always the username"},
-    {"id": "system_accept_tp", "category": "system", "regex": "acceptTP", "status": "unverified", "note": "tp request"},
+    {"id": "system_accept_tp", "category": "system", "regex": "acceptTP", "status": "unverified"},
     {"id": "system_own_arrow", "category": "system", "regex": "^(?<name>\\S+) <- ", "status": "unverified", "note": "reward receipt"},
-    {"id": "public_action", "category": "public_action", "regex": "^\\* (?<name>[A-Za-z0-9_ ❤]{1,16}) (?<body>.*)$", "status": "unverified", "note": "/me line"},
+    {"id": "public_action", "category": "public_action", "regex": "^\\* (?<name>[A-Za-z0-9_ ❤]{1,16}) (?<body>.*)$", "status": "unverified"},
     {"id": "public_chat", "category": "public_chat", "regex": "^(?:☘ )?(?:(?<clan>[A-Za-z0-9]{1,4})\\.)?(?<name>[A-Za-z0-9❤_ ]{1,16}): (?<body>.*)$", "status": "confirmed", "note": "clan tag before the dot, name can be a nick"}
   ],
   "death_patterns": {
