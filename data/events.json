@@ -4,17 +4,21 @@
     {
       "id": "snovasion",
       "display": "Snovasion",
-      "rewards": null
+      "rewards": "none, snowmen drops"
     },
     {
       "id": "beef",
       "display": "Beef",
-      "rewards": null
+      "rewards": "to verify"
     },
     {
       "id": "labyrinth",
       "display": "Labyrinth",
-      "rewards": null,
+      "rewards": {
+        "chests": "random loot, can have old items",
+        "escape": "chaos key",
+        "top 15": "summoner key"
+      },
       "notes": "has an 'is starting...' line"
     },
     {
@@ -23,12 +27,12 @@
       "rewards": {
         "winner": "1s, 2 abyssal keys, 1 fmb, 64 gaps, 64 gold coins"
       },
-      "rewards_status": "unverified, about a year old"
+      "rewards_status": "to verify"
     },
     {
       "id": "attack_on_giant",
       "display": "Attack on Giant",
-      "rewards": null
+      "rewards": "giant drops (deggs, keys, gapples)"
     },
     {
       "id": "fox_hunt",
@@ -38,27 +42,27 @@
         "2": "42 deggs",
         "3": "32 deggs"
       },
-      "rewards_status": "unverified, about a year old"
+      "rewards_status": "to verify"
     },
     {
       "id": "bait",
       "display": "Bait (fishing)",
-      "rewards": null
+      "rewards": "to verify"
     },
     {
       "id": "free_for_all",
       "display": "Free-For-All",
-      "rewards": null
+      "rewards": "to verify"
     },
     {
       "id": "team_deathmatch",
       "display": "Team Deathmatch",
-      "rewards": null
+      "rewards": "to verify"
     },
     {
       "id": "castle",
       "display": "Battle for Minewind (Castle)",
-      "rewards": null
+      "rewards": "victory beans, ruling spawn"
     }
   ],
   "tab_header": {
