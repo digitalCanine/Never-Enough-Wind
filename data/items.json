@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "notes": [
+    "match on id, custom name and lore, not translated names",
+    "1.20.4 nbt is in minecraft:custom_data on 1.21",
+    "enchant lines are fake lore",
+    "#0D0307/#000005 lore marker means nothing reliable",
+    "group: currency, rarity or ?"
+  ],
+  "kinds": {
+    "essence_book": {
+      "item": "minecraft:knowledge_book",
+      "name_regex": "^Essence of (?<essence>.+)$",
+      "lore_kind_regex": "the essence of an? (?<kind>\\w+)\\.",
+      "level": "last lore line, name + roman level",
+      "status": "confirmed",
+      "note": "read the lore, books can be renamed"
+    },
+    "spellbook": {
+      "item": "minecraft:book",
+      "lore_regex": "^- Consumes (?<count>\\d+) (?<soul>\\w+) souls?\\.?$",
+      "lore_flags": [
+        "i"
+      ],
+      "fallback_name_regex": "Spellbook$",
+      "status": "confirmed",
+      "note": "not all have soul lines or end in Spellbook"
+    },
+    "infinity_block": {
+      "lore_first_line_regex": "^An infinite source of (?<block>.+)$",
+      "name_regex": "^Infinity (?<block>.+)$",
+      "price": "look up the item id in prices.json blocks. slabs, stairs and walls use block_notes",
+      "status": "confirmed on 5 blocks"
+    },
+    "midas_key": {
+      "item": "minecraft:tripwire_hook",
+      "lore_regex": "^Opens midas chest",
+      "name_regex": "^(?:(?<key>.+?) )?(?:Midas Key|Key of Midas)$",
+      "status": "confirmed",
+      "note": "only midas keys dumped so far"
+    },
+    "gear_essences": {
+      "header_line": "Essence",
+      "essence_line_regex": "^(?<essence>[A-Za-z' -]+?)( (?<level>[IVX]+))?$",
+      "trigger_line_regex": "^  --> (?<triggers>.+)$",
+      "effect_line_regex": "^  <-- (?<effects>.+)$",
+      "status": "confirmed on jester gear",
+      "note": "'-' ends the list. normalize names, hyphens differ"
+    },
+    "soul_lines": {
+      "accumulates_regex": "^- Accumulates (?<count>\\d+) (?<soul>\\w+) Souls?\\.?$",
+      "consumes_regex": "^- Consumes (?<count>\\d+) (?<soul>\\w+) Souls?\\.?$",
+      "lore_flags": [
+        "i"
+      ]
+    },
+    "soulbound": {
+      "lore_regex": "^Soulbound: (?<name>\\S+)",
+      "note": "plain text name, not uuid. aura stone colors are the § bits after it"
+    },
+    "cosmetic_hat": {
+      "lore_contains": "Drag and drop on your head",
+      "note": "rank line before, month after"
+    },
+    "aura_cookie": {
+      "item": "minecraft:cookie",
+      "lore_regex": "grants the (?<aura>.+) aura when eaten",
+      "lore_flags": [
+        "i"
+      ]
+    },
+    "dated": {
+      "last_lore_line_regex": "^(January|February|March|April|May|June|July|August|September|October|November|December) \\d{4}$",
+      "note": "release month"
+    }
+  },
+  "currencies_and_rarities": [
+    {
+      "item": "minecraft:dragon_egg",
+      "name": "Degg",
+      "vanilla": true,
+      "group": "currency",
+      "note": "every dragon egg"
+    },
+    {
+      "item": "minecraft:fire_charge",
+      "name": "Ember",
+      "lore": "Fossilized dragon fire",
+      "group": "currency",
+      "note": "0.25 degg"
+    },
+    {
+      "item": "minecraft:nether_star",
+      "name": "Nether Star",
+      "vanilla": true,
+      "group": "?"
+    },
+    {
+      "item": "minecraft:heart_of_the_sea",
+      "name": "Heart of the Sea",
+      "vanilla": true,
+      "group": "?"
+    },
+    {
+      "item": "minecraft:sunflower",
+      "name": "Minewind Gold Coin",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:glowstone_dust",
+      "name": "Ancient Gold Powder",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:prismarine_shard",
+      "name": "Moonlight Shard",
+      "lore": "Lucent triangular crystal",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "name": "Star Remnant",
+      "lore": "An unidentified metal fragment.",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:ghast_tear",
+      "name": "Freyas Tear",
+      "lore": "A clear and transparent gem",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:cod",
+      "name": "Evolved Blue Fish",
+      "lore": "Smells just like regular fish",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:cocoa_beans",
+      "name": "Forbidden Cacao Beans",
+      "lore": "When it comes to chocolate,",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:gray_dye",
+      "name": "Decomposed Dragon Head",
+      "lore": "Whoever thought keeping",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:quartz",
+      "name": "Union of Conquest",
+      "lore": "A symbol of solidarity",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "name": "Shard of Midas",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:string",
+      "name": "String of Sacrifice",
+      "lore": "Its holder will lose nothing",
+      "group": "?",
+      "note": "soulbound"
+    },
+    {
+      "item": "minecraft:bone",
+      "name": "Enderbone",
+      "lore": "A bone taken from an Enderman",
+      "group": "?"
+    },
+    {
+      "item": "minecraft:ender_eye",
+      "name": "Aura Stone",
+      "group": "rarity",
+      "note": "soulbound"
+    },
+    {
+      "item": "minecraft:spider_eye",
+      "name": "Spider Eye of Resetting",
+      "lore": "Removes all policies.",
+      "group": "rarity",
+      "note": "castle"
+    },
+    {
+      "item": "minecraft:pumpkin_seeds",
+      "name": "Victory Beans",
+      "lore": "These precious beans",
+      "group": "rarity",
+      "note": "castle"
+    },
+    {
+      "item": "minecraft:cake",
+      "name": "Cuik",
+      "lore": "Unlike regular Cace, this",
+      "group": "rarity"
+    },
+    {
+      "item": "minecraft:stick",
+      "name": "Trade Stick",
+      "lore": "Trade I",
+      "group": "rarity"
+    }
+  ],
+  "named_items": [
+    {
+      "item": "minecraft:diamond_pickaxe",
+      "name": "Multipass"
+    },
+    {
+      "item": "minecraft:diamond_pickaxe",
+      "name": "Corrupted Diggity"
+    },
+    {
+      "item": "minecraft:golden_pickaxe",
+      "name": "Syba's Touch"
+    },
+    {
+      "item": "minecraft:netherite_hoe",
+      "name": "Ripper"
+    },
+    {
+      "item": "minecraft:clock",
+      "name": "Land Claim Clock"
+    },
+    {
+      "item": "minecraft:stick",
+      "name": "Hoofer Stick"
+    },
+    {
+      "item": "minecraft:spectral_arrow",
+      "name": "By His Will Alone"
+    },
+    {
+      "item": "minecraft:filled_map",
+      "name": "Server Indicator",
+      "note": "map id might differ per subserver"
+    },
+    {
+      "item": "minecraft:compass",
+      "name": "Game Menu (Right Click)",
+      "note": "menu item"
+    }
+  ],
+  "trade_gui": {
+    "note": "trade window buttons",
+    "items": [
+      {
+        "item": "minecraft:black_stained_glass_pane",
+        "name": "Border"
+      },
+      {
+        "item": "minecraft:light_blue_stained_glass_pane",
+        "name": "Lock Offer"
+      },
+      {
+        "item": "minecraft:yellow_stained_glass_pane",
+        "name": "Item check pending"
+      },
+      {
+        "item": "minecraft:lime_stained_glass_pane",
+        "name_regex": "^(?<name>\\S+)'s offer is locked$"
+      }
+    ]
+  },
+  "unknown_yet": [
+    "how to tell jester gear from auc gear once a player adds essences to auc gear (maybe inherent essences look different)",
+    "non midas keys",
+    "communist potato and other castle stuff",
+    "which of the ? ones are currencies vs rarities"
+  ]
+}

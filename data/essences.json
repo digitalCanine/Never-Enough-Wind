@@ -1,0 +1,5489 @@
+{
+ "schema_version": 1,
+ "received": "2026-09-29",
+ "statuses": {
+  "unverified": "from the sheets",
+  "confirmed": "matches a dump"
+ },
+ "notes": [
+  "max_level: one book, global_cap: all gear",
+  "price letters are price_tiers.essence in prices.json"
+ ],
+ "triggers": {
+  "buffs": {
+   "name": "Buffs",
+   "meaning": "Passive effects that apply at all times",
+   "includes": null
+  },
+  "hit": {
+   "name": "Hit",
+   "meaning": "Effects that apply on what are considered as Meele Hits",
+   "includes": [
+    "Meele Hit",
+    "Thrown Trident",
+    "Elder Branch",
+    "Satan Sweep",
+    "Rabbit Shot",
+    "Baby Horde",
+    "Rabid Rabbits",
+    "Centipede",
+    "Ninja Fox",
+    "Vexers",
+    "Elder Phantom",
+    "Skeleton Assassin",
+    "War Bees",
+    "Shadow Swarm",
+    "Woofers",
+    "Escape Skeleton",
+    "Puchita",
+    "Shadow Fangs",
+    "Shadow Saw"
+   ]
+  },
+  "bow": {
+   "name": "Bow",
+   "meaning": "Effects that apply to Arrows",
+   "includes": null
+  },
+  "crossbow": {
+   "name": "Crossbow",
+   "meaning": "Effects that apply to Crossbows (including Rockets(?))",
+   "includes": null
+  },
+  "throw": {
+   "name": "Throw",
+   "meaning": "Effects that apply to thrown things",
+   "includes": null
+  },
+  "splash": {
+   "name": "Splash",
+   "meaning": "Effects that activate on splash / lingering splash",
+   "includes": null
+  },
+  "cast": {
+   "name": "Cast",
+   "meaning": "Effects that activate on spellcast",
+   "includes": null
+  },
+  "sneak": {
+   "name": "Sneak",
+   "meaning": "Effects that activate when sneaking",
+   "includes": null
+  },
+  "jump_sneak": {
+   "name": "Jump Sneak",
+   "meaning": "effects that activate when sneaking while not on ground",
+   "includes": null
+  },
+  "double_sneak": {
+   "name": "Double Sneak",
+   "meaning": "Effects that activate when sneaking 2x",
+   "includes": null
+  },
+  "food": {
+   "name": "Food",
+   "meaning": "???",
+   "includes": null
+  }
+ },
+ "essences": [
+  {
+   "id": "absorption",
+   "name": "Absorption",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Provides absorption effect over time",
+   "details": "Adds [2|4] Absorption Hearts every 4 Seconds, only if you have NONE --ABSORPTION 1  BUGGED, DOES NOT WORK",
+   "item_type": "Any",
+   "price": {
+    "1": "BB",
+    "2": "S",
+    "3": "X close to Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "absorption_on_teleport",
+   "name": "Absorption On Teleport",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Provides absorption on teleport",
+   "price": {
+    "1": "CCC",
+    "2": "BB",
+    "3": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "aegis",
+   "name": "Aegis",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell",
+    "armor"
+   ],
+   "description": "Cast onto players or mobs to receive any damage they take",
+   "requirements": [
+    "Cast"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "anti_mage",
+   "name": "Anti-Mage",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Reduces most magic damage taken",
+   "details": "Greatly Reduces Magic Damage",
+   "price": {
+    "1": "CC",
+    "2": "A",
+    "3": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "aquatic_explosion",
+   "name": "Aquatic Explosion",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Explosions create water source blocks at their impact points",
+   "details": "Creates Water on Explosion Impact",
+   "requirements": [
+    "Explosion"
+   ],
+   "effects": [
+    "Transmutation"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "arrow_strike",
+   "name": "Arrow Strike",
+   "key": "dimensional",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases melee damage based on how many arrows are stuck in a player",
+   "details": "Deals more damage If the target has arrows stuck in their model",
+   "requirements": [
+    "Meele",
+    "?"
+   ],
+   "price": {
+    "1": "AAA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "baby_horde",
+   "name": "Baby Horde",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a small group of baby zombies",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "back_claymore",
+   "name": "Back Claymore",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Creates an explosion when hit from behind",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "backstab",
+   "name": "Backstab",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-2",
+   "max_level": 2,
+   "global_cap": 2,
+   "description": "Increases melee damage when dealt from behind an opponent",
+   "details": ".8 Damage Multiplier per level (additive)",
+   "requirements": [
+    "Meele"
+   ],
+   "trigger": "Hit",
+   "price": {
+    "1": "BBB",
+    "2": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "backstab_resistance",
+   "name": "Backstab Resistance",
+   "key": "inferno",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Reduces damage taken by Backstab essence",
+   "price": {
+    "1": "C",
+    "2": "CCC",
+    "3": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ball_lightning",
+   "name": "Ball Lightning",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots a ball of lightning that deals damage in a small AoE",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Lightning",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bat_blink",
+   "name": "Bat Blink",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Teleports behind you, spawning bats that explode near players",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Explosion",
+    "Teleportation",
+    "Magic",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "beast_soul",
+   "name": "Beast Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Beast soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CCC",
+    "3": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bee_aggression",
+   "name": "Bee Aggression",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "weapon_tool",
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": "?",
+   "description": "Makes bees angrier and attack faster",
+   "price": {
+    "1": "C",
+    "2": "C",
+    "3": "CCC",
+    "4": "S"
+   },
+   "max_level_conflict": {
+    "explanations": 4,
+    "prices": 4,
+    "cheat_sheet": 3
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "berry_bush",
+   "name": "Berry Bush",
+   "key": "chaos",
+   "applies_to": [
+    "spell",
+    "weapon_tool"
+   ],
+   "description": "Summons berry bushes",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bind",
+   "name": "Bind",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "max_level": 3,
+   "description": "Restricts players from teleporting on hit",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "CCC",
+    "2": "BB",
+    "3": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bite_back",
+   "name": "Bite Back",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "A chance to spawn a ring of evoker fangs around you upon taking damage",
+   "requirements": [
+    "Physical Damage Recieved"
+   ],
+   "effects": [
+    "Meele",
+    "Magic"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "black_hole",
+   "name": "Black Hole",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Clears a large sphere, pulling in all entities. Costs 1 degg.",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Acceleration",
+    "Destruction"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Degg",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blessed_snow",
+   "name": "Blessed Snow",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a forcefield around the caster protecting them from most projectiles",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Ice 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blind",
+   "name": "Blind",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Inflicts blind effect on hit",
+   "requirements": [
+    "Meele"
+   ],
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blindness_immunity",
+   "name": "Blindness Immunity",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "description": "Provides immunity to blindness",
+   "details": "Grants Immunity to the Blindness Debuff, but not the nearsightedness you get from the Warden",
+   "price": {
+    "1": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blizzard",
+   "name": "Blizzard",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a path of snow in a large AoE following the player",
+   "requirements": [
+    "Ice",
+    "II"
+   ],
+   "effects": [
+    "Transmutation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blood_drain",
+   "name": "Blood Drain",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Drains health of the caster and players and mobs on cast",
+   "requirements": [
+    "Blood"
+   ],
+   "effects": [
+    "Damage",
+    "Heal",
+    "Magic",
+    "Homing"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blood_ground_siphon",
+   "name": "Blood Ground Siphon",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "spell"
+   ],
+   "max_level": 1,
+   "description": "'Blood Drain' and 'Blood Heal' no longer harm the caster on its blood ground.",
+   "details": "Blood Spells don't sacrifice life on bloody ground",
+   "requirements": [
+    "Blood"
+   ],
+   "item_type": "Any",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blood_heal",
+   "name": "Blood Heal",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Heals other players at the expense of the caster’s health",
+   "requirements": [
+    "Blood"
+   ],
+   "effects": [
+    "Heal",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blood_soul",
+   "name": "Blood Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Blood soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CC",
+    "3": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blood_soup",
+   "name": "Blood Soup",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a soup named with the player it is cast on",
+   "requirements": [
+    "Blood"
+   ],
+   "effects": [
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "blood_walker",
+   "name": "Blood Walker",
+   "key": "tempest",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 4,
+   "description": "Blood blocks heal and grant blood souls",
+   "price": {
+    "1": "BBB",
+    "2": "AA",
+    "3": "SS",
+    "4": "X"
+   },
+   "max_level_conflict": {
+    "explanations": 3,
+    "prices": 4
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bloodlust",
+   "name": "Bloodlust",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "A flat increase in damage with a 5 second cooldown",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bone_path",
+   "name": "Bone Path",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Forms a bone-and-soul-sand path; sneaking on it launches the caster upward.",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Destruction",
+    "Transmutation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "bone_spirit",
+   "name": "Bone Spirit",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Fires homing shulker shots that inflict Levitation on hit.",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Projectile",
+    "Magic",
+    "Homing"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "cake_on_kill",
+   "name": "Cake On Kill",
+   "key": "paradox",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Spawns a cake on kill; eating it restores souls.",
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "centipede",
+   "name": "Centipede",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a 'centipede' (chain of silverfish)",
+   "requirements": [
+    "Undead",
+    "II"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "chain_shot",
+   "name": "Chain Shot",
+   "key": "chaos",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Arrows that hit opponents will ricochet onto other players or mobs",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "chaos_curse",
+   "name": "Chaos Curse",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "A random debuff effect is given to opponents after damaging them with a spell",
+   "requirements": [
+    "Magic Damage"
+   ],
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "condensed_lightning",
+   "name": "Condensed Lightning",
+   "key": "tempest",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a lightning storm within a small area",
+   "spell_cost": "Nature 2",
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "cripple",
+   "name": "Cripple",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Debuffs enemies with slowness and weakness",
+   "details": "+2 s weakness and slowness'",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "B",
+    "2": "A",
+    "3": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "critical_plus",
+   "name": "Critical Plus",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases damage dealt whilst critting",
+   "requirements": [
+    "Meele",
+    "Arrow"
+   ],
+   "price": {
+    "1": "AAA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "crouching_web_shot",
+   "name": "Crouching Web Shot",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Leaves a trail of web after shooting an arrow",
+   "requirements": [
+    "Beast",
+    "Projectile"
+   ],
+   "effects": [
+    "Creation"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "curse_of_fangs",
+   "name": "Curse Of Fangs",
+   "key": "paradox",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Follows opponents on the ground dealing damage",
+   "spell_cost": "Shdw 1",
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "curse_of_living_flames",
+   "name": "Curse of Living Flames",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool",
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Curses enemies hit by your magic damage. Cursed enemies explode by contact with fire, lava, or magma blocks",
+   "price": {
+    "1": "B",
+    "2": "BB",
+    "3": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "curse_skull",
+   "name": "Curse Skull",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots a skull that explodes on impact, dealing AoE damage and blinding on hit",
+   "details": "Explosive Projectile, Creates Soulsand, Inflicts Wither, Weakness 2, Mining Fatigue 2",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Wither Skull",
+    "Transmutation",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Undead 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "damage_resistance",
+   "name": "Damage Resistance",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "global_cap": 1,
+   "description": "Provides resistance effect",
+   "details": "Resistance I",
+   "price": {
+    "1": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dark_seed_explosion",
+   "name": "Dark Seed Explosion",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Explosions leave soul sand and wither flowers on impact",
+   "details": "Creates Soulsand and Wither roses on Explosion Impact",
+   "requirements": [
+    "Explosion"
+   ],
+   "effects": [
+    "Creation",
+    "Transmutation"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "death_absorption",
+   "name": "Death Absorption",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Provides absorption after killing mobs and players",
+   "requirements": [
+    "Kill"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "death_claw_critical",
+   "name": "Death Claw Critical",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Deals extra damage on crit, and binds enemies for 30 seconds",
+   "details": "Critical that \"summons claw of anubis\" creating wither roses and soul sand behind target",
+   "requirements": [
+    "Meele",
+    "Arrow"
+   ],
+   "effects": [
+    "Meele",
+    "Creation",
+    "Transmutation"
+   ],
+   "price": {
+    "1": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "decapitation",
+   "name": "Decapitation",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Receive enemy skulls on kill",
+   "requirements": [
+    "Kill"
+   ],
+   "effects": [
+    "Loot"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "decreased_infinity_block_cooldown",
+   "name": "Decreased Infinity Block Cooldown",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Decreases the cooldown for the block-replacement effect of infinity blocks",
+   "details": "Decreases the cooldown of the Infinity block mass place Ability (shift+place)",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "deep_freeze",
+   "name": "Deep Freeze",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Sends a slow wave that freezes mobs, players, water, and lava in its path",
+   "details": "Cone freeze that ice traps entities, not a projectile",
+   "requirements": [
+    "Ice",
+    "III"
+   ],
+   "effects": [
+    "Creation",
+    "Transmutation",
+    "Magic"
+   ],
+   "spell_cost": "Ice 3",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dimension_soul",
+   "name": "Dimension Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Dimensional soul",
+   "details": "1 extra soul per Level",
+   "item_type": "?",
+   "price": {
+    "2": "CCC",
+    "3": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dimension_steed",
+   "name": "Dimension Steed",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a horse that will teleport instead of jump",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Teleportation",
+    "Mount",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dragon_fireball",
+   "name": "Dragon Fireball",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Throw a fireball projectile that explodes on impact",
+   "requirements": [
+    "Dragon"
+   ],
+   "effects": [
+    "Fireball",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dragon_leap",
+   "name": "Dragon Leap",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Double-jump forward, exploding on landing; immune to bind",
+   "requirements": [
+    "Dragon",
+    "Double Jump"
+   ],
+   "effects": [
+    "Acceleration",
+    "Explosion"
+   ],
+   "item_type": "Most Armor Items",
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dragon_soul",
+   "name": "Dragon Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Dragon soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CC",
+    "3": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dragon_spawn",
+   "name": "Dragon Spawn",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Spawns a blaze to fight for you",
+   "requirements": [
+    "Dragon"
+   ],
+   "effects": [
+    "Projectile",
+    "wdym",
+    "Explosion",
+    "Magic",
+    "Summon"
+   ],
+   "spell_cost": "Dragon 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "dragon_switch",
+   "name": "Dragon Switch",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Switches your position with your summoned Dragon Spawn",
+   "requirements": [
+    "Dragon"
+   ],
+   "effects": [
+    "Teleportation",
+    "Heal",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "elder_branch",
+   "name": "Elder Branch",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Hits summon sword clones that carry the player’s effects; only works at night",
+   "requirements": [
+    "Meele"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "elder_phantom",
+   "name": "Elder Phantom",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a large Phantom to fight for you",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Meele",
+    "Destruction",
+    "Transmutation",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ender_pearl_dispenser",
+   "name": "Ender Pearl Dispenser",
+   "key": "dimensional",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots ender pearls that teleport the caster on impact",
+   "details": "Shoots out an Ender Pearl at the cost of 1/3rd of a Dimension soul",
+   "requirements": [
+    "Dimension"
+   ],
+   "effects": [
+    "Projectile",
+    "Teleportation"
+   ],
+   "spell_cost": "Dim 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "entangling_roots",
+   "name": "Entangling Roots",
+   "key": "tempest",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Traps opponents in tree roots, binding for 30 seconds",
+   "spell_cost": "Nature 1",
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "escape_skeleton",
+   "name": "Escape Skeleton",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Teleport towards the direction of cast, leaving a skeleton replica of the caster",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Meele",
+    "Projectile",
+    "Teleportation",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "exp_gain_boost",
+   "name": "Exp Gain Boost",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 10,
+   "description": "Increases experienced received",
+   "price": {
+    "1": "C",
+    "2": "C",
+    "3": "C",
+    "4": "C",
+    "5": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "exploding_chickens",
+   "name": "Exploding Chickens",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons chickens that explode shortly after being nearby enemies",
+   "requirements": [
+    "Fire",
+    "Nature"
+   ],
+   "effects": [
+    "Explosion",
+    "Magic",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "explosion_resistance",
+   "name": "Explosion Resistance",
+   "key": "inferno",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-2",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Increases resistance to explosive attacks",
+   "price": {
+    "1": "C",
+    "2": "CCC",
+    "3": "can stack to 3"
+   },
+   "max_level_conflict": {
+    "explanations": 2,
+    "prices": 3,
+    "cheat_sheet": 3
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "explosive_webbing",
+   "name": "Explosive Webbing",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Explosions leave cobwebs on impact",
+   "price": {
+    "1": "B",
+    "2": "BB",
+    "3": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fairy_barrier",
+   "name": "Fairy Barrier",
+   "key": "tempest",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "description": "Negates a single hit of damage with a cooldown",
+   "price": {
+    "1": "BBB",
+    "2": "S",
+    "3": "X close to Z",
+    "4": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "falken",
+   "name": "Falken",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases the amount of projectiles cast.",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Shapeshift"
+   ],
+   "price": {
+    "1": "AAA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fang_strike",
+   "name": "Fang Strike",
+   "key": "paradox",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Melee hits trigger an extra Invoker attack (3s cooldown)",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fast_blood_recharge",
+   "name": "Fast Blood Recharge",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Increases the rate at which blood souls rejuvenate",
+   "details": "Reduces Blood Soul recharge by 4 Seconds",
+   "requirements": [
+    "Blood"
+   ],
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fast_infinity",
+   "name": "Fast Infinity",
+   "key": "dimensional",
+   "kind": "buff",
+   "details": "Increaeses Infinity Block spread speed?",
+   "status": "unverified"
+  },
+  {
+   "id": "fast_potion_recharge",
+   "name": "Fast Potion Recharge",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "description": "Increases the rate at which potions rejuvenate",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fatal_strike",
+   "name": "Fatal Strike",
+   "key": "dimensional",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Full swings instantly kill players below 30 HP",
+   "details": "Executes the target if the Inflicted damage leaves him at or below 30% of his maximum HP",
+   "requirements": [
+    "Meele"
+   ],
+   "item_type": "Tools and Weapons",
+   "price": {
+    "1": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fatigue_resistance",
+   "name": "Fatigue Resistance",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "description": "Provides resistance to the fatigue",
+   "price": {
+    "1": "B",
+    "2": "SS",
+    "3": "SSS",
+    "4": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "feed_blocker",
+   "name": "Feed Blocker",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Restricts opponents from eating food",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "B",
+    "2": "BB",
+    "3": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fertile_strike",
+   "name": "Fertile Strike",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Upon hitting mobs and players, a small surrounding area turns into moss and flowers",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fire_blast",
+   "name": "Fire Blast",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Long range shot that explodes after a short interval",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fire_hand",
+   "name": "Fire Hand",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots continuous small fireballs that burn on impact",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Fire",
+    "Destruction",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fire_shotgun",
+   "name": "Fire Shotgun",
+   "key": "chaos",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fire_soul",
+   "name": "Fire Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra fire soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CC",
+    "3": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fire_soulmass",
+   "name": "Fire Soulmass",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots a homing fire shot that explodes on impact",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Explosion",
+    "Magic",
+    "Homing"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "fire_spiral",
+   "name": "Fire Spiral",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoot a slow moving fire shot that explodes on impact",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Fire 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "flame_aegis",
+   "name": "Flame Aegis",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Provides temporary nullification to explosion damage",
+   "requirements": [
+    "Fire",
+    "II"
+   ],
+   "effects": [
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "flower_field",
+   "name": "Flower Field",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Spawns a field of flowers with a massive AoE",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Creation",
+    "Transmutation",
+    "Magic"
+   ],
+   "spell_cost": "Nature 1",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "flower_healing",
+   "name": "Flower Healing",
+   "key": "inferno",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Walking over flowers consumes them, and heals you",
+   "details": "Heals when running over a flower, \"consumes\" the flower. Doesnt work with wither roses",
+   "effects": [
+    "Heal"
+   ],
+   "price": {
+    "1": "C",
+    "2": "B",
+    "3": "AAA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "flying_brown_panda",
+   "name": "Flying Brown Panda",
+   "key": "chaos",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a flying brown panda mount",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "flying_panda",
+   "name": "Flying Panda",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a flying panda mount",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Mount",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "flying_turtle",
+   "name": "Flying Turtle",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a flying turtle mount",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Mount",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "force_field",
+   "name": "Force Field",
+   "key": "paradox",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Pushes players and mobs away from the area of cast",
+   "spell_cost": "Dim 1",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "freezing_strike",
+   "name": "Freezing Strike",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Inflicts freezing to enemies on melee hits",
+   "details": "Freezes",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "frost_armor",
+   "name": "Frost Armor",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "description": "Inflicts freezing to enemies upon taking damage",
+   "details": "Grants the ability to see Invisible people up to 5 Blocks per Level away",
+   "requirements": [
+    "Meele Damage Received"
+   ],
+   "item_type": "Any Item",
+   "price": {
+    "1": "CCC",
+    "2": "AA",
+    "3": "S",
+    "4": "can stack to 4"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "frost_arrow",
+   "name": "Frost Arrow",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases damage dealt by arrows, and applies freezing effect on hit",
+   "requirements": [
+    "Ice",
+    "Arrow"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ghast_chan",
+   "name": "Ghast Chan",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a ghast that shoots fireballs at enemies",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Fireball",
+    "Explosion",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ghost_block",
+   "name": "Ghost Block",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Teleport behind opponents after blocking hits with a shield",
+   "price": {
+    "1": "no ess form"
+   },
+   "price_note": "Price is based on Shield's soul type/count and if it has mending",
+   "status": "unverified"
+  },
+  {
+   "id": "giant_snowball",
+   "name": "Giant Snowball",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots a snowball that, on impact, creates a mound of snow and ice",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Ice 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "goatfather",
+   "name": "Goatfather",
+   "key": "paradox",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a goat that leaves blood blocks and polymorphs players on hit",
+   "spell_cost": "Nature 2",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "grass_nourishment",
+   "name": "Grass Nourishment",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Provides saturation when standing on grass",
+   "details": "Grants Saturation Near Grass blocks",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "gravity_resistance",
+   "name": "Gravity Resistance",
+   "key": "tempest",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "description": "Provides resistance to gravity effects",
+   "price": {
+    "1": "BB",
+    "2": "A",
+    "3": "X close to Z",
+    "4": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "gravity_well",
+   "name": "Gravity Well",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Lowers an area, increasing gravity and restricting players’ movement",
+   "details": "Creates an area that you cannot jump in",
+   "requirements": [
+    "Dragon",
+    "II"
+   ],
+   "effects": [
+    "Acceleration",
+    "Destruction",
+    "Transmutation",
+    "Magic"
+   ],
+   "spell_cost": "Dragon 2",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "groundbreak_crit",
+   "name": "Groundbreak Crit",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Critical hits cause a 5-block radius explosion, breaking 2 blocks of ground below",
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "grug_charge",
+   "name": "Grug Charge",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Leap forward, with a small explosion on impact",
+   "requirements": [
+    "Orc",
+    "Jump Sneak"
+   ],
+   "effects": [
+    "Explosion",
+    "Teleportation"
+   ],
+   "item_type": "Most Armor Items",
+   "spell_cost": "Orc 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "haste",
+   "name": "Haste",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-2",
+   "max_level": 2,
+   "global_cap": 2,
+   "description": "Receive the haste effect (increases mining and swinging speed)",
+   "item_type": "Any",
+   "price": {
+    "1": "B",
+    "2": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "headshot",
+   "name": "Headshot",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Increases damage dealt by projectiles aimed at the head",
+   "requirements": [
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "CC",
+    "2": "BBB",
+    "3": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "headshot_resistance",
+   "name": "Headshot Resistance",
+   "key": "inferno",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Provides resistance to the 'headshot' essence",
+   "details": "Likeley reduces the Headshot Essence Multiplier?",
+   "price": {
+    "1": "C",
+    "2": "CC",
+    "3": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "heal_on_shield_block",
+   "name": "Heal On Shield Block",
+   "key": "chaos",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Provides a small heal when blocking hits with a shield",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "heal_on_teleport",
+   "name": "Heal On Teleport",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Provides a heal upon teleport",
+   "price": {
+    "1": "BBB",
+    "2": "A",
+    "3": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "healthy_strike",
+   "name": "Healthy Strike",
+   "key": "dimensional",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Deals extra damage to opponents the more health the player has",
+   "details": "Deals more damage if the Dealer is at full Life",
+   "requirements": [
+    "Meele"
+   ],
+   "price": {
+    "1": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "heart_extractor",
+   "name": "Heart Extractor",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Receive the named heart of players on kill",
+   "requirements": [
+    "Kill"
+   ],
+   "effects": [
+    "Loot"
+   ],
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "heightened_senses",
+   "name": "Heightened Senses",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": 4,
+   "description": "Reveals invisible players",
+   "details": "Reflects Damage on Meele Block",
+   "item_type": "Any Item(?)",
+   "price": {
+    "1": "B",
+    "2": "AA",
+    "3": "SS"
+   },
+   "max_level_conflict": {
+    "explanations": 4,
+    "prices": 4,
+    "cheat_sheet": 3
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "high_gravity_critical",
+   "name": "High Gravity Critical",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "On crit, restricts jumping and general movement of players and mobs",
+   "details": "On critical puts target in \"High gravity\" status, creating a strong vertical downwards force",
+   "requirements": [
+    "Meele",
+    "Arrow"
+   ],
+   "effects": [
+    "Acceleration"
+   ],
+   "price": {
+    "1": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "holy_branch_attack",
+   "name": "Holy Branch (Attack)",
+   "key": "inferno",
+   "kind": "spell",
+   "requirements": [
+    "Meele"
+   ],
+   "effects": [
+    "Meele",
+    "Magic",
+    "Summon"
+   ],
+   "status": "unverified"
+  },
+  {
+   "id": "holy_branch_cast",
+   "name": "Holy Branch (Cast)",
+   "key": "inferno",
+   "kind": "spell",
+   "requirements": [
+    "Holy"
+   ],
+   "effects": [
+    "Meele",
+    "Magic",
+    "Summon"
+   ],
+   "status": "unverified"
+  },
+  {
+   "id": "honey_cannon",
+   "name": "Honey Cannon",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots a beam of honey that replaces blocks with honey on impact",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Transmutation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_bomb",
+   "name": "Ice Bomb",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "When shot at ice, detonates after a short interval",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Creation",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_coffin_strike",
+   "name": "Ice Coffin Strike",
+   "key": "dimensional",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "On crit, trap opponents in an ice box",
+   "details": "creates an ice wall behind the Target on critical hit, to make escape harder",
+   "requirements": [
+    "Meele"
+   ],
+   "effects": [
+    "Creation"
+   ],
+   "price": {
+    "1": "AAA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_domain",
+   "name": "Ice Domain",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a small ice sphere around the player, applying bind to all players and mobs inside",
+   "requirements": [
+    "Ice",
+    "II"
+   ],
+   "effects": [
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_growth",
+   "name": "Ice Growth",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Projectile freezes a small area on impact and forms an ice path back to the caster",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Ice 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_path",
+   "name": "Ice Path",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a path of ice under the player. Can be used as a platform to run mid-air",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Ice 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_pedestal",
+   "name": "Ice Pedestal",
+   "key": "paradox",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "description": "On teleport, create an ice pedestal with a 3 block spherical radius",
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_prison",
+   "name": "Ice Prison",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoot a projectile that traps opponents on hit, binding them for a short duration",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Projectile",
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_shinto",
+   "name": "Ice Shinto",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "A homing shot that deals AoE damage, binds and traps the enemy on impact",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Creation",
+    "Magic",
+    "Homing"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Ice 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ice_soul",
+   "name": "Ice Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Ice soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CCC",
+    "3": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "icengard",
+   "name": "Icengard",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Raises a fast ice platform with a 'blessed snow' forcefield on top",
+   "requirements": [
+    "Ice"
+   ],
+   "effects": [
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ignoble_steed",
+   "name": "Ignoble Steed",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a horse with armour",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Mount",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_arrow_damage",
+   "name": "Increased Arrow Damage",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 10,
+   "description": "Increases the damage dealt by bows and crossbows",
+   "price": {
+    "1": "C",
+    "2": "CCC",
+    "3": "A",
+    "4": "SSS",
+    "5": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_dagger_replenish",
+   "name": "Increased Dagger Replenish",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "description": "Increases the rate at which daggers are rejuvenated",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_dark_recharge",
+   "name": "Increased Dark Recharge",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Increases the rate at which undead, shadow and blood souls are rejuvenated",
+   "details": "Reduces Undead, Shadow, Blood Soul recharge by 2 Seconds",
+   "requirements": [
+    "Undead",
+    "Shadow",
+    "Blood"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_dragon_recharge",
+   "name": "Increased Dragon Recharge",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Increases the rate at which Dragon souls are rejuvenated",
+   "details": "Reduces Dragon Soul recharge by 2 Seconds",
+   "requirements": [
+    "Dragon"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_elemental_recharge",
+   "name": "Increased Elemental Recharge",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Increases the rate at which Ice, Nature and Fire souls are rejuvenated",
+   "details": "Reduces Fire, Ice, Nature Soul recharge by 2 Seconds",
+   "requirements": [
+    "Fire",
+    "Ice",
+    "Nature"
+   ],
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_fire_recharge",
+   "name": "Increased Fire Recharge",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Increases the rate at which Fire souls are rejuvenated",
+   "details": "Only Observed on armour, need essence confirmation",
+   "requirements": [
+    "Fire"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_heal_harm_potion",
+   "name": "Increased Heal & Harm Potion",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "description": "Increases the healing from health potions, and the damage of harm potions",
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_heal_power",
+   "name": "Increased Heal Power",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 5,
+   "description": "Increases healing from most sources",
+   "details": "Bugged Currently (?)",
+   "requirements": [
+    "Heal"
+   ],
+   "price": {
+    "1": "CC",
+    "2": "CCC",
+    "3": "BBB",
+    "4": "SSS",
+    "5": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_infinity_blocks_placed",
+   "name": "Increased Infinity Blocks Placed",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Increases the AoE of the block-replacement effect of infinity blocks",
+   "details": "Increases the amount of placements for Infinity block mass place Ability (shift+place)",
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_lightning_damage",
+   "name": "Increased Lightning Damage",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 5,
+   "description": "Increases the damage dealt by natural lightning",
+   "requirements": [
+    "Lightning"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C",
+    "2": "CC",
+    "3": "B",
+    "4": "S",
+    "5": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_magic_damage",
+   "name": "Increased Magic Damage",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Increases the damage dealt by most spells",
+   "requirements": [
+    "Magic Damage"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "B",
+    "2": "AAA",
+    "3": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_maximum_daggers",
+   "name": "Increased Maximum Daggers",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 5,
+   "description": "Increases the maximum number of daggers held",
+   "price": {
+    "1": "C",
+    "2": "C",
+    "3": "CC",
+    "4": "BB",
+    "5": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_melee_damage",
+   "name": "Increased Melee Damage",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Increases melee damage dealt to a player or mob",
+   "requirements": [
+    "Meele"
+   ],
+   "price": {
+    "1": "BB",
+    "2": "S",
+    "3": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_potion_duration",
+   "name": "Increased Potion Duration",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "description": "Increases the duration of positive effect splash potions",
+   "details": "Multiplies Duration of any Splash potion",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_summon_damage",
+   "name": "Increased Summon Damage",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "weapon_tool",
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Increases the damage dealt by summons",
+   "price": {
+    "1": "CC",
+    "2": "B",
+    "3": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_throwing_damage",
+   "name": "Increased Throwing Damage",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases the damage dealt by thrown daggers",
+   "requirements": [
+    "Throwing"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "increased_velocity",
+   "name": "Increased Velocity",
+   "key": "chaos",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases projectile velocity",
+   "price": {
+    "1": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "instant_mining",
+   "name": "Instant Mining",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Instantly mines blocks",
+   "requirements": [
+    "Meele"
+   ],
+   "effects": [
+    "Destruction"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "invisible_sneak",
+   "name": "Invisible Sneak",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Provides invisibility when sneaking",
+   "requirements": [
+    "Sneak"
+   ],
+   "effects": [
+    "Invisibility"
+   ],
+   "item_type": "Most Armor Items",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "jump",
+   "name": "Jump",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 10,
+   "description": "Provides jump effect, increasing jump height",
+   "item_type": "Any",
+   "price": {
+    "1": "no ess form",
+    "2": "BB",
+    "3": "BBB",
+    "4": "S",
+    "5": "X"
+   },
+   "max_level_conflict": {
+    "explanations": 5,
+    "prices": 5,
+    "cheat_sheet": 3
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "jump_rod",
+   "name": "Jump Rod",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Propels the caster forward",
+   "requirements": [
+    "Cast",
+    "Hook"
+   ],
+   "effects": [
+    "Acceleration"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "knockback_immunity",
+   "name": "Knockback Immunity",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "description": "Provides immunity to knockback",
+   "details": "Cursed af. Increases Damage taken in some cases, Removes Many Forms of displacement like levitation, but not all. Very buggy but not bad",
+   "price": {
+    "1": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "lava_bolt",
+   "name": "Lava Bolt",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoot a fire shot that explodes on impact and turns the surrounding area into lava",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Creation",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "lava_eater",
+   "name": "Lava Eater",
+   "key": "paradox",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Clears the surrounding area of lava on cast",
+   "spell_cost": "Free",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "lava_shot",
+   "name": "Lava Shot",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-2",
+   "max_level": 2,
+   "description": "Upon shooting an arrow, the impact leaves a source of lava",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Creation"
+   ],
+   "price": {
+    "1": "CC",
+    "2": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "lava_shotgun",
+   "name": "Lava Shotgun",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoots a spray of small fireballs with a large AoE",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Fireball",
+    "Transmutation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "lava_walker",
+   "name": "Lava Walker",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Transforms lava under the player’s feet into obsidian, allowing for easy travel on lava",
+   "effects": [
+    "Transmutation"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "levitation",
+   "name": "Levitation",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "On cast, slowly levitate upwards, being able to move whilst hovering",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "levitation_shot",
+   "name": "Levitation Shot",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Inflicts the levitation effect on players and mobs upon being hit with a projectile",
+   "requirements": [
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "life_steal",
+   "name": "Life Steal",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-2",
+   "max_level": 2,
+   "global_cap": 2,
+   "description": "Provides a small heal when hitting opponents",
+   "details": ".5 Hearts Per level per FULL hit",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "effects": [
+    "Heal"
+   ],
+   "price": {
+    "1": "BBB",
+    "2": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "life_swap",
+   "name": "Life Swap",
+   "key": "dimensional",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Swaps the health you currently have with players on cast",
+   "spell_cost": "Degg",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "lightning_strike",
+   "name": "Lightning Strike",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Occasionally strike opponents with lightning on hit",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "effects": [
+    "Lightning",
+    "Explosion"
+   ],
+   "price": {
+    "1": "B",
+    "2": "B",
+    "3": "SS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "living_wings",
+   "name": "Living Wings",
+   "key": "tempest",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Gain forward momentum while gliding, activate with shift, 3s cooldown",
+   "price": {
+    "1": "no ess form"
+   },
+   "price_note": "Price is based on Elytra's soul type/count and if it has mending",
+   "status": "unverified"
+  },
+  {
+   "id": "love_strike",
+   "name": "Love Strike",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Projectile leaves heart particles and grants Regeneration II to players and mobs it hits",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "magic_disrupt",
+   "name": "Magic Disrupt",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Blocks players and bosses from using most spells for a short period of time",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "CCC",
+    "2": "A",
+    "3": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "magma_critical",
+   "name": "Magma Critical",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Hits create magma blocks under foes; critical hits trigger explosions",
+   "requirements": [
+    "Meele",
+    "Arrow"
+   ],
+   "effects": [
+    "Transmutation",
+    "Explosion"
+   ],
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "magma_orb",
+   "name": "Magma Orb",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Fires a slow homing shot that explodes on impact, creating a large magma mound",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Creation",
+    "Transmutation",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "mana_spirit",
+   "name": "Mana Spirit",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Spawns an allay, providing a chance not to consume souls",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Magic",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "marker",
+   "name": "Marker",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Enemies hit will glow (and received poison) for a period of time",
+   "details": "Glow / Poison 2",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "mass_levitation",
+   "name": "Mass Levitation",
+   "key": "tempest",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "All players and mobs within a small area will levitate for 8s on cast",
+   "spell_cost": "Dragon 2",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "mass_polymorph",
+   "name": "Mass Polymorph",
+   "key": "dimensional",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Turns all in a large AoE into random mobs with blood ground beneath",
+   "details": "Polymorphs entities in big area",
+   "spell_cost": "Degg",
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "maximum_bees",
+   "name": "Maximum Bees",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": "?",
+   "description": "Increases the amount of bees summoned by War Bees",
+   "price": {
+    "1": "C",
+    "2": "CC",
+    "3": "BB",
+    "4": "AA"
+   },
+   "max_level_conflict": {
+    "explanations": 4,
+    "prices": 4,
+    "cheat_sheet": 3
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "meteor_storm",
+   "name": "Meteor Storm",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a hail of fireballs from the sky, 1 degg cast",
+   "details": "Costs 1 Degg, Many fireballs from the sky",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Fireball",
+    "Explosion",
+    "Magic"
+   ],
+   "spell_cost": "Degg",
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "molotov",
+   "name": "Molotov",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Increases projectile velocity and ignites on impact within a small AoE",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Creation"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "morbin_time",
+   "name": "Morbin Time",
+   "key": "chaos",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Morph into a bat",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "mounted_damage",
+   "name": "Mounted Damage",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-2",
+   "max_level": 2,
+   "description": "Increases damage whilst mounted",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C",
+    "2": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "multiflame",
+   "name": "Multiflame",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoot continuous flames that burn enemies on impact",
+   "requirements": [
+    "Fire"
+   ],
+   "effects": [
+    "Fireball",
+    "Destruction",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "nature_free_cast",
+   "name": "Nature Free Cast",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 5,
+   "description": "Chance to save nature souls when casting nature spells",
+   "price": {
+    "1": "C",
+    "2": "CC",
+    "3": "BB",
+    "4": "AAA",
+    "5": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "nature_heal",
+   "name": "Nature Heal",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Large heal on cast",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Heal",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "nature_soul",
+   "name": "Nature Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra nature soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CCC",
+    "3": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "nausea",
+   "name": "Nausea",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Inflicts nausea effect to players hit",
+   "requirements": [
+    "Meele"
+   ],
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "nausea_immunity",
+   "name": "Nausea Immunity",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Provides immunity to the nausea effect",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "night_goggles",
+   "name": "Night Goggles",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Grants night vision, toggleable by sneaking",
+   "requirements": [
+    "Double Sneak"
+   ],
+   "item_type": "Most Armor Items",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "night_vision",
+   "name": "Night Vision",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "global_cap": 1,
+   "description": "Provides night vision effect",
+   "item_type": "Any",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "ninja_foxes",
+   "name": "Ninja Foxes",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons 2 foxes to fight for you",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Meele",
+    "Acceleration",
+    "Invisibility",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "orc_soul",
+   "name": "Orc Soul",
+   "key": "chaos",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Orc soul",
+   "price": {
+    "2": "C",
+    "3": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "parrot_form",
+   "name": "Parrot Form",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Morph into a parrot",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Shapeshift",
+    "Magic"
+   ],
+   "spell_cost": "Nature 1",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "photosynthesis",
+   "name": "Photosynthesis",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Provides saturation during sunlight",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "poison",
+   "name": "Poison",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Inflicts poison effect to enemies on hit",
+   "details": "Poison 3 Effect, 7 Seconds +3 duration per level, +1 to effect",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "C",
+    "2": "CCC",
+    "3": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "poison_resistance",
+   "name": "Poison Resistance",
+   "key": "inferno",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": "4?",
+   "description": "Provides resistance to the poison effect",
+   "price": {
+    "1": "C",
+    "2": "CC",
+    "3": "CCC",
+    "4": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "polymorph",
+   "name": "Polymorph",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Homing projectile that transforms players into random mobs briefly or until hit.",
+   "requirements": [
+    "Blood"
+   ],
+   "effects": [
+    "Shapeshift",
+    "Magic",
+    "Homing"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "poseidon_block",
+   "name": "Poseidon Block",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Morphs opponents that hit your blocked shield into a fish",
+   "price": {
+    "1": "no ess form"
+   },
+   "price_note": "Price is based on Shield's soul type/count and if it has mending",
+   "status": "unverified"
+  },
+  {
+   "id": "proximity_blind",
+   "name": "Proximity Blind",
+   "key": "paradox",
+   "applies_to": [
+    "weapon_tool",
+    "armor"
+   ],
+   "description": "Inflicts AoE blindness on nearby players.",
+   "price": {
+    "1": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "puchita",
+   "name": "Puchita",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summon a fox that will fight, and trigger lifesteal for you",
+   "requirements": [
+    "Blood"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "quickstep",
+   "name": "Quickstep",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Thrust forward whilst mid-air on sneak",
+   "requirements": [
+    "Beast",
+    "Jump Sneak"
+   ],
+   "effects": [
+    "Acceleration",
+    "Teleportation"
+   ],
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "rabbid_rabbits",
+   "name": "Rabbid Rabbits",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Summon a swarm of rabbits that inflict poison on hit",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Meele",
+    "Projectile",
+    "Magic",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "rabbit_shot",
+   "name": "Rabbit Shot",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Projectiles spawn a rabbit that inflicts poison on hit",
+   "details": "Summons rabbits on projectile shot",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "rage_of_zeus",
+   "name": "Rage of Zeus",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Fires a destructive AoE lightning shot, damaging all in its path",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Lightning",
+    "Explosion",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "railgun",
+   "name": "Railgun",
+   "key": "tempest",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Long range, Large AoE explosion with a medium cooldown",
+   "spell_cost": "Fire 2",
+   "price": {
+    "1": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "rain_healing",
+   "name": "Rain Healing",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Provides fast regeneration when it rains",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "recover_shadow_strike",
+   "name": "Recover Shadow Strike",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Recover Shadow souls on hits",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "effects": [
+    "Shadow"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "recover_undead_strike",
+   "name": "Recover Undead Strike",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Recover Undead souls on Hits",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "effects": [
+    "Undead"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "reduce_heal",
+   "name": "Reduce Heal",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Opponents hit will heal half as quickly",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "reflect_on_melee_block",
+   "name": "Reflect On Melee Block",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Reflects melee damage when blocking with a shield",
+   "requirements": [
+    "Physical Damage Received"
+   ],
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "regeneration",
+   "name": "Regeneration",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "global_cap": 3,
+   "description": "Provides the regeneration effect",
+   "requirements": [
+    "Heal"
+   ],
+   "item_type": "Any",
+   "price": {
+    "1": "AA",
+    "2": "SS",
+    "3": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "repeating_arrow",
+   "name": "Repeating Arrow",
+   "key": "paradox",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Rapidly repeats bow or crossbow shots for a short time",
+   "price": {
+    "1": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sacred_absorption",
+   "name": "Sacred Absorption",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "description": "Grants Absorption II on soul sand or bone blocks",
+   "details": "Grants Absorption 1 Near Boneblocks and Soulsand",
+   "item_type": "Any",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sacred_regen",
+   "name": "Sacred Regen",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "description": "Grants Regeneration II on soul sand or bone blocks",
+   "details": "Grants Regeneration 2 Near Boneblocks and Soulsand",
+   "requirements": [
+    "Heal"
+   ],
+   "item_type": "Any",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sacred_strength",
+   "name": "Sacred Strength",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "description": "Grants Strength II on soul sand or bone blocks",
+   "details": "GrantsStrength 2 Near Boneblocks and Soulsand",
+   "item_type": "Any",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "safe_teleport",
+   "name": "Safe Teleport",
+   "key": "chaos",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Teleport towards the direction of cast without phasing through blocks",
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sage_slayer",
+   "name": "Sage Slayer",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Boosts damage against players based on their soul count",
+   "details": ".125 Hearts FLAT per soul on target",
+   "requirements": [
+    "Meele"
+   ],
+   "price": {
+    "1": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "santa_rage",
+   "name": "Santa Rage",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Replace arrows with snowballs that detonate on impact",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Explosion",
+    "Shapeshift"
+   ],
+   "price": {
+    "1": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "satan_sweep",
+   "name": "Satan Sweep",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "On hit, melee attacks effect a small AoE",
+   "requirements": [
+    "Meele",
+    "Arrow",
+    "Blood Damage"
+   ],
+   "effects": [
+    "Meele"
+   ],
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shadow_fangs",
+   "name": "Shadow Fangs",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Long range straight-line invoker attack",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Meele",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shadow_form",
+   "name": "Shadow Form",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "On cast, become invisible for a short period of time (or till hit)",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Invisibility",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shadow_saw",
+   "name": "Shadow Saw",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "A stationary offensive spell dealing damage over time in a 1x1 area",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Meele",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Shdw 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shadow_soul",
+   "name": "Shadow Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra Shadow soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CC",
+    "3": "CCC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shadow_swarm",
+   "name": "Shadow Swarm",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons spiders that inflict poison, nausea, slowness, and fatigue on hit",
+   "requirements": [
+    "Shadow",
+    "Nature"
+   ],
+   "effects": [
+    "Meele",
+    "Invisibility",
+    "Teleportation",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shadowmeld",
+   "name": "Shadowmeld",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Provides invisibility during nighttime",
+   "details": "Grants invisibility when below light level 7(?)",
+   "effects": [
+    "Invisibility"
+   ],
+   "item_type": "Armor",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "shoot_web",
+   "name": "Shoot Web",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Ranged shot that places a cobweb on impact",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Projectile",
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "skeleton_archer",
+   "name": "Skeleton Archer",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a highly mobile skeleton",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Arrow",
+    "Acceleration",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "skeleton_assassin",
+   "name": "Skeleton Assassin",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a sword wielding skeleton that binds on hit",
+   "requirements": [
+    "Undead"
+   ],
+   "effects": [
+    "Meele",
+    "Teleportation",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "skeleton_horse",
+   "name": "Skeleton Horse",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a skeleton horse mount",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Mount",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "skeleton_on_teleport",
+   "name": "Skeleton On Teleport",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Summons a skeleton upon teleport",
+   "price": {
+    "1": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "slayer_of_the_blind",
+   "name": "Slayer Of The Blind",
+   "key": "paradox",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Deals extra damage to blinded opponents",
+   "price": {
+    "1": "AAA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "slow",
+   "name": "Slow",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 5,
+   "description": "Inflicts the slowness effect on hits",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "price": {
+    "1": "CC",
+    "2": "B",
+    "3": "AA",
+    "4": "SSS",
+    "5": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "slow_resistance",
+   "name": "Slow Resistance",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "description": "Provides resistance to the slowness effect",
+   "price": {
+    "1": "B",
+    "2": "A",
+    "3": "X",
+    "4": "Z",
+    "5": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sneak_fortification",
+   "name": "Sneak Fortification",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-2",
+   "max_level": 2,
+   "description": "Provides absorption over time whilst sneaking",
+   "details": "Adds 1 Absorption Heart every second while sneaked up to 6",
+   "requirements": [
+    "Sneak"
+   ],
+   "item_type": "Most Armor Items",
+   "price": {
+    "1": "CCC",
+    "2": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "snowmage",
+   "name": "Snowmage",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a snowman that can fly, casting ice spells at opponents",
+   "requirements": [
+    "Ice",
+    "V",
+    "Shadow"
+   ],
+   "effects": [
+    "Projectile",
+    "Creation",
+    "Explosion",
+    "Magic",
+    "Homing",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "spell_cost": "Ice 5",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sonic_slash",
+   "name": "Sonic Slash",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "A long range melee attack with a short cooldown",
+   "details": "Warden Shriek Attack",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Meele"
+   ],
+   "spell_cost": "Free",
+   "price": {
+    "1": "AA"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "soul_break",
+   "name": "Soul Break",
+   "key": "dimensional",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "description": "Melee hits removes souls from opponents",
+   "details": "Removes 1 Soul from the Target, cycles the type removed after every hit",
+   "requirements": [
+    "Meele"
+   ],
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "soul_chain",
+   "name": "Soul Chain",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Pulls players and mobs towards you on cast",
+   "requirements": [
+    "Dragon"
+   ],
+   "effects": [
+    "Acceleration",
+    "Magic"
+   ],
+   "spell_cost": "Dragon 1",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "spectre_shot",
+   "name": "Spectre Shot",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Replaces projectiles with charged creepers",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Explosion",
+    "Shapeshift"
+   ],
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "speed",
+   "name": "Speed",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-5",
+   "max_level": 5,
+   "global_cap": 10,
+   "description": "Provides the speed effect",
+   "item_type": "Any",
+   "price": {
+    "1": "no ess form",
+    "2": "BB",
+    "3": "S",
+    "4": "X",
+    "5": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "spongebob",
+   "name": "Spongebob",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Clears any water within 3 blocks of the player",
+   "effects": [
+    "Destruction"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "spontaneous_combustion",
+   "name": "Spontaneous combustion",
+   "key": "paradox",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates an explosion on cast",
+   "spell_cost": "Free",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "stability_field",
+   "name": "Stability Field",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Shields the area from explosions, but players still take damage.",
+   "details": "Hinders Explosions in area to destroy blocks",
+   "price": {
+    "1": "CCC",
+    "2": "A",
+    "3": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "starve",
+   "name": "Starve",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "max_level": 1,
+   "global_cap": 1,
+   "description": "On hit, opponents will lose hunger",
+   "details": ".5 Hunger per Level per FULL hit",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "static_field",
+   "name": "Static Field",
+   "key": "dimensional",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Creates a field blocking most spells. Costs 1 degg.",
+   "details": "Consumes Dragon Egg, People around the user can not use spells",
+   "requirements": [
+    "Cast"
+   ],
+   "spell_cost": "Degg",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "sticky_explosive",
+   "name": "Sticky Explosive",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Arrows will detonate after a short period on impact",
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Explosion"
+   ],
+   "price": {
+    "1": "BBB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "strength",
+   "name": "Strength",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": 4,
+   "description": "Provides the strength effect",
+   "item_type": "Any",
+   "price": {
+    "1": "B",
+    "2": "S",
+    "3": "SSS",
+    "4": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "summon_dimension_anomaly",
+   "name": "Summon Dimension Anomaly",
+   "key": "dimensional",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Redirects teleport spells in the area to the anomaly, dealing damage.",
+   "details": "Creates zone in which teleports instead lead to the center and damage the teleporting entity heavily",
+   "requirements": [
+    "Dimension"
+   ],
+   "effects": [
+    "Teleportation",
+    "Magic Damage"
+   ],
+   "spell_cost": "Dim 2",
+   "price": {
+    "1": "S"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "summon_woods",
+   "name": "Summon Woods",
+   "key": "inferno",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Turns a large area into a forest, replacing ground with grass and spawning trees.",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Creation",
+    "Transmutation",
+    "Magic"
+   ],
+   "spell_cost": "Nature 1",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "swap_gate",
+   "name": "Swap Gate",
+   "key": "tempest",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Teleport you, and the blocks underneath you, in the direction of cast",
+   "spell_cost": "Dim 1",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "telekinesis",
+   "name": "Telekinesis",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Provides the ability to place blocks from a larger distance",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Creation"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "teleport",
+   "name": "Teleport",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Teleport towards the direction of cast",
+   "requirements": [
+    "Dimension"
+   ],
+   "effects": [
+    "Teleportation"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "teleport_behind",
+   "name": "Teleport Behind",
+   "key": "chaos",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Teleport behind mobs and players",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "tornado",
+   "name": "Tornado",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a large wind current that sucks in players and mobs",
+   "requirements": [
+    "Nature",
+    "III"
+   ],
+   "effects": [
+    "Acceleration",
+    "Destruction",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "undead_soul",
+   "name": "Undead Soul",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Obtain an extra undead soul",
+   "details": "1 extra soul per Level",
+   "item_type": "Armour",
+   "price": {
+    "2": "CC",
+    "3": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "unholy_strength",
+   "name": "Unholy Strength",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Increases strength upon killing a player",
+   "requirements": [
+    "Kill"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "untouchable",
+   "name": "Untouchable",
+   "key": "dimensional",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": 4,
+   "description": "When hit, inflicts opponents with the fatigue effect",
+   "details": "Inflicts Mining Fatigue Equal to the level of the Essence upon the Attacker for 4(?) Seconds",
+   "requirements": [
+    "Physical Damage Received"
+   ],
+   "item_type": "Armor",
+   "price": {
+    "1": "BBB",
+    "2": "S",
+    "3": "X",
+    "4": "can stack to 4"
+   },
+   "max_level_conflict": {
+    "explanations": 4,
+    "prices": 4,
+    "cheat_sheet": 3
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "vampire_strike",
+   "name": "Vampire Strike",
+   "key": "tempest",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Steals health on hit, healing you. Nearby blocks turn into “blood blocks” for blood spells",
+   "price": {
+    "1": "X"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "vanishing_teleport",
+   "name": "Vanishing Teleport",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor",
+    "weapon_tool"
+   ],
+   "description": "Provides invisibility upon teleporting",
+   "requirements": [
+    "Teleportation"
+   ],
+   "effects": [
+    "Invisibility"
+   ],
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "vexers",
+   "name": "Vexers",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons vexes to fight for you",
+   "requirements": [
+    "Shadow"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "volcanic_explosion",
+   "name": "Volcanic Explosion",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Leaves magma blocks around explosions",
+   "details": "Creates Magma and Lava on Explosion impact",
+   "requirements": [
+    "Explosion"
+   ],
+   "effects": [
+    "Transmutation"
+   ],
+   "item_type": "Weapons/Tools",
+   "price": {
+    "1": "A"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "war_bees",
+   "name": "War Bees",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a swarm of bees that inflict poison on hit",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Meele",
+    "Acceleration",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "water_ball",
+   "name": "Water Ball",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Shoot a ball that leaves a mound of water where it lands",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Creation",
+    "Magic"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "water_breathing",
+   "name": "Water Breathing",
+   "key": "chaos",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "max_level": 1,
+   "global_cap": 1,
+   "description": "Provides infinite respiration",
+   "item_type": "Any",
+   "price": {
+    "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "water_eater",
+   "name": "Water Eater",
+   "key": "dimensional",
+   "kind": "spell",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Clears water surrounding the player",
+   "details": "Consumes water in huge area",
+   "spell_cost": "Free",
+   "price": {
+    "1": "BB"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "water_shot",
+   "name": "Water Shot",
+   "key": "inferno",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "After shooting a projectile, leave a source of water on impact",
+   "details": "Creates Water on Projectile Impact",
+   "price": {
+    "1": "B"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "weakness_resistance",
+   "name": "Weakness Resistance",
+   "key": "paradox",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "description": "Provides resistance to weakness",
+   "price": {
+    "1": "BBB",
+    "2": "S",
+    "3": "X",
+    "4": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "web_eater",
+   "name": "Web Eater",
+   "key": "tempest",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "description": "Consume cobweb blocks for healing",
+   "price": {
+    "1": "B",
+    "2": "A",
+    "3": "SS",
+    "4": "Z"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "web_spinner",
+   "name": "Web Spinner",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a spider that leaves a trail of web to fight for you",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Meele",
+    "Projectile"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "web_step",
+   "name": "Web Step",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "On shift, teleport forward leaving a trail of cobweb",
+   "requirements": [
+    "Beast",
+    "Jump Sneak"
+   ],
+   "effects": [
+    "Acceleration",
+    "Creation",
+    "Teleportation"
+   ],
+   "item_type": "Most Armor Items",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "wither",
+   "name": "Wither",
+   "key": "chaos",
+   "kind": "attack",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "levels": "1-3",
+   "max_level": 3,
+   "description": "Inflicts opponents with wither on hit",
+   "details": "Wither 3 Effect, increased by 1 per essence level, 5 seconds",
+   "requirements": [
+    "Meele",
+    "Projectile",
+    "Magic Damage"
+   ],
+   "price": {
+    "1": "CCC",
+    "2": "BB",
+    "3": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "wither_resistance",
+   "name": "Wither Resistance",
+   "key": "inferno",
+   "kind": "buff",
+   "applies_to": [
+    "armor"
+   ],
+   "levels": "1-4",
+   "max_level": 4,
+   "global_cap": "4?",
+   "description": "Provides resistance to wither",
+   "details": "Reduce Wither Duration? Or Damage?",
+   "price": {
+    "1": "C",
+    "2": "CC",
+    "3": "CCC",
+    "4": "SSS"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "woofers",
+   "name": "Woofers",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "armor"
+   ],
+   "description": "Summons 2 wolves to fight for you",
+   "requirements": [
+    "Beast",
+    "Double Sneak"
+   ],
+   "effects": [
+    "Meele",
+    "Summon"
+   ],
+   "item_type": "Most Armor Items",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "zombie_horse",
+   "name": "Zombie Horse",
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "spell"
+   ],
+   "description": "Summons a zombie horse mount",
+   "requirements": [
+    "Cast"
+   ],
+   "effects": [
+    "Mount",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
+   },
+   "status": "unverified"
+  }
+ ],
+ "non_essence_effects": [
+  {
+   "name": "Increased Velocity",
+   "global_cap": 1,
+   "requirements": [
+    "Projectile"
+   ],
+   "effects": [
+    "Acceleration"
+   ]
+  },
+  {
+   "name": "Grenade",
+   "global_cap": 1,
+   "requirements": [
+    "Splash(?)"
+   ],
+   "effects": [
+    "Magic",
+    "Explosion(?)"
+   ],
+   "source": "Grenade"
+  },
+  {
+   "name": "Orc Fork",
+   "global_cap": 1,
+   "requirements": [
+    "Projectile"
+   ]
+  },
+  {
+   "name": "Training Sword",
+   "global_cap": 1,
+   "requirements": [
+    "Meele"
+   ]
+  },
+  {
+   "name": "Emperia",
+   "global_cap": 1,
+   "requirements": [
+    "Meele"
+   ]
+  },
+  {
+   "name": "Multipass"
+  },
+  {
+   "name": "Hoofer Stick",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ]
+  },
+  {
+   "name": "Iron Golem Potion",
+   "requirements": [
+    "Splash"
+   ]
+  },
+  {
+   "name": "Greater Invis Potion",
+   "requirements": [
+    "Splash"
+   ]
+  },
+  {
+   "name": "Acid Potion",
+   "requirements": [
+    "Splash"
+   ]
+  },
+  {
+   "name": "Love Strike",
+   "requirements": [
+    "Meele",
+    "Projectile"
+   ],
+   "effects": [
+    "Heal(?)"
+   ],
+   "source": "Cupids"
+  },
+  {
+   "name": "Minibow",
+   "effects": [
+    "Projectile(?)",
+    "Arrow(?)"
+   ],
+   "source": "Minibow"
+  },
+  {
+   "name": "Orc Soul",
+   "source": "Orc Set"
+  },
+  {
+   "name": "Holy Soul",
+   "source": "Bible/Cross"
+  },
+  {
+   "name": "Syba's Touch"
+  },
+  {
+   "name": "Wind Elytra"
+  },
+  {
+   "name": "Infinity Block"
+  },
+  {
+   "name": "Goku Potion",
+   "source": "Level Pot",
+   "trigger": "Food/Buff",
+   "details": "Discontinued"
+  },
+  {
+   "name": "Chameleon",
+   "source": "Talpa"
+  },
+  {
+   "name": "Lightning Rod",
+   "source": "Lightning rod Helm"
+  },
+  {
+   "name": "Orc Set I"
+  },
+  {
+   "name": "Bandit Set I"
+  },
+  {
+   "name": "Blood Set I"
+  },
+  {
+   "name": "Archer Set I"
+  },
+  {
+   "name": "Wizard Set I"
+  },
+  {
+   "name": "Knight Set I"
+  },
+  {
+   "name": "Druid Set I"
+  },
+  {
+   "name": "Alchemist Set I"
+  },
+  {
+   "name": "Edge  Set I"
+  },
+  {
+   "name": "Meele Reflection"
+  },
+  {
+   "name": "Robin Set I"
+  },
+  {
+   "name": "Blinding Headshot"
+  },
+  {
+   "name": "Midas Key"
+  },
+  {
+   "name": "Holy Branch"
+  },
+  {
+   "name": "Throwing Dagger"
+  },
+  {
+   "name": "Ender Bone"
+  },
+  {
+   "name": "Astral Hook"
+  },
+  {
+   "name": "Gapple Rod"
+  },
+  {
+   "name": "Glass Cannon"
+  },
+  {
+   "name": "Glass Cannon Pane"
+  }
+ ]
+}

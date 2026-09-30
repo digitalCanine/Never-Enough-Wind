@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "events": [
+    {
+      "id": "snovasion",
+      "display": "Snovasion",
+      "rewards": null
+    },
+    {
+      "id": "beef",
+      "display": "Beef",
+      "rewards": null
+    },
+    {
+      "id": "labyrinth",
+      "display": "Labyrinth",
+      "rewards": null,
+      "notes": "has an 'is starting...' line"
+    },
+    {
+      "id": "abyssal",
+      "display": "Abyssal",
+      "rewards": {
+        "winner": "1s, 2 abyssal keys, 1 fmb, 64 gaps, 64 gold coins"
+      },
+      "rewards_status": "unverified, about a year old"
+    },
+    {
+      "id": "attack_on_giant",
+      "display": "Attack on Giant",
+      "rewards": null
+    },
+    {
+      "id": "fox_hunt",
+      "display": "Fox Hunt",
+      "rewards": {
+        "1": "52 deggs, 1 forbidden cacao beans",
+        "2": "42 deggs",
+        "3": "32 deggs"
+      },
+      "rewards_status": "unverified, about a year old"
+    },
+    {
+      "id": "bait",
+      "display": "Bait (fishing)",
+      "rewards": null,
+      "notes": "ends with 'Fishing event ends!'"
+    },
+    {
+      "id": "free_for_all",
+      "display": "Free-For-All",
+      "rewards": null
+    },
+    {
+      "id": "team_deathmatch",
+      "display": "Team Deathmatch",
+      "rewards": null
+    },
+    {
+      "id": "castle",
+      "display": "Battle for Minewind (Castle)",
+      "rewards": null,
+      "notes": "winner sets spawn policy"
+    }
+  ],
+  "tab_header": {
+    "status": "confirmed",
+    "regex": "^(?<event>.+) in (?<minutes>\\d+) min$",
+    "notes": "minutes, even above 60. footer is an ad",
+    "fallback_when_empty": "unknown"
+  },
+  "sidebar": {
+    "status": "confirmed for bait",
+    "notes": "event start. title has time left. everyone gets a score, not just top 15",
+    "title_regex": "^(?<label>.+) \\((?<minutes>\\d+):(?<seconds>\\d\\d)\\)$"
+  },
+  "start_and_end": "no start line, the sidebar is the start. reward receipt and next event in the header right after the end"
+}

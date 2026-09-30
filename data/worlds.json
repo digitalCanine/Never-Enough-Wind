@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "notes": [
+    "match on hashed_seed + dimension",
+    "seeds are strings, too big for some json readers"
+  ],
+  "worlds": [
+    {
+      "name": "Spawn",
+      "hashed_seed": "-6476551909250050175",
+      "dimension": "minecraft:overworld",
+      "status": "confirmed"
+    },
+    {
+      "name": "Aqua",
+      "hashed_seed": "-582343119929597910",
+      "dimension": "minecraft:overworld",
+      "status": "confirmed"
+    },
+    {
+      "name": "Moon",
+      "hashed_seed": "5461151895090118877",
+      "dimension": "minecraft:overworld",
+      "status": "confirmed"
+    },
+    {
+      "name": "Sun",
+      "hashed_seed": "-1913433296502452619",
+      "dimension": "minecraft:overworld",
+      "status": "confirmed"
+    },
+    {
+      "name": "Terra",
+      "hashed_seed": "-2393413464488010571",
+      "dimension": "minecraft:overworld",
+      "status": "confirmed"
+    },
+    {
+      "name": "Throne",
+      "hashed_seed": "3685739608433952248",
+      "dimension": "minecraft:overworld",
+      "spawn_point": [
+        -11,
+        64,
+        269
+      ],
+      "status": "unsure",
+      "note": "same seed as azure, spawn point differs"
+    },
+    {
+      "name": "Azure",
+      "hashed_seed": "3685739608433952248",
+      "dimension": "minecraft:overworld",
+      "spawn_point": [
+        -10,
+        64,
+        269
+      ],
+      "status": "unsure",
+      "note": "same seed as throne, spawn point differs"
+    }
+  ],
+  "if_unsure": "show both names",
+  "unlabeled": [
+    {
+      "hashed_seed": "3685739608433952248",
+      "dimension": "minecraft:the_end",
+      "note": "on the spawn server"
+    },
+    {
+      "hashed_seed": "-6276508145740963404",
+      "dimension": "minecraft:enc",
+      "note": "custom dimension, unknown"
+    }
+  ],
+  "spawn_server_hint": "only server with pentachoron/abyss/world_city dimensions and 400 max players",
+  "todo": [
+    "Era",
+    "Arch",
+    "the nether and end of each subserver"
+  ]
+}

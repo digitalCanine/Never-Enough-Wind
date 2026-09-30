@@ -1,0 +1,2437 @@
+{
+ "schema_version": 1,
+ "received": "2026-09-29",
+ "unit": "ember",
+ "notation": {
+  "ember": 1,
+  "d": 4,
+  "s": 256,
+  "sh": 6912,
+  "ch": 186624
+ },
+ "notes": [
+  "embers: [min, max], min 0 = or less",
+  "essence and block letters are different scales"
+ ],
+ "price_tiers": {
+  "essence": {
+   "Z": {
+    "price": "Bidding wars"
+   },
+   "X": {
+    "price": "1-2 Sheggs",
+    "embers": [
+     6912,
+     13824
+    ]
+   },
+   "SSS": {
+    "price": "15s-26s",
+    "embers": [
+     3840,
+     6656
+    ]
+   },
+   "SS": {
+    "price": "9s-15s",
+    "embers": [
+     2304,
+     3840
+    ]
+   },
+   "S": {
+    "price": "7s-9s",
+    "embers": [
+     1792,
+     2304
+    ]
+   },
+   "AAA": {
+    "price": "7s",
+    "embers": [
+     1792,
+     1792
+    ]
+   },
+   "AA": {
+    "price": "6s",
+    "embers": [
+     1536,
+     1536
+    ]
+   },
+   "A": {
+    "price": "5s",
+    "embers": [
+     1280,
+     1280
+    ]
+   },
+   "BBB": {
+    "price": "4s",
+    "embers": [
+     1024,
+     1024
+    ]
+   },
+   "BB": {
+    "price": "3s",
+    "embers": [
+     768,
+     768
+    ]
+   },
+   "B": {
+    "price": "2s",
+    "embers": [
+     512,
+     512
+    ]
+   },
+   "CCC": {
+    "price": "1s Or Less",
+    "embers": [
+     0,
+     256
+    ]
+   },
+   "CC": {
+    "price": "32d Or Less",
+    "embers": [
+     0,
+     128
+    ]
+   },
+   "C": {
+    "price": "16d Or Less",
+    "embers": [
+     0,
+     64
+    ]
+   },
+   "TBD": {
+    "price": "Not Yet Traded"
+   }
+  },
+  "block": {
+   "AAA": {
+    "price": "7s",
+    "embers": [
+     1792,
+     1792
+    ]
+   },
+   "AA": {
+    "price": "6s",
+    "embers": [
+     1536,
+     1536
+    ]
+   },
+   "A": {
+    "price": "5s",
+    "embers": [
+     1280,
+     1280
+    ]
+   },
+   "BBB": {
+    "price": "4s",
+    "embers": [
+     1024,
+     1024
+    ]
+   },
+   "BB": {
+    "price": "3s",
+    "embers": [
+     768,
+     768
+    ]
+   },
+   "B": {
+    "price": "2s",
+    "embers": [
+     512,
+     512
+    ]
+   },
+   "CC": {
+    "price": "1s - 1,5 s",
+    "embers": [
+     256,
+     384
+    ]
+   },
+   "C": {
+    "price": "32d Or Less",
+    "embers": [
+     0,
+     128
+    ]
+   }
+  }
+ },
+ "keys": [
+  {
+   "name": "Tempest Key",
+   "price": "4.5s",
+   "embers": [
+    1152,
+    1152
+   ]
+  },
+  {
+   "name": "Paradox Key",
+   "price": "4.5s",
+   "embers": [
+    1152,
+    1152
+   ]
+  },
+  {
+   "name": "Dimensional Key",
+   "price": "2.5s",
+   "embers": [
+    640,
+    640
+   ]
+  },
+  {
+   "name": "Inferno Key",
+   "price": "2.5s",
+   "embers": [
+    640,
+    640
+   ]
+  },
+  {
+   "name": "Jester Key",
+   "price": "2s",
+   "embers": [
+    512,
+    512
+   ]
+  },
+  {
+   "name": "Chaos Key",
+   "price": "1.5s",
+   "embers": [
+    384,
+    384
+   ]
+  },
+  {
+   "name": "Malphas Key",
+   "price": "32d",
+   "embers": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "Belphegor Key",
+   "price": "12d",
+   "embers": [
+    48,
+    48
+   ]
+  },
+  {
+   "name": "Wild Key",
+   "price": "4d",
+   "embers": [
+    16,
+    16
+   ]
+  },
+  {
+   "name": "Wizard Key",
+   "price": "4d",
+   "embers": [
+    16,
+    16
+   ]
+  },
+  {
+   "name": "Aura Key",
+   "price": "3d",
+   "embers": [
+    12,
+    12
+   ]
+  },
+  {
+   "name": "Demon Key",
+   "price": "1d",
+   "embers": [
+    4,
+    4
+   ]
+  },
+  {
+   "name": "Summoner's Key",
+   "price": "1d",
+   "embers": [
+    4,
+    4
+   ]
+  },
+  {
+   "name": "Giant Key",
+   "price": "Less than 1d",
+   "embers": [
+    0,
+    4
+   ]
+  },
+  {
+   "name": "Blood Key",
+   "price": "Less than 1d",
+   "embers": [
+    0,
+    4
+   ]
+  },
+  {
+   "name": "Abyssal Key",
+   "price": "Less than 1d",
+   "embers": [
+    0,
+    4
+   ]
+  },
+  {
+   "name": "Legendary Key",
+   "price": "Less than 1d",
+   "embers": [
+    0,
+    4
+   ]
+  },
+  {
+   "name": "Midas Key",
+   "price": "Less than 1d",
+   "embers": [
+    0,
+    4
+   ]
+  }
+ ],
+ "block_notes": [
+  "All Slabs go for around 20-32 deggs",
+  "All Stairs go for around 20-32 deggs",
+  "All Walls go for around 25-32 deggs",
+  "bluename infinity blocks can be worth more"
+ ],
+ "blocks": [
+  {
+   "name": "Oak Log",
+   "item": "minecraft:oak_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Oak Planks",
+   "item": "minecraft:oak_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Oak Wood",
+   "item": "minecraft:oak_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Oak Log",
+   "item": "minecraft:stripped_oak_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Oak Wood",
+   "item": "minecraft:stripped_oak_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Acacia Log",
+   "item": "minecraft:acacia_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Acacia Planks",
+   "item": "minecraft:acacia_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Acacia Wood",
+   "item": "minecraft:acacia_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Acacia Log",
+   "item": "minecraft:stripped_acacia_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Acacia Wood",
+   "item": "minecraft:stripped_acacia_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Birch Log",
+   "item": "minecraft:birch_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Birch Planks",
+   "item": "minecraft:birch_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Birch Wood",
+   "item": "minecraft:birch_wood",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Stripped Birch Log",
+   "item": "minecraft:stripped_birch_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Birch Wood",
+   "item": "minecraft:stripped_birch_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Dark Oak Log",
+   "item": "minecraft:dark_oak_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Dark Oak Planks",
+   "item": "minecraft:dark_oak_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Dark Oak Wood",
+   "item": "minecraft:dark_oak_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Dark Oak Log",
+   "item": "minecraft:stripped_dark_oak_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Dark Oak Wood",
+   "item": "minecraft:stripped_dark_oak_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Jungle Log",
+   "item": "minecraft:jungle_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Jungle Planks",
+   "item": "minecraft:jungle_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Jungle Wood",
+   "item": "minecraft:jungle_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Jungle Log",
+   "item": "minecraft:stripped_jungle_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Jungle Wood",
+   "item": "minecraft:stripped_jungle_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Mangrove Log",
+   "item": "minecraft:mangrove_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Mangrove Planks",
+   "item": "minecraft:mangrove_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Mangrove Wood",
+   "item": "minecraft:mangrove_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Mangrove Log",
+   "item": "minecraft:stripped_mangrove_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Mangrove Wood",
+   "item": "minecraft:stripped_mangrove_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Spruce Log",
+   "item": "minecraft:spruce_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Spruce Planks",
+   "item": "minecraft:spruce_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Spruce Wood",
+   "item": "minecraft:spruce_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Spruce Log",
+   "item": "minecraft:stripped_spruce_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Spruce Wood",
+   "item": "minecraft:stripped_spruce_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Cherry Log",
+   "item": "minecraft:cherry_log",
+   "category": "Wood",
+   "tier": "B"
+  },
+  {
+   "name": "Cherry Planks",
+   "item": "minecraft:cherry_planks",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Cherry Wood",
+   "item": "minecraft:cherry_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Cherry Log",
+   "item": "minecraft:stripped_cherry_log",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Cherry Wood",
+   "item": "minecraft:stripped_cherry_wood",
+   "category": "Wood",
+   "tier": "CC"
+  },
+  {
+   "name": "White Wool",
+   "item": "minecraft:white_wool",
+   "category": "Wool",
+   "tier": "BB"
+  },
+  {
+   "name": "Orange Wool",
+   "item": "minecraft:orange_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Magenta Wool",
+   "item": "minecraft:magenta_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Light Blue Wool",
+   "item": "minecraft:light_blue_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Yellow Wool",
+   "item": "minecraft:yellow_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Lime Wool",
+   "item": "minecraft:lime_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Pink Wool",
+   "item": "minecraft:pink_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Gray Wool",
+   "item": "minecraft:gray_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Light Gray Wool",
+   "item": "minecraft:light_gray_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Cyan Wool",
+   "item": "minecraft:cyan_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Purple Wool",
+   "item": "minecraft:purple_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Blue Wool",
+   "item": "minecraft:blue_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Brown wool",
+   "item": "minecraft:brown_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Green Wool",
+   "item": "minecraft:green_wool",
+   "category": "Wool",
+   "tier": "B"
+  },
+  {
+   "name": "Red Wool",
+   "item": "minecraft:red_wool",
+   "category": "Wool",
+   "tier": "BB"
+  },
+  {
+   "name": "Black Wool",
+   "item": "minecraft:black_wool",
+   "category": "Wool",
+   "tier": "BB"
+  },
+  {
+   "name": "White Terracotta",
+   "item": "minecraft:white_terracotta",
+   "category": "Terracotta",
+   "tier": "BB"
+  },
+  {
+   "name": "Light Gray Terracotta",
+   "item": "minecraft:light_gray_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Gray Terracotta",
+   "item": "minecraft:gray_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Black Terracotta",
+   "item": "minecraft:black_terracotta",
+   "category": "Terracotta",
+   "tier": "BB"
+  },
+  {
+   "name": "Brown Terracotta",
+   "item": "minecraft:brown_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Red Terracotta",
+   "item": "minecraft:red_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Orange Terracotta",
+   "item": "minecraft:orange_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Yellow Terracotta",
+   "item": "minecraft:yellow_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Lime Terracotta",
+   "item": "minecraft:lime_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Green Terracotta",
+   "item": "minecraft:green_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Cyan TerraCotta",
+   "item": "minecraft:cyan_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Light Blue Terracotta",
+   "item": "minecraft:light_blue_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Blue Terracotta",
+   "item": "minecraft:blue_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Purple Terracotta",
+   "item": "minecraft:purple_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Magenta Terracotta",
+   "item": "minecraft:magenta_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Pink Terracotta",
+   "item": "minecraft:pink_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "White Glazed Terracotta",
+   "item": "minecraft:white_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Orange Glazed Terracotta",
+   "item": "minecraft:orange_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Magenta Glazed Terracotta",
+   "item": "minecraft:magenta_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Light Blue Glazed Terracotta",
+   "item": "minecraft:light_blue_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Yellow Glazed Terracotta",
+   "item": "minecraft:yellow_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Lime Glazed Terracotta",
+   "item": "minecraft:lime_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Pink Glazed Terracotta",
+   "item": "minecraft:pink_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Gray Glazed Terracotta",
+   "item": "minecraft:gray_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Light Gray Glazed Terracotta",
+   "item": "minecraft:light_gray_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Cyan Glazed Terracotta",
+   "item": "minecraft:cyan_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Purple Glazed Terracotta",
+   "item": "minecraft:purple_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Blue Glazed Terracotta",
+   "item": "minecraft:blue_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Brown Glazed Terracotta",
+   "item": "minecraft:brown_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Green Glazed Terracotta",
+   "item": "minecraft:green_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Red Glazed Terracotta",
+   "item": "minecraft:red_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "Black Glazed Terracotta",
+   "item": "minecraft:black_glazed_terracotta",
+   "category": "Terracotta",
+   "tier": "B"
+  },
+  {
+   "name": "White Concrete",
+   "item": "minecraft:white_concrete",
+   "category": "Concrete",
+   "tier": "BB"
+  },
+  {
+   "name": "Orange Concrete",
+   "item": "minecraft:orange_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Magenta Concrete",
+   "item": "minecraft:magenta_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Light Blue Concrete",
+   "item": "minecraft:light_blue_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Yellow Concrete",
+   "item": "minecraft:yellow_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Lime Concrete",
+   "item": "minecraft:lime_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Pink Concrete",
+   "item": "minecraft:pink_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Gray Concrete",
+   "item": "minecraft:gray_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Light Gray Concrete",
+   "item": "minecraft:light_gray_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Cyan Concrete",
+   "item": "minecraft:cyan_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Purple Concrete",
+   "item": "minecraft:purple_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Blue Concrete",
+   "item": "minecraft:blue_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Brown Concrete",
+   "item": "minecraft:brown_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Green Concrete",
+   "item": "minecraft:green_concrete",
+   "category": "Concrete",
+   "tier": "B"
+  },
+  {
+   "name": "Red Concrete",
+   "item": "minecraft:red_concrete",
+   "category": "Concrete",
+   "tier": "BB"
+  },
+  {
+   "name": "Black Concrete",
+   "item": "minecraft:black_concrete",
+   "category": "Concrete",
+   "tier": "BB"
+  },
+  {
+   "name": "White Concrete Powder",
+   "item": "minecraft:white_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Orange Concrete Powder",
+   "item": "minecraft:orange_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Magenta Concrete Powder",
+   "item": "minecraft:magenta_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Light Blue Concrete Powder",
+   "item": "minecraft:light_blue_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Yellow Concrete Powder",
+   "item": "minecraft:yellow_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Lime Concrete Powder",
+   "item": "minecraft:lime_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Pink Concrete Powder",
+   "item": "minecraft:pink_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Gray Concrete Powder",
+   "item": "minecraft:gray_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Light Gray Concrete Powder",
+   "item": "minecraft:light_gray_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Cyan Concrete Powder",
+   "item": "minecraft:cyan_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Purple Concrete Powder",
+   "item": "minecraft:purple_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Blue Concrete Powder",
+   "item": "minecraft:blue_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Brown Concrete Powder",
+   "item": "minecraft:brown_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Green Concrete Powder",
+   "item": "minecraft:green_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Red Concrete Powder",
+   "item": "minecraft:red_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "Black Concrete Powder",
+   "item": "minecraft:black_concrete_powder",
+   "category": "Concrete Powder",
+   "tier": "CC"
+  },
+  {
+   "name": "White Stained Glass",
+   "item": "minecraft:white_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Red Stained Glass",
+   "item": "minecraft:red_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Orange Stained Glass",
+   "item": "minecraft:orange_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Pink Stained Glass",
+   "item": "minecraft:pink_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Yellow Stained Glass",
+   "item": "minecraft:yellow_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Lime Stained Glass",
+   "item": "minecraft:lime_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Green Stained Glass",
+   "item": "minecraft:green_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Light Blue Stained Glass",
+   "item": "minecraft:light_blue_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Cyan Stained Glass",
+   "item": "minecraft:cyan_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Blue Stained Glass",
+   "item": "minecraft:blue_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Magenta Stained Glass",
+   "item": "minecraft:magenta_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Purple Stained Glass",
+   "item": "minecraft:purple_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Brown Stained Glass",
+   "item": "minecraft:brown_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Gray Stained Glass",
+   "item": "minecraft:gray_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Light Gray Stained Glass",
+   "item": "minecraft:light_gray_stained_glass",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "Black Stained Glass",
+   "item": "minecraft:black_stained_glass",
+   "category": "Glass block",
+   "tier": "B"
+  },
+  {
+   "name": "Tinted Glass",
+   "item": "minecraft:tinted_glass",
+   "category": "Glass block",
+   "tier": "B"
+  },
+  {
+   "name": "Glass Block",
+   "item": "minecraft:glass",
+   "category": "Glass block",
+   "tier": "BB"
+  },
+  {
+   "name": "Glass Pane",
+   "item": "minecraft:glass_pane",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "White Glass Pane",
+   "item": "minecraft:white_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Red Glass Pane",
+   "item": "minecraft:red_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Orange Glass Pane",
+   "item": "minecraft:orange_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Pink Glass Pane",
+   "item": "minecraft:pink_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Yellow Glass Pane",
+   "item": "minecraft:yellow_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Lime Glass Pane",
+   "item": "minecraft:lime_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Green Glass Pane",
+   "item": "minecraft:green_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Light blue Glass Pane",
+   "item": "minecraft:light_blue_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Cyan Glass Pane",
+   "item": "minecraft:cyan_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Blue Glass Pane",
+   "item": "minecraft:blue_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Magenta Glass Pane",
+   "item": "minecraft:magenta_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Purple Glass Pane",
+   "item": "minecraft:purple_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Brown Glass Pane",
+   "item": "minecraft:brown_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Grey Glass Pane",
+   "item": "minecraft:gray_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Light Grey Glass Pane",
+   "item": "minecraft:light_gray_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "C"
+  },
+  {
+   "name": "Black Glass Pane",
+   "item": "minecraft:black_stained_glass_pane",
+   "category": "Glass block",
+   "tier": "CC"
+  },
+  {
+   "name": "BlackStone",
+   "item": "minecraft:blackstone",
+   "category": "Blackstone",
+   "tier": "B"
+  },
+  {
+   "name": "Chiseled Polished Blackstone",
+   "item": "minecraft:chiseled_polished_blackstone",
+   "category": "Blackstone",
+   "tier": "CC"
+  },
+  {
+   "name": "Cracked Polished Blackstone Bricks",
+   "item": "minecraft:cracked_polished_blackstone_bricks",
+   "category": "Blackstone",
+   "tier": "CC"
+  },
+  {
+   "name": "Gilded Blackstone",
+   "item": "minecraft:gilded_blackstone",
+   "category": "Blackstone",
+   "tier": "CC"
+  },
+  {
+   "name": "Polished Blackstone",
+   "item": "minecraft:polished_blackstone",
+   "category": "Blackstone",
+   "tier": "CC"
+  },
+  {
+   "name": "Polished Blackstone Bricks",
+   "item": "minecraft:polished_blackstone_bricks",
+   "category": "Blackstone",
+   "tier": "CC"
+  },
+  {
+   "name": "Basalt",
+   "item": "minecraft:basalt",
+   "category": "Basalt",
+   "tier": "CC"
+  },
+  {
+   "name": "Polished Basalt",
+   "item": "minecraft:polished_basalt",
+   "category": "Basalt",
+   "tier": "CC"
+  },
+  {
+   "name": "Smooth Basalt",
+   "item": "minecraft:smooth_basalt",
+   "category": "Basalt",
+   "tier": "CC"
+  },
+  {
+   "name": "Crimson Hyphae",
+   "item": "minecraft:crimson_hyphae",
+   "category": "Crimson",
+   "tier": "CC"
+  },
+  {
+   "name": "Crimson Nylium",
+   "item": "minecraft:crimson_nylium",
+   "category": "Crimson",
+   "tier": "CC"
+  },
+  {
+   "name": "Crimson Planks",
+   "item": "minecraft:crimson_planks",
+   "category": "Crimson",
+   "tier": "CC"
+  },
+  {
+   "name": "Crimson Stem",
+   "item": "minecraft:crimson_stem",
+   "category": "Crimson",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Crimson Hyphae",
+   "item": "minecraft:stripped_crimson_hyphae",
+   "category": "Crimson",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Crimson Stem",
+   "item": "minecraft:stripped_crimson_stem",
+   "category": "Crimson",
+   "tier": "CC"
+  },
+  {
+   "name": "Nether Wart Block",
+   "item": "minecraft:nether_wart_block",
+   "category": "Crimson",
+   "tier": "C"
+  },
+  {
+   "name": "Block of Quartz",
+   "item": "minecraft:quartz_block",
+   "category": "Quartz",
+   "tier": "BBB"
+  },
+  {
+   "name": "Chiseled Quartz Block",
+   "item": "minecraft:chiseled_quartz_block",
+   "category": "Quartz",
+   "tier": "BB"
+  },
+  {
+   "name": "Nether Quartz Ore",
+   "item": "minecraft:nether_quartz_ore",
+   "category": "Quartz",
+   "tier": "BB"
+  },
+  {
+   "name": "Quartz Pillar",
+   "item": "minecraft:quartz_pillar",
+   "category": "Quartz",
+   "tier": "BBB"
+  },
+  {
+   "name": "Smooth Quartz Block",
+   "item": "minecraft:smooth_quartz",
+   "category": "Quartz",
+   "tier": "AAA"
+  },
+  {
+   "name": "Quartz Bricks",
+   "item": "minecraft:quartz_bricks",
+   "category": "Quartz",
+   "tier": "BBB"
+  },
+  {
+   "name": "Nether Bricks",
+   "item": "minecraft:nether_bricks",
+   "category": "Netherack/brick",
+   "tier": "CC"
+  },
+  {
+   "name": "Cracked Nether Bricks",
+   "item": "minecraft:cracked_nether_bricks",
+   "category": "Netherack/brick",
+   "tier": "CC"
+  },
+  {
+   "name": "Netherrack",
+   "item": "minecraft:netherrack",
+   "category": "Netherack/brick",
+   "tier": "CC"
+  },
+  {
+   "name": "Red Nether Bricks",
+   "item": "minecraft:red_nether_bricks",
+   "category": "Netherack/brick",
+   "tier": "C"
+  },
+  {
+   "name": "Magma Block",
+   "item": "minecraft:magma_block",
+   "category": "Netherack/brick",
+   "tier": "CC"
+  },
+  {
+   "name": "Soul Sand",
+   "item": "minecraft:soul_sand",
+   "category": "Netherack/brick",
+   "tier": "CC"
+  },
+  {
+   "name": "Soul Soil",
+   "item": "minecraft:soul_soil",
+   "category": "Netherack/brick",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Warped Hyphae",
+   "item": "minecraft:stripped_warped_hyphae",
+   "category": "Warped",
+   "tier": "CC"
+  },
+  {
+   "name": "Stripped Warped Stem",
+   "item": "minecraft:stripped_warped_stem",
+   "category": "Warped",
+   "tier": "CC"
+  },
+  {
+   "name": "Warped Hyphae",
+   "item": "minecraft:warped_hyphae",
+   "category": "Warped",
+   "tier": "CC"
+  },
+  {
+   "name": "Warped Nylium",
+   "item": "minecraft:warped_nylium",
+   "category": "Warped",
+   "tier": "CC"
+  },
+  {
+   "name": "Warped Planks",
+   "item": "minecraft:warped_planks",
+   "category": "Warped",
+   "tier": "CC"
+  },
+  {
+   "name": "Warped Stem",
+   "item": "minecraft:warped_stem",
+   "category": "Warped",
+   "tier": "CC"
+  },
+  {
+   "name": "Warped Wart Block",
+   "item": "minecraft:warped_wart_block",
+   "category": "Warped",
+   "tier": "C"
+  },
+  {
+   "name": "End Stone",
+   "item": "minecraft:end_stone",
+   "category": "End blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "End Stone Bricks",
+   "item": "minecraft:end_stone_bricks",
+   "category": "End blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Obsidian",
+   "item": "minecraft:obsidian",
+   "category": "End blocks",
+   "tier": "AA"
+  },
+  {
+   "name": "Crying Obsidian",
+   "item": "minecraft:crying_obsidian",
+   "category": "End blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Respawn Anchor",
+   "item": "minecraft:respawn_anchor",
+   "category": "End blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Purpur Block",
+   "item": "minecraft:purpur_block",
+   "category": "Purpur",
+   "tier": "CC"
+  },
+  {
+   "name": "Purpur Pillar",
+   "item": "minecraft:purpur_pillar",
+   "category": "Purpur",
+   "tier": "C"
+  },
+  {
+   "name": "Sand",
+   "item": "minecraft:sand",
+   "category": "Dirt Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "FarmLand",
+   "item": "minecraft:farmland",
+   "category": "Dirt Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Mud",
+   "item": "minecraft:mud",
+   "category": "Dirt Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Clay",
+   "item": "minecraft:clay",
+   "category": "Dirt Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Red Sand",
+   "item": "minecraft:red_sand",
+   "category": "Dirt Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Coarse Dirt",
+   "item": "minecraft:coarse_dirt",
+   "category": "Dirt Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Rooted Dirt",
+   "item": "minecraft:rooted_dirt",
+   "category": "Dirt Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Podzol",
+   "item": "minecraft:podzol",
+   "category": "Dirt Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Mycellium",
+   "item": "minecraft:mycelium",
+   "category": "Dirt Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Dirt Path",
+   "item": "minecraft:dirt_path",
+   "category": "Dirt Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Dirt",
+   "item": "minecraft:dirt",
+   "category": "Dirt Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Grass Block",
+   "item": "minecraft:grass_block",
+   "category": "Dirt Blocks",
+   "tier": "AAA"
+  },
+  {
+   "name": "Block Of Iron",
+   "item": "minecraft:iron_block",
+   "category": "Iron",
+   "tier": "BB"
+  },
+  {
+   "name": "Block Of Raw Iron",
+   "item": "minecraft:raw_iron_block",
+   "category": "Iron",
+   "tier": "BB"
+  },
+  {
+   "name": "Chain",
+   "item": "minecraft:chain",
+   "category": "Iron",
+   "tier": "CC"
+  },
+  {
+   "name": "Deepslate Iron Ore",
+   "item": "minecraft:deepslate_iron_ore",
+   "category": "Iron",
+   "tier": "CC"
+  },
+  {
+   "name": "Iron Bars",
+   "item": "minecraft:iron_bars",
+   "category": "Iron",
+   "tier": "CC"
+  },
+  {
+   "name": "Iron Ore",
+   "item": "minecraft:iron_ore",
+   "category": "Iron",
+   "tier": "CC"
+  },
+  {
+   "name": "Block Of Gold",
+   "item": "minecraft:gold_block",
+   "category": "Gold",
+   "tier": "B"
+  },
+  {
+   "name": "Block Of Raw Gold",
+   "item": "minecraft:raw_gold_block",
+   "category": "Gold",
+   "tier": "B"
+  },
+  {
+   "name": "Deepslate Gold Ore",
+   "item": "minecraft:deepslate_gold_ore",
+   "category": "Gold",
+   "tier": "CC"
+  },
+  {
+   "name": "Gold Ore",
+   "item": "minecraft:gold_ore",
+   "category": "Gold",
+   "tier": "B"
+  },
+  {
+   "name": "Deepslate Diamond Ore",
+   "item": "minecraft:deepslate_diamond_ore",
+   "category": "Diamond",
+   "tier": "CC"
+  },
+  {
+   "name": "Diamond Block",
+   "item": "minecraft:diamond_block",
+   "category": "Diamond",
+   "tier": "BBB"
+  },
+  {
+   "name": "Diamond Ore",
+   "item": "minecraft:diamond_ore",
+   "category": "Diamond",
+   "tier": "CC"
+  },
+  {
+   "name": "Deepslate Emerald Ore",
+   "item": "minecraft:deepslate_emerald_ore",
+   "category": "Emerald",
+   "tier": "CC"
+  },
+  {
+   "name": "Emerald Block",
+   "item": "minecraft:emerald_block",
+   "category": "Emerald",
+   "tier": "BBB"
+  },
+  {
+   "name": "Emerald Ore",
+   "item": "minecraft:emerald_ore",
+   "category": "Emerald",
+   "tier": "CC"
+  },
+  {
+   "name": "Netherite",
+   "item": "minecraft:netherite_block",
+   "category": "Emerald",
+   "tier": "BB"
+  },
+  {
+   "name": "Block of Amethyst",
+   "item": "minecraft:amethyst_block",
+   "category": "Amethlyst",
+   "tier": "B"
+  },
+  {
+   "name": "Budding Amethyst",
+   "item": "minecraft:budding_amethyst",
+   "category": "Amethlyst",
+   "tier": "C"
+  },
+  {
+   "name": "Block Of Lapiz Lazuli",
+   "item": "minecraft:lapis_block",
+   "category": "Lapis",
+   "tier": "B"
+  },
+  {
+   "name": "Deepslate Lapis Lazuli Ore",
+   "item": "minecraft:deepslate_lapis_ore",
+   "category": "Lapis",
+   "tier": "CC"
+  },
+  {
+   "name": "Lapiz Lazuli Ore",
+   "item": "minecraft:lapis_ore",
+   "category": "Lapis",
+   "tier": "C"
+  },
+  {
+   "name": "Block Of Coal",
+   "item": "minecraft:coal_block",
+   "category": "Coal",
+   "tier": "A"
+  },
+  {
+   "name": "Coal Ore",
+   "item": "minecraft:coal_ore",
+   "category": "Coal",
+   "tier": "CC"
+  },
+  {
+   "name": "Deepslate Coal Ore",
+   "item": "minecraft:deepslate_coal_ore",
+   "category": "Coal",
+   "tier": "CC"
+  },
+  {
+   "name": "Block Of Copper",
+   "item": "minecraft:copper_block",
+   "category": "Copper",
+   "tier": "B"
+  },
+  {
+   "name": "Waxed Block Of Copper",
+   "item": "minecraft:waxed_copper_block",
+   "category": "Copper",
+   "tier": "B"
+  },
+  {
+   "name": "Block of Raw Copper",
+   "item": "minecraft:raw_copper_block",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Cut Copper",
+   "item": "minecraft:cut_copper",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Deepslate Copper Ore",
+   "item": "minecraft:deepslate_copper_ore",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Oxidized Copper",
+   "item": "minecraft:oxidized_copper",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Oxidized Cut Copper",
+   "item": "minecraft:oxidized_cut_copper",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Waxed Cut Copper",
+   "item": "minecraft:waxed_cut_copper",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Waxed Oxidized Copper",
+   "item": "minecraft:waxed_oxidized_copper",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Waxed Oxidized Cut Copper",
+   "item": "minecraft:waxed_oxidized_cut_copper",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Copper Ore",
+   "item": "minecraft:copper_ore",
+   "category": "Copper",
+   "tier": "CC"
+  },
+  {
+   "name": "Raw Copper",
+   "item": "minecraft:raw_copper",
+   "category": "Copper",
+   "tier": "B",
+   "unsure": "not placeable, maybe raw_copper_block"
+  },
+  {
+   "name": "Beehive",
+   "item": "minecraft:beehive",
+   "category": "Utility Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Smithing Table",
+   "item": "minecraft:smithing_table",
+   "category": "Utility Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Composter",
+   "item": "minecraft:composter",
+   "category": "Utility Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Loom",
+   "item": "minecraft:loom",
+   "category": "Utility Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Note block",
+   "item": "minecraft:note_block",
+   "category": "Utility Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Slime block",
+   "item": "minecraft:slime_block",
+   "category": "Utility Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Honey block",
+   "item": "minecraft:honey_block",
+   "category": "Utility Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Beenest",
+   "item": "minecraft:bee_nest",
+   "category": "Utility Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Bookshelf",
+   "item": "minecraft:bookshelf",
+   "category": "Utility Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Chizeled Bookshelf",
+   "item": "minecraft:chiseled_bookshelf",
+   "category": "Utility Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Sculk block",
+   "item": "minecraft:sculk",
+   "category": "Utility Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Lodestone",
+   "item": "minecraft:lodestone",
+   "category": "Utility Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Stone",
+   "item": "minecraft:stone",
+   "category": "Stone",
+   "tier": "AA"
+  },
+  {
+   "name": "Smooth Stone",
+   "item": "minecraft:smooth_stone",
+   "category": "Stone",
+   "tier": "AA"
+  },
+  {
+   "name": "CobbleStone",
+   "item": "minecraft:cobblestone",
+   "category": "Stone",
+   "tier": "AA"
+  },
+  {
+   "name": "Andesite",
+   "item": "minecraft:andesite",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Polished Andesite",
+   "item": "minecraft:polished_andesite",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Diorite",
+   "item": "minecraft:diorite",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Polished Diorite",
+   "item": "minecraft:polished_diorite",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Granite",
+   "item": "minecraft:granite",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Polished Granite",
+   "item": "minecraft:polished_granite",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Sandstone",
+   "item": "minecraft:sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Chiseled SandStone",
+   "item": "minecraft:chiseled_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Smooth SandStone",
+   "item": "minecraft:smooth_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Red Sandstone",
+   "item": "minecraft:red_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Chiseled Red Sandstone",
+   "item": "minecraft:chiseled_red_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Smooth Red Sandstone",
+   "item": "minecraft:smooth_red_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Cut Sandstone",
+   "item": "minecraft:cut_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Cut Red Sandstone",
+   "item": "minecraft:cut_red_sandstone",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Deepslate",
+   "item": "minecraft:deepslate",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Infested Deepslate",
+   "item": "minecraft:infested_deepslate",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Deepslate Tiles",
+   "item": "minecraft:deepslate_tiles",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Cracked Deepslate Tiles",
+   "item": "minecraft:cracked_deepslate_tiles",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Deepslate Bricks",
+   "item": "minecraft:deepslate_bricks",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Cracked Deepslate Bricks",
+   "item": "minecraft:cracked_deepslate_bricks",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Chiseled Deepslate",
+   "item": "minecraft:chiseled_deepslate",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Cobbled Deepslate",
+   "item": "minecraft:cobbled_deepslate",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Polished Deepslate",
+   "item": "minecraft:polished_deepslate",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Reinforced Deepslate",
+   "item": "minecraft:reinforced_deepslate",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Stone Bricks",
+   "item": "minecraft:stone_bricks",
+   "category": "Stone",
+   "tier": "AA"
+  },
+  {
+   "name": "Cracked Stone Bricks",
+   "item": "minecraft:cracked_stone_bricks",
+   "category": "Stone",
+   "tier": "A"
+  },
+  {
+   "name": "Chiseled Stone Bricks",
+   "item": "minecraft:chiseled_stone_bricks",
+   "category": "Stone",
+   "tier": "A"
+  },
+  {
+   "name": "Mossy Cobblestone",
+   "item": "minecraft:mossy_cobblestone",
+   "category": "Stone",
+   "tier": "BB"
+  },
+  {
+   "name": "Mossy Stone Bricks",
+   "item": "minecraft:mossy_stone_bricks",
+   "category": "Stone",
+   "tier": "BB"
+  },
+  {
+   "name": "Bricks",
+   "item": "minecraft:bricks",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Packed Mud",
+   "item": "minecraft:packed_mud",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Mud Bricks",
+   "item": "minecraft:mud_bricks",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Drip Stone",
+   "item": "minecraft:dripstone_block",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Calcite",
+   "item": "minecraft:calcite",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "Gravel Block",
+   "item": "minecraft:gravel",
+   "category": "Stone",
+   "tier": "B"
+  },
+  {
+   "name": "Tuff",
+   "item": "minecraft:tuff",
+   "category": "Stone",
+   "tier": "CC"
+  },
+  {
+   "name": "End Rod",
+   "item": "minecraft:end_rod",
+   "category": "Lightsources",
+   "tier": "BB"
+  },
+  {
+   "name": "Glowstone",
+   "item": "minecraft:glowstone",
+   "category": "Lightsources",
+   "tier": "A"
+  },
+  {
+   "name": "Shroomlight",
+   "item": "minecraft:shroomlight",
+   "category": "Lightsources",
+   "tier": "BBB"
+  },
+  {
+   "name": "Ochre Froglight",
+   "item": "minecraft:ochre_froglight",
+   "category": "Lightsources",
+   "tier": "BB"
+  },
+  {
+   "name": "Pearlescent Froglight",
+   "item": "minecraft:pearlescent_froglight",
+   "category": "Lightsources",
+   "tier": "BB"
+  },
+  {
+   "name": "Verdant Froglight",
+   "item": "minecraft:verdant_froglight",
+   "category": "Lightsources",
+   "tier": "BB"
+  },
+  {
+   "name": "Jack o'Lantern",
+   "item": "minecraft:jack_o_lantern",
+   "category": "Lightsources",
+   "tier": "BBB"
+  },
+  {
+   "name": "Redstone Lamp",
+   "item": "minecraft:redstone_lamp",
+   "category": "Lightsources",
+   "tier": "B"
+  },
+  {
+   "name": "Sea Lantern",
+   "item": "minecraft:sea_lantern",
+   "category": "Lightsources",
+   "tier": "BBB"
+  },
+  {
+   "name": "Oak Leaves",
+   "item": "minecraft:oak_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Spruce Leaves",
+   "item": "minecraft:spruce_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Birch Leaves",
+   "item": "minecraft:birch_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Jungle Leaves",
+   "item": "minecraft:jungle_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Acacia Leaves",
+   "item": "minecraft:acacia_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Dark Oak Leaves",
+   "item": "minecraft:dark_oak_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Azalea Leaves",
+   "item": "minecraft:azalea_leaves",
+   "category": "Leaves",
+   "tier": "BB"
+  },
+  {
+   "name": "Flowering Azalea Leaves",
+   "item": "minecraft:flowering_azalea_leaves",
+   "category": "Leaves",
+   "tier": "BB"
+  },
+  {
+   "name": "Mangrove Leaves",
+   "item": "minecraft:mangrove_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Cherry Leaves",
+   "item": "minecraft:cherry_leaves",
+   "category": "Leaves",
+   "tier": "B"
+  },
+  {
+   "name": "Brown Mushroom Block",
+   "item": "minecraft:brown_mushroom_block",
+   "category": "Nature Based Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Mushroom Stem",
+   "item": "minecraft:mushroom_stem",
+   "category": "Nature Based Blocks",
+   "tier": "A"
+  },
+  {
+   "name": "Red Mushroom Block",
+   "item": "minecraft:red_mushroom_block",
+   "category": "Nature Based Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Carved Pumpkin",
+   "item": "minecraft:carved_pumpkin",
+   "category": "Nature Based Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Hay Bale",
+   "item": "minecraft:hay_block",
+   "category": "Nature Based Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Melon",
+   "item": "minecraft:melon",
+   "category": "Nature Based Blocks",
+   "tier": "A"
+  },
+  {
+   "name": "Pumpkin",
+   "item": "minecraft:pumpkin",
+   "category": "Nature Based Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Moss Block",
+   "item": "minecraft:moss_block",
+   "category": "Nature Based Blocks",
+   "tier": "A"
+  },
+  {
+   "name": "Bone Block",
+   "item": "minecraft:bone_block",
+   "category": "Nature Based Blocks",
+   "tier": "BBB"
+  },
+  {
+   "name": "Mangrove Roots",
+   "item": "minecraft:mangrove_roots",
+   "category": "Nature Based Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Muddy Mangrove Roots",
+   "item": "minecraft:muddy_mangrove_roots",
+   "category": "Nature Based Blocks",
+   "tier": "C"
+  },
+  {
+   "name": "Honeycomb",
+   "item": "minecraft:honeycomb",
+   "category": "Nature Based Blocks",
+   "tier": "CC",
+   "unsure": "not placeable, maybe honeycomb_block"
+  },
+  {
+   "name": "Brain Coral Block",
+   "item": "minecraft:brain_coral_block",
+   "category": "Aquatic",
+   "tier": "CC"
+  },
+  {
+   "name": "Bubble Coral Block",
+   "item": "minecraft:bubble_coral_block",
+   "category": "Aquatic",
+   "tier": "CC"
+  },
+  {
+   "name": "Fire Coral Block",
+   "item": "minecraft:fire_coral_block",
+   "category": "Aquatic",
+   "tier": "CC"
+  },
+  {
+   "name": "Horn Coral Block",
+   "item": "minecraft:horn_coral_block",
+   "category": "Aquatic",
+   "tier": "CC"
+  },
+  {
+   "name": "Tube Coral Block",
+   "item": "minecraft:tube_coral_block",
+   "category": "Aquatic",
+   "tier": "CC"
+  },
+  {
+   "name": "Blue Ice",
+   "item": "minecraft:blue_ice",
+   "category": "Aquatic",
+   "tier": "BB"
+  },
+  {
+   "name": "Ice",
+   "item": "minecraft:ice",
+   "category": "Aquatic",
+   "tier": "BB"
+  },
+  {
+   "name": "Packed Ice",
+   "item": "minecraft:packed_ice",
+   "category": "Aquatic",
+   "tier": "BB"
+  },
+  {
+   "name": "Snow Block",
+   "item": "minecraft:snow_block",
+   "category": "Aquatic",
+   "tier": "BB"
+  },
+  {
+   "name": "Dried Kelp Block",
+   "item": "minecraft:dried_kelp_block",
+   "category": "Aquatic",
+   "tier": "CC"
+  },
+  {
+   "name": "Sponge",
+   "item": "minecraft:sponge",
+   "category": "Aquatic",
+   "tier": "BBB"
+  },
+  {
+   "name": "Dark Prismarine",
+   "item": "minecraft:dark_prismarine",
+   "category": "Prismarine",
+   "tier": "B"
+  },
+  {
+   "name": "Prismarine",
+   "item": "minecraft:prismarine",
+   "category": "Prismarine",
+   "tier": "B"
+  },
+  {
+   "name": "Prismarine Bricks",
+   "item": "minecraft:prismarine_bricks",
+   "category": "Prismarine",
+   "tier": "B"
+  },
+  {
+   "name": "Redstone Block",
+   "item": "minecraft:redstone_block",
+   "category": "Redstone Blocks",
+   "tier": "A"
+  },
+  {
+   "name": "Observer Block",
+   "item": "minecraft:observer",
+   "category": "Redstone Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Piston Block",
+   "item": "minecraft:piston",
+   "category": "Redstone Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Sticky Piston Block",
+   "item": "minecraft:sticky_piston",
+   "category": "Redstone Blocks",
+   "tier": "BB"
+  },
+  {
+   "name": "Target Block",
+   "item": "minecraft:target",
+   "category": "Redstone Blocks",
+   "tier": "B"
+  },
+  {
+   "name": "Daylight Detector",
+   "item": "minecraft:daylight_detector",
+   "category": "Redstone Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Redstone Ore",
+   "item": "minecraft:redstone_ore",
+   "category": "Redstone Blocks",
+   "tier": "CC"
+  },
+  {
+   "name": "Ancient Debris",
+   "item": "minecraft:ancient_debris",
+   "category": "Redstone Blocks",
+   "tier": "B"
+  }
+ ]
+}
