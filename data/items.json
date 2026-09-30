@@ -167,15 +167,18 @@
       "items": [
         {
           "item": "minecraft:compass",
-          "name": "Game Menu (Right Click)"
+          "name": "Game Menu (Right Click)",
+          "lore": "Right-click to open the Game Menu!"
         },
         {
           "item": "minecraft:clock",
-          "name": "Land Claim Clock"
+          "name": "Land Claim Clock",
+          "lore": "Also shows the closest claim border"
         },
         {
           "item": "minecraft:ender_eye",
-          "name": "Aura Stone"
+          "name": "Aura Stone",
+          "lore": "Soulbound: "
         },
         {
           "item": "minecraft:stick",
