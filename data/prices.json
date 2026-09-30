@@ -638,7 +638,7 @@
    "tier": "B"
   },
   {
-   "name": "Brown wool",
+   "name": "Brown Wool",
    "item": "minecraft:brown_wool",
    "category": "Wool",
    "tier": "B"
@@ -722,7 +722,7 @@
    "tier": "B"
   },
   {
-   "name": "Cyan TerraCotta",
+   "name": "Cyan Terracotta",
    "item": "minecraft:cyan_terracotta",
    "category": "Terracotta",
    "tier": "B"
@@ -1048,215 +1048,215 @@
   {
    "name": "White Stained Glass",
    "item": "minecraft:white_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Red Stained Glass",
    "item": "minecraft:red_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Orange Stained Glass",
    "item": "minecraft:orange_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Pink Stained Glass",
    "item": "minecraft:pink_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Yellow Stained Glass",
    "item": "minecraft:yellow_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Lime Stained Glass",
    "item": "minecraft:lime_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Green Stained Glass",
    "item": "minecraft:green_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Light Blue Stained Glass",
    "item": "minecraft:light_blue_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Cyan Stained Glass",
    "item": "minecraft:cyan_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Blue Stained Glass",
    "item": "minecraft:blue_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Magenta Stained Glass",
    "item": "minecraft:magenta_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Purple Stained Glass",
    "item": "minecraft:purple_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Brown Stained Glass",
    "item": "minecraft:brown_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Gray Stained Glass",
    "item": "minecraft:gray_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Light Gray Stained Glass",
    "item": "minecraft:light_gray_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
    "name": "Black Stained Glass",
    "item": "minecraft:black_stained_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "B"
   },
   {
    "name": "Tinted Glass",
    "item": "minecraft:tinted_glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "B"
   },
   {
-   "name": "Glass Block",
+   "name": "Glass",
    "item": "minecraft:glass",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "BB"
   },
   {
    "name": "Glass Pane",
    "item": "minecraft:glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
-   "name": "White Glass Pane",
+   "name": "White Stained Glass Pane",
    "item": "minecraft:white_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Red Glass Pane",
+   "name": "Red Stained Glass Pane",
    "item": "minecraft:red_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Orange Glass Pane",
+   "name": "Orange Stained Glass Pane",
    "item": "minecraft:orange_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Pink Glass Pane",
+   "name": "Pink Stained Glass Pane",
    "item": "minecraft:pink_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Yellow Glass Pane",
+   "name": "Yellow Stained Glass Pane",
    "item": "minecraft:yellow_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Lime Glass Pane",
+   "name": "Lime Stained Glass Pane",
    "item": "minecraft:lime_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Green Glass Pane",
+   "name": "Green Stained Glass Pane",
    "item": "minecraft:green_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Light blue Glass Pane",
+   "name": "Light Blue Stained Glass Pane",
    "item": "minecraft:light_blue_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Cyan Glass Pane",
+   "name": "Cyan Stained Glass Pane",
    "item": "minecraft:cyan_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Blue Glass Pane",
+   "name": "Blue Stained Glass Pane",
    "item": "minecraft:blue_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Magenta Glass Pane",
+   "name": "Magenta Stained Glass Pane",
    "item": "minecraft:magenta_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Purple Glass Pane",
+   "name": "Purple Stained Glass Pane",
    "item": "minecraft:purple_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Brown Glass Pane",
+   "name": "Brown Stained Glass Pane",
    "item": "minecraft:brown_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Grey Glass Pane",
+   "name": "Gray Stained Glass Pane",
    "item": "minecraft:gray_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Light Grey Glass Pane",
+   "name": "Light Gray Stained Glass Pane",
    "item": "minecraft:light_gray_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "C"
   },
   {
-   "name": "Black Glass Pane",
+   "name": "Black Stained Glass Pane",
    "item": "minecraft:black_stained_glass_pane",
-   "category": "Glass block",
+   "category": "Glass",
    "tier": "CC"
   },
   {
-   "name": "BlackStone",
+   "name": "Blackstone",
    "item": "minecraft:blackstone",
    "category": "Blackstone",
    "tier": "B"
@@ -1352,7 +1352,7 @@
    "tier": "C"
   },
   {
-   "name": "Block of Quartz",
+   "name": "Quartz Block",
    "item": "minecraft:quartz_block",
    "category": "Quartz",
    "tier": "BBB"
@@ -1376,7 +1376,7 @@
    "tier": "BBB"
   },
   {
-   "name": "Smooth Quartz Block",
+   "name": "Smooth Quartz",
    "item": "minecraft:smooth_quartz",
    "category": "Quartz",
    "tier": "AAA"
@@ -1390,43 +1390,43 @@
   {
    "name": "Nether Bricks",
    "item": "minecraft:nether_bricks",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "CC"
   },
   {
    "name": "Cracked Nether Bricks",
    "item": "minecraft:cracked_nether_bricks",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "CC"
   },
   {
    "name": "Netherrack",
    "item": "minecraft:netherrack",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "CC"
   },
   {
    "name": "Red Nether Bricks",
    "item": "minecraft:red_nether_bricks",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "C"
   },
   {
    "name": "Magma Block",
    "item": "minecraft:magma_block",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "CC"
   },
   {
    "name": "Soul Sand",
    "item": "minecraft:soul_sand",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "CC"
   },
   {
    "name": "Soul Soil",
    "item": "minecraft:soul_soil",
-   "category": "Netherack/brick",
+   "category": "Netherrack",
    "tier": "CC"
   },
   {
@@ -1520,7 +1520,7 @@
    "tier": "B"
   },
   {
-   "name": "FarmLand",
+   "name": "Farmland",
    "item": "minecraft:farmland",
    "category": "Dirt Blocks",
    "tier": "CC"
@@ -1562,7 +1562,7 @@
    "tier": "CC"
   },
   {
-   "name": "Mycellium",
+   "name": "Mycelium",
    "item": "minecraft:mycelium",
    "category": "Dirt Blocks",
    "tier": "CC"
@@ -1586,13 +1586,13 @@
    "tier": "AAA"
   },
   {
-   "name": "Block Of Iron",
+   "name": "Iron Block",
    "item": "minecraft:iron_block",
    "category": "Iron",
    "tier": "BB"
   },
   {
-   "name": "Block Of Raw Iron",
+   "name": "Raw Iron Block",
    "item": "minecraft:raw_iron_block",
    "category": "Iron",
    "tier": "BB"
@@ -1622,13 +1622,13 @@
    "tier": "CC"
   },
   {
-   "name": "Block Of Gold",
+   "name": "Gold Block",
    "item": "minecraft:gold_block",
    "category": "Gold",
    "tier": "B"
   },
   {
-   "name": "Block Of Raw Gold",
+   "name": "Raw Gold Block",
    "item": "minecraft:raw_gold_block",
    "category": "Gold",
    "tier": "B"
@@ -1682,43 +1682,43 @@
    "tier": "CC"
   },
   {
-   "name": "Netherite",
+   "name": "Netherite Block",
    "item": "minecraft:netherite_block",
    "category": "Emerald",
    "tier": "BB"
   },
   {
-   "name": "Block of Amethyst",
+   "name": "Amethyst Block",
    "item": "minecraft:amethyst_block",
-   "category": "Amethlyst",
+   "category": "Amethyst",
    "tier": "B"
   },
   {
    "name": "Budding Amethyst",
    "item": "minecraft:budding_amethyst",
-   "category": "Amethlyst",
+   "category": "Amethyst",
    "tier": "C"
   },
   {
-   "name": "Block Of Lapiz Lazuli",
+   "name": "Lapis Block",
    "item": "minecraft:lapis_block",
    "category": "Lapis",
    "tier": "B"
   },
   {
-   "name": "Deepslate Lapis Lazuli Ore",
+   "name": "Deepslate Lapis Ore",
    "item": "minecraft:deepslate_lapis_ore",
    "category": "Lapis",
    "tier": "CC"
   },
   {
-   "name": "Lapiz Lazuli Ore",
+   "name": "Lapis Ore",
    "item": "minecraft:lapis_ore",
    "category": "Lapis",
    "tier": "C"
   },
   {
-   "name": "Block Of Coal",
+   "name": "Coal Block",
    "item": "minecraft:coal_block",
    "category": "Coal",
    "tier": "A"
@@ -1736,19 +1736,19 @@
    "tier": "CC"
   },
   {
-   "name": "Block Of Copper",
+   "name": "Copper Block",
    "item": "minecraft:copper_block",
    "category": "Copper",
    "tier": "B"
   },
   {
-   "name": "Waxed Block Of Copper",
+   "name": "Waxed Copper Block",
    "item": "minecraft:waxed_copper_block",
    "category": "Copper",
    "tier": "B"
   },
   {
-   "name": "Block of Raw Copper",
+   "name": "Raw Copper Block",
    "item": "minecraft:raw_copper_block",
    "category": "Copper",
    "tier": "CC"
@@ -1833,25 +1833,25 @@
    "tier": "B"
   },
   {
-   "name": "Note block",
+   "name": "Note Block",
    "item": "minecraft:note_block",
    "category": "Utility Blocks",
    "tier": "BB"
   },
   {
-   "name": "Slime block",
+   "name": "Slime Block",
    "item": "minecraft:slime_block",
    "category": "Utility Blocks",
    "tier": "BBB"
   },
   {
-   "name": "Honey block",
+   "name": "Honey Block",
    "item": "minecraft:honey_block",
    "category": "Utility Blocks",
    "tier": "BB"
   },
   {
-   "name": "Beenest",
+   "name": "Bee Nest",
    "item": "minecraft:bee_nest",
    "category": "Utility Blocks",
    "tier": "B"
@@ -1863,13 +1863,13 @@
    "tier": "BBB"
   },
   {
-   "name": "Chizeled Bookshelf",
+   "name": "Chiseled Bookshelf",
    "item": "minecraft:chiseled_bookshelf",
    "category": "Utility Blocks",
    "tier": "BB"
   },
   {
-   "name": "Sculk block",
+   "name": "Sculk",
    "item": "minecraft:sculk",
    "category": "Utility Blocks",
    "tier": "B"
@@ -1893,7 +1893,7 @@
    "tier": "AA"
   },
   {
-   "name": "CobbleStone",
+   "name": "Cobblestone",
    "item": "minecraft:cobblestone",
    "category": "Stone",
    "tier": "AA"
@@ -1941,13 +1941,13 @@
    "tier": "B"
   },
   {
-   "name": "Chiseled SandStone",
+   "name": "Chiseled Sandstone",
    "item": "minecraft:chiseled_sandstone",
    "category": "Stone",
    "tier": "B"
   },
   {
-   "name": "Smooth SandStone",
+   "name": "Smooth Sandstone",
    "item": "minecraft:smooth_sandstone",
    "category": "Stone",
    "tier": "B"
@@ -2091,7 +2091,7 @@
    "tier": "B"
   },
   {
-   "name": "Drip Stone",
+   "name": "Dripstone Block",
    "item": "minecraft:dripstone_block",
    "category": "Stone",
    "tier": "CC"
@@ -2103,7 +2103,7 @@
    "tier": "CC"
   },
   {
-   "name": "Gravel Block",
+   "name": "Gravel",
    "item": "minecraft:gravel",
    "category": "Stone",
    "tier": "B"
@@ -2151,7 +2151,7 @@
    "tier": "BB"
   },
   {
-   "name": "Jack o'Lantern",
+   "name": "Jack O Lantern",
    "item": "minecraft:jack_o_lantern",
    "category": "Lightsources",
    "tier": "BBB"
@@ -2253,7 +2253,7 @@
    "tier": "BBB"
   },
   {
-   "name": "Hay Bale",
+   "name": "Hay Block",
    "item": "minecraft:hay_block",
    "category": "Nature Based Blocks",
    "tier": "BB"
@@ -2392,25 +2392,25 @@
    "tier": "A"
   },
   {
-   "name": "Observer Block",
+   "name": "Observer",
    "item": "minecraft:observer",
    "category": "Redstone Blocks",
    "tier": "BB"
   },
   {
-   "name": "Piston Block",
+   "name": "Piston",
    "item": "minecraft:piston",
    "category": "Redstone Blocks",
    "tier": "B"
   },
   {
-   "name": "Sticky Piston Block",
+   "name": "Sticky Piston",
    "item": "minecraft:sticky_piston",
    "category": "Redstone Blocks",
    "tier": "BB"
   },
   {
-   "name": "Target Block",
+   "name": "Target",
    "item": "minecraft:target",
    "category": "Redstone Blocks",
    "tier": "B"

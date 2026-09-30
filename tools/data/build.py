@@ -49,7 +49,33 @@ def norm(s):
 def ident(s):
     return re.sub(r'_+', '_', re.sub(r'[^a-z0-9]+', '_', s.lower())).strip('_')
 
+# sheet typos and chatter
+TYPOS = {'Meele': 'Melee', 'Recieved': 'Received', 'Likeley': 'Likely', 'GrantsStrength': 'Grants Strength', 'Rabbid': 'Rabid'}
+JUNK = {'?', '???', 'wdym'}
+REWORD = {
+    'Cursed af. ': '',
+    ' --ABSORPTION 1  BUGGED, DOES NOT WORK': ', level 1 bugged',
+    'only if you have NONE': 'only if you have none',
+}
+
+def clean(v):
+    if isinstance(v, list):
+        v = [clean(x) for x in v]
+        v = [x for x in v if x is not None]
+        return v or None
+    if not isinstance(v, str):
+        return v
+    v = v.strip()
+    if v in JUNK:
+        return None
+    for a, b in REWORD.items():
+        v = v.replace(a, b)
+    for a, b in TYPOS.items():
+        v = re.sub(rf'\b{a}\b', b, v)
+    return v
+
 def num(v):
+    v = clean(v)
     if v is None:
         return None
     try:
@@ -58,6 +84,7 @@ def num(v):
     except ValueError:
         return v  # keeps things like "4?" or "3(?)"
 
+
 # essences: explanations
 TYPE = {'⚔': 'weapon_tool', '👕': 'armor', '✨': 'spell'}
 expl = {}
@@ -65,11 +92,12 @@ for row in list(csv.reader(open(f'{SRC}/Debug_Essences/explanations.csv')))[1:]:
     if not row or not row[0].strip():
         continue
     name, types, levels, desc = (row + ['', '', '', ''])[:4]
+    name = clean(name)
     expl[norm(name)] = {
-        'name': name.strip(),
+        'name': name,
         'applies_to': [TYPE[c] for c in types if c in TYPE],
         'levels': levels.strip() or None,
-        'description': desc.strip() or None,
+        'description': clean(desc) or None,
     }
 
 # essences: prices sheet
@@ -92,7 +120,7 @@ for row in grid:
     letter, text = row[12].strip(), row[11].strip()
     if letter and letter != 'Quality Tiers' and text and letter not in ess_tiers and re.fullmatch(r'[A-Z]+', letter):
         ess_tiers[letter] = tier(letter, text)
-    name = row[1].strip()
+    name = clean(row[1]) or ''
     if not name or section is None:
         continue
     cap = num(row[2].strip() or None)
@@ -130,14 +158,14 @@ for sname, sh in sheets.items():
     for rn, r in sorted(sh['rows'].items()):
         if rn < 3 or not r.get('B'):
             continue
-        e = {'name': r['B'], 'kind': kind, 'key': k,
+        e = {'name': clean(r['B']), 'kind': kind, 'key': k,
              'max_level': num(r.get(L['cap'])),
              'global_cap': num(r.get(L['gcap'])) if L['gcap'] else None,
-             'requirements': [r[c] for c in L['req'] if r.get(c)] or None,
-             'effects': [r[c] for c in L['eff'] if r.get(c)] or None,
-             'item_type': r.get(L['item']),
-             'trigger': r.get(L['trig']) if L['trig'] else None,
-             'details': r.get(L['desc'])}
+             'requirements': clean([r[c] for c in L['req'] if r.get(c)]),
+             'effects': clean([r[c] for c in L['eff'] if r.get(c)]),
+             'item_type': clean(r.get(L['item'])),
+             'trigger': clean(r.get(L['trig'])) if L['trig'] else None,
+             'details': clean(r.get(L['desc']))}
         if norm(e['name']) in cheat:
             report['cheat sheet duplicate (kept first)'].append(f"{e['name']} ({sname})")
             continue
@@ -148,8 +176,8 @@ triggers = {}
 for col, name in trig_rows[1].items():
     triggers[name.lower().replace(' ', '_')] = {
         'name': name,
-        'meaning': trig_rows.get(2, {}).get(col),
-        'includes': [r[col] for rn, r in sorted(trig_rows.items()) if rn >= 3 and r.get(col)] or None,
+        'meaning': clean(trig_rows.get(2, {}).get(col)),
+        'includes': clean([r[col] for rn, r in sorted(trig_rows.items()) if rn >= 3 and r.get(col)]),
     }
 
 # merge, fuzzy for spelling differences between the sheets
@@ -191,7 +219,7 @@ for k, c in cheat.items():
 
 # seen in dumps, missing from the sheets
 EXTRA = [{'name': 'Increased Max Daggers', 'kind': 'buff', 'min_level_seen': 3}]
-ALSO_CALLED = {'Bee Aggression': ['Increased Bee Aggression']}
+ALSO_CALLED = {'Bee Aggression': ['Increased Bee Aggression'], 'Rabid Rabbits': ['Rabbid Rabbits']}
 for x in EXTRA:
     base[norm(x['name'])] = {'name': x['name'], '_extra': x}
 
@@ -292,7 +320,7 @@ for row in bgrid:
     if not name:
         continue
     if not rating:
-        category = name.strip()
+        category = {'Amethlyst': 'Amethyst', 'Netherack/brick': 'Netherrack', 'Glass block': 'Glass'}.get(name.strip(), name.strip())
         continue
     iid = item_id(name)
     if iid and any(b.get('item') == f'minecraft:{iid}' and b['tier'] == rating for b in blocks):
@@ -306,7 +334,7 @@ for row in bgrid:
         unsure = f'not placeable, maybe {iid}_block'
 
     blocks.append({k: v for k, v in {
-        'name': re.sub(r'\s+', ' ', name.strip()),
+        'name': iid.replace('_', ' ').title() if iid else re.sub(r'\s+', ' ', name.strip()),
         'item': f'minecraft:{iid}' if iid else None,
         'category': category,
         'tier': rating,

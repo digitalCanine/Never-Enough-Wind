@@ -17,9 +17,9 @@
   },
   "hit": {
    "name": "Hit",
-   "meaning": "Effects that apply on what are considered as Meele Hits",
+   "meaning": "Effects that apply on what are considered as Melee Hits",
    "includes": [
-    "Meele Hit",
+    "Melee Hit",
     "Thrown Trident",
     "Elder Branch",
     "Satan Sweep",
@@ -82,7 +82,7 @@
   },
   "food": {
    "name": "Food",
-   "meaning": "???",
+   "meaning": null,
    "includes": null
   }
  },
@@ -99,7 +99,7 @@
    "max_level": 3,
    "global_cap": 3,
    "description": "Provides absorption effect over time",
-   "details": "Adds [2|4] Absorption Hearts every 4 Seconds, only if you have NONE --ABSORPTION 1  BUGGED, DOES NOT WORK",
+   "details": "Adds [2|4] Absorption Hearts every 4 Seconds, only if you have none, level 1 bugged",
    "item_type": "Any",
    "price": {
     "1": "BB",
@@ -197,8 +197,7 @@
    "description": "Increases melee damage based on how many arrows are stuck in a player",
    "details": "Deals more damage If the target has arrows stuck in their model",
    "requirements": [
-    "Meele",
-    "?"
+    "Melee"
    ],
    "price": {
     "1": "AAA"
@@ -218,7 +217,7 @@
     "Undead"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -254,7 +253,7 @@
    "description": "Increases melee damage when dealt from behind an opponent",
    "details": ".8 Damage Multiplier per level (additive)",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "trigger": "Hit",
    "price": {
@@ -362,7 +361,6 @@
    ],
    "levels": "1-4",
    "max_level": 4,
-   "global_cap": "?",
    "description": "Makes bees angrier and attack faster",
    "price": {
     "1": "C",
@@ -402,7 +400,7 @@
    "max_level": 3,
    "description": "Restricts players from teleporting on hit",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -422,10 +420,10 @@
    ],
    "description": "A chance to spawn a ring of evoker fangs around you upon taking damage",
    "requirements": [
-    "Physical Damage Recieved"
+    "Physical Damage Received"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Magic"
    ],
    "price": {
@@ -488,7 +486,7 @@
    ],
    "description": "Inflicts blind effect on hit",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "CCC"
@@ -672,7 +670,7 @@
    ],
    "description": "A flat increase in damage with a 5 second cooldown",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -753,7 +751,7 @@
     "II"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -820,7 +818,7 @@
    "description": "Debuffs enemies with slowness and weakness",
    "details": "+2 s weakness and slowness'",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -840,7 +838,7 @@
    ],
    "description": "Increases damage dealt whilst critting",
    "requirements": [
-    "Meele",
+    "Melee",
     "Arrow"
    ],
    "price": {
@@ -996,11 +994,11 @@
    "description": "Deals extra damage on crit, and binds enemies for 30 seconds",
    "details": "Critical that \"summons claw of anubis\" creating wither roses and soul sand behind target",
    "requirements": [
-    "Meele",
+    "Melee",
     "Arrow"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Creation",
     "Transmutation"
    ],
@@ -1081,7 +1079,6 @@
    "max_level": 3,
    "description": "Obtain an extra Dimensional soul",
    "details": "1 extra soul per Level",
-   "item_type": "?",
    "price": {
     "2": "CCC",
     "3": "BB"
@@ -1190,7 +1187,6 @@
    ],
    "effects": [
     "Projectile",
-    "wdym",
     "Explosion",
     "Magic",
     "Summon"
@@ -1234,10 +1230,10 @@
    ],
    "description": "Hits summon sword clones that carry the player’s effects; only works at night",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "price": {
@@ -1258,7 +1254,7 @@
     "Undead"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Destruction",
     "Transmutation",
     "Summon"
@@ -1319,7 +1315,7 @@
     "Undead"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Projectile",
     "Teleportation",
     "Summon"
@@ -1515,7 +1511,7 @@
    "description": "Full swings instantly kill players below 30 HP",
    "details": "Executes the target if the Inflicted damage leaves him at or below 30% of his maximum HP",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "item_type": "Tools and Weapons",
    "price": {
@@ -1553,7 +1549,7 @@
    "max_level": 3,
    "description": "Restricts opponents from eating food",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "item_type": "Weapons/Tools",
@@ -1846,7 +1842,7 @@
    "description": "Inflicts freezing to enemies on melee hits",
    "details": "Freezes",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -1867,7 +1863,7 @@
    "description": "Inflicts freezing to enemies upon taking damage",
    "details": "Grants the ability to see Invisible people up to 5 Blocks per Level away",
    "requirements": [
-    "Meele Damage Received"
+    "Melee Damage Received"
    ],
    "item_type": "Any Item",
    "price": {
@@ -2120,7 +2116,7 @@
    "max_level": 3,
    "global_cap": 3,
    "description": "Provides resistance to the 'headshot' essence",
-   "details": "Likeley reduces the Headshot Essence Multiplier?",
+   "details": "Likely reduces the Headshot Essence Multiplier?",
    "price": {
     "1": "C",
     "2": "CC",
@@ -2170,7 +2166,7 @@
    "description": "Deals extra damage to opponents the more health the player has",
    "details": "Deals more damage if the Dealer is at full Life",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "S"
@@ -2209,7 +2205,7 @@
    "max_level": 4,
    "global_cap": 4,
    "description": "Reveals invisible players",
-   "details": "Reflects Damage on Meele Block",
+   "details": "Reflects Damage on Melee Block",
    "item_type": "Any Item(?)",
    "price": {
     "1": "B",
@@ -2234,7 +2230,7 @@
    "description": "On crit, restricts jumping and general movement of players and mobs",
    "details": "On critical puts target in \"High gravity\" status, creating a strong vertical downwards force",
    "requirements": [
-    "Meele",
+    "Melee",
     "Arrow"
    ],
    "effects": [
@@ -2302,7 +2298,7 @@
    "description": "On crit, trap opponents in an ice box",
    "details": "creates an ice wall behind the Target on critical hit, to make escape harder",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "effects": [
     "Creation"
@@ -2774,7 +2770,7 @@
    "global_cap": 3,
    "description": "Increases melee damage dealt to a player or mob",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "BB",
@@ -2858,7 +2854,7 @@
    ],
    "description": "Instantly mines blocks",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "effects": [
     "Destruction"
@@ -2950,7 +2946,7 @@
    ],
    "max_level": 1,
    "description": "Provides immunity to knockback",
-   "details": "Cursed af. Increases Damage taken in some cases, Removes Many Forms of displacement like levitation, but not all. Very buggy but not bad",
+   "details": "Increases Damage taken in some cases, Removes Many Forms of displacement like levitation, but not all. Very buggy but not bad",
    "price": {
     "1": "SS"
    },
@@ -3109,7 +3105,7 @@
    "description": "Provides a small heal when hitting opponents",
    "details": ".5 Hearts Per level per FULL hit",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "effects": [
@@ -3149,7 +3145,7 @@
    "global_cap": 3,
    "description": "Occasionally strike opponents with lightning on hit",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "effects": [
@@ -3187,7 +3183,7 @@
    ],
    "description": "Projectile leaves heart particles and grants Regeneration II to players and mobs it hits",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "item_type": "Weapons/Tools",
@@ -3208,7 +3204,7 @@
    "max_level": 3,
    "description": "Blocks players and bosses from using most spells for a short period of time",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -3228,7 +3224,7 @@
    ],
    "description": "Hits create magma blocks under foes; critical hits trigger explosions",
    "requirements": [
-    "Meele",
+    "Melee",
     "Arrow"
    ],
    "effects": [
@@ -3297,7 +3293,7 @@
    "description": "Enemies hit will glow (and received poison) for a period of time",
    "details": "Glow / Poison 2",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "item_type": "Weapons/Tools",
@@ -3346,7 +3342,6 @@
    ],
    "levels": "1-4",
    "max_level": 4,
-   "global_cap": "?",
    "description": "Increases the amount of bees summoned by War Bees",
    "price": {
     "1": "C",
@@ -3430,7 +3425,7 @@
    "max_level": 2,
    "description": "Increases damage whilst mounted",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "item_type": "Weapons/Tools",
@@ -3536,7 +3531,7 @@
    ],
    "description": "Inflicts nausea effect to players hit",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "C"
@@ -3604,7 +3599,7 @@
     "Nature"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Acceleration",
     "Invisibility",
     "Summon"
@@ -3679,7 +3674,7 @@
    "description": "Inflicts poison effect to enemies on hit",
    "details": "Poison 3 Effect, 7 Seconds +3 duration per level, +1 to effect",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -3773,7 +3768,7 @@
     "Blood"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -3805,30 +3800,6 @@
    "status": "unverified"
   },
   {
-   "id": "rabbid_rabbits",
-   "name": "Rabbid Rabbits",
-   "key": "chaos",
-   "kind": "spell",
-   "applies_to": [
-    "weapon_tool"
-   ],
-   "description": "Summon a swarm of rabbits that inflict poison on hit",
-   "requirements": [
-    "Nature"
-   ],
-   "effects": [
-    "Meele",
-    "Projectile",
-    "Magic",
-    "Summon"
-   ],
-   "item_type": "Most Melee Weapons or Tools",
-   "price": {
-    "1": "C"
-   },
-   "status": "unverified"
-  },
-  {
    "id": "rabbit_shot",
    "name": "Rabbit Shot",
    "key": "chaos",
@@ -3842,11 +3813,38 @@
     "Projectile"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "price": {
     "1": "CC"
+   },
+   "status": "unverified"
+  },
+  {
+   "id": "rabid_rabbits",
+   "name": "Rabid Rabbits",
+   "also_called": [
+    "Rabbid Rabbits"
+   ],
+   "key": "chaos",
+   "kind": "spell",
+   "applies_to": [
+    "weapon_tool"
+   ],
+   "description": "Summon a swarm of rabbits that inflict poison on hit",
+   "requirements": [
+    "Nature"
+   ],
+   "effects": [
+    "Melee",
+    "Projectile",
+    "Magic",
+    "Summon"
+   ],
+   "item_type": "Most Melee Weapons or Tools",
+   "price": {
+    "1": "C"
    },
    "status": "unverified"
   },
@@ -3910,7 +3908,7 @@
    ],
    "description": "Recover Shadow souls on hits",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "effects": [
@@ -3932,7 +3930,7 @@
    ],
    "description": "Recover Undead souls on Hits",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "effects": [
@@ -3954,7 +3952,7 @@
    ],
    "description": "Opponents hit will heal half as quickly",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -4062,7 +4060,7 @@
    ],
    "max_level": 1,
    "description": "Grants Strength II on soul sand or bone blocks",
-   "details": "GrantsStrength 2 Near Boneblocks and Soulsand",
+   "details": "Grants Strength 2 Near Boneblocks and Soulsand",
    "item_type": "Any",
    "price": {
     "1": "C"
@@ -4093,7 +4091,7 @@
    "description": "Boosts damage against players based on their soul count",
    "details": ".125 Hearts FLAT per soul on target",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "AA"
@@ -4131,12 +4129,12 @@
    ],
    "description": "On hit, melee attacks effect a small AoE",
    "requirements": [
-    "Meele",
+    "Melee",
     "Arrow",
     "Blood Damage"
    ],
    "effects": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "BBB"
@@ -4156,7 +4154,7 @@
     "Shadow"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Magic"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -4200,7 +4198,7 @@
     "Shadow"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Magic"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -4243,7 +4241,7 @@
     "Nature"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Invisibility",
     "Teleportation",
     "Summon"
@@ -4332,7 +4330,7 @@
     "Undead"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Teleportation",
     "Summon"
    ],
@@ -4403,7 +4401,7 @@
    "global_cap": 5,
    "description": "Inflicts the slowness effect on hits",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "price": {
@@ -4499,7 +4497,7 @@
     "Cast"
    ],
    "effects": [
-    "Meele"
+    "Melee"
    ],
    "spell_cost": "Free",
    "price": {
@@ -4519,7 +4517,7 @@
    "description": "Melee hits removes souls from opponents",
    "details": "Removes 1 Soul from the Target, cycles the type removed after every hit",
    "requirements": [
-    "Meele"
+    "Melee"
    ],
    "price": {
     "1": "B"
@@ -4654,7 +4652,7 @@
    "description": "On hit, opponents will lose hunger",
    "details": ".5 Hunger per Level per FULL hit",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "item_type": "Weapons/Tools",
@@ -4978,7 +4976,7 @@
     "Shadow"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -5022,7 +5020,7 @@
     "Nature"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Acceleration",
     "Summon"
    ],
@@ -5151,7 +5149,7 @@
     "Nature"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Projectile"
    ],
    "item_type": "Most Melee Weapons or Tools",
@@ -5197,7 +5195,7 @@
    "description": "Inflicts opponents with wither on hit",
    "details": "Wither 3 Effect, increased by 1 per essence level, 5 seconds",
    "requirements": [
-    "Meele",
+    "Melee",
     "Projectile",
     "Magic Damage"
    ],
@@ -5243,7 +5241,7 @@
     "Double Sneak"
    ],
    "effects": [
-    "Meele",
+    "Melee",
     "Summon"
    ],
    "item_type": "Most Armor Items",
