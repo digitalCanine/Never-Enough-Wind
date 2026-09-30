@@ -2,8 +2,7 @@ To do :
 
 Item class :
 
-    Item parser (mainly a getter, used for sending item info to other methods
-below)
+    Item parser (mainly a getter, used for sending item info to other method below)
 
     Item cattegory parser
 
