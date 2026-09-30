@@ -66,7 +66,7 @@ UI class (the meat) :
 
     Item Highligter (using item cattegory parser)
 
-    Essence menu (uses the essence list json to show every essence in the game as a menu)
+    Item menu (uses the essence list json, inf block json, and key json, to show all of it in the game as menu with different submenus)
 
     Buffs/Debuff timer widget (if possible, parsing from the player class methods)
     
