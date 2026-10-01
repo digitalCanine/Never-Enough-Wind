@@ -1,0 +1,2725 @@
+{
+  "schema_version": 2,
+  "notes": [
+    "flavor = lore lines before souls / Essence / Player Kills, skipping enchant lines and blanks",
+    "match: join the flavor lines with spaces, compare letters and digits only",
+    "needs_item_id: tell apart by tool type, not material",
+    "restyle the current name, gradient = first to last color",
+    "sharpness = what it drops with, only levels above it count as spent",
+    "status wiki = from the wiki, no style, flavor may be slightly off"
+  ],
+  "items": [
+    {
+      "name": "Lava Bolt",
+      "item": "minecraft:blaze_rod",
+      "flavor": [
+        "And so Notch the Archmage said"
+      ],
+      "style": {
+        "gradient": [
+          "#FF1E00",
+          "#FFE600"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Cupid's Bow",
+      "item": "minecraft:bow",
+      "flavor": [
+        "The wounds invisible that",
+        "Love's keen arrows make."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Falken Blitz",
+      "item": "minecraft:bow",
+      "flavor": [
+        "We require more arrows."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Frost Bow",
+      "item": "minecraft:bow",
+      "flavor": [
+        "The wind spirits love",
+        "disrupting the balance of powers.",
+        "To that end, they have blessed this bow with",
+        "near-supersonic ice shots."
+      ],
+      "style": {
+        "gradient": [
+          "#99C5FF",
+          "#61F5BF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ichaival",
+      "item": "minecraft:bow",
+      "flavor": [
+        "A bow possessed by Odin."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Indra",
+      "item": "minecraft:bow",
+      "flavor": [
+        "A poet is someone who stands outside in",
+        "the rain hoping to be struck by lightning."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Minibow",
+      "item": "minecraft:bow",
+      "flavor": [
+        "Called Mini in comparison to its prototype,",
+        "the Repeating Ballista commonly found",
+        "on Raider Caravels.",
+        "Works by accelerating time around the bow,",
+        "which is more energy efficient than reversing time,",
+        "but does not conserve the arrows.",
+        "December 2022"
+      ],
+      "style": {
+        "gradient": [
+          "#6EFF00",
+          "#32CFD2"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Nepenthes",
+      "item": "minecraft:bow",
+      "flavor": [
+        "A conjured bow said to create",
+        "a rift between dimensions"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ragnaros",
+      "item": "minecraft:bow",
+      "flavor": [
+        "YOU AND YOUR KIND THOUGHT THAT THE",
+        "FIRES OF DOOM HAD BEEN QUENCHED."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Robin's Bow",
+      "item": "minecraft:bow",
+      "flavor": [
+        "Robin liked stealing from the rich",
+        "and also giving it to the poor."
+      ],
+      "style": {
+        "gradient": [
+          "#EBE71E",
+          "#41C914"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Santa's Rage",
+      "item": "minecraft:bow",
+      "flavor": [
+        "Favorite tool of the Jolly Man",
+        "to grief the shit out of",
+        "naughty kids and adults."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Sicario",
+      "item": "minecraft:bow",
+      "flavor": [
+        "Order is the best we can hope for."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Bloodmancer Boots",
+      "item": "minecraft:chainmail_boots",
+      "flavor": [
+        "The demonic wizard loved",
+        "consuming DN above all else."
+      ],
+      "style": {
+        "gradient": [
+          "#D9004F",
+          "#E9001F"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Rift Dragon Boots",
+      "item": "minecraft:chainmail_boots",
+      "flavor": [
+        "Not much is known about",
+        "the elusive Rift Dragon."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Shadowmancer's Boots",
+      "item": "minecraft:chainmail_boots",
+      "flavor": [
+        "Enchanted with the deadly",
+        "necromancer essence."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Bloodmancer Chestplate",
+      "item": "minecraft:chainmail_chestplate",
+      "flavor": [
+        "Prolonged use of blood magic may cause",
+        "pointier ears and longer fangs."
+      ],
+      "style": {
+        "gradient": [
+          "#D9004F",
+          "#EE0025"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Edge Lord's Chestplate",
+      "item": "minecraft:chainmail_chestplate",
+      "flavor": [
+        "Being covered in razorblades completely,",
+        "makes the wearer feel alive."
+      ],
+      "style": {
+        "gradient": [
+          "#6A14FF",
+          "#E8142D"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Shadowmancer's Chestplate",
+      "item": "minecraft:chainmail_chestplate",
+      "flavor": [
+        "Rebuilt from a thousand",
+        "cursed enderbones."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Edge Lord's Leggings",
+      "item": "minecraft:chainmail_leggings",
+      "flavor": [
+        "Chained razorblades perfectly",
+        "come together to form pants."
+      ],
+      "style": {
+        "gradient": [
+          "#6A14FF",
+          "#EF142E"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Rift Dragon Leggings",
+      "item": "minecraft:chainmail_leggings",
+      "flavor": [
+        "Enchanted dragon scales",
+        "with blaze powder finish."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Shadowmancer's Leggings",
+      "item": "minecraft:chainmail_leggings",
+      "flavor": [
+        "Wither bones, covered in shadow grease."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Headshot",
+      "item": "minecraft:crossbow",
+      "flavor": [
+        "BOOM HEADSHOT!"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Syba's Living Crossbow",
+      "item": "minecraft:crossbow",
+      "flavor": [
+        "Constructed from a leg of a",
+        "great treant by Syba himself."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Avidity",
+      "item": "minecraft:diamond_axe",
+      "flavor": [
+        "Once used by an infamous merchant.",
+        "Some say the person was dead inside."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Lifestealer",
+      "item": "minecraft:diamond_axe",
+      "flavor": [
+        "A terrifying axe that is said",
+        "to fill the entire battlefield",
+        "with blood once it cuts flesh"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 16
+    },
+    {
+      "name": "Syba's Sage Slayer",
+      "item": "minecraft:diamond_axe",
+      "flavor": [
+        "Mad wizards across multispawn",
+        "abhorred Syba for his tranquility."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 20
+    },
+    {
+      "name": "Frozen Boots",
+      "item": "minecraft:diamond_boots",
+      "flavor": [
+        "These boots have a disdain for ice."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Sleipnir",
+      "item": "minecraft:diamond_boots",
+      "flavor": [
+        "Named after Odins trusty steed."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Sponge Boots",
+      "item": "minecraft:diamond_boots",
+      "flavor": [
+        "Essentially a pair of extremely",
+        "talkative sponge creatures",
+        "that remain mysteriously dry",
+        "as long as they are alive."
+      ],
+      "style": {
+        "gradient": [
+          "#F2FF00",
+          "#58C8E7"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Assault Cuirass",
+      "item": "minecraft:diamond_chestplate",
+      "flavor": [
+        "An extremely heavy piece of armor",
+        "worn by warlords of Minewind."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Frozen Chestplate",
+      "item": "minecraft:diamond_chestplate",
+      "flavor": [
+        "Traditional Claus armor."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Abyssal Helm",
+      "item": "minecraft:diamond_helmet",
+      "flavor": [
+        "Thims Calb's very first creation",
+        "his most prized and precious armor."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Frozen Helm",
+      "item": "minecraft:diamond_helmet",
+      "flavor": [
+        "Iconic dome protection for",
+        "Santa's elf hunting squad."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Warm and Cozy Helmet",
+      "item": "minecraft:diamond_helmet",
+      "flavor": [
+        "Attracts spirits of kindness to watch over you",
+        "and deflect one attack from any direction",
+        "whenever they can.",
+        "A fine, shimmering garment",
+        "woven using love magic.",
+        "Once bestowed by an old witch",
+        "onto her best pupil,",
+        "so that no stroke of unluck",
+        "could claim her life."
+      ],
+      "style": {
+        "gradient": [
+          "#00FF32",
+          "#BEFF0C"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ball Lightning Rod",
+      "item": "minecraft:diamond_hoe",
+      "flavor": [
+        "A prank by Zeus",
+        "to puzzle scientists for millenia.",
+        "He uses this spell whenever",
+        "a scientist is not looking.",
+        "Lightning does more damage to wet things."
+      ],
+      "style": {
+        "gradient": [
+          "#FFFFFF",
+          "#88FFFF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 15
+    },
+    {
+      "name": "Baphomet",
+      "item": "minecraft:diamond_hoe",
+      "flavor": [
+        "We must remember that",
+        "Satan has his miracles, too."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 12
+    },
+    {
+      "name": "Death Scythe",
+      "item": "minecraft:diamond_hoe",
+      "flavor": [
+        "The Harvester of Souls."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Elder Phantom Staff",
+      "item": "minecraft:diamond_hoe",
+      "flavor": [
+        "Summon Elder Phantom, true ruler of the night sky."
+      ],
+      "style": {
+        "gradient": [
+          "#7A11FF",
+          "#206B6F"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 15
+    },
+    {
+      "name": "Bani-shin reginsu",
+      "item": "minecraft:diamond_leggings",
+      "flavor": [
+        "Mysterious leggings that automatically",
+        "adjusts its size as the wearer's size."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Frozen Leggings",
+      "item": "minecraft:diamond_leggings",
+      "flavor": [
+        "Partly responsible for ice age."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ice Tights",
+      "item": "minecraft:diamond_leggings",
+      "flavor": [
+        "Made of enchanted icicles."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Corrupted Diggity",
+      "item": "minecraft:diamond_pickaxe",
+      "flavor": [
+        "Possessed by Satan"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Diggity",
+      "item": "minecraft:diamond_pickaxe",
+      "flavor": [
+        "It is said that only one skilled",
+        "in metalworking can properly",
+        "wield this pickaxe."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Multipass",
+      "item": "minecraft:diamond_pickaxe",
+      "flavor": [
+        "One Tool that lets you",
+        "pass through anything"
+      ],
+      "style": {
+        "gradient": [
+          "#02FAF6",
+          "#E222FE"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 11
+    },
+    {
+      "name": "Obsidian Destroyer",
+      "item": "minecraft:diamond_pickaxe",
+      "flavor": [
+        "One pickaxe to dig them all"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Shadow Swarm Pickaxe",
+      "item": "minecraft:diamond_pickaxe",
+      "flavor": [
+        "Summons a spider assassin clan",
+        "from the Great Jungle.",
+        "Feared for their hallucinogenic venom,",
+        "they cloak themselves in shadow",
+        "upon sensing the slightest glimmer of light."
+      ],
+      "style": {
+        "gradient": [
+          "#618875",
+          "#D3AEE7"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 19
+    },
+    {
+      "name": "Elemental Shovel",
+      "item": "minecraft:diamond_shovel",
+      "flavor": [
+        "A shovel of balance and a symbol",
+        "of peace in the Realm,",
+        "which must be kept to stand a chance",
+        "in surviving its destructive Elements."
+      ],
+      "style": {
+        "gradient": [
+          "#00F3FF",
+          "#3CA8FF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 18
+    },
+    {
+      "name": "Bone Spirit Sword",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "Summons suicidal spirits of death."
+      ],
+      "style": {
+        "gradient": [
+          "#618875",
+          "#D1A8F5"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 15
+    },
+    {
+      "name": "Dyrnwyn",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "When drawn",
+        "it blazed with fire."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "also_seen_as": [
+        "Vampiric Dyrnwyn"
+      ],
+      "note": "vampiric copy had essences on it",
+      "needs_item_id": false,
+      "sharpness": 24
+    },
+    {
+      "name": "Ice Katana",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "Forged by an unlucky runesmith",
+        "to preserve his zombified wife until",
+        "better resurrection magic was invented."
+      ],
+      "style": {
+        "gradient": [
+          "#BAFFF6",
+          "#8430F6"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Mysteltainn",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "One-handed sword similar to the",
+        "legendary twig which was rumored",
+        "to have murdered Baldur,",
+        "the God of Light."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 14
+    },
+    {
+      "name": "Summon Skeleton Scout Sword",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "Summon dead homies",
+        "back from the grave."
+      ],
+      "style": {
+        "gradient": [
+          "#7A11FF",
+          "#2C797D"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 10
+    },
+    {
+      "name": "Torquem",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "Existence without you",
+        "has been torment"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 19
+    },
+    {
+      "name": "Rift Dragon Head",
+      "item": "minecraft:dragon_head",
+      "flavor": [
+        "Weird how it still moves."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Honey Master Bee Wings",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "The Honey Master grew bug wings",
+        "to be closer with the Queen,",
+        "but she perceived it as rivalry.",
+        "After the blood and guts have settled,",
+        "the War Bees lifted their champion",
+        "onto the Amber Throne."
+      ],
+      "style": {
+        "gradient": [
+          "#FEB204",
+          "#E94904"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Mana Wings",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Wings that an ancient wizard",
+        "won in a duel with the Mana Satan."
+      ],
+      "style": {
+        "color": "aqua",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Orc Hero Wings",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Grug's wings awarded by",
+        "an orc general for bravery,",
+        "despite his insanity."
+      ],
+      "style": {
+        "gradient": [
+          "#28D13B",
+          "#0EAA21"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Rift Dragon Wings",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Was once a part of a greater dragon."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Robin's Elytra",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Robin loved scoutin'",
+        "rich neighborhoods from above."
+      ],
+      "style": {
+        "gradient": [
+          "#EBE71E",
+          "#37C312"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Wind Elytra",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Lightweight demon butterfly wings.",
+        "In flight, its wearer becomes Wind itself:",
+        "nigh invisible and resistant to explosion damage."
+      ],
+      "style": {
+        "gradient": [
+          "#FFFFFF",
+          "#FFB9FF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Wings of Blood",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Wings of a fallen demon,",
+        "made entirely of screaming victims."
+      ],
+      "style": {
+        "gradient": [
+          "#D9004F",
+          "#D90035"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Salty",
+      "item": "minecraft:fishing_rod",
+      "flavor": [
+        "With patience comes great reward."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ceremonial Axe",
+      "item": "minecraft:golden_axe",
+      "flavor": [
+        "Used for beheading."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 30
+    },
+    {
+      "name": "War Bee Axe",
+      "item": "minecraft:golden_axe",
+      "flavor": [
+        "Genetically engineered for maximum hatred,",
+        "they can sting more than once.",
+        "Indeed, they sting until",
+        "nothing remains."
+      ],
+      "style": {
+        "gradient": [
+          "#FEB204",
+          "#2CF836"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 20
+    },
+    {
+      "name": "Anti-Mage's Chestplate",
+      "item": "minecraft:golden_chestplate",
+      "flavor": [
+        "The stout heart knows no fear!"
+      ],
+      "style": {
+        "color": "green",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Odin's Blessing",
+      "item": "minecraft:golden_chestplate",
+      "flavor": [
+        "From the perspective of Odin the All-Seeing,",
+        "when the body is hidden, the soul becomes revealed.",
+        "This blessing extends to his followers,",
+        "who value knowledge and wisdom above all else."
+      ],
+      "style": {
+        "gradient": [
+          "#CBFF00",
+          "#F54900"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Glass Cannon",
+      "item": "minecraft:golden_pickaxe",
+      "flavor": [
+        "Doctor Hu's first prototype",
+        "on Peaceful Griefing."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Honey Cannon",
+      "item": "minecraft:golden_pickaxe",
+      "flavor": [
+        "Does not destroy your enemies immediately,",
+        "but kills them slowly with diabetes."
+      ],
+      "style": {
+        "gradient": [
+          "#FBCE11",
+          "#F08106"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 25
+    },
+    {
+      "name": "Bush Magic",
+      "item": "minecraft:golden_shovel",
+      "flavor": [
+        "A blessing from the god Min",
+        "upon his hungry followers.",
+        "They turned the food into a weapon,",
+        "so he cursed them with raining frogs.",
+        "The frog meat was even more delicious."
+      ],
+      "style": {
+        "gradient": [
+          "#00AA00",
+          "#7E47CF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 14
+    },
+    {
+      "name": "Erozenith",
+      "item": "minecraft:golden_sword",
+      "flavor": [
+        "Bends the electromagnetic current to strike",
+        "lightning in the same spot repeatedly.",
+        "A spell adapted by Zeus",
+        "when a mortal lightning sorceress tried to charm him",
+        "using a similar but weaker spell.",
+        "Where she aimed to gently excite her target's neurons",
+        "by channeling the static electricity around them,",
+        "Zeus realized he could do the same",
+        "but on a whole different level."
+      ],
+      "style": {
+        "gradient": [
+          "#D400FF",
+          "#1C20FF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 10
+    },
+    {
+      "name": "Netheramber",
+      "item": "minecraft:golden_sword",
+      "flavor": [
+        "A sharp piece of pure Honey Amber,",
+        "solidified under immense tectonic pressure",
+        "of the volcanic Nether regions.",
+        "It spent three eternities in the treasury",
+        "of Osiris, from where it was traded",
+        "to the Travelling Merchant for",
+        "his smartest talking llama.",
+        "The llama studied architecture and",
+        "designed the first Nether Fortress."
+      ],
+      "style": {
+        "gradient": [
+          "#CF1020",
+          "#F7A60C"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 25
+    },
+    {
+      "name": "Fire Blast Axe",
+      "item": "minecraft:iron_axe",
+      "flavor": [
+        "Summons a detonating fire."
+      ],
+      "style": {
+        "gradient": [
+          "#FF6000",
+          "#FFE234"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 11
+    },
+    {
+      "name": "Pushpa Sangama",
+      "item": "minecraft:iron_axe",
+      "flavor": [
+        "An ancient spell of Nature",
+        "devised by an elder sage",
+        "for his soul.",
+        "Summons a field of nice flowers.",
+        "Rare magic born from pure love of beauty,",
+        "it can still be corrupted for war.",
+        "Indeed, wizard assassins are known to have",
+        "exotic ways to bend flowers",
+        "to their deadly will."
+      ],
+      "style": {
+        "gradient": [
+          "#00FFBF",
+          "#34FF16"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 15
+    },
+    {
+      "name": "Succulent",
+      "item": "minecraft:iron_axe",
+      "flavor": [
+        "You cannot eat while being eaten."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 19
+    },
+    {
+      "name": "Tornado Axe",
+      "item": "minecraft:iron_axe",
+      "flavor": [
+        "Found occuring naturally in Great Plains,",
+        "tornadoes are lesser known as",
+        "the Breath of Vayu, god of the winds.",
+        "Not all tornadoes occur from Vayu,",
+        "so it is not entirely correct",
+        "to blame the god every time one happens."
+      ],
+      "style": {
+        "gradient": [
+          "#129420",
+          "#E4EE0C"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true,
+      "sharpness": 13
+    },
+    {
+      "name": "Iron Maiden",
+      "item": "minecraft:iron_chestplate",
+      "flavor": [
+        "An instrument used for torture,",
+        "only a fool would wear it."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Syba's Ancestral Chestplate",
+      "item": "minecraft:iron_chestplate",
+      "flavor": [
+        "Contains the spirit of Syba's ancestors,",
+        "fills this armor with unstoppable rage."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Death Marker Dagger Staff",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "Coated in material so radioactive,",
+        "those who are struck glow through walls",
+        "in addition to being very poisoned."
+      ],
+      "style": {
+        "gradient": [
+          "#7A11FF",
+          "#32716F"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true,
+      "sharpness": 14
+    },
+    {
+      "name": "Ice Shinto Staff",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "Concentrated anger",
+        "of a snow apparition."
+      ],
+      "style": {
+        "gradient": [
+          "#00F3FF",
+          "#3CA8FF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 12
+    },
+    {
+      "name": "Jack",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "Accursed hook mostly used",
+        "to put meat on display."
+      ],
+      "style": {
+        "gradient": [
+          "#FC0366",
+          "#AE5478"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "ShadowSaw Staff",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "It rips you apart from the outside."
+      ],
+      "style": {
+        "gradient": [
+          "#618875",
+          "#D1B2F3"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 12
+    },
+    {
+      "name": "Trap Chicken Staff",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "Abomination spell that creates a chicken,",
+        "but with a heart of molten rock",
+        "that explodes upon excitement.",
+        "It creates a suffering creature,",
+        "so this spell is banned",
+        "by all wizard academies except",
+        "the infamous Clown College,",
+        "a school for wizard hitmen."
+      ],
+      "style": {
+        "gradient": [
+          "#FF6000",
+          "#FFE833"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 10
+    },
+    {
+      "name": "Leggings of Increased Infinity Placed",
+      "item": "minecraft:iron_leggings",
+      "flavor": [
+        "Bestowed by Malphas upon his trusted builders,",
+        "the ceremonial Leggings strengthens their connection",
+        "to infinity."
+      ],
+      "style": {
+        "gradient": [
+          "#0054FF",
+          "#00F6B7"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Death Marker Dagger Shovel",
+      "item": "minecraft:iron_shovel",
+      "flavor": [
+        "Coated in material so radioactive,",
+        "those who are struck glow through walls",
+        "in addition to being very poisoned."
+      ],
+      "style": {
+        "gradient": [
+          "#7A11FF",
+          "#2F7569"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true,
+      "sharpness": 21
+    },
+    {
+      "name": "Backstabber",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "Sweet screams of death",
+        "are best heard from behind."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 17
+    },
+    {
+      "name": "Blessed Snow Sword",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "Protects an area from projectiles."
+      ],
+      "style": {
+        "gradient": [
+          "#00F3FF",
+          "#33AFFF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 11
+    },
+    {
+      "name": "Crippling Dagger",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "Envenomed with deadly STDs!"
+      ],
+      "style": {
+        "color": "green",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Noegrus",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "Cut my heart into pieces!",
+        "July 2026"
+      ],
+      "style": {
+        "gradient": [
+          "#FDF7FF",
+          "#FDF1FF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Robin's Silver Sword",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "Robin Hood liked to live dangerously."
+      ],
+      "style": {
+        "gradient": [
+          "#B5FFC6",
+          "#E3FFDD"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 11
+    },
+    {
+      "name": "Syba's Katana",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "Only effective in the hands",
+        "of a true sword master."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 11
+    },
+    {
+      "name": "Vexer Sword",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "They are like ghosts,",
+        "but apparently not undead."
+      ],
+      "style": {
+        "gradient": [
+          "#618875",
+          "#CFB0ED"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 11
+    },
+    {
+      "name": "Zord",
+      "item": "minecraft:iron_sword",
+      "flavor": [
+        "The previous wielder of this",
+        "sword suffocated in a wall."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 23
+    },
+    {
+      "name": "Bandit's Boots",
+      "item": "minecraft:leather_boots",
+      "flavor": [
+        "Fancy ninja footwear."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Hunter's Pupil Boots",
+      "item": "minecraft:leather_boots",
+      "flavor": [
+        "Some of the finest cow leather."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Nature's Flips",
+      "item": "minecraft:leather_boots",
+      "flavor": [
+        "Magical footwear that",
+        "is made of literal grass.",
+        "Very fashionable around druids."
+      ],
+      "style": {
+        "gradient": [
+          "#FFE205",
+          "#FF4646"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Pyromancer's Boots",
+      "item": "minecraft:leather_boots",
+      "flavor": [
+        "Infused with firm but",
+        "light dragon leather."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Aegis",
+      "item": "minecraft:leather_chestplate",
+      "flavor": [
+        "Fabled animal's skin, worn",
+        "over shoulders and arms."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Divine Cloth",
+      "item": "minecraft:leather_chestplate",
+      "flavor": [
+        "A holy garment that",
+        "was produced through",
+        "series of religious rituals",
+        "August 2025"
+      ],
+      "style": {
+        "color": "white",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Grug's Shirt",
+      "item": "minecraft:leather_chestplate",
+      "flavor": [
+        "Grug's favorite green shirt.",
+        "Only Grug's girlfriend is allowed to wear it."
+      ],
+      "style": {
+        "gradient": [
+          "#28D13B",
+          "#079A1A"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Honey Master Chestplate",
+      "item": "minecraft:leather_chestplate",
+      "flavor": [
+        "Armor of pure amber, snatched",
+        "from the sweetest depths of hell",
+        "by a traveling wizard.",
+        "It remains unknown why the Demon Bees",
+        "created a human-shaped armor."
+      ],
+      "style": {
+        "gradient": [
+          "#FEB204",
+          "#E84404"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Pyromancer's Tunic",
+      "item": "minecraft:leather_chestplate",
+      "flavor": [
+        "Attire of pyromancers",
+        "from the Hathor cult."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Robin's Tunic",
+      "item": "minecraft:leather_chestplate",
+      "flavor": [
+        "The hero lived in a forest",
+        "because he couldn't stop looting."
+      ],
+      "style": {
+        "gradient": [
+          "#EBE71E",
+          "#37C312"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Grug's Hat",
+      "item": "minecraft:leather_helmet",
+      "flavor": [
+        "A fine leather hat of the beloved orc Grug.",
+        "Keeps the blood off Grug's shining buzz."
+      ],
+      "style": {
+        "gradient": [
+          "#28D13B",
+          "#049B17"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Leather of Talpa",
+      "item": "minecraft:leather_helmet",
+      "flavor": [
+        "Puzzling headgear imbued",
+        "with immortal lizard's skin."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Pyromancer's Hood",
+      "item": "minecraft:leather_helmet",
+      "flavor": [
+        "The magicks within this delicate",
+        "hood attract angry souls."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Robin's Cap",
+      "item": "minecraft:leather_helmet",
+      "flavor": [
+        "Robin Hood couldn't go a day",
+        "without Robin' The Hood"
+      ],
+      "style": {
+        "gradient": [
+          "#EBE71E",
+          "#41C914"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Grug's Pants",
+      "item": "minecraft:leather_leggings",
+      "flavor": [
+        "These pants have never been washed once.",
+        "They smell pretty good, very orc."
+      ],
+      "style": {
+        "gradient": [
+          "#28D13B",
+          "#079A1A"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Lightning God Pajamas",
+      "item": "minecraft:leather_leggings",
+      "flavor": [
+        "Zeus does not follow fashion,",
+        "it follows Zeus."
+      ],
+      "style": {
+        "gradient": [
+          "#7DF9FF",
+          "#F5F9FF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Nature's Slacks",
+      "item": "minecraft:leather_leggings",
+      "flavor": [
+        "It's like wearing nothing at all."
+      ],
+      "style": {
+        "gradient": [
+          "#FFE205",
+          "#FF484B"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Pyromancer's Tights",
+      "item": "minecraft:leather_leggings",
+      "flavor": [
+        "Traditional pyro leg wear",
+        "that symbolizes fire mastery."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Syba's Jaguar Leggings",
+      "item": "minecraft:leather_leggings",
+      "flavor": [
+        "Even speed demons had hard time",
+        "catching up to Syba's swift bhops."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ghastchan Axe",
+      "item": "minecraft:netherite_axe",
+      "flavor": [
+        "Summon ghast chan"
+      ],
+      "style": {
+        "gradient": [
+          "#618875",
+          "#CDACED"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 13
+    },
+    {
+      "name": "Mana Spirit Axe",
+      "item": "minecraft:netherite_axe",
+      "flavor": [
+        "Summons a benevolent Mana Spirit",
+        "that adds a chance to free cast spells",
+        "as long as it is alive.",
+        "Believing itself to be better than all violent creatures,",
+        "it does not cause harm directly,",
+        "but the wizards they often accompany",
+        "are still the #1 cause of natural disasters",
+        "accross the planes."
+      ],
+      "style": {
+        "gradient": [
+          "#129420",
+          "#E4F612"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 15
+    },
+    {
+      "name": "Merman's Mukluk",
+      "item": "minecraft:netherite_boots",
+      "flavor": [
+        "Tritons later became generic mermen."
+      ],
+      "style": {
+        "color": "red",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Necromancer's Boots",
+      "item": "minecraft:netherite_boots",
+      "flavor": [
+        "Footwear made by Satin himself.",
+        "The soles are filled with giant's blood."
+      ],
+      "style": {
+        "color": "green",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Necromancer's Chestplate",
+      "item": "minecraft:netherite_chestplate",
+      "flavor": [
+        "Compressed giant's carcass",
+        "that smells pretty good."
+      ],
+      "style": {
+        "color": "green",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ripper",
+      "item": "minecraft:netherite_hoe",
+      "flavor": [
+        "Special sickle for",
+        "extracting innards quickly."
+      ],
+      "style": {
+        "gradient": [
+          "#FC0366",
+          "#A75D7A"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Tornado Staff",
+      "item": "minecraft:netherite_hoe",
+      "flavor": [
+        "Found occuring naturally in Great Plains,",
+        "tornadoes are lesser known as",
+        "the Breath of Vayu, god of the winds.",
+        "Not all tornadoes occur from Vayu,",
+        "so it is not entirely correct",
+        "to blame the god every time one happens."
+      ],
+      "style": {
+        "gradient": [
+          "#129420",
+          "#EAF414"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true,
+      "sharpness": 15
+    },
+    {
+      "name": "Fire Spiral Shovel",
+      "item": "minecraft:netherite_shovel",
+      "flavor": [
+        "Unleashes a fire essence from hell."
+      ],
+      "style": {
+        "gradient": [
+          "#FF6000",
+          "#FFE833"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 22
+    },
+    {
+      "name": "Daemon Sword",
+      "item": "minecraft:netherite_sword",
+      "flavor": [
+        "Embedded with three blasphemous",
+        "gems, hearts of Greater Daemons who",
+        "could use all magic freely.",
+        "Their hearts only cast darkness, however."
+      ],
+      "style": {
+        "gradient": [
+          "#7A11FF",
+          "#227470"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 13
+    },
+    {
+      "name": "Occultist's Blade",
+      "item": "minecraft:netherite_sword",
+      "flavor": [
+        "A fine blade made of wither bone."
+      ],
+      "style": {
+        "gradient": [
+          "#17D1C2",
+          "#7731C2"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Sheep's Ass Shear",
+      "item": "minecraft:shears",
+      "flavor": [
+        "Surprising amount of wool is left on",
+        "the spot most barbers refuse to shave."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Shadowmancer's Skull",
+      "item": "minecraft:skeleton_skull",
+      "flavor": [
+        "Skull of an old fallen necromancer,",
+        "big enough to fit human head."
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Giant Snowball",
+      "item": "minecraft:snowball",
+      "flavor": [
+        "Devised by a sadistic wizard",
+        "to torture his enemies."
+      ],
+      "style": {
+        "gradient": [
+          "#7583FF",
+          "#D0EBFF"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Necromancer's Mask",
+      "item": "minecraft:wither_skeleton_skull",
+      "flavor": [
+        "Originally worn by Steve The Eternal."
+      ],
+      "style": {
+        "color": "green",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Isfet Nebu",
+      "item": "minecraft:wooden_shovel",
+      "flavor": [
+        "The runed scepter of Apophis, god of Chaos.",
+        "Uses the energy of a Dragon Egg",
+        "to summon a meteor storm by a celestial portal.",
+        "It is said Meteor Storms come from the edge",
+        "of a nearby star that has been violently consuming",
+        "its solar system for at least 1337 years.",
+        "The remains of an ancient civilization",
+        "might be falling from the sky."
+      ],
+      "style": {
+        "gradient": [
+          "#00FF21",
+          "#C6FF06"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "sharpness": 20
+    },
+    {
+      "name": "Elder Branch",
+      "item": "minecraft:wooden_sword",
+      "flavor": [
+        "A twig which contains the",
+        "mysterious power of eternity"
+      ],
+      "style": {
+        "color": "red",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Aku bani",
+      "flavor": [
+        "Made out of evil bunnies."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Alchemist's Lab Boots",
+      "flavor": [
+        "Contrary to popular belief, they don't protect you from acid."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Alchemist's Lab Hat",
+      "flavor": [
+        "It is said that wearing this hat increases your IQ by at least 20 points."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Alchemist's Lab Pants",
+      "flavor": [
+        "An ancient alchemist was awarded a noble prize inventing a dye so white."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Alchemist's Wings",
+      "flavor": [
+        "Developed by alchemist guild to aid with nether research."
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Angry broom",
+      "flavor": [
+        "Sweeps bugs like flies"
+      ],
+      "sharpness": 25,
+      "status": "wiki"
+    },
+    {
+      "name": "Aro",
+      "flavor": [
+        "Bow of unknown origin"
+      ],
+      "type": "bow",
+      "status": "wiki"
+    },
+    {
+      "name": "Assassin's Blade",
+      "flavor": [
+        "Used to belong to a masked assasssin, who suffocated in a wall under mysterious circumstances."
+      ],
+      "sharpness": 17,
+      "status": "wiki"
+    },
+    {
+      "name": "Assassin's Boots",
+      "flavor": [
+        "Dagger are hidden in these!"
+      ],
+      "status": "wiki"
+    },
+    {
+      "name": "Assassin's Hat",
+      "flavor": [
+        "Very tight hat, squeezing the brain made assassins think faster."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Assassin's Shirt",
+      "flavor": [
+        "Sharp objects in secret compartments."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Assassin's Tights",
+      "flavor": [
+        "Pockets stuffed with alchemic substances."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Azurite Helm",
+      "flavor": [
+        "We'll not be lured into the darkness so easily."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Bab-ilu",
+      "flavor": [
+        "The things we can't obtain are the most beautiful ones. -Gilgamesh"
+      ],
+      "sharpness": 37,
+      "status": "wiki"
+    },
+    {
+      "name": "Bandit's Bow",
+      "flavor": [
+        "Standard issue Bandit bow. Stolen from a hunter village."
+      ],
+      "type": "bow",
+      "status": "wiki"
+    },
+    {
+      "name": "Bandit's Glider",
+      "flavor": [
+        "Goes well with the Jump Rod!"
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Brynhild",
+      "flavor": [
+        "An Armor which is made of a metal unknown in overworld."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Builder's Hat",
+      "flavor": [
+        "Enchanted with the lifeforce of spectral turtle dragons."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Cursed Dragontooth",
+      "flavor": [
+        "A cursed blade forged out of dragon's tooth, known to cause insanity to whoever may wield it."
+      ],
+      "type": "sword",
+      "sharpness": 15,
+      "status": "wiki"
+    },
+    {
+      "name": "Devilfish",
+      "flavor": [
+        "Contains the power of over 9000 fish! Caught by: CntyMcShttr Player Kills: 1027"
+      ],
+      "sharpness": 24,
+      "status": "wiki"
+    },
+    {
+      "name": "Diabolus Armor",
+      "flavor": [
+        "The small Satan left and the great Satan came."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Dimension Anomaly Tools",
+      "flavor": [
+        "Creates endermatic anomaly seething with disdain for teleportation, warping the very fabric of space to punish those who dare to blink through dimensions."
+      ],
+      "status": "wiki"
+    },
+    {
+      "name": "Dragon Knight's Boots",
+      "flavor": [
+        "These were used to tread across a million dead goblins."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Dragon Knight's Shield",
+      "flavor": [
+        "Crafted from top quality wood, iron and dragon scales, at Minewind blacksmite."
+      ],
+      "type": "shield",
+      "status": "wiki"
+    },
+    {
+      "name": "Dragon Knight's Sword",
+      "flavor": [
+        "A grand dragon's sword snatched for adventure. Right click to unleash it's power"
+      ],
+      "type": "sword",
+      "sharpness": 9,
+      "status": "wiki"
+    },
+    {
+      "name": "Dragon Knight's Wings",
+      "flavor": [
+        "The knight thought he defeated the dragon, but the serpent took him for a vessel."
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Edge Lords Wings",
+      "flavor": [
+        "Razor blade shaped, very hip."
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Empeiria",
+      "flavor": [
+        "Strength lies not in defence but in attack."
+      ],
+      "sharpness": 29,
+      "status": "wiki"
+    },
+    {
+      "name": "Exploding Seenk",
+      "flavor": [
+        "A dangerous contraption made by a crazed engineer. Straps live explosives to every arrow."
+      ],
+      "type": "crossbow",
+      "status": "wiki"
+    },
+    {
+      "name": "Fragarach",
+      "flavor": [
+        "That Which Comes Later Cuts First"
+      ],
+      "sharpness": 20,
+      "status": "wiki"
+    },
+    {
+      "name": "Frosty Boots",
+      "flavor": [
+        "Mysterious shoes from the north pole."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Gravitas",
+      "flavor": [
+        "Gravity explains the motions of the planets, but it cannot explain who sets the planets in motion."
+      ],
+      "type": "bow",
+      "status": "wiki"
+    },
+    {
+      "name": "Grug's Boots",
+      "flavor": [
+        "Grug like to go fast and also hard."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Hawkwood's Chain Helm",
+      "flavor": [
+        "This helm makes you admire the power of dragons. You're not quite sure why."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Hermes Boots",
+      "flavor": [
+        "Boots of the trickster god who prized cleverness and amusement above all else."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Holy Cross",
+      "flavor": [
+        "Unholy things have been done to it."
+      ],
+      "sharpness": 7,
+      "status": "wiki"
+    },
+    {
+      "name": "Honey Master Boots",
+      "flavor": [
+        "Amber boots perpetually covered in Bee Juice. The Honey Master could not know smelling this good was both a blessing and a curse."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Honey Master Head",
+      "flavor": [
+        "The First Honey Master believed he was one of the bees. To become a Honey Amber was the greatest honor a Queen could bestow."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Honey Master Leggings",
+      "flavor": [
+        "Amber leggings woven from the intoxicating blood of a Queen Bee."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Hunter's Bow",
+      "flavor": [
+        "Top quality bow from the hunter's village."
+      ],
+      "type": "bow",
+      "status": "wiki"
+    },
+    {
+      "name": "Hunter's Elytra",
+      "flavor": [
+        "Passed down to the best marksmen from the hunters village."
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Hunter's Pupil Hat",
+      "flavor": [
+        "Made of the pupils first prey, a supple squarrel. This hat holds a secret skill of the hunter's village. Activate it to become a houndmaster."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Hunter's Pupil Pants",
+      "flavor": [
+        "Comfy fur from mountain goat. Unlock the hidden power of these pants! Mysterious hunter skill awaits. Master it to unleash improved mobility."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Hunter's Pupil Shirt",
+      "flavor": [
+        "Skin used to belong to an extinct creature."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Infirmity",
+      "flavor": [
+        "A bow imbued with the sacred essence of death."
+      ],
+      "type": "bow",
+      "status": "wiki"
+    },
+    {
+      "name": "Kiga",
+      "flavor": [
+        "They that die by famine die by inches"
+      ],
+      "sharpness": 25,
+      "status": "wiki"
+    },
+    {
+      "name": "Lightbringer",
+      "flavor": [
+        "Finders Keeper"
+      ],
+      "sharpness": 30,
+      "status": "wiki"
+    },
+    {
+      "name": "Lightning God Glider",
+      "flavor": [
+        "Zeus did not need these to fly, but it made him feel like a bird and a mortal."
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Lightning God Robe",
+      "flavor": [
+        "Zeus prefers to bare his chest whenever possible, so he traded this modest-leaning heavenly robe to Herobrine for an unknown favor."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Lightning God Sandals",
+      "flavor": [
+        "Favorite heavenwear of Zeus that draw all focus onto his lightning-hard thighs."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Lightning Head Rod",
+      "flavor": [
+        "Nothing refreshes the memory like 300 million Volts to the brain. Plugs into your Neuralink socket, enhancing your feel for lightning."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Mage Apprentice Boots",
+      "flavor": [
+        "The best shoes an apprentice mage could afford."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Mage Apprentice Hat",
+      "flavor": [
+        "Keeps you warm at night, and also contains fire magic."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Mage Apprentice Tights",
+      "flavor": [
+        "Self cleaning magical pants, always smell like mana."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Mage Apprentice Tunic",
+      "flavor": [
+        "Gifted by a great wizard upon accepting an apprentice."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Mani's Blessing",
+      "flavor": [
+        "A helm that is said to have been worn by the god of the moon"
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Mask of Aurelian",
+      "flavor": [
+        "A Golden Helmet once worn by the Restorer of the World during his blazing Conquests."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Misery",
+      "flavor": [
+        "No One Here Gets Out Alive"
+      ],
+      "sharpness": 30,
+      "status": "wiki"
+    },
+    {
+      "name": "Nature's Elytra",
+      "flavor": [
+        "Bestowed upon a very kind druid by the spirits."
+      ],
+      "type": "elytra",
+      "status": "wiki"
+    },
+    {
+      "name": "Nature's Garb",
+      "flavor": [
+        "A living armor that was woven by trees themselves!"
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Nature's Headress",
+      "flavor": [
+        "Made of leaves but provides a connection with nature."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Necromancer's Leggings",
+      "flavor": [
+        "Used in countless wars against Ydahs Tar's tribe."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    },
+    {
+      "name": "Orc Fork",
+      "flavor": [
+        "A common orc sport is to see how much you can destroy with a single throw."
+      ],
+      "sharpness": 10,
+      "status": "wiki"
+    },
+    {
+      "name": "Prison Shank",
+      "flavor": [
+        "Sharp as fuck"
+      ],
+      "sharpness": 25,
+      "status": "wiki"
+    },
+    {
+      "name": "Puchita",
+      "flavor": [
+        "Contains the soul of a demon thirsty for blood sauce. Forms a vampiric link with her master."
+      ],
+      "sharpness": 7,
+      "status": "wiki"
+    },
+    {
+      "name": "Queen's Whip",
+      "flavor": [
+        "Causes severe pain"
+      ],
+      "sharpness": 24,
+      "status": "wiki"
+    },
+    {
+      "name": "Rage of Zeus",
+      "flavor": [
+        "Devises by an adolescent Zeus in his angry years, for everything was scorched anyway. Lightning does more damage to wet things."
+      ],
+      "sharpness": 20,
+      "status": "wiki"
+    },
+    {
+      "name": "Stick of Truth",
+      "flavor": [
+        "Doesn't do anything"
+      ],
+      "sharpness": 30,
+      "status": "wiki"
+    },
+    {
+      "name": "Stone Dagger",
+      "flavor": [
+        "A heavy long dagger, popular amongst Minewind hunters."
+      ],
+      "type": "sword",
+      "sharpness": 7,
+      "status": "wiki"
+    },
+    {
+      "name": "Syba's Pet Turtle",
+      "flavor": [
+        "When his master was in danger, Syba's Great Turtle heroically turned himself into a magical helmet."
+      ],
+      "type": "helmet",
+      "status": "wiki"
+    },
+    {
+      "name": "Syba's Satan Shoes",
+      "flavor": [
+        "Syba's life force can still be felt, trapped in these boots."
+      ],
+      "type": "boots",
+      "status": "wiki"
+    },
+    {
+      "name": "Syba's Touch",
+      "flavor": [
+        "So gentle, it can even pick up a spawner sometimes."
+      ],
+      "status": "wiki"
+    },
+    {
+      "name": "Syba's Training Sword",
+      "flavor": [
+        "Syba holds deeply the spirit of sharing."
+      ],
+      "type": "sword",
+      "sharpness": 31,
+      "status": "wiki"
+    },
+    {
+      "name": "Telekinetic Multipass",
+      "flavor": [
+        "One Tool that lets you pass through anything. Also allows you to place blocks telepathically from your other hand."
+      ],
+      "sharpness": 11,
+      "status": "wiki"
+    },
+    {
+      "name": "Untouchable Chest",
+      "flavor": [
+        "Stylish Chest, makes the wearer irresistibly charming, causing enemies to hesitate and feel guilty for attacking such a mesmerizing figure."
+      ],
+      "type": "chestplate",
+      "status": "wiki"
+    },
+    {
+      "name": "Untouchable Leggings",
+      "flavor": [
+        "Stylish Leggings, makes the wearer irresistibly charming, causing enemies to hesitate and feel guilty for attacking such a mesmerizing figure."
+      ],
+      "type": "leggings",
+      "status": "wiki"
+    }
+  ],
+  "fallback": {
+    "style": {
+      "color": "red",
+      "bold": true
+    },
+    "only_when": [
+      "renamed",
+      "gear type",
+      "has flavor lines",
+      "no dupe police lore"
+    ],
+    "gear_types": [
+      "sword",
+      "axe",
+      "pickaxe",
+      "shovel",
+      "hoe",
+      "bow",
+      "crossbow",
+      "trident",
+      "helmet",
+      "chestplate",
+      "leggings",
+      "boots",
+      "elytra",
+      "head",
+      "skull",
+      "shears",
+      "rod",
+      "snowball"
+    ]
+  }
+}

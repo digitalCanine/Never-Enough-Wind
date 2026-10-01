@@ -2,7 +2,9 @@
   "schema_version": 1,
   "notes": [
     "match on hashed_seed + dimension",
-    "seeds are strings, too big for some json readers"
+    "seeds are strings, too big for some json readers",
+    "assumed = not visited, same seed as the rest of that subserver",
+    "unknown seed: hide"
   ],
   "worlds": [
     {
@@ -12,10 +14,34 @@
       "status": "confirmed"
     },
     {
+      "name": "Spawn",
+      "hashed_seed": "-6476551909250050175",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Spawn",
+      "hashed_seed": "-6476551909250050175",
+      "dimension": "minecraft:the_end",
+      "status": "assumed"
+    },
+    {
       "name": "Aqua",
       "hashed_seed": "-582343119929597910",
       "dimension": "minecraft:overworld",
       "status": "confirmed"
+    },
+    {
+      "name": "Aqua",
+      "hashed_seed": "-582343119929597910",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Aqua",
+      "hashed_seed": "-582343119929597910",
+      "dimension": "minecraft:the_end",
+      "status": "assumed"
     },
     {
       "name": "Moon",
@@ -24,15 +50,88 @@
       "status": "confirmed"
     },
     {
+      "name": "Moon",
+      "hashed_seed": "5461151895090118877",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Moon",
+      "hashed_seed": "5461151895090118877",
+      "dimension": "minecraft:the_end",
+      "status": "assumed"
+    },
+    {
       "name": "Sun",
       "hashed_seed": "-1913433296502452619",
       "dimension": "minecraft:overworld",
       "status": "confirmed"
     },
     {
+      "name": "Sun",
+      "hashed_seed": "-1913433296502452619",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Sun",
+      "hashed_seed": "-1913433296502452619",
+      "dimension": "minecraft:the_end",
+      "status": "assumed"
+    },
+    {
       "name": "Terra",
       "hashed_seed": "-2393413464488010571",
       "dimension": "minecraft:overworld",
+      "status": "confirmed"
+    },
+    {
+      "name": "Terra",
+      "hashed_seed": "-2393413464488010571",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Terra",
+      "hashed_seed": "-2393413464488010571",
+      "dimension": "minecraft:the_end",
+      "status": "assumed"
+    },
+    {
+      "name": "Era",
+      "hashed_seed": "3449406114464094276",
+      "dimension": "minecraft:overworld",
+      "status": "assumed"
+    },
+    {
+      "name": "Era",
+      "hashed_seed": "3449406114464094276",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Era",
+      "hashed_seed": "3449406114464094276",
+      "dimension": "minecraft:the_end",
+      "status": "confirmed"
+    },
+    {
+      "name": "Arch",
+      "hashed_seed": "-2236854711765881049",
+      "dimension": "minecraft:overworld",
+      "status": "confirmed",
+      "note": "same seed as arch end"
+    },
+    {
+      "name": "Arch",
+      "hashed_seed": "-2236854711765881049",
+      "dimension": "minecraft:the_nether",
+      "status": "assumed"
+    },
+    {
+      "name": "Arch",
+      "hashed_seed": "-2236854711765881049",
+      "dimension": "minecraft:the_end",
       "status": "confirmed"
     },
     {
@@ -45,7 +144,7 @@
         269
       ],
       "status": "unsure",
-      "note": "same seed as azure, spawn point differs"
+      "note": "same seed as azure"
     },
     {
       "name": "Azure",
@@ -57,43 +156,61 @@
         269
       ],
       "status": "unsure",
-      "note": "same seed as throne, spawn point differs"
+      "note": "same seed as throne"
     },
     {
-      "name": "Era",
-      "hashed_seed": "3449406114464094276",
-      "dimension": "minecraft:the_end",
-      "status": "confirmed"
+      "name": "Throne",
+      "hashed_seed": "3685739608433952248",
+      "dimension": "minecraft:the_nether",
+      "spawn_point": [
+        0,
+        64,
+        0
+      ],
+      "status": "unsure",
+      "note": "seen by portal"
     },
     {
-      "name": "Arch",
-      "hashed_seed": "-2236854711765881049",
-      "dimension": "minecraft:the_end",
-      "status": "confirmed"
-    }
-  ],
-  "if_unsure": "show both names",
-  "unlabeled": [
+      "name": "Azure",
+      "hashed_seed": "3685739608433952248",
+      "dimension": "minecraft:the_nether",
+      "spawn_point": [
+        -10,
+        64,
+        269
+      ],
+      "status": "unsure",
+      "note": "seen by server switch, might be the switch not the world"
+    },
     {
+      "name": "Throne",
       "hashed_seed": "3685739608433952248",
       "dimension": "minecraft:the_end",
-      "note": "on the spawn server"
+      "spawn_point": [
+        0,
+        50,
+        0
+      ],
+      "status": "unsure"
     },
+    {
+      "name": "Azure",
+      "hashed_seed": "3685739608433952248",
+      "dimension": "minecraft:the_end",
+      "status": "unsure"
+    }
+  ],
+  "if_unsure": "throne only on spawn -11 64 269, else azure",
+  "unlabeled": [
     {
       "hashed_seed": "-6276508145740963404",
       "dimension": "minecraft:enc",
-      "note": "custom dimension, unknown"
-    },
-    {
-      "hashed_seed": "3685739608433952248",
-      "dimension": "minecraft:the_nether",
-      "note": "same default seed again"
+      "note": "custom dimension, unknown, skipped"
     }
   ],
-  "spawn_server_hint": "only server listing pentachoron and the abyss dimensions, 400 max players",
+  "spawn_server_hint": "lists pentachoron and abyss, 400 max players",
   "todo": [
-    "overworld and nether of era and arch",
-    "the nether and end of the rest"
+    "throne vs azure nether spawn, arriving the other way"
   ],
   "dimensions": {
     "minecraft:abyss_minewind": "abyssal event",

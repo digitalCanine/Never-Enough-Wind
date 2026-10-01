@@ -204,6 +204,10 @@ for k, p in prices.items():
         report['in prices, not in explanations'].append(p['name'])
         base[tgt] = {'name': p['name']}
     base[tgt]['_price'] = p
+# dimensional buffs sheet: descriptions sit one row too high from frost armor down
+if {'frostarmor', 'heightenedsenses', 'reflectmeleeonblock'} <= cheat.keys():
+    cheat['heightenedsenses']['details'], cheat['reflectmeleeonblock']['details'], cheat['frostarmor']['details'] = \
+        cheat['frostarmor']['details'], cheat['heightenedsenses']['details'], None
 # same essence, different wording in the cheat sheet
 CHEAT_SAME = {'reflectmeeleonblock': 'reflectonmeleeblock', 'increasedhealdamagepotion': 'increasedhealharmpotion'}
 for a, b in CHEAT_SAME.items():
@@ -372,6 +376,9 @@ json.dump({
     'keys': keys,
     'block_notes': notes + ['bluename infinity blocks can be worth more'],
     'blocks': blocks,
+    # deggs to go up to that level, sum from current + 1 to target
+    'sharpen_cost': dict(zip(range(1, 31), [1, 2, 3, 4, 6, 7, 9, 11, 13, 16, 18, 21, 23, 27, 31, 34, 38, 42, 47, 52,
+                                            57, 62, 68, 74, 80, 87, 94, 100, 108, 116])),
 }, open(f'{OUT}/prices.json', 'w'), ensure_ascii=False, indent=1)
 
 json.dump(report, open(os.path.join(OUT, '..', 'tools', 'data', 'last_report.json'), 'w'), ensure_ascii=False, indent=1)

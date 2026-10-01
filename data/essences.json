@@ -1861,7 +1861,6 @@
    "levels": "1-4",
    "max_level": 4,
    "description": "Inflicts freezing to enemies upon taking damage",
-   "details": "Grants the ability to see Invisible people up to 5 Blocks per Level away",
    "requirements": [
     "Melee Damage Received"
    ],
@@ -2205,7 +2204,7 @@
    "max_level": 4,
    "global_cap": 4,
    "description": "Reveals invisible players",
-   "details": "Reflects Damage on Melee Block",
+   "details": "Grants the ability to see Invisible people up to 5 Blocks per Level away",
    "item_type": "Any Item(?)",
    "price": {
     "1": "B",
@@ -3969,6 +3968,7 @@
     "weapon_tool"
    ],
    "description": "Reflects melee damage when blocking with a shield",
+   "details": "Reflects Damage on Melee Block",
    "requirements": [
     "Physical Damage Received"
    ],
