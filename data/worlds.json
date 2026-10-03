@@ -214,6 +214,20 @@
       "hashed_seed": "3685739608433952248",
       "dimension": "minecraft:the_end",
       "status": "unsure"
+    },
+    {
+      "name": "Restarting",
+      "hashed_seed": "5477507219007494076",
+      "dimension": "minecraft:overworld",
+      "spawn_point": [
+        56,
+        64,
+        120
+      ],
+      "icon": "spawn",
+      "server": "Limbo",
+      "status": "confirmed",
+      "note": "waiting room while a subserver restarts. only lists the overworld, 400 max players"
     }
   ],
   "if_unsure": "throne only on spawn -11 64 269, else azure",
@@ -230,6 +244,7 @@
     "minecraft:abyss_minewind_city": "abyssal event",
     "minecraft:world_city": "probably chillspawn, listed on every subserver",
     "minecraft:enc": "chillspawn",
-    "minecraft:pentachoron": "unknown"
+    "minecraft:pentachoron": "unknown",
+    "minecraft:lab": "labyrinth event, listed on the spawn server"
   }
 }

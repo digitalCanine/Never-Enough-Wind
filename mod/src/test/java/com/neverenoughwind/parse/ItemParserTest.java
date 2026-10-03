@@ -142,6 +142,29 @@ class ItemParserTest {
     }
 
     @Test
+    void spellbooks() {
+        ItemInfo bomb = parser.parse(item("minecraft:book", "Ice Bomb Spellbook", true,
+                "Turns ice into proximity ice.", "", "- Accumulates 1 ice soul", "- Consumes 1 ice soul"));
+        assertEquals("magic", bomb.category());
+        assertEquals("Ice Bomb", bomb.detail());
+        assertEquals("Ice Bomb", bomb.essences().get(0).essence().name());
+        assertEquals(2, bomb.souls().size());
+        // the book is singular, the essence plural
+        ItemInfo rabbit = parser.parse(item("minecraft:book", "Rabid Rabbit Spellbook", true,
+                "x", "", "- Accumulates 1 Nature Soul", "- Consumes 1 Nature Soul"));
+        assertEquals("Rabid Rabbits", rabbit.essences().get(0).essence().name());
+        // no essence version in the sheets: still a spellbook, just no explanation
+        ItemInfo firefly = parser.parse(item("minecraft:book", "Firefly Spellbook", true,
+                "x", "", "- Accumulates 1 fire soul", "- Consumes 1 fire soul"));
+        assertEquals("magic", firefly.category());
+        assertEquals("Firefly", firefly.detail());
+        assertTrue(firefly.essences().isEmpty());
+        // a non-spell essence with the same name doesnt count
+        ItemInfo fake = parser.parse(item("minecraft:book", "Strength Spellbook", true, "x", "", "- Consumes 1 fire soul"));
+        assertTrue(fake.essences().isEmpty());
+    }
+
+    @Test
     void roman() {
         assertEquals(30, Roman.toInt("XXX"));
         assertEquals(24, Roman.toInt("XXIV"));

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "contributors": [
+    {
+      "name": "21943second",
+      "for": "DebugMenu source code and price charts"
+    },
+    {
+      "name": "dove",
+      "for": "Windchat source code"
+    },
+    {
+      "name": "Collector773",
+      "for": "EasyWind source code"
+    }
+  ],
+  "special_thanks": [
+    {
+      "name": "ShiningSteel_",
+      "for": "data collection for the debuff timers"
+    }
+  ],
+  "essence_sheet": [
+    {
+      "name": "tatatot234",
+      "for": "made the essence cheat sheet"
+    },
+    {
+      "name": "ChristieTwist",
+      "for": "feedback and help on entries"
+    },
+    {
+      "name": "Saystomabel",
+      "for": "feedback"
+    },
+    {
+      "name": "dove",
+      "for": "first draft"
+    },
+    {
+      "name": "Xaziss",
+      "for": "first draft"
+    },
+    {
+      "name": "vkna",
+      "for": "listed in the sheet's credits"
+    },
+    {
+      "name": "Falkryth",
+      "for": "listed in the sheet's credits"
+    }
+  ]
+}

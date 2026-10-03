@@ -2,6 +2,7 @@ package com.neverenoughwind.parse;
 
 import com.neverenoughwind.dao.Data;
 import com.neverenoughwind.model.AuctionItem;
+import com.neverenoughwind.model.Essence;
 import com.neverenoughwind.model.GearRules;
 import com.neverenoughwind.model.ItemType;
 import com.neverenoughwind.model.KnownItem;
@@ -41,7 +42,14 @@ public final class ItemParser {
         for (ItemType type : data.itemRules().types()) {
             String detail = matchType(type, item);
             if (detail == null) continue;
-            List<EssenceEntry> essences = type.id().equals("essence") ? bookEssence(lore) : List.of();
+            List<EssenceEntry> essences = List.of();
+            if (type.id().equals("essence")) essences = bookEssence(lore);
+            if (type.id().equals("magic")) {
+                // the spell's name is the book's name. most spells also exist as an essence with an explanation
+                detail = item.name().replaceFirst("\\s*Spellbook$", "").trim();
+                Essence spell = spellNamed(detail);
+                if (spell != null) essences = List.of(new EssenceEntry(spell.name(), 0, spell, null, null));
+            }
             return new ItemInfo(type.id(), detail, essences, souls(lore), List.of(), null, false, null, null);
         }
 
@@ -126,6 +134,15 @@ public final class ItemParser {
     private static String firstGroup(Matcher m) {
         if (m == null || m.groupCount() < 1) return null;
         return m.group(1);
+    }
+
+    // null when the sheets have no spell by that name. "Rabid Rabbit" the book is "Rabid Rabbits" the essence
+    private Essence spellNamed(String name) {
+        for (String candidate : new String[]{name, name + "s"}) {
+            Essence e = data.essences().byName(candidate).orElse(null);
+            if (e != null && "spell".equals(e.kind())) return e;
+        }
+        return null;
     }
 
     // essence books: the essence is the 4th lore line, triggers and effects further down

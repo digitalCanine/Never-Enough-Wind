@@ -117,8 +117,11 @@ public final class SidePanel {
         if (info.isEmpty() && dmg == null) return out;
         PriceDao prices = NeverEnoughWind.data().prices();
 
+        if ("magic".equals(info.category())) spellRows(out, info);
+
         int min = 0, max = 0, unpriced = 0;
-        for (EssenceEntry e : info.essences()) {
+        // spellbooks got their own lines above
+        for (EssenceEntry e : "magic".equals(info.category()) ? List.<EssenceEntry>of() : info.essences()) {
             String title = e.level() > 0 ? e.name() + " " + Roman.of(e.level()) : e.name();
             Text price = null;
             if (e.essence() != null) {
@@ -150,6 +153,15 @@ public final class SidePanel {
                 String atLevel = e.essence().levelText().get(String.valueOf(e.level()));
                 if (atLevel != null) out.add(Row.of(Text.literal(atLevel).formatted(Formatting.GREEN)));
                 else if (e.essence().details() != null) out.add(Row.of(Text.literal(e.essence().details()).formatted(Formatting.DARK_GRAY)));
+            }
+        }
+        // books only: which key the essence comes out of
+        if ("essence".equals(info.category())) {
+            for (EssenceEntry e : info.essences()) {
+                if (e.essence() == null || e.essence().key() == null) continue;
+                String key = e.essence().key();
+                key = Character.toUpperCase(key.charAt(0)) + key.substring(1) + " Midas Key";
+                out.add(new Row(Text.literal("drops from").formatted(Formatting.GRAY), Text.literal(key).formatted(Formatting.GREEN)));
             }
         }
         if ("gear".equals(info.category()) && !info.essences().isEmpty()) {
@@ -207,6 +219,24 @@ public final class SidePanel {
             debug(out, "essences", info.essences().size() + " parsed, " + unknown + " unknown");
         }
         return out;
+    }
+
+    // spell name, what it does when the data knows, and its soul cost
+    private static void spellRows(List<Row> out, ItemInfo info) {
+        if (info.detail() != null && !info.detail().isEmpty()) out.add(Row.of(Text.literal(info.detail()).formatted(Formatting.GOLD)));
+        for (EssenceEntry e : info.essences()) {
+            if (e.essence() != null && e.essence().description() != null) {
+                out.add(Row.of(Text.literal(e.essence().description()).formatted(Formatting.GRAY)));
+            }
+        }
+        List<String> parts = new ArrayList<>();
+        for (Soul s : info.souls()) {
+            if (s.consumes()) parts.add("costs " + s.count() + " " + s.type().toLowerCase(java.util.Locale.ROOT) + (s.count() == 1 ? " soul" : " souls"));
+        }
+        for (Soul s : info.souls()) {
+            if (!s.consumes()) parts.add("holds " + s.count() + " " + s.type().toLowerCase(java.util.Locale.ROOT) + (s.count() == 1 ? " soul" : " souls"));
+        }
+        if (!parts.isEmpty()) out.add(Row.of(Text.literal(String.join(", ", parts)).formatted(Formatting.GREEN)));
     }
 
     private static void debug(List<Row> out, String label, String value) {
