@@ -19,6 +19,8 @@ public final class PriceDao {
     private final Map<String, BlockPrice> blocks = new HashMap<>();
     private final Map<Integer, Integer> sharpenCost = new HashMap<>();
     private List<String> blockNotes = List.of();
+    // "slab" -> [20, 32]: blocks the chart only prices as a group
+    private final Map<String, int[]> blockGroups = new HashMap<>();
 
     public static PriceDao load() {
         PriceDao dao = new PriceDao();
@@ -40,6 +42,14 @@ public final class PriceDao {
             for (Map.Entry<String, JsonElement> e : sharpen.entrySet()) dao.sharpenCost.put(Integer.valueOf(e.getKey()), e.getValue().getAsInt());
         }
         dao.blockNotes = Json.strings(root, "block_notes");
+        JsonObject groups = root.getAsJsonObject("block_groups");
+        if (groups != null) {
+            for (Map.Entry<String, JsonElement> e : groups.entrySet()) {
+                if (e.getValue().isJsonArray() && e.getValue().getAsJsonArray().size() == 2) {
+                    dao.blockGroups.put(e.getKey(), new int[]{e.getValue().getAsJsonArray().get(0).getAsInt(), e.getValue().getAsJsonArray().get(1).getAsInt()});
+                }
+            }
+        }
         return dao;
     }
 
@@ -80,6 +90,15 @@ public final class PriceDao {
 
     public Optional<BlockPrice> block(String itemId) {
         return Optional.ofNullable(blocks.get(itemId));
+    }
+
+    // price text for an infinity block: its own tier, else its group's range, else empty
+    public Optional<String> infinityPrice(String itemId) {
+        Optional<PriceTier> tier = block(itemId).flatMap(b -> blockTier(b.tier()));
+        if (tier.isPresent()) return Optional.of(tier.get().letter() + " " + tier.get().text());
+        String end = itemId.substring(itemId.lastIndexOf('_') + 1);
+        int[] range = blockGroups.get(end);
+        return range == null ? Optional.empty() : Optional.of(range[0] + "d - " + range[1] + "d");
     }
 
     public List<String> blockNotes() {

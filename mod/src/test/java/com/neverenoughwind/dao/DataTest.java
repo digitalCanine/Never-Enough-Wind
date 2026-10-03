@@ -122,6 +122,14 @@ class DataTest {
         assertEquals("Midas Key", data.prices().key("").orElseThrow().name());
         assertEquals("Less than 1d", data.prices().key("Abyssal").orElseThrow().text());
         assertTrue(data.prices().key("Nonexistent").isEmpty());
+        // infinity blocks: own tier, else the group range, else nothing
+        assertEquals("B 2s", data.prices().infinityPrice("minecraft:oak_log").orElseThrow());
+        assertEquals("20d - 32d", data.prices().infinityPrice("minecraft:oak_slab").orElseThrow());
+        assertEquals("20d - 32d", data.prices().infinityPrice("minecraft:warped_stairs").orElseThrow());
+        assertEquals("25d - 32d", data.prices().infinityPrice("minecraft:cobblestone_wall").orElseThrow());
+        // fences count as walls
+        assertEquals("25d - 32d", data.prices().infinityPrice("minecraft:crimson_fence").orElseThrow());
+        assertTrue(data.prices().infinityPrice("minecraft:oak_door").isEmpty());
         assertEquals("2s", data.prices().blockTier(data.prices().block("minecraft:oak_log").orElseThrow().tier()).orElseThrow().text());
         assertEquals("B", data.prices().block("minecraft:oak_log").orElseThrow().tier());
         assertTrue(data.prices().block("minecraft:bedrock").isEmpty());

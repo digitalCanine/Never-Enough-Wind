@@ -128,9 +128,10 @@ public final class SidePanel {
                     new Row(Text.literal("Price").formatted(Formatting.YELLOW), Text.literal(k.text()).formatted(Formatting.WHITE))));
         }
         if ("infinite".equals(info.category()) && itemId != null) {
-            prices.block(itemId).flatMap(b -> prices.blockTier(b.tier())).ifPresent(t -> out.add(
-                    new Row(Text.literal("Price").formatted(Formatting.YELLOW),
-                            Text.literal(t.letter() + " ").formatted(Formatting.YELLOW).append(Text.literal(t.text()).formatted(Formatting.WHITE)))));
+            // not every block is in the chart, say so instead of showing nothing
+            String price = prices.infinityPrice(itemId).orElse(null);
+            out.add(new Row(Text.literal("Price").formatted(Formatting.YELLOW),
+                    Text.literal(price == null ? "No price known" : price).formatted(price == null ? Formatting.DARK_GRAY : Formatting.WHITE)));
         }
 
         int min = 0, max = 0, unpriced = 0;
