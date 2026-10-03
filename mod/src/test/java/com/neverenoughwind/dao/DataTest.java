@@ -127,8 +127,9 @@ class DataTest {
         assertEquals("20d - 32d", data.prices().infinityPrice("minecraft:oak_slab").orElseThrow());
         assertEquals("20d - 32d", data.prices().infinityPrice("minecraft:warped_stairs").orElseThrow());
         assertEquals("25d - 32d", data.prices().infinityPrice("minecraft:cobblestone_wall").orElseThrow());
-        // fences count as walls
+        // fences and gates count as walls
         assertEquals("25d - 32d", data.prices().infinityPrice("minecraft:crimson_fence").orElseThrow());
+        assertEquals("25d - 32d", data.prices().infinityPrice("minecraft:oak_fence_gate").orElseThrow());
         assertTrue(data.prices().infinityPrice("minecraft:oak_door").isEmpty());
         assertEquals("2s", data.prices().blockTier(data.prices().block("minecraft:oak_log").orElseThrow().tier()).orElseThrow().text());
         assertEquals("B", data.prices().block("minecraft:oak_log").orElseThrow().tier());

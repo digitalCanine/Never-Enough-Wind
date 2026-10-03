@@ -410,8 +410,8 @@ json.dump({
     'keys': keys,
     'block_notes': notes + ['bluename infinity blocks can be worth more'],
     'blocks': blocks,
-    # the chart prices these as a group, not one by one. deggs [min, max] by the end of the item id. fences count as walls
-    'block_groups': {'slab': [20, 32], 'stairs': [20, 32], 'wall': [25, 32], 'fence': [25, 32]},
+    # the chart prices these as a group, not one by one. deggs [min, max] by the end of the item id. fences and gates count as walls
+    'block_groups': {'slab': [20, 32], 'stairs': [20, 32], 'wall': [25, 32], 'fence': [25, 32], 'gate': [25, 32]},
     # deggs to go up to that level, sum from current + 1 to target
     'sharpen_cost': dict(zip(range(1, 31), [1, 2, 3, 4, 6, 7, 9, 11, 13, 16, 18, 21, 23, 27, 31, 34, 38, 42, 47, 52,
                                             57, 62, 68, 74, 80, 87, 94, 100, 108, 116])),
