@@ -16,6 +16,7 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.tooltip.TooltipComponent;
 import net.minecraft.client.gui.tooltip.TooltipPositioner;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
@@ -52,7 +53,7 @@ public final class SidePanel {
         ItemStack stack = hovered;
         hovered = null;
         try {
-            List<Row> rows = rows(Items.info(stack), Loadout.damage(stack));
+            List<Row> rows = rows(Items.info(stack), Loadout.damage(stack), Registries.ITEM.getId(stack.getItem()).toString());
             if (rows.isEmpty()) return;
 
             int w = 0, h = vanilla.size() == 1 ? -2 : 0;
@@ -111,13 +112,26 @@ public final class SidePanel {
         return out;
     }
 
-    static List<Row> rows(ItemInfo info, Loadout.Result dmg) {
+    static List<Row> rows(ItemInfo info, Loadout.Result dmg, String itemId) {
         List<Row> out = new ArrayList<>();
         // plain weapons still get a damage line
         if (info.isEmpty() && dmg == null) return out;
         PriceDao prices = NeverEnoughWind.data().prices();
 
         if ("magic".equals(info.category())) spellRows(out, info);
+        // currencies and other listed items: what its for, when the data says
+        NeverEnoughWind.data().itemRules().type(info.category()).ifPresent(type -> type.items().stream()
+                .filter(k -> k.use() != null && k.name().equals(info.detail())).findFirst()
+                .ifPresent(k -> out.add(Row.of(Text.literal(k.use()).formatted(Formatting.GRAY)))));
+        if ("keys".equals(info.category())) {
+            prices.key(info.detail()).ifPresent(k -> out.add(
+                    new Row(Text.literal("price").formatted(Formatting.YELLOW), Text.literal(k.text()).formatted(Formatting.WHITE))));
+        }
+        if ("infinite".equals(info.category()) && itemId != null) {
+            prices.block(itemId).flatMap(b -> prices.blockTier(b.tier())).ifPresent(t -> out.add(
+                    new Row(Text.literal("price").formatted(Formatting.YELLOW),
+                            Text.literal(t.letter() + " ").formatted(Formatting.YELLOW).append(Text.literal(t.text()).formatted(Formatting.WHITE)))));
+        }
 
         int min = 0, max = 0, unpriced = 0;
         // spellbooks got their own lines above

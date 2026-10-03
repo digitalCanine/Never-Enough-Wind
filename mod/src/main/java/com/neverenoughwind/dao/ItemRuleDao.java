@@ -40,7 +40,7 @@ public final class ItemRuleDao {
             List<KnownItem> items = new ArrayList<>();
             for (JsonObject k : Json.objects(t.get("items"))) {
                 items.add(new KnownItem(Json.str(k, "item"), Json.str(k, "name"), Json.str(k, "lore"),
-                        Json.str(k, "enchant"), Json.bool(k, "vanilla")));
+                        Json.str(k, "enchant"), Json.bool(k, "vanilla"), Json.str(k, "use")));
             }
             dao.types.put(e.getKey(), new ItemType(e.getKey(), List.copyOf(rules), List.copyOf(items)));
         }

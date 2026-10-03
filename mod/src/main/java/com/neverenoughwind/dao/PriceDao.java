@@ -66,11 +66,16 @@ public final class PriceDao {
         return letter == null ? Optional.empty() : essenceTier(letter);
     }
 
-    // "Tempest Key" in the chart, "Tempest Midas Key" on the item: pass the first word(s)
+    // keyName = what comes before "Midas Key" on the item ("Wizard's", "Abyssal"), empty for the plain key.
+    // the chart drops the 's ("Wizard Key") and uses one word ("Malphas Key" for "Malphas Building")
     public Optional<KeyPrice> key(String keyName) {
-        KeyPrice k = keys.get(Json.key(keyName));
-        if (k == null) k = keys.get(Json.key(keyName + " Key"));
-        return Optional.ofNullable(k);
+        String name = keyName == null || keyName.isBlank() ? "Midas" : keyName.trim();
+        String first = name.split(" ")[0];
+        for (String candidate : new String[]{name, name.replaceFirst("'s$", ""), first, first.replaceFirst("'s$", "")}) {
+            KeyPrice k = keys.get(Json.key(candidate + " Key"));
+            if (k != null) return Optional.of(k);
+        }
+        return Optional.empty();
     }
 
     public Optional<BlockPrice> block(String itemId) {

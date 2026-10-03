@@ -65,37 +65,44 @@
           "item": "minecraft:dragon_egg",
           "name": "Degg",
           "vanilla": true,
-          "note": "every dragon egg"
+          "note": "every dragon egg",
+          "use": "the main currency"
         },
         {
           "item": "minecraft:fire_charge",
           "name": "Ember",
-          "lore": "Fossilized dragon fire"
+          "lore": "Fossilized dragon fire",
+          "use": "4 embers for 1 degg at the Ember Exchange"
         },
         {
           "item": "minecraft:nether_star",
           "name": "Nether Star",
-          "vanilla": true
+          "vanilla": true,
+          "use": "buys spawn eggs at Lebenskaufmann"
         },
         {
           "item": "minecraft:sunflower",
           "name": "Minewind Gold Coin",
-          "enchant": "minecraft:sharpness"
+          "enchant": "minecraft:sharpness",
+          "use": "27 coins and a raw beef for 1 degg at Buggzzz"
         },
         {
           "item": "minecraft:glowstone_dust",
           "name": "Ancient Gold Powder",
-          "enchant": "minecraft:luck_of_the_sea"
+          "enchant": "minecraft:luck_of_the_sea",
+          "use": "buys things from the Powder Enthusiast"
         },
         {
           "item": "minecraft:iron_nugget",
           "name": "Star Remnant",
-          "lore": "An unidentified metal fragment."
+          "lore": "An unidentified metal fragment.",
+          "use": "2 for 1 nether star at Vaulto"
         },
         {
           "item": "minecraft:amethyst_shard",
           "name": "Shard of Midas",
-          "enchant": "minecraft:luck_of_the_sea"
+          "enchant": "minecraft:luck_of_the_sea",
+          "use": "trades with Shardi"
         }
       ]
     },
@@ -124,7 +131,8 @@
         {
           "item": "minecraft:cocoa_beans",
           "name": "Forbidden Cacao Beans",
-          "lore": "When it comes to chocolate,"
+          "lore": "When it comes to chocolate,",
+          "use": "no use anymore, the god anvil takes deggs now"
         },
         {
           "item": "minecraft:gray_dye",
@@ -139,27 +147,37 @@
         {
           "item": "minecraft:string",
           "name": "String of Sacrifice",
-          "lore": "Its holder will lose nothing"
+          "lore": "Its holder will lose nothing",
+          "use": "no use anymore, keep inventory is always on"
         },
         {
           "item": "minecraft:bone",
           "name": "Enderbone",
-          "lore": "A bone taken from an Enderman"
+          "lore": "A bone taken from an Enderman",
+          "use": "right click a player to see their inventory. 25 for 1 degg at Buggzzz"
         },
         {
           "item": "minecraft:spider_eye",
           "name": "Spider Eye of Resetting",
-          "lore": "Removes all policies."
+          "lore": "Removes all policies.",
+          "use": "eaten by the castle owner, removes all policies"
         },
         {
           "item": "minecraft:pumpkin_seeds",
           "name": "Victory Beans",
-          "lore": "These precious beans"
+          "lore": "These precious beans",
+          "use": "trades with the Elusive Bean Master"
         },
         {
           "item": "minecraft:cake",
           "name": "Cuik",
           "lore": "Unlike regular Cace, this"
+        },
+        {
+          "item": "minecraft:potion",
+          "name": "Level UP Potion",
+          "lore": "Gives 9001 EXP",
+          "use": "bought with Ancient Gold Powder at the Powder Enthusiast"
         }
       ]
     },

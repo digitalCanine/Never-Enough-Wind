@@ -112,6 +112,17 @@ class DataTest {
     @Test
     void keysAndBlocks() {
         assertEquals(288, data.prices().key("Tempest").orElseThrow().minDeggs());
+        // item names dont match the chart exactly
+        assertEquals("Wizard Key", data.prices().key("Wizard's").orElseThrow().name());
+        assertEquals("Giant Key", data.prices().key("Giant's").orElseThrow().name());
+        assertEquals("Summoner's Key", data.prices().key("Summoner's").orElseThrow().name());
+        assertEquals("Malphas Key", data.prices().key("Malphas Building").orElseThrow().name());
+        assertEquals("Legendary Key", data.prices().key("Legendary").orElseThrow().name());
+        // "Key of Midas" has nothing in front
+        assertEquals("Midas Key", data.prices().key("").orElseThrow().name());
+        assertEquals("Less than 1d", data.prices().key("Abyssal").orElseThrow().text());
+        assertTrue(data.prices().key("Nonexistent").isEmpty());
+        assertEquals("2s", data.prices().blockTier(data.prices().block("minecraft:oak_log").orElseThrow().tier()).orElseThrow().text());
         assertEquals("B", data.prices().block("minecraft:oak_log").orElseThrow().tier());
         assertTrue(data.prices().block("minecraft:bedrock").isEmpty());
     }
@@ -161,6 +172,10 @@ class DataTest {
         assertEquals("Abyssal", m.group("key"));
         assertTrue(key.lore().matcher("Opens midas chest").find());
         assertEquals(7, data.itemRules().type("currency").orElseThrow().items().size());
+        // every currency says what its for
+        assertTrue(data.itemRules().type("currency").orElseThrow().items().stream().allMatch(k -> k.use() != null));
+        assertEquals("2 for 1 nether star at Vaulto", data.itemRules().type("currency").orElseThrow().items().stream()
+                .filter(k -> k.name().equals("Star Remnant")).findFirst().orElseThrow().use());
         assertEquals(2, data.itemRules().type("glamour").orElseThrow().rules().size());
     }
 
