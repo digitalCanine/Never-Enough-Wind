@@ -228,7 +228,37 @@ ALSO_CALLED = {'Bee Aggression': ['Increased Bee Aggression'], 'Rabid Rabbits': 
 for x in EXTRA:
     base[norm(x['name'])] = {'name': x['name'], '_extra': x}
 
+# what one level actually does, only where a number is known. "0" = essence without levels
+ROMAN = ['', 'I', 'II', 'III', 'IV', 'V']
+LEVEL_TEXT = {
+    'Backstab': {str(n): f'+{0.8 * n:g} damage multiplier from behind' for n in (1, 2)},
+    'Life Steal': {'1': '0.5 hearts per full hit', '2': '1 heart per full hit'},
+    'Starve': {'1': '0.5 hunger per full hit'},
+    'Heightened Senses': {str(n): f'{5 * n} blocks' for n in (1, 2, 3, 4)},
+    'Untouchable': {str(n): f'Mining Fatigue {ROMAN[n]} on the attacker, about 4 s' for n in (1, 2, 3, 4)},
+    'Anti-Mage': {str(n): f'{10 * n}% less magic damage' for n in (1, 2, 3)},
+    'Absorption': {'1': 'bugged', '2': '2 absorption hearts every 4 s', '3': '4 absorption hearts every 4 s'},
+    'Sneak Fortification': {str(n): '1 absorption heart per second while sneaking, up to 6' for n in (1, 2)},
+    # measured in captures, the sheet says longer
+    'Wither': {'3': 'Wither III for about 3 s'},
+    'Poison': {'3': 'Poison III for about 2 s'},
+    'Cripple': {'3': 'Slowness III and Weakness III for 5 s'},
+    'Magic Disrupt': {'3': 'no spells for about 2.5 s'},
+    'Reduce Heal': {'0': 'healing halved'},
+}
+for soul in ('Beast', 'Blood', 'Dimension', 'Dragon', 'Fire', 'Ice', 'Nature', 'Orc', 'Shadow', 'Undead'):
+    LEVEL_TEXT[f'{soul} Soul'] = {str(n): f'+{n} {soul.lower()} soul{"s" if n > 1 else ""}' for n in (1, 2, 3)}
+# these give the vanilla effect at the same level
+for name, effect, top in (('Strength', 'Strength', 4), ('Jump', 'Jump Boost', 5), ('Speed', 'Speed', 5),
+                          ('Haste', 'Haste', 2), ('Regeneration', 'Regeneration', 3)):
+    LEVEL_TEXT[name] = {str(n): f'{effect} {ROMAN[n]}' for n in range(1, top + 1)}
+
+# melee damage essences. unknown = adds damage but nobody has the number, situational = only in some cases
+DAMAGE = {'Increased Melee Damage': 'unknown', 'Critical Plus': 'unknown', 'Healthy Strike': 'unknown', 'Bloodlust': 'unknown',
+          'Backstab': 'situational', 'Sage Slayer': 'situational', 'Arrow Strike': 'situational', 'Mounted Damage': 'situational'}
+
 essences = []
+used_level_text = set()
 for k, e in sorted(base.items(), key=lambda kv: kv[1]['name'].lower()):
     p, c = e.get('_price', {}), e.get('_cheat', {})
     lv = e.get('levels')
@@ -254,6 +284,8 @@ for k, e in sorted(base.items(), key=lambda kv: kv[1]['name'].lower()):
         'global_cap': c.get('global_cap'),
         'description': e.get('description'),
         'details': c.get('details'),
+        'level_text': LEVEL_TEXT.get(e['name']),
+        'damage': DAMAGE.get(e['name']),
         'requirements': c.get('requirements'),
         'effects': c.get('effects'),
         'item_type': c.get('item_type'),
@@ -266,8 +298,10 @@ for k, e in sorted(base.items(), key=lambda kv: kv[1]['name'].lower()):
     }
     if x.get('min_level_seen'):
         out['max_level'] = f"{x['min_level_seen']}+"
+    used_level_text.add(e['name'])
     essences.append({k2: v for k2, v in out.items() if v is not None})
 
+report['level text for an unknown essence'] = sorted(set(LEVEL_TEXT) - used_level_text)
 ids = collections.Counter(x['id'] for x in essences)
 report['duplicate ids'] = [i for i, n in ids.items() if n > 1]
 

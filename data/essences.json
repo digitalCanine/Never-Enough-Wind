@@ -100,6 +100,11 @@
    "global_cap": 3,
    "description": "Provides absorption effect over time",
    "details": "Adds [2|4] Absorption Hearts every 4 Seconds, only if you have none, level 1 bugged",
+   "level_text": {
+    "1": "bugged",
+    "2": "2 absorption hearts every 4 s",
+    "3": "4 absorption hearts every 4 s"
+   },
    "item_type": "Any",
    "price": {
     "1": "BB",
@@ -157,6 +162,11 @@
    "global_cap": 3,
    "description": "Reduces most magic damage taken",
    "details": "Greatly Reduces Magic Damage",
+   "level_text": {
+    "1": "10% less magic damage",
+    "2": "20% less magic damage",
+    "3": "30% less magic damage"
+   },
    "price": {
     "1": "CC",
     "2": "A",
@@ -196,6 +206,7 @@
    ],
    "description": "Increases melee damage based on how many arrows are stuck in a player",
    "details": "Deals more damage If the target has arrows stuck in their model",
+   "damage": "situational",
    "requirements": [
     "Melee"
    ],
@@ -252,6 +263,11 @@
    "global_cap": 2,
    "description": "Increases melee damage when dealt from behind an opponent",
    "details": ".8 Damage Multiplier per level (additive)",
+   "level_text": {
+    "1": "+0.8 damage multiplier from behind",
+    "2": "+1.6 damage multiplier from behind"
+   },
+   "damage": "situational",
    "requirements": [
     "Melee"
    ],
@@ -340,6 +356,11 @@
    "max_level": 3,
    "description": "Obtain an extra Beast soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 beast soul",
+    "2": "+2 beast souls",
+    "3": "+3 beast souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CCC",
@@ -610,6 +631,11 @@
    "max_level": 3,
    "description": "Obtain an extra Blood soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 blood soul",
+    "2": "+2 blood souls",
+    "3": "+3 blood souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CC",
@@ -669,6 +695,7 @@
     "weapon_tool"
    ],
    "description": "A flat increase in damage with a 5 second cooldown",
+   "damage": "unknown",
    "requirements": [
     "Melee",
     "Projectile"
@@ -817,6 +844,9 @@
    "global_cap": 3,
    "description": "Debuffs enemies with slowness and weakness",
    "details": "+2 s weakness and slowness'",
+   "level_text": {
+    "3": "Slowness III and Weakness III for 5 s"
+   },
    "requirements": [
     "Melee",
     "Projectile"
@@ -837,6 +867,7 @@
     "weapon_tool"
    ],
    "description": "Increases damage dealt whilst critting",
+   "damage": "unknown",
    "requirements": [
     "Melee",
     "Arrow"
@@ -1079,6 +1110,11 @@
    "max_level": 3,
    "description": "Obtain an extra Dimensional soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 dimension soul",
+    "2": "+2 dimension souls",
+    "3": "+3 dimension souls"
+   },
    "price": {
     "2": "CCC",
     "3": "BB"
@@ -1166,6 +1202,11 @@
    "max_level": 3,
    "description": "Obtain an extra Dragon soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 dragon soul",
+    "2": "+2 dragon souls",
+    "3": "+3 dragon souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CC",
@@ -1639,6 +1680,11 @@
    "max_level": 3,
    "description": "Obtain an extra fire soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 fire soul",
+    "2": "+2 fire souls",
+    "3": "+3 fire souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CC",
@@ -2073,6 +2119,10 @@
    "max_level": 2,
    "global_cap": 2,
    "description": "Receive the haste effect (increases mining and swinging speed)",
+   "level_text": {
+    "1": "Haste I",
+    "2": "Haste II"
+   },
    "item_type": "Any",
    "price": {
     "1": "B",
@@ -2164,6 +2214,7 @@
    "max_level": 1,
    "description": "Deals extra damage to opponents the more health the player has",
    "details": "Deals more damage if the Dealer is at full Life",
+   "damage": "unknown",
    "requirements": [
     "Melee"
    ],
@@ -2205,6 +2256,12 @@
    "global_cap": 4,
    "description": "Reveals invisible players",
    "details": "Grants the ability to see Invisible people up to 5 Blocks per Level away",
+   "level_text": {
+    "1": "5 blocks",
+    "2": "10 blocks",
+    "3": "15 blocks",
+    "4": "20 blocks"
+   },
    "item_type": "Any Item(?)",
    "price": {
     "1": "B",
@@ -2449,6 +2506,11 @@
    "max_level": 3,
    "description": "Obtain an extra Ice soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 ice soul",
+    "2": "+2 ice souls",
+    "3": "+3 ice souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CCC",
@@ -2768,6 +2830,7 @@
    "max_level": 3,
    "global_cap": 3,
    "description": "Increases melee damage dealt to a player or mob",
+   "damage": "unknown",
    "requirements": [
     "Melee"
    ],
@@ -2898,6 +2961,13 @@
    "max_level": 5,
    "global_cap": 10,
    "description": "Provides jump effect, increasing jump height",
+   "level_text": {
+    "1": "Jump Boost I",
+    "2": "Jump Boost II",
+    "3": "Jump Boost III",
+    "4": "Jump Boost IV",
+    "5": "Jump Boost V"
+   },
    "item_type": "Any",
    "price": {
     "1": "no ess form",
@@ -3103,6 +3173,10 @@
    "global_cap": 2,
    "description": "Provides a small heal when hitting opponents",
    "details": ".5 Hearts Per level per FULL hit",
+   "level_text": {
+    "1": "0.5 hearts per full hit",
+    "2": "1 heart per full hit"
+   },
    "requirements": [
     "Melee",
     "Projectile"
@@ -3202,6 +3276,9 @@
    "levels": "1-3",
    "max_level": 3,
    "description": "Blocks players and bosses from using most spells for a short period of time",
+   "level_text": {
+    "3": "no spells for about 2.5 s"
+   },
    "requirements": [
     "Melee",
     "Projectile"
@@ -3423,6 +3500,7 @@
    "levels": "1-2",
    "max_level": 2,
    "description": "Increases damage whilst mounted",
+   "damage": "situational",
    "requirements": [
     "Melee",
     "Projectile"
@@ -3513,6 +3591,11 @@
    "max_level": 3,
    "description": "Obtain an extra nature soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 nature soul",
+    "2": "+2 nature souls",
+    "3": "+3 nature souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CCC",
@@ -3619,6 +3702,11 @@
    "levels": "1-3",
    "max_level": 3,
    "description": "Obtain an extra Orc soul",
+   "level_text": {
+    "1": "+1 orc soul",
+    "2": "+2 orc souls",
+    "3": "+3 orc souls"
+   },
    "price": {
     "2": "C",
     "3": "C"
@@ -3672,6 +3760,9 @@
    "max_level": 3,
    "description": "Inflicts poison effect to enemies on hit",
    "details": "Poison 3 Effect, 7 Seconds +3 duration per level, +1 to effect",
+   "level_text": {
+    "3": "Poison III for about 2 s"
+   },
    "requirements": [
     "Melee",
     "Projectile"
@@ -3950,6 +4041,9 @@
     "weapon_tool"
    ],
    "description": "Opponents hit will heal half as quickly",
+   "level_text": {
+    "0": "healing halved"
+   },
    "requirements": [
     "Melee",
     "Projectile"
@@ -3989,6 +4083,11 @@
    "max_level": 3,
    "global_cap": 3,
    "description": "Provides the regeneration effect",
+   "level_text": {
+    "1": "Regeneration I",
+    "2": "Regeneration II",
+    "3": "Regeneration III"
+   },
    "requirements": [
     "Heal"
    ],
@@ -4090,6 +4189,7 @@
    ],
    "description": "Boosts damage against players based on their soul count",
    "details": ".125 Hearts FLAT per soul on target",
+   "damage": "situational",
    "requirements": [
     "Melee"
    ],
@@ -4220,6 +4320,11 @@
    "max_level": 3,
    "description": "Obtain an extra Shadow soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 shadow soul",
+    "2": "+2 shadow souls",
+    "3": "+3 shadow souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CC",
@@ -4444,6 +4549,10 @@
    "max_level": 2,
    "description": "Provides absorption over time whilst sneaking",
    "details": "Adds 1 Absorption Heart every second while sneaked up to 6",
+   "level_text": {
+    "1": "1 absorption heart per second while sneaking, up to 6",
+    "2": "1 absorption heart per second while sneaking, up to 6"
+   },
    "requirements": [
     "Sneak"
    ],
@@ -4579,6 +4688,13 @@
    "max_level": 5,
    "global_cap": 10,
    "description": "Provides the speed effect",
+   "level_text": {
+    "1": "Speed I",
+    "2": "Speed II",
+    "3": "Speed III",
+    "4": "Speed IV",
+    "5": "Speed V"
+   },
    "item_type": "Any",
    "price": {
     "1": "no ess form",
@@ -4651,6 +4767,9 @@
    "global_cap": 1,
    "description": "On hit, opponents will lose hunger",
    "details": ".5 Hunger per Level per FULL hit",
+   "level_text": {
+    "1": "0.5 hunger per full hit"
+   },
    "requirements": [
     "Melee",
     "Projectile"
@@ -4712,6 +4831,12 @@
    "max_level": 4,
    "global_cap": 4,
    "description": "Provides the strength effect",
+   "level_text": {
+    "1": "Strength I",
+    "2": "Strength II",
+    "3": "Strength III",
+    "4": "Strength IV"
+   },
    "item_type": "Any",
    "price": {
     "1": "B",
@@ -4872,6 +4997,11 @@
    "max_level": 3,
    "description": "Obtain an extra undead soul",
    "details": "1 extra soul per Level",
+   "level_text": {
+    "1": "+1 undead soul",
+    "2": "+2 undead souls",
+    "3": "+3 undead souls"
+   },
    "item_type": "Armour",
    "price": {
     "2": "CC",
@@ -4912,6 +5042,12 @@
    "global_cap": 4,
    "description": "When hit, inflicts opponents with the fatigue effect",
    "details": "Inflicts Mining Fatigue Equal to the level of the Essence upon the Attacker for 4(?) Seconds",
+   "level_text": {
+    "1": "Mining Fatigue I on the attacker, about 4 s",
+    "2": "Mining Fatigue II on the attacker, about 4 s",
+    "3": "Mining Fatigue III on the attacker, about 4 s",
+    "4": "Mining Fatigue IV on the attacker, about 4 s"
+   },
    "requirements": [
     "Physical Damage Received"
    ],
@@ -5194,6 +5330,9 @@
    "max_level": 3,
    "description": "Inflicts opponents with wither on hit",
    "details": "Wither 3 Effect, increased by 1 per essence level, 5 seconds",
+   "level_text": {
+    "3": "Wither III for about 3 s"
+   },
    "requirements": [
     "Melee",
     "Projectile",

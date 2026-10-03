@@ -191,7 +191,7 @@
   "gear": {
     "essences": {
       "header_line": "Essence",
-      "essence_line_regex": "^(?<essence>[A-Za-z' -]+?)( (?<level>[IVX]+))?$",
+      "essence_line_regex": "^(?<essence>[A-Za-z'& -]+?)( (?<level>[IVX]+))?$",
       "trigger_line_regex": "^  --> (?<triggers>.+)$",
       "effect_line_regex": "^  <-- (?<effects>.+)$",
       "note": "'-' ends the list. normalize names, hyphens differ"

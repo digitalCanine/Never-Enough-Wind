@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "neverenoughwind",
+  "version": "${version}",
+  "name": "Never Enough Wind",
+  "description": "Display-only quality of life mod for Minewind.",
+  "authors": ["digitalCanine"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.neverenoughwind.NeverEnoughWind"]
+  },
+  "mixins": ["neverenoughwind.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
