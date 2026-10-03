@@ -69,4 +69,11 @@ UI class (the meat) :
     Item menu (uses the essence list json, inf block json, and key json, to show all of it in the game as menu with different submenus)
 
     Buffs/Debuff timer widget (if possible, parsing from the player class methods)
-    
+
+    Settings menu (every module lists its own settings, menu is built from them)
+
+
+Discord class (own module, off by default) :
+
+    Rich presence (uses world parser, event parser, scoreboard parser and clan tag parser, every field has its own toggle)
+

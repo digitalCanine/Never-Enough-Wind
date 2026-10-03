@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "collected": "2026-10-03",
+  "clans": [
+    {
+      "tag": "AXE",
+      "name": "Engagement Based Matchmaking",
+      "leader": "DocSousa",
+      "officers": [
+        "ShiningSteel_",
+        "MrSniper911Jr",
+        "AI_YoungBoy",
+        "Rotaxe",
+        "DeadlyCheese_",
+        "Silverion_",
+        "mizukoru",
+        "poqje"
+      ],
+      "members": [
+        "luckyslayer_",
+        "TwoYuanYi1732",
+        "SurestPanda5299",
+        "nobledestroyer",
+        "merevvs",
+        "ForsakenOblivion",
+        "flixpix",
+        "SickHospital",
+        "DarthDagon",
+        "MuteSmoocher",
+        "Cheetos_XD",
+        "Titannica",
+        "LegoBatarang"
+      ],
+      "recruits": [
+        "PADOs22",
+        "GuyAmbrose",
+        "Andria7",
+        "Ameer_Sarsor",
+        "LavaGoblin84",
+        "_FarmerMate_"
+      ]
+    },
+    {
+      "tag": "hoes",
+      "name": "Helping Organize Every Subject",
+      "leader": "Gwungis",
+      "officers": [
+        "notforstaken",
+        "digitalCanine",
+        "Knight_Thunder",
+        "CosmicJustice",
+        "4fs",
+        "yesmynameisyes"
+      ],
+      "recruits": [
+        "HoochSmoocher",
+        "smthlikethat101",
+        "_b_1"
+      ]
+    },
+    {
+      "tag": "ZEN",
+      "name": "ZEN DYNASTY",
+      "leader": "H0nk3yK0ng",
+      "officers": [
+        "Zenbot80085",
+        "ZENDbot",
+        "TheRockHardMan",
+        "JoEusebe",
+        "Woden88"
+      ],
+      "members": [
+        "PrinceLeao",
+        "ConNightmare",
+        "H3DV",
+        "LimePopsicles",
+        "NightXTerror",
+        "__VampX"
+      ],
+      "recruits": [
+        "AmnesiaIsBad",
+        "Zachanator3000",
+        "asteriqx",
+        "Spar7anPig",
+        "iambjamin",
+        "gachapon2019"
+      ]
+    },
+    {
+      "tag": "Srmt",
+      "name": "Shrimp Mocktail",
+      "leader": "SrmtBot",
+      "officers": [
+        "ZynoxX___",
+        "ArcticFoxMX",
+        "DorkGamblr",
+        "That_gamer_boi"
+      ],
+      "members": [
+        "Perrithedad",
+        "chefrikki",
+        "Unhitchedemu07",
+        "CyberClaw27",
+        "Itz_snowyy",
+        "chyckysnail",
+        "Cece3706",
+        "Corallum",
+        "_Lunissa_",
+        "Hirothemeep",
+        "ZyronFX"
+      ],
+      "recruits": [
+        "ChickonX7",
+        "Arli_Conan",
+        "Foxycinar",
+        "DigiverseDragon",
+        "Bob_The_Build3r",
+        "notshyne",
+        "HelloEveryBody1",
+        "duskvein6",
+        "Phantom_Strike25",
+        "Thoma12345",
+        "Vraelxv2",
+        "xaro980",
+        "Deni64",
+        "Lingxu",
+        "Gonkshackle"
+      ]
+    },
+    {
+      "tag": "Srmp",
+      "name": "Shrimp Cocktail",
+      "leader": "MAASKER",
+      "officers": [
+        "Mauzimilia",
+        "Lianescu",
+        "SrmpBot",
+        "TimoLionel",
+        "Minipenguin0018",
+        "AliDadar",
+        "X_Misted",
+        "Wish4FrenchFries",
+        "DarkGamblr",
+        "SkrlmpLord"
+      ],
+      "members": [
+        "RudiBuddeln",
+        "DevilSanil",
+        "h4nnibanni",
+        "Hotythedogy",
+        "Lord_Jabu",
+        "ZynoxX___",
+        "Ben_The_Lucky",
+        "TodesPinguin",
+        "Raezores",
+        "Nyverisy",
+        "GrandmasterChez",
+        "the_buff",
+        "Repuu53",
+        "grldigital",
+        "WolfHybrid",
+        "Warmtep"
+      ],
+      "recruits": [
+        "VexelKite",
+        "Whatz1Tooya7",
+        "squerix3",
+        "Gwenlyre",
+        "Kyovv"
+      ]
+    },
+    {
+      "tag": "res",
+      "name": "xv scammed me",
+      "leader": "_juey",
+      "officers": [
+        "Sashee"
+      ],
+      "members": [
+        "SombraxSFK",
+        "rm_bobafet"
+      ],
+      "recruits": [
+        "drdonut67676767",
+        "zorakito",
+        "ILickPtoes",
+        "Slowdropper",
+        "Collector773"
+      ]
+    },
+    {
+      "tag": "BABE",
+      "name": "Chaos Babes",
+      "leader": "WastedWitch",
+      "officers": [
+        "Eleechee",
+        "Nameless_Shadoww",
+        "PrincessLilB"
+      ],
+      "members": [
+        "glitchling_exe",
+        "drugl0rd",
+        "DocSousa"
+      ],
+      "recruits": [
+        "jjoedirtty"
+      ]
+    },
+    {
+      "tag": "Done",
+      "name": "Done",
+      "leader": "green_kanight",
+      "officers": [
+        "Oh_Emeralds",
+        "subschafe",
+        "SanderTunic20",
+        "Gamgammy",
+        "sharkcy_"
+      ],
+      "members": [
+        "Tridentify_",
+        "INC09N1T0",
+        "SoulCollector98",
+        "Fe4rless3941",
+        "CyberClaw27",
+        "II256",
+        "ryuseidancer",
+        "Racoon___",
+        "Manu_Ryu",
+        "karior12",
+        "Leonsky993",
+        "Onhind",
+        "OnexSoul98",
+        "Cherraspar",
+        "Humanbeng",
+        "3SM_Cooler",
+        "mizoxw",
+        "Starry123xyx",
+        "KachokBariga"
+      ],
+      "recruits": [
+        "MCStrawberryMoki",
+        "_Jayden_15th__",
+        "Myroox",
+        "cookie_oNToast",
+        "Bruticus10YT",
+        "Kwixli_cz",
+        "maroonspinodino",
+        "AgentBiffle2",
+        "IntelsProcessor",
+        "vannoor_"
+      ]
+    },
+    {
+      "tag": "STMX",
+      "name": "Stamina",
+      "leader": "Ender811",
+      "officers": [
+        "agoodolrub",
+        "Morfeys_",
+        "fishingdream"
+      ],
+      "members": [
+        "ItsNotEnvixityYT",
+        "SalonKitty",
+        "Femboy_Slut",
+        "Joe4563",
+        "11_49",
+        "IcyLeaf_",
+        "ore_fin",
+        "NoobSterHasBonk",
+        "_XpoofX_",
+        "Eres_Estupido",
+        "__basileus"
+      ],
+      "recruits": [
+        "lexizzz",
+        "SaulLuckman",
+        "kittylover811"
+      ]
+    },
+    {
+      "tag": "swrd",
+      "name": "skill based matchmaking",
+      "leader": "__mute",
+      "officers": [
+        "peterd101",
+        "Deggmaster",
+        "Dwando",
+        "SuperSamyy",
+        "F33tlover3000"
+      ],
+      "members": [
+        "LoudHayler",
+        "MrTem_",
+        "Iglu",
+        "TheDuckingMafia",
+        "Identificaton",
+        "Hoshino_Miyoko",
+        "MM2SS",
+        "GoDoMotes",
+        "PrinceeII",
+        "DanzATurtle",
+        "NoHcksJustGerman",
+        "CallMePete",
+        "Karml",
+        "SkystormerX",
+        "MacPass",
+        "BlockyClockwork",
+        "BRUCE_BRUCE",
+        "Leugi"
+      ]
+    },
+    {
+      "tag": "0",
+      "name": "RAT",
+      "leader": "RainbowHelper",
+      "officers": [
+        "Niters"
+      ]
+    },
+    {
+      "tag": "001",
+      "name": "The Collector Corporations",
+      "leader": "MrHippyPanda",
+      "recruits": [
+        "Lycorisi",
+        "Beranan"
+      ]
+    },
+    {
+      "tag": "01",
+      "name": "RIOTS",
+      "leader": "BenderPro2013"
+    },
+    {
+      "tag": "0420",
+      "name": "WeedSmoker",
+      "leader": "Kubbizzz"
+    },
+    {
+      "tag": "0603",
+      "name": "DaBoys",
+      "leader": "The_King212036",
+      "officers": [
+        "Foodlord37"
+      ]
+    },
+    {
+      "tag": "08MS",
+      "name": "Marauders",
+      "leader": "Padre_Esteban",
+      "members": [
+        "Zweekers",
+        "chompyhell"
+      ]
+    },
+    {
+      "tag": "0922",
+      "name": "Violet Warriors",
+      "leader": "_MGamerlol_",
+      "officers": [
+        "Taiyoken7"
+      ],
+      "recruits": [
+        "2crax1"
+      ]
+    },
+    {
+      "tag": "0__0",
+      "name": "Assasins",
+      "leader": "Greeswo_",
+      "officers": [
+        "katerpillow"
+      ],
+      "recruits": [
+        "TC23322"
+      ]
+    },
+    {
+      "tag": "0P",
+      "name": "0P",
+      "leader": "JYRFire",
+      "recruits": [
+        "littlenutt",
+        "Purple_Eyed_Two"
+      ]
+    },
+    {
+      "tag": "0v0",
+      "name": "1",
+      "leader": "Oseakar"
+    },
+    {
+      "tag": "0w0",
+      "name": "Enigma",
+      "leader": "_Nakano__Nino_",
+      "members": [
+        "Groomerbelt8",
+        "Lxseen"
+      ]
+    },
+    {
+      "tag": "1",
+      "name": "UNO",
+      "leader": "Zach3876",
+      "officers": [
+        "unannoucedglitch"
+      ],
+      "members": [
+        "Spicy_Spaghetti_"
+      ]
+    },
+    {
+      "tag": "10",
+      "name": "Poggie Nation",
+      "leader": "Ashlynnix",
+      "officers": [
+        "Kobfam"
+      ]
+    },
+    {
+      "tag": "102",
+      "name": "IdentityV",
+      "leader": "sou4p",
+      "officers": [
+        "gettiere"
+      ],
+      "members": [
+        "catsumu"
+      ]
+    },
+    {
+      "tag": "104",
+      "name": "sunrisers",
+      "leader": "SpaceWallaby",
+      "recruits": [
+        "UnhandyCrowd382",
+        "TNDKanye88",
+        "Ardisan_"
+      ]
+    },
+    {
+      "tag": "1090",
+      "name": "Sm",
+      "leader": "91superjack"
+    },
+    {
+      "tag": "11",
+      "name": "Eleven",
+      "leader": "gay2win"
+    },
+    {
+      "tag": "117",
+      "name": "wienerGulpers",
+      "leader": "bruh_mr"
+    },
+    {
+      "tag": "12",
+      "name": "The Twelve Apostles",
+      "leader": "fluffypengi",
+      "officers": [
+        "BaphyPoo"
+      ]
+    },
+    {
+      "tag": "1216",
+      "name": "CyberCrew",
+      "leader": "CyberDJ_2014",
+      "officers": [
+        "sw337babygav"
+      ],
+      "members": [
+        "FlyWithJack",
+        "Brendanbro13"
+      ]
+    },
+    {
+      "tag": "122",
+      "name": "Dragons",
+      "leader": "sDr4gonL1rd",
+      "recruits": [
+        "magiclove4"
+      ]
+    },
+    {
+      "tag": "123",
+      "name": "penguins",
+      "leader": "lilfortman",
+      "recruits": [
+        "grumpycat2100"
+      ]
+    },
+    {
+      "tag": "1234",
+      "name": "atomic",
+      "leader": "atomic_wolf212"
+    },
+    {
+      "tag": "1260",
+      "name": "DragonDen",
+      "leader": "Therlwolffy"
+    },
+    {
+      "tag": "1337",
+      "name": "Arabasta Kingdom",
+      "leader": "Yuka_x"
+    },
+    {
+      "tag": "1389",
+      "name": "Динарска Дивизија",
+      "leader": "luka1389",
+      "officers": [
+        "kalaprcna",
+        "peki1389"
+      ],
+      "members": [
+        "xtxl"
+      ],
+      "recruits": [
+        "Ghost724"
+      ]
+    },
+    {
+      "tag": "14",
+      "name": "OneFour",
+      "leader": "14hhsf"
+    },
+    {
+      "tag": "1423",
+      "name": "potato",
+      "leader": "Nidina"
+    },
+    {
+      "tag": "1432",
+      "name": "skyfarmlife",
+      "leader": "aboardkarma8574",
+      "officers": [
+        "Mistydream9082"
+      ]
+    },
+    {
+      "tag": "1453",
+      "name": "Devleti-i Aliyye",
+      "leader": "Kanuni_",
+      "recruits": [
+        "makimafeet"
+      ]
+    },
+    {
+      "tag": "1488",
+      "name": "National Socialist German Workers Party",
+      "leader": "SpaceWarrior663"
+    },
+    {
+      "tag": "15",
+      "name": "Clash",
+      "leader": "Nyrellee",
+      "recruits": [
+        "ProMan_ALE"
+      ]
+    },
+    {
+      "tag": "1710",
+      "name": "Glitch Industries",
+      "leader": "SkySkywalker10",
+      "recruits": [
+        "DecPlayZZZ",
+        "BlackApple80"
+      ]
+    },
+    {
+      "tag": "1928",
+      "name": "LetsHaveFun",
+      "leader": "LastBrainCeII"
+    },
+    {
+      "tag": "2",
+      "name": "ZeroRequiem",
+      "leader": "Shedopen"
+    },
+    {
+      "tag": "2000",
+      "name": "Static Network",
+      "leader": "GravityPSI"
+    },
+    {
+      "tag": "23",
+      "name": "GODS",
+      "leader": "Erwinnerr23"
+    },
+    {
+      "tag": "24K",
+      "name": "Theives",
+      "leader": "vitrixx",
+      "members": [
+        "RomanG6"
+      ]
+    },
+    {
+      "tag": "24kp",
+      "name": "0p",
+      "leader": "hellkingphoenix",
+      "recruits": [
+        "6767676fg",
+        "Rayzox_team"
+      ]
+    },
+    {
+      "tag": "2co",
+      "name": "MolodoISBlood",
+      "leader": "Skr1p_0",
+      "officers": [
+        "RiasGremoryx"
+      ],
+      "recruits": [
+        "7r1eNd",
+        "ex1ster"
+      ]
+    }
+  ],
+  "not_found": []
+}
