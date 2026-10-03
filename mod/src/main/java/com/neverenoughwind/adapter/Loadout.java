@@ -39,7 +39,7 @@ public final class Loadout {
         if (hovered == offHand) {
             weapon = player.getMainHandStack();
             if (weapon.isEmpty()) return null;
-            note = "as off hand, with " + weapon.getName().getString();
+            note = "As off hand, with " + weapon.getName().getString();
         }
         double bonus = attackBonus(weapon);
         if (bonus <= 0) return null;

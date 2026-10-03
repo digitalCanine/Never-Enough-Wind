@@ -61,7 +61,7 @@ public final class PartyWidget {
         List<String> rollTexts = new ArrayList<>();
         for (String name : members) {
             Party.Roll roll = party.rolls().get(name);
-            String text = roll == null ? null : roll.choice().equals("pass") ? "pass" : roll.choice() + " " + roll.value();
+            String text = roll == null ? null : roll.choice().equals("pass") ? "Pass" : (roll.choice().equals("need") ? "Need " : "Greed ") + roll.value();
             rollTexts.add(text);
             width = Math.max(width, tr.getWidth(name) + (text == null ? 0 : 8 + tr.getWidth(text)));
         }

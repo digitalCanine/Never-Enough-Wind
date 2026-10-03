@@ -125,11 +125,11 @@ public final class SidePanel {
                 .ifPresent(k -> out.add(Row.of(Text.literal(k.use()).formatted(Formatting.GRAY)))));
         if ("keys".equals(info.category())) {
             prices.key(info.detail()).ifPresent(k -> out.add(
-                    new Row(Text.literal("price").formatted(Formatting.YELLOW), Text.literal(k.text()).formatted(Formatting.WHITE))));
+                    new Row(Text.literal("Price").formatted(Formatting.YELLOW), Text.literal(k.text()).formatted(Formatting.WHITE))));
         }
         if ("infinite".equals(info.category()) && itemId != null) {
             prices.block(itemId).flatMap(b -> prices.blockTier(b.tier())).ifPresent(t -> out.add(
-                    new Row(Text.literal("price").formatted(Formatting.YELLOW),
+                    new Row(Text.literal("Price").formatted(Formatting.YELLOW),
                             Text.literal(t.letter() + " ").formatted(Formatting.YELLOW).append(Text.literal(t.text()).formatted(Formatting.WHITE)))));
         }
 
@@ -162,7 +162,7 @@ public final class SidePanel {
             }
             out.add(new Row(Text.literal(title).formatted(Formatting.GOLD), price));
             String text = e.essence() == null ? null : e.essence().description();
-            out.add(Row.of(Text.literal(text == null ? "not documented yet" : text).formatted(Formatting.GRAY)));
+            out.add(Row.of(Text.literal(text == null ? "Not documented yet" : text).formatted(Formatting.GRAY)));
             if (e.essence() != null) {
                 String atLevel = e.essence().levelText().get(String.valueOf(e.level()));
                 if (atLevel != null) out.add(Row.of(Text.literal(atLevel).formatted(Formatting.GREEN)));
@@ -175,37 +175,37 @@ public final class SidePanel {
                 if (e.essence() == null || e.essence().key() == null) continue;
                 String key = e.essence().key();
                 key = Character.toUpperCase(key.charAt(0)) + key.substring(1) + " Midas Key";
-                out.add(new Row(Text.literal("drops from").formatted(Formatting.GRAY), Text.literal(key).formatted(Formatting.GREEN)));
+                out.add(new Row(Text.literal("Drops from").formatted(Formatting.GRAY), Text.literal(key).formatted(Formatting.GREEN)));
             }
         }
         if ("gear".equals(info.category()) && !info.essences().isEmpty()) {
-            String total = max == 0 ? "no price known" : min == max ? PriceDao.text(min) : PriceDao.text(min) + " - " + PriceDao.text(max);
+            String total = max == 0 ? "No price known" : min == max ? PriceDao.text(min) : PriceDao.text(min) + " - " + PriceDao.text(max);
             if (unpriced > 0 && max > 0) total += " (+" + unpriced + " not priced)";
             out.add(Row.of(Text.empty()));
-            out.add(new Row(Text.literal("essences").formatted(Formatting.YELLOW), Text.literal(total).formatted(Formatting.WHITE)));
+            out.add(new Row(Text.literal("Essences").formatted(Formatting.YELLOW), Text.literal(total).formatted(Formatting.WHITE)));
         }
 
         if (dmg != null) {
             Damage d = dmg.damage();
             String plus = d.atLeast() ? "+" : "";
             if (!out.isEmpty()) out.add(Row.of(Text.empty()));
-            out.add(new Row(Text.literal("damage").formatted(Formatting.RED),
+            out.add(new Row(Text.literal("Damage").formatted(Formatting.RED),
                     Text.literal(DamageCalc.text(d.hit()) + plus).formatted(Formatting.WHITE)
-                            .append(Text.literal("   crit ").formatted(Formatting.GRAY))
+                            .append(Text.literal("   Crit ").formatted(Formatting.GRAY))
                             .append(Text.literal(DamageCalc.text(d.crit()) + plus).formatted(Formatting.WHITE))));
             if (dmg.note() != null) out.add(Row.of(Text.literal(dmg.note()).formatted(Formatting.GRAY)));
             if (!d.parts().isEmpty()) out.add(Row.of(Text.literal(String.join(", ", d.parts())).formatted(Formatting.GRAY)));
             if (!d.notCounted().isEmpty()) {
-                out.add(Row.of(Text.literal("not counted: " + String.join(", ", d.notCounted())).formatted(Formatting.DARK_GRAY)));
+                out.add(Row.of(Text.literal("Not counted: " + String.join(", ", d.notCounted())).formatted(Formatting.DARK_GRAY)));
             }
             if (!d.sometimes().isEmpty()) {
-                out.add(Row.of(Text.literal("sometimes: " + String.join(", ", d.sometimes())).formatted(Formatting.DARK_GRAY)));
+                out.add(Row.of(Text.literal("Sometimes: " + String.join(", ", d.sometimes())).formatted(Formatting.DARK_GRAY)));
             }
         }
         if (info.isEmpty()) return out;
 
         if (!out.isEmpty()) out.add(Row.of(Text.empty()));
-        out.add(Row.of(Text.literal("debug").formatted(Formatting.DARK_AQUA)));
+        out.add(Row.of(Text.literal("Debug").formatted(Formatting.DARK_AQUA)));
         debug(out, "type", info.detail() == null || info.detail().isEmpty() ? info.category() : info.category() + " (" + info.detail() + ")");
         if ("gear".equals(info.category())) {
             debug(out, "auction", info.auction() == null ? "no match" : info.auction().name() + ", " + info.auction().status());
@@ -250,7 +250,10 @@ public final class SidePanel {
         for (Soul s : info.souls()) {
             if (!s.consumes()) parts.add("holds " + s.count() + " " + s.type().toLowerCase(java.util.Locale.ROOT) + (s.count() == 1 ? " soul" : " souls"));
         }
-        if (!parts.isEmpty()) out.add(Row.of(Text.literal(String.join(", ", parts)).formatted(Formatting.GREEN)));
+        if (!parts.isEmpty()) {
+            String line = String.join(", ", parts);
+            out.add(Row.of(Text.literal(Character.toUpperCase(line.charAt(0)) + line.substring(1)).formatted(Formatting.GREEN)));
+        }
     }
 
     private static void debug(List<Row> out, String label, String value) {

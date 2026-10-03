@@ -101,7 +101,7 @@
    "description": "Provides absorption effect over time",
    "details": "Adds [2|4] Absorption Hearts every 4 Seconds, only if you have none, level 1 bugged",
    "level_text": {
-    "1": "bugged",
+    "1": "Bugged",
     "2": "2 absorption hearts every 4 s",
     "3": "4 absorption hearts every 4 s"
    },
@@ -3277,7 +3277,7 @@
    "max_level": 3,
    "description": "Blocks players and bosses from using most spells for a short period of time",
    "level_text": {
-    "3": "no spells for about 2.5 s"
+    "3": "No spells for about 2.5 s"
    },
    "requirements": [
     "Melee",
@@ -4042,7 +4042,7 @@
    ],
    "description": "Opponents hit will heal half as quickly",
    "level_text": {
-    "0": "healing halved"
+    "0": "Healing halved"
    },
    "requirements": [
     "Melee",

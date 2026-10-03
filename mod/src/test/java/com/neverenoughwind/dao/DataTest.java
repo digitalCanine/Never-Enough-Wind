@@ -69,7 +69,7 @@ class DataTest {
     @Test
     void levelTextAndDeggText() {
         assertEquals("30% less magic damage", data.essences().byName("Anti Mage").orElseThrow().levelText().get("3"));
-        assertEquals("healing halved", data.essences().byName("Reduce Heal").orElseThrow().levelText().get("0"));
+        assertEquals("Healing halved", data.essences().byName("Reduce Heal").orElseThrow().levelText().get("0"));
         assertTrue(data.essences().byName("Bind").orElseThrow().levelText().isEmpty());
         assertEquals("15s", PriceDao.text(960));
         assertEquals("9s 9d", PriceDao.text(585));
@@ -174,7 +174,7 @@ class DataTest {
         assertEquals(7, data.itemRules().type("currency").orElseThrow().items().size());
         // every currency says what its for
         assertTrue(data.itemRules().type("currency").orElseThrow().items().stream().allMatch(k -> k.use() != null));
-        assertEquals("2 for 1 nether star at Vaulto", data.itemRules().type("currency").orElseThrow().items().stream()
+        assertEquals("Two remnants trade for one nether star at Vaulto.", data.itemRules().type("currency").orElseThrow().items().stream()
                 .filter(k -> k.name().equals("Star Remnant")).findFirst().orElseThrow().use());
         assertEquals(2, data.itemRules().type("glamour").orElseThrow().rules().size());
     }

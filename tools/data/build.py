@@ -237,14 +237,14 @@ LEVEL_TEXT = {
     'Heightened Senses': {str(n): f'{5 * n} blocks' for n in (1, 2, 3, 4)},
     'Untouchable': {str(n): f'Mining Fatigue {ROMAN[n]} on the attacker, about 4 s' for n in (1, 2, 3, 4)},
     'Anti-Mage': {str(n): f'{10 * n}% less magic damage' for n in (1, 2, 3)},
-    'Absorption': {'1': 'bugged', '2': '2 absorption hearts every 4 s', '3': '4 absorption hearts every 4 s'},
+    'Absorption': {'1': 'Bugged', '2': '2 absorption hearts every 4 s', '3': '4 absorption hearts every 4 s'},
     'Sneak Fortification': {str(n): '1 absorption heart per second while sneaking, up to 6' for n in (1, 2)},
     # measured in captures, the sheet says longer
     'Wither': {'3': 'Wither III for about 3 s'},
     'Poison': {'3': 'Poison III for about 2 s'},
     'Cripple': {'3': 'Slowness III and Weakness III for 5 s'},
-    'Magic Disrupt': {'3': 'no spells for about 2.5 s'},
-    'Reduce Heal': {'0': 'healing halved'},
+    'Magic Disrupt': {'3': 'No spells for about 2.5 s'},
+    'Reduce Heal': {'0': 'Healing halved'},
 }
 for soul in ('Beast', 'Blood', 'Dimension', 'Dragon', 'Fire', 'Ice', 'Nature', 'Orc', 'Shadow', 'Undead'):
     LEVEL_TEXT[f'{soul} Soul'] = {str(n): f'+{n} {soul.lower()} soul{"s" if n > 1 else ""}' for n in (1, 2, 3)}
