@@ -19,7 +19,8 @@ public final class Scoreboards {
     private Scoreboards() {}
 
     // your line on a running event's sidebar. everyone has a score there, not only the 15 the sidebar shows
-    public record OwnScore(String label, int secondsLeft, int score, int rank, int players) {
+    // lines = rows the vanilla sidebar draws
+    public record OwnScore(String label, int secondsLeft, int score, int rank, int players, int lines) {
     }
 
     // null when no event sidebar is up or you have no score on it
@@ -33,10 +34,11 @@ public final class Scoreboards {
         if (title == null) return null;
         String me = mc.player.getNameForScoreboard();
         Integer mine = null;
-        int players = 0;
+        int players = 0, lines = 0;
         List<Integer> all = new ArrayList<>();
         for (ScoreboardEntry e : board.getScoreboardEntries(side)) {
             players++;
+            if (!e.hidden()) lines++;
             all.add(e.value());
             if (e.owner().equals(me)) mine = e.value();
         }
@@ -45,7 +47,7 @@ public final class Scoreboards {
         for (int v : all) {
             if (v > mine) rank++;
         }
-        return new OwnScore(title.label(), title.secondsLeft(), mine, rank, players);
+        return new OwnScore(title.label(), title.secondsLeft(), mine, rank, players, Math.min(lines, 15));
     }
 
     // the party's team name, a different one for every party. null when not in a party

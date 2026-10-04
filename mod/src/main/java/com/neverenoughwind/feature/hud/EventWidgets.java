@@ -13,10 +13,8 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-// event reminder next to the hotbar, and your own score while an event runs
+// event reminder above the hunger bar, and your own score under the sidebar while an event runs
 public final class EventWidgets {
-    // placeholders until the settings menu exists. the score sits under the subserver indicator
-    public static HudPos scorePos = new HudPos(0f, 0.5f, 6, 30);
     // how long a reminder stays, in ticks
     public static int reminderTicks = 200;
 
@@ -52,8 +50,10 @@ public final class EventWidgets {
         int sw = ctx.getScaledWindowWidth(), sh = ctx.getScaledWindowHeight();
 
         if (reminderLeft > 0 && reminderText != null) {
-            // right of the hotbar, level with the slots
-            ctx.drawTextWithShadow(tr, reminderText, sw / 2 + 91 + 10, sh - 15, YELLOW);
+            // above the hunger bar, ending at the hotbar's right edge. one row higher while the air bubbles show
+            int y = sh - 50;
+            if (mc.player != null && mc.player.getAir() < mc.player.getMaxAir()) y -= 10;
+            ctx.drawTextWithShadow(tr, reminderText, sw / 2 + 91 - tr.getWidth(reminderText), y, YELLOW);
         }
 
         Scoreboards.OwnScore own = Scoreboards.ownScore();
@@ -62,7 +62,8 @@ public final class EventWidgets {
         String score = String.valueOf(own.score());
         String rank = "#" + own.rank() + " of " + own.players();
         int w = tr.getWidth(label) + 6 + tr.getWidth(score) + 6 + tr.getWidth(rank);
-        int x = scorePos.x(sw, w), y = scorePos.y(sh, tr.fontHeight);
+        // the vanilla sidebar ends at half the screen plus a third of its rows, 3 px from the right edge
+        int x = sw - 3 - w, y = sh / 2 + own.lines() * 9 / 3 + 4;
         ctx.drawTextWithShadow(tr, label, x, y, GOLD);
         x += tr.getWidth(label) + 6;
         ctx.drawTextWithShadow(tr, score, x, y, WHITE);
