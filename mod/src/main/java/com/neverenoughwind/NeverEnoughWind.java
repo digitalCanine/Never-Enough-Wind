@@ -2,6 +2,7 @@ package com.neverenoughwind;
 
 import com.neverenoughwind.dao.Data;
 import com.neverenoughwind.adapter.Chat;
+import com.neverenoughwind.feature.Clans;
 import com.neverenoughwind.feature.NameColor;
 import com.neverenoughwind.feature.hud.PartyWidget;
 import com.neverenoughwind.feature.hud.SubserverIndicator;
@@ -34,6 +35,7 @@ public class NeverEnoughWind implements ClientModInitializer {
             SubserverIndicator.register();
             Chat.register();
             PartyWidget.register();
+            Clans.register();
             LOG.info("data loaded: {} essences, {} auction items, {} item types",
                     data.essences().all().size(), data.auctionItems().all().size(), data.itemRules().types().size());
         } catch (RuntimeException e) {
