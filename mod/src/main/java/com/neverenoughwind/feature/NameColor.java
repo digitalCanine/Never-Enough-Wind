@@ -1,6 +1,7 @@
 package com.neverenoughwind.feature;
 
 import com.neverenoughwind.adapter.Items;
+import com.neverenoughwind.config.Config;
 import com.neverenoughwind.model.NameStyle;
 import com.neverenoughwind.parse.ItemInfo;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
@@ -16,7 +17,7 @@ public final class NameColor {
 
     public static void register() {
         ItemTooltipCallback.EVENT.register((stack, context, type, lines) -> {
-            if (lines.isEmpty()) return;
+            if (lines.isEmpty() || !Config.get().originalNames) return;
             ItemInfo info = Items.info(stack);
             if (info.restoreStyle() == null) return;
             lines.set(0, paint(stack.getName().getString(), info.restoreStyle()));

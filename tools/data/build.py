@@ -223,8 +223,14 @@ for k, c in cheat.items():
     base[tgt]['_cheat'] = c
 
 # seen in dumps, missing from the sheets
-EXTRA = [{'name': 'Increased Max Daggers', 'kind': 'buff', 'min_level_seen': 3}]
-ALSO_CALLED = {'Bee Aggression': ['Increased Bee Aggression'], 'Rabid Rabbits': ['Rabbid Rabbits']}
+EXTRA = []
+# names that are spelled differently in game, in the sheets and in CallMePete's essence book
+ALSO_CALLED = {'Bee Aggression': ['Increased Bee Aggression'], 'Rabid Rabbits': ['Rabbid Rabbits'],
+               'Increased Dagger Replenish': ['Increase Dagger Replenish'],
+               'Increased Maximum Daggers': ['Increased Max Daggers'],
+               'Back Claymore': ['Black Claymore'], 'Increased Heal & Harm Potion': ['Increased Heal & Harm Potions'],
+               'Santa Rage': ['Santas Rage'], 'Shadow Fangs': ['Shadow Fang'],
+               'Summon Dimension Anomaly': ['Summon Dimensional Anomaly'], 'Telekinesis': ['Telekenisis']}
 for x in EXTRA:
     base[norm(x['name'])] = {'name': x['name'], '_extra': x}
 

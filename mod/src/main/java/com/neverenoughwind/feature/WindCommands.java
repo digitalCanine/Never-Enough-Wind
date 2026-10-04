@@ -3,8 +3,10 @@ package com.neverenoughwind.feature;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.neverenoughwind.NeverEnoughWind;
+import com.neverenoughwind.config.LayoutScreen;
 import com.neverenoughwind.dao.PriceDao;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
@@ -47,7 +49,16 @@ public final class WindCommands {
                         })))
                 .then(literal("reload").executes(c -> {
                     Clans.reload();
-                    c.getSource().sendFeedback(Text.literal("Reloaded your clan and relation files.").formatted(Formatting.GREEN));
+                    c.getSource().sendFeedback(Text.literal("Reloaded your settings and clan file.").formatted(Formatting.GREEN));
+                    return 1;
+                }))
+                .then(literal("config").executes(c -> {
+                    // a tick later, the chat screen is still closing right now
+                    MinecraftClient mc = c.getSource().getClient();
+                    mc.send(() -> mc.setScreen(LayoutScreen.settings(null)));
+                    if (!LayoutScreen.hasMenu()) {
+                        c.getSource().sendFeedback(Text.literal("Install the mod YACL for the full settings menu. This is the widget layout.").formatted(Formatting.GRAY));
+                    }
                     return 1;
                 }))));
     }

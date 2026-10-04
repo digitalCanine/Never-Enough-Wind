@@ -27,7 +27,7 @@ class DataTest {
 
     @Test
     void essencesLoad() {
-        assertEquals(259, data.essences().all().size());
+        assertEquals(258, data.essences().all().size());
         Essence antiMage = data.essences().byName("Anti-Mage").orElseThrow();
         assertEquals(3, antiMage.maxLevel());
         assertEquals(3, antiMage.globalCap());

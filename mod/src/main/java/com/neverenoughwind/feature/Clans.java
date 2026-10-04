@@ -3,6 +3,7 @@ package com.neverenoughwind.feature;
 import com.neverenoughwind.NeverEnoughWind;
 import com.neverenoughwind.adapter.Chat;
 import com.neverenoughwind.adapter.Worlds;
+import com.neverenoughwind.config.Config;
 import com.neverenoughwind.dao.ClanDao;
 import com.neverenoughwind.parse.ChatMatch;
 import com.neverenoughwind.state.Relations;
@@ -16,7 +17,6 @@ import net.minecraft.text.TextColor;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,10 +24,6 @@ import java.util.Map;
 public final class Clans {
     private static final Roster roster = new Roster();
     private static final Relations relations = new Relations();
-    // placeholder colors, overridden by "colors" in relations.json until the settings menu exists
-    private static final Map<Relations.Kind, Integer> colors = new EnumMap<>(Map.of(
-            Relations.Kind.OWN, 0x55FF55, Relations.Kind.ALLY, 0x55AAFF,
-            Relations.Kind.ENEMY, 0xFF5555, Relations.Kind.TRADEBANNED, 0xFFAA00, Relations.Kind.NEUTRAL, 0xAAAAAA));
     private static final int RANK_COLOR = 0xAAAAAA;
     private static long shippedTime;
     private static final Map<String, String> seen = new java.util.LinkedHashMap<>();
@@ -43,15 +39,7 @@ public final class Clans {
         shippedTime = shipped.stream().mapToLong(Roster.Clan::checked).max().orElse(0);
         roster.putAll(shipped);
         ClanDao.loadPlayer(dir().resolve("clans.json"), roster);
-        Path rel = dir().resolve("relations.json");
-        ClanDao.loadRelations(rel, relations);
-        ClanDao.loadColors(rel).forEach((name, rgb) -> {
-            try {
-                colors.put(Relations.Kind.valueOf(name.toUpperCase(java.util.Locale.ROOT)), rgb);
-            } catch (IllegalArgumentException ignored) {
-                // not a relation name
-            }
-        });
+        applyConfig();
         NeverEnoughWind.LOG.info("clans: {} in the roster", roster.size());
 
         Chat.listen(Clans::onChat);
@@ -70,16 +58,14 @@ public final class Clans {
     // rereads the player's files
     public static void reload() {
         ClanDao.loadPlayer(dir().resolve("clans.json"), roster);
-        Path rel = dir().resolve("relations.json");
-        relations.set(List.of(), List.of(), List.of(), List.of());
-        ClanDao.loadRelations(rel, relations);
-        ClanDao.loadColors(rel).forEach((name, rgb) -> {
-            try {
-                colors.put(Relations.Kind.valueOf(name.toUpperCase(java.util.Locale.ROOT)), rgb);
-            } catch (IllegalArgumentException ignored) {
-                // not a relation name
-            }
-        });
+        Config.load(dir());
+        applyConfig();
+    }
+
+    // the relation lists live in the settings
+    public static void applyConfig() {
+        Config c = Config.get();
+        relations.set(c.own, c.ally, c.enemy, c.tradebanned);
     }
 
     public static void onChat(ChatMatch m) {
@@ -117,12 +103,19 @@ public final class Clans {
     }
 
     private static TextColor color(String tag) {
-        return TextColor.fromRgb(colors.get(relations.of(tag)));
+        Config c = Config.get();
+        return TextColor.fromRgb(switch (relations.of(tag)) {
+            case OWN -> c.ownColor;
+            case ALLY -> c.allyColor;
+            case ENEMY -> c.enemyColor;
+            case TRADEBANNED -> c.tradebannedColor;
+            case NEUTRAL -> c.neutralColor;
+        });
     }
 
     // the line above a player's name: "AXE Leader", or every listed clan when the roster isnt sure. null = no line
     public static Text nametagLine(String player) {
-        if (!Worlds.onMinewind()) return null;
+        if (!Config.get().nametagTags || !Worlds.onMinewind()) return null;
         List<Roster.Membership> clans = roster.of(player);
         if (clans.isEmpty()) return null;
         MutableText line = Text.empty();
@@ -136,21 +129,32 @@ public final class Clans {
         return line;
     }
 
+    // the name on a nametag, in the color of that player's clan. neutral players keep the server's color
+    public static Text nametagName(String player, Text original) {
+        if (!Config.get().nameColors || !Worlds.onMinewind() || player == null) return original;
+        // listed in several clans: the first one you have a stance on decides
+        for (Roster.Membership m : roster.of(player)) {
+            if (relations.of(m.tag()) == Relations.Kind.NEUTRAL) continue;
+            return recolor(original, player, color(m.tag()), new boolean[]{false});
+        }
+        return original;
+    }
+
     // chat: color the tag the line itself carries. the speaker can be nicked, so the tag is all we go by
     private static Text recolorChat(Text message) {
         try {
-            if (NeverEnoughWind.data() == null || !Worlds.onMinewind()) return message;
+            if (NeverEnoughWind.data() == null || !Config.get().chatColors || !Worlds.onMinewind()) return message;
             ChatMatch m = NeverEnoughWind.data().chat().match(message.getString()).orElse(null);
             if (m == null || !m.id().equals("public_chat") || m.get("clan") == null) return message;
             if (relations.of(m.get("clan")) == Relations.Kind.NEUTRAL) return message;
-            boolean[] done = {false};
-            return recolor(message, m.get("clan") + ".", color(m.get("clan")), done);
+            // only the tag. the name keeps its rank or custom color
+            return recolor(message, m.get("clan") + ".", color(m.get("clan")), new boolean[]{false});
         } catch (RuntimeException e) {
             return message;
         }
     }
 
-    // copies the text, repainting the first piece that is exactly the tag
+    // copies the text, repainting the first piece that is exactly the token
     private static Text recolor(Text text, String token, TextColor color, boolean[] done) {
         MutableText copy = text.copyContentOnly().setStyle(text.getStyle());
         if (!done[0] && text.getContent() instanceof PlainTextContent plain && plain.string().equals(token)) {

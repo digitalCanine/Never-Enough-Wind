@@ -1,5 +1,6 @@
 package com.neverenoughwind;
 
+import com.neverenoughwind.config.Config;
 import com.neverenoughwind.dao.Data;
 import com.neverenoughwind.adapter.Chat;
 import com.neverenoughwind.feature.ClanRefresh;
@@ -11,6 +12,7 @@ import com.neverenoughwind.feature.hud.PartyWidget;
 import com.neverenoughwind.feature.hud.SubserverIndicator;
 import com.neverenoughwind.parse.ItemParser;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +33,7 @@ public class NeverEnoughWind implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        Config.load(FabricLoader.getInstance().getConfigDir().resolve("neverenoughwind"));
         try {
             data = Data.load();
             parser = new ItemParser(data);

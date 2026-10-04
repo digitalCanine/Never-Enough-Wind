@@ -1,6 +1,7 @@
 package com.neverenoughwind.mixin;
 
 import com.neverenoughwind.adapter.Items;
+import com.neverenoughwind.config.Config;
 import com.neverenoughwind.feature.Highlighter;
 import com.neverenoughwind.feature.NameColor;
 import com.neverenoughwind.parse.ItemInfo;
@@ -41,7 +42,7 @@ public abstract class InGameHudMixin {
     // the item name that fades in above the hotbar: renamed auction gear gets its original look here too
     @Unique
     private Text new$restyled() {
-        if (currentStack == null || currentStack.isEmpty()) return null;
+        if (currentStack == null || currentStack.isEmpty() || !Config.get().originalNames) return null;
         ItemInfo info = Items.info(currentStack);
         return info.restoreStyle() == null ? null : NameColor.paint(currentStack.getName().getString(), info.restoreStyle());
     }

@@ -2,6 +2,8 @@ package com.neverenoughwind.feature;
 
 import com.neverenoughwind.NeverEnoughWind;
 import com.neverenoughwind.adapter.Items;
+import com.neverenoughwind.config.Config;
+import net.minecraft.client.gui.screen.Screen;
 import com.neverenoughwind.adapter.Loadout;
 import com.neverenoughwind.dao.PriceDao;
 import com.neverenoughwind.model.PriceTier;
@@ -52,6 +54,8 @@ public final class SidePanel {
         if (drawing || hovered == null) return;
         ItemStack stack = hovered;
         hovered = null;
+        Config.PanelMode mode = Config.get().sidePanel;
+        if (mode == Config.PanelMode.OFF || mode == Config.PanelMode.SHIFT && !Screen.hasShiftDown()) return;
         try {
             List<Row> rows = rows(Items.info(stack), Loadout.damage(stack), Registries.ITEM.getId(stack.getItem()).toString());
             if (rows.isEmpty()) return;
@@ -203,7 +207,7 @@ public final class SidePanel {
                 out.add(Row.of(Text.literal("Sometimes: " + String.join(", ", d.sometimes())).formatted(Formatting.DARK_GRAY)));
             }
         }
-        if (info.isEmpty()) return out;
+        if (info.isEmpty() || !Config.get().debug) return out;
 
         if (!out.isEmpty()) out.add(Row.of(Text.empty()));
         out.add(Row.of(Text.literal("Debug").formatted(Formatting.DARK_AQUA)));

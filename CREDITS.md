@@ -13,6 +13,7 @@
 ## Essence cheat sheet
 
 - **tatatot234** - made the essence cheat sheet
+- **CallMePete** - wrote the Unofficial Essence Encyclopedia, the in-game book the descriptions come from
 - **ChristieTwist** - feedback and help on entries
 - **Saystomabel** - feedback
 - **dove** and **Xaziss** - first draft

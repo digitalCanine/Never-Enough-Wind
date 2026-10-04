@@ -240,6 +240,9 @@
   {
    "id": "back_claymore",
    "name": "Back Claymore",
+   "also_called": [
+    "Black Claymore"
+   ],
    "key": "paradox",
    "applies_to": [
     "armor"
@@ -2587,6 +2590,9 @@
   {
    "id": "increased_dagger_replenish",
    "name": "Increased Dagger Replenish",
+   "also_called": [
+    "Increase Dagger Replenish"
+   ],
    "key": "chaos",
    "kind": "buff",
    "applies_to": [
@@ -2686,6 +2692,9 @@
   {
    "id": "increased_heal_harm_potion",
    "name": "Increased Heal & Harm Potion",
+   "also_called": [
+    "Increased Heal & Harm Potions"
+   ],
    "key": "chaos",
    "kind": "buff",
    "applies_to": [
@@ -2790,15 +2799,11 @@
    "status": "unverified"
   },
   {
-   "id": "increased_max_daggers",
-   "name": "Increased Max Daggers",
-   "kind": "buff",
-   "max_level": "3+",
-   "status": "confirmed"
-  },
-  {
    "id": "increased_maximum_daggers",
    "name": "Increased Maximum Daggers",
+   "also_called": [
+    "Increased Max Daggers"
+   ],
    "key": "chaos",
    "kind": "buff",
    "applies_to": [
@@ -4201,6 +4206,9 @@
   {
    "id": "santa_rage",
    "name": "Santa Rage",
+   "also_called": [
+    "Santas Rage"
+   ],
    "key": "chaos",
    "kind": "attack",
    "applies_to": [
@@ -4244,6 +4252,9 @@
   {
    "id": "shadow_fangs",
    "name": "Shadow Fangs",
+   "also_called": [
+    "Shadow Fang"
+   ],
    "key": "chaos",
    "kind": "spell",
    "applies_to": [
@@ -4849,6 +4860,9 @@
   {
    "id": "summon_dimension_anomaly",
    "name": "Summon Dimension Anomaly",
+   "also_called": [
+    "Summon Dimensional Anomaly"
+   ],
    "key": "dimensional",
    "kind": "spell",
    "applies_to": [
@@ -4909,6 +4923,9 @@
   {
    "id": "telekinesis",
    "name": "Telekinesis",
+   "also_called": [
+    "Telekenisis"
+   ],
    "key": "chaos",
    "kind": "spell",
    "applies_to": [

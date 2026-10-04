@@ -87,36 +87,6 @@ public final class ClanDao {
         write(file, root);
     }
 
-    // own / ally / enemy / tradebanned lists. a missing file means no relations, only the detected own clan
-    public static void loadRelations(Path file, Relations relations) {
-        if (!Files.exists(file)) return;
-        try {
-            JsonObject root = JsonParser.parseString(Files.readString(file, StandardCharsets.UTF_8)).getAsJsonObject();
-            relations.set(Json.strings(root, "own"), Json.strings(root, "ally"), Json.strings(root, "enemy"), Json.strings(root, "tradebanned"));
-        } catch (Exception e) {
-            NeverEnoughWind.LOG.warn("could not read {}: {}", file, e.toString());
-        }
-    }
-
-    // colors by relation from the same file, hex strings. missing ones keep the default
-    public static Map<String, Integer> loadColors(Path file) {
-        Map<String, Integer> out = new HashMap<>();
-        if (!Files.exists(file)) return out;
-        try {
-            JsonObject root = JsonParser.parseString(Files.readString(file, StandardCharsets.UTF_8)).getAsJsonObject();
-            Json.stringMap(root, "colors").forEach((k, v) -> {
-                try {
-                    out.put(k, Integer.parseInt(v.replace("#", ""), 16));
-                } catch (NumberFormatException ignored) {
-                    // bad color, keep the default
-                }
-            });
-        } catch (Exception e) {
-            NeverEnoughWind.LOG.warn("could not read {}: {}", file, e.toString());
-        }
-        return out;
-    }
-
     private static JsonArray array(List<String> list) {
         JsonArray a = new JsonArray();
         list.forEach(a::add);

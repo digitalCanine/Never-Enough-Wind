@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntityRenderer.class)
@@ -20,6 +21,13 @@ public abstract class PlayerEntityRendererMixin {
 
     @Shadow
     protected abstract void renderLabelIfPresent(PlayerEntityRenderState state, Text text, MatrixStack matrices, VertexConsumerProvider consumers, int light);
+
+    // the name itself takes the clan's color when that setting is on
+    @ModifyVariable(method = "renderLabelIfPresent(Lnet/minecraft/client/render/entity/state/PlayerEntityRenderState;Lnet/minecraft/text/Text;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V",
+            at = @At("HEAD"), argsOnly = true)
+    private Text new$nameColor(Text text, PlayerEntityRenderState state) {
+        return new$drawing || text == null ? text : Clans.nametagName(state.name, text);
+    }
 
     // the game only gets here when it is already showing this player's nametag, so hidden names stay hidden.
     // right before it finishes, draw one more label a line higher with the clan

@@ -1,53 +1,58 @@
 package com.neverenoughwind.feature.hud;
 
 import com.neverenoughwind.adapter.Worlds;
+import com.neverenoughwind.config.Config;
 import com.neverenoughwind.model.World;
-import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.util.Identifier;
 
 // which subserver you're on: icon and name, no background so it sits in the hud like vanilla text
-public final class SubserverIndicator {
-    // placeholders until the settings menu exists
-    // left edge, halfway down: clear of minimaps, effect icons and the hotbar
-    public static HudPos pos = new HudPos(0f, 0.5f, 4, 0);
-    public static int iconScale = 2;
-    public static boolean showName = true;
-    // debug: on minewind in a world thats not in the data, show its seed instead of nothing
-    public static boolean showUnknown = true;
-
+public final class SubserverIndicator extends HudWidget {
     private static final int PAD = 3;
 
-    private SubserverIndicator() {}
+    private SubserverIndicator() {
+        super("subserver", "Subserver");
+    }
 
     public static void register() {
-        HudElementRegistry.addLast(Identifier.of("neverenoughwind", "subserver"), (ctx, tick) -> render(ctx));
+        new SubserverIndicator().add();
     }
 
-    private static void render(DrawContext ctx) {
-        MinecraftClient mc = MinecraftClient.getInstance();
-        if (mc.options.hudHidden || mc.world == null) return;
+    @Override
+    protected Content content(TextRenderer tr, boolean sample) {
+        // debug shows worlds that arent in the data by their seed, and says when a shared seed was a guess
+        boolean debug = Config.get().debug;
         World world = Worlds.current();
         if (world == null) {
-            if (showUnknown && Worlds.onMinewind() && !Worlds.raw().isEmpty()) drawPlate(ctx, mc.textRenderer, null, "? " + Worlds.raw(), 0xFFAAAAAA);
-            return;
+            if (debug && Worlds.onMinewind() && !Worlds.raw().isEmpty()) return plate(tr, null, "? " + Worlds.raw(), 0xFFAAAAAA);
+            return sample ? plate(tr, icon("azure"), Config.get().subserverName ? "Azure" : null, 0xFFFFFFFF) : null;
         }
-        Icon icon = Icon.of(Identifier.of("neverenoughwind", "textures/subserver/" + world.icon() + ".png"));
-        // debug: say when its the fallback for a shared seed and not a sure match
-        String name = showUnknown && Worlds.guessing() ? world.name() + " (fallback)" : world.name();
-        drawPlate(ctx, mc.textRenderer, icon, showName || icon == null ? name : null, 0xFFFFFFFF);
+        Icon icon = icon(world.icon());
+        String name = debug && Worlds.guessing() ? world.name() + " (fallback)" : world.name();
+        return plate(tr, icon, Config.get().subserverName || icon == null ? name : null, 0xFFFFFFFF);
     }
 
-    private static void drawPlate(DrawContext ctx, TextRenderer tr, Icon icon, String text, int textColor) {
-        int iconSize = icon == null ? 0 : icon.size(iconScale);
+    // left edge, halfway down: clear of minimaps, effect icons and the hotbar
+    @Override
+    protected int[] home(int sw, int sh, int w, int h) {
+        return new int[]{4, (sh - h) / 2};
+    }
+
+    private static Icon icon(String name) {
+        return Icon.of(Identifier.of("neverenoughwind", "textures/subserver/" + name + ".png"));
+    }
+
+    private static Content plate(TextRenderer tr, Icon icon, String text, int textColor) {
+        // whole multiples only, so the pixel art stays sharp
+        int scale = Math.max(1, Math.min(3, Config.get().subserverIconSize));
+        int iconSize = icon == null ? 0 : icon.size(scale);
         int textWidth = text == null ? 0 : tr.getWidth(text);
         int gap = icon != null && text != null ? 4 : 0;
         int w = PAD + iconSize + gap + textWidth + PAD;
         int h = PAD + Math.max(iconSize, text == null ? 0 : tr.fontHeight) + PAD;
-        int x = pos.x(ctx.getScaledWindowWidth(), w), y = pos.y(ctx.getScaledWindowHeight(), h);
-        if (icon != null) icon.draw(ctx, x + PAD, y + (h - iconSize) / 2, iconScale);
-        if (text != null) ctx.drawTextWithShadow(tr, text, x + PAD + iconSize + gap, y + (h - tr.fontHeight) / 2 + 1, textColor);
+        return new Content(w, h, ctx -> {
+            if (icon != null) icon.draw(ctx, PAD, (h - iconSize) / 2, scale);
+            if (text != null) ctx.drawTextWithShadow(tr, text, PAD + iconSize + gap, (h - tr.fontHeight) / 2 + 1, textColor);
+        });
     }
 }

@@ -1,26 +1,14 @@
 package com.neverenoughwind.feature;
 
 import com.neverenoughwind.adapter.Items;
+import com.neverenoughwind.config.Config;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.ItemStack;
 import org.joml.Matrix3x2fStack;
 
-import java.util.Map;
-
 // thin gradient outline on the slot frame, by item type. gear is left alone
 public final class Highlighter {
-    // placeholder colors until the settings menu exists
-    private static final Map<String, Integer> COLORS = Map.of(
-            "essence", 0xFFFF4FA3,
-            "magic", 0xFFA855FF,
-            "infinite", 0xFF55FFFF,
-            "keys", 0xFF55FF55,
-            "glamour", 0xFFFF9BEA,
-            "currency", 0xFFFFAA00,
-            "rarity", 0xFFFF5555,
-            "mechanics", 0xFFAAAAAA);
-
     // how dark the bottom gets, and how strong the inner line is (0-255)
     private static final double DARKEN = 0.65;
     private static final int GLOW = 0x66;
@@ -29,9 +17,10 @@ public final class Highlighter {
 
     // x, y = where the item is drawn (its top left corner)
     public static void draw(DrawContext ctx, ItemStack stack, int x, int y) {
-        if (stack == null || stack.isEmpty()) return;
-        Integer color = COLORS.get(String.valueOf(Items.info(stack).category()));
-        if (color == null) return;
+        if (stack == null || stack.isEmpty() || !Config.get().borders) return;
+        Integer rgb = Config.get().borderColors.get(String.valueOf(Items.info(stack).category()));
+        if (rgb == null) return;
+        int color = 0xFF000000 | rgb;
         int dark = darker(color);
         // draw in real screen pixels so the line is one pixel at any gui scale
         int scale = Math.max(1, MinecraftClient.getInstance().getWindow().getScaleFactor());

@@ -8,7 +8,8 @@
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
-    "client": ["com.neverenoughwind.NeverEnoughWind"]
+    "client": ["com.neverenoughwind.NeverEnoughWind"],
+    "modmenu": ["com.neverenoughwind.config.ModMenuEntry"]
   },
   "mixins": ["neverenoughwind.mixins.json"],
   "depends": {
@@ -16,5 +17,9 @@
     "minecraft": "~1.21.8",
     "java": ">=21",
     "fabric-api": "*"
+  },
+  "recommends": {
+    "yet_another_config_lib_v3": "*",
+    "modmenu": "*"
   }
 }
