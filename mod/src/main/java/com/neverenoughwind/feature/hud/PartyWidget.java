@@ -19,7 +19,6 @@ public final class PartyWidget {
     public static HudPos pos = new HudPos(1f, 0.5f, -4, 0);
 
     private static final int PAD = 3;
-    private static final int PLATE = 0x90000000;
     private static final int WHITE = 0xFFFFFFFF, GRAY = 0xFFAAAAAA, GOLD = 0xFFFFAA00, GREEN = 0xFF55FF55;
 
     private static final Party party = new Party();
@@ -69,7 +68,6 @@ public final class PartyWidget {
         int w = PAD + width + PAD, h = PAD + line * (members.size() + 1) + PAD - 1;
         int x = pos.x(ctx.getScaledWindowWidth(), w), y = pos.y(ctx.getScaledWindowHeight(), h);
 
-        ctx.fill(x, y, x + w, y + h, PLATE);
         int ty = y + PAD;
         ctx.drawTextWithShadow(tr, header, x + PAD, ty, GOLD);
         if (bonus != null) ctx.drawTextWithShadow(tr, bonus, x + w - PAD - tr.getWidth(bonus), ty, WHITE);

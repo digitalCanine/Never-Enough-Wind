@@ -9,6 +9,7 @@
     "DrawContextMixin",
     "HandledScreenMixin",
     "InGameHudMixin",
+    "PlayerListHudAccessor",
     "PlayerEntityRendererMixin"
   ],
   "injectors": {

@@ -8,7 +8,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.util.Identifier;
 
-// which subserver you're on: icon and name on a dark plate
+// which subserver you're on: icon and name, no background so it sits in the hud like vanilla text
 public final class SubserverIndicator {
     // placeholders until the settings menu exists
     // left edge, halfway down: clear of minimaps, effect icons and the hotbar
@@ -19,7 +19,6 @@ public final class SubserverIndicator {
     public static boolean showUnknown = true;
 
     private static final int PAD = 3;
-    private static final int PLATE = 0x90000000;
 
     private SubserverIndicator() {}
 
@@ -48,7 +47,6 @@ public final class SubserverIndicator {
         int w = PAD + iconSize + gap + textWidth + PAD;
         int h = PAD + Math.max(iconSize, text == null ? 0 : tr.fontHeight) + PAD;
         int x = pos.x(ctx.getScaledWindowWidth(), w), y = pos.y(ctx.getScaledWindowHeight(), h);
-        ctx.fill(x, y, x + w, y + h, PLATE);
         if (icon != null) icon.draw(ctx, x + PAD, y + (h - iconSize) / 2, iconScale);
         if (text != null) ctx.drawTextWithShadow(tr, text, x + PAD + iconSize + gap, y + (h - tr.fontHeight) / 2 + 1, textColor);
     }

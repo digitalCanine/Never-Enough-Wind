@@ -1,6 +1,11 @@
 package com.neverenoughwind.adapter;
 
 import net.minecraft.client.MinecraftClient;
+import com.neverenoughwind.parse.EventParser;
+import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.ScoreboardDisplaySlot;
+import net.minecraft.scoreboard.ScoreboardEntry;
+import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.scoreboard.Team;
 
 import java.util.ArrayList;
@@ -12,6 +17,36 @@ public final class Scoreboards {
     private static final Pattern PARTY_TEAM = Pattern.compile("^[0-9a-f]{24}$");
 
     private Scoreboards() {}
+
+    // your line on a running event's sidebar. everyone has a score there, not only the 15 the sidebar shows
+    public record OwnScore(String label, int secondsLeft, int score, int rank, int players) {
+    }
+
+    // null when no event sidebar is up or you have no score on it
+    public static OwnScore ownScore() {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        if (mc.world == null || mc.player == null) return null;
+        Scoreboard board = mc.world.getScoreboard();
+        ScoreboardObjective side = board.getObjectiveForSlot(ScoreboardDisplaySlot.SIDEBAR);
+        if (side == null) return null;
+        EventParser.Title title = EventParser.title(side.getDisplayName().getString());
+        if (title == null) return null;
+        String me = mc.player.getNameForScoreboard();
+        Integer mine = null;
+        int players = 0;
+        List<Integer> all = new ArrayList<>();
+        for (ScoreboardEntry e : board.getScoreboardEntries(side)) {
+            players++;
+            all.add(e.value());
+            if (e.owner().equals(me)) mine = e.value();
+        }
+        if (mine == null) return null;
+        int rank = 1;
+        for (int v : all) {
+            if (v > mine) rank++;
+        }
+        return new OwnScore(title.label(), title.secondsLeft(), mine, rank, players);
+    }
 
     // the party's team name, a different one for every party. null when not in a party
     public static String partyId() {

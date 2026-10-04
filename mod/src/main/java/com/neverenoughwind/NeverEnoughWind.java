@@ -6,6 +6,7 @@ import com.neverenoughwind.feature.ClanRefresh;
 import com.neverenoughwind.feature.Clans;
 import com.neverenoughwind.feature.NameColor;
 import com.neverenoughwind.feature.WindCommands;
+import com.neverenoughwind.feature.hud.EventWidgets;
 import com.neverenoughwind.feature.hud.PartyWidget;
 import com.neverenoughwind.feature.hud.SubserverIndicator;
 import com.neverenoughwind.parse.ItemParser;
@@ -37,6 +38,7 @@ public class NeverEnoughWind implements ClientModInitializer {
             SubserverIndicator.register();
             Chat.register();
             PartyWidget.register();
+            EventWidgets.register();
             Clans.register();
             ClanRefresh.register();
             WindCommands.register();
