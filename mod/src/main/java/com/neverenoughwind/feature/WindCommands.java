@@ -1,0 +1,77 @@
+package com.neverenoughwind.feature;
+
+import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
+import com.neverenoughwind.NeverEnoughWind;
+import com.neverenoughwind.dao.PriceDao;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+import java.util.Optional;
+
+import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
+import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
+
+// /wind commands. answered by the mod, nothing goes to the server except /wind clans after its confirmation
+public final class WindCommands {
+    private static final DecimalFormat NUMBER = new DecimalFormat("#,##0.##", DecimalFormatSymbols.getInstance(Locale.ROOT));
+
+    private WindCommands() {}
+
+    public static void register() {
+        ClientCommandRegistrationCallback.EVENT.register((dispatcher, access) -> dispatcher.register(literal("wind")
+                .then(literal("calc")
+                        .then(argument("amount", StringArgumentType.word())
+                                .then(argument("unit", StringArgumentType.word()).executes(c -> {
+                                    c.getSource().sendFeedback(calc(StringArgumentType.getString(c, "amount"), StringArgumentType.getString(c, "unit")));
+                                    return 1;
+                                }))))
+                .then(literal("sharp")
+                        .then(argument("from", IntegerArgumentType.integer(0, 30))
+                                .then(argument("to", IntegerArgumentType.integer(1, 30)).executes(c -> {
+                                    c.getSource().sendFeedback(sharp(IntegerArgumentType.getInteger(c, "from"), IntegerArgumentType.getInteger(c, "to")));
+                                    return 1;
+                                }))))
+                .then(literal("clans")
+                        .executes(c -> {
+                            c.getSource().sendFeedback(ClanRefresh.request());
+                            return 1;
+                        })
+                        .then(literal("stop").executes(c -> {
+                            c.getSource().sendFeedback(ClanRefresh.stop(null));
+                            return 1;
+                        })))
+                .then(literal("reload").executes(c -> {
+                    Clans.reload();
+                    c.getSource().sendFeedback(Text.literal("Reloaded your clan and relation files.").formatted(Formatting.GREEN));
+                    return 1;
+                }))));
+    }
+
+    // "9sh" "d" -> "9sh = 15,552d"
+    public static Text calc(String amount, String unit) {
+        if (NeverEnoughWind.data() == null) return Text.literal("The price data did not load.").formatted(Formatting.RED);
+        PriceDao prices = NeverEnoughWind.data().prices();
+        Optional<Double> result = prices.convert(amount, unit);
+        if (result.isEmpty()) {
+            return Text.literal("Write it like /wind calc 9sh d. Units: " + String.join(", ", prices.unitNames().stream().sorted().toList()) + ".")
+                    .formatted(Formatting.GRAY);
+        }
+        return Text.literal(amount.toLowerCase(Locale.ROOT) + " = ").formatted(Formatting.GRAY)
+                .append(Text.literal(NUMBER.format(result.get()) + unit.toLowerCase(Locale.ROOT)).formatted(Formatting.WHITE));
+    }
+
+    public static Text sharp(int from, int to) {
+        if (NeverEnoughWind.data() == null) return Text.literal("The price data did not load.").formatted(Formatting.RED);
+        if (to <= from) return Text.literal("The second level has to be higher than the first.").formatted(Formatting.GRAY);
+        int cost = NeverEnoughWind.data().prices().sharpenCost(from, to);
+        if (cost < 0) return Text.literal("The sharpening table only goes up to 30.").formatted(Formatting.GRAY);
+        return Text.literal("Sharpness " + from + " to " + to + " costs ").formatted(Formatting.GRAY)
+                .append(Text.literal(NUMBER.format(cost) + " dragon eggs").formatted(Formatting.WHITE))
+                .append(Text.literal(cost >= 64 ? " (" + PriceDao.text(cost) + ")." : ".").formatted(Formatting.GRAY));
+    }
+}

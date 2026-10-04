@@ -19,6 +19,8 @@ public final class PriceDao {
     private final Map<String, BlockPrice> blocks = new HashMap<>();
     private final Map<Integer, Integer> sharpenCost = new HashMap<>();
     private List<String> blockNotes = List.of();
+    // unit -> deggs: ember 0.25, d 1, s 64, sh 1728, ch 46656
+    private final Map<String, Double> units = new HashMap<>();
     // "slab" -> [20, 32]: blocks the chart only prices as a group
     private final Map<String, int[]> blockGroups = new HashMap<>();
 
@@ -42,6 +44,10 @@ public final class PriceDao {
             for (Map.Entry<String, JsonElement> e : sharpen.entrySet()) dao.sharpenCost.put(Integer.valueOf(e.getKey()), e.getValue().getAsInt());
         }
         dao.blockNotes = Json.strings(root, "block_notes");
+        JsonObject notation = root.getAsJsonObject("notation");
+        if (notation != null) {
+            for (Map.Entry<String, JsonElement> e : notation.entrySet()) dao.units.put(e.getKey(), e.getValue().getAsDouble());
+        }
         JsonObject groups = root.getAsJsonObject("block_groups");
         if (groups != null) {
             for (Map.Entry<String, JsonElement> e : groups.entrySet()) {
@@ -103,6 +109,19 @@ public final class PriceDao {
 
     public List<String> blockNotes() {
         return blockNotes;
+    }
+
+    // "9sh" to "d" -> 15552. amount = a number with its unit stuck on. empty when a unit isnt known or the number is bad
+    public Optional<Double> convert(String amount, String toUnit) {
+        java.util.regex.Matcher m = java.util.regex.Pattern.compile("^(\\d+(?:\\.\\d+)?)([a-z]+)$").matcher(amount.toLowerCase(java.util.Locale.ROOT));
+        if (!m.matches()) return Optional.empty();
+        Double from = units.get(m.group(2)), to = units.get(toUnit.toLowerCase(java.util.Locale.ROOT));
+        if (from == null || to == null) return Optional.empty();
+        return Optional.of(Double.parseDouble(m.group(1)) * from / to);
+    }
+
+    public java.util.Set<String> unitNames() {
+        return java.util.Set.copyOf(units.keySet());
     }
 
     // 960 -> "15s", 1000 -> "15s 40d", 1728 -> "1sh". same units as the price chart

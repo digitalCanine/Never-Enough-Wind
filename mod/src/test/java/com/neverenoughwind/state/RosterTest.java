@@ -64,7 +64,8 @@ class RosterTest {
     @Test
     void relations() {
         Relations r = new Relations();
-        r.set(List.of("hoes", "AXE"), List.of("res"), List.of("Srmp", "done"));
+        r.set(List.of("hoes", "AXE"), List.of("res"), List.of("Srmp", "done"), List.of("USA", "srmp"));
+        assertEquals(Relations.Kind.TRADEBANNED, r.of("usa"));
         assertEquals(Relations.Kind.OWN, r.of("axe"));
         assertEquals(Relations.Kind.ALLY, r.of("RES"));
         assertEquals(Relations.Kind.ENEMY, r.of("srmp"));

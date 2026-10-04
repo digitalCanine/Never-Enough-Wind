@@ -27,9 +27,10 @@ public final class Clans {
     // placeholder colors, overridden by "colors" in relations.json until the settings menu exists
     private static final Map<Relations.Kind, Integer> colors = new EnumMap<>(Map.of(
             Relations.Kind.OWN, 0x55FF55, Relations.Kind.ALLY, 0x55AAFF,
-            Relations.Kind.ENEMY, 0xFF5555, Relations.Kind.NEUTRAL, 0xAAAAAA));
+            Relations.Kind.ENEMY, 0xFF5555, Relations.Kind.TRADEBANNED, 0xFFAA00, Relations.Kind.NEUTRAL, 0xAAAAAA));
     private static final int RANK_COLOR = 0xAAAAAA;
     private static long shippedTime;
+    private static final Map<String, String> seen = new java.util.LinkedHashMap<>();
 
     private Clans() {}
 
@@ -57,7 +58,31 @@ public final class Clans {
         ClientReceiveMessageEvents.MODIFY_GAME.register((message, overlay) -> overlay ? message : recolorChat(message));
     }
 
-    private static void onChat(ChatMatch m) {
+    // tags that showed up in chat this session, as written. /wind clans refreshes these
+    public static List<String> seenTags() {
+        return List.copyOf(seen.values());
+    }
+
+    public static void forgetSeen(String tag) {
+        seen.remove(tag.toLowerCase(java.util.Locale.ROOT));
+    }
+
+    // rereads the player's files
+    public static void reload() {
+        ClanDao.loadPlayer(dir().resolve("clans.json"), roster);
+        Path rel = dir().resolve("relations.json");
+        relations.set(List.of(), List.of(), List.of(), List.of());
+        ClanDao.loadRelations(rel, relations);
+        ClanDao.loadColors(rel).forEach((name, rgb) -> {
+            try {
+                colors.put(Relations.Kind.valueOf(name.toUpperCase(java.util.Locale.ROOT)), rgb);
+            } catch (IllegalArgumentException ignored) {
+                // not a relation name
+            }
+        });
+    }
+
+    public static void onChat(ChatMatch m) {
         switch (m.id()) {
             // any /clan find answer updates the roster, whoever asked for it
             case "clan_find" -> {
@@ -69,7 +94,9 @@ public final class Clans {
             case "clan_chat" -> relations.detected(m.get("clan"));
             // a real name speaking with a tag settles which of their listed clans is the current one
             case "public_chat" -> {
-                if (m.get("clan") != null && roster.settle(m.get("name"), m.get("clan"))) save();
+                if (m.get("clan") == null) break;
+                seen.putIfAbsent(m.get("clan").toLowerCase(java.util.Locale.ROOT), m.get("clan"));
+                if (roster.settle(m.get("name"), m.get("clan"))) save();
             }
             default -> {
             }

@@ -87,12 +87,12 @@ public final class ClanDao {
         write(file, root);
     }
 
-    // own / ally / enemy lists. a missing file means no relations, only the detected own clan
+    // own / ally / enemy / tradebanned lists. a missing file means no relations, only the detected own clan
     public static void loadRelations(Path file, Relations relations) {
         if (!Files.exists(file)) return;
         try {
             JsonObject root = JsonParser.parseString(Files.readString(file, StandardCharsets.UTF_8)).getAsJsonObject();
-            relations.set(Json.strings(root, "own"), Json.strings(root, "ally"), Json.strings(root, "enemy"));
+            relations.set(Json.strings(root, "own"), Json.strings(root, "ally"), Json.strings(root, "enemy"), Json.strings(root, "tradebanned"));
         } catch (Exception e) {
             NeverEnoughWind.LOG.warn("could not read {}: {}", file, e.toString());
         }

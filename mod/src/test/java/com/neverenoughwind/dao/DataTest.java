@@ -110,6 +110,21 @@ class DataTest {
     }
 
     @Test
+    void unitCalc() {
+        PriceDao p = data.prices();
+        assertEquals(15552.0, p.convert("9sh", "d").orElseThrow());
+        assertEquals(1.0, p.convert("64d", "s").orElseThrow());
+        assertEquals(27.0, p.convert("1sh", "s").orElseThrow());
+        assertEquals(0.5, p.convert("32d", "S").orElseThrow());
+        assertEquals(4.0, p.convert("1d", "ember").orElseThrow());
+        assertEquals(1.5, p.convert("1.5SH", "sh").orElseThrow());
+        assertTrue(p.convert("9", "d").isEmpty());
+        assertTrue(p.convert("9xx", "d").isEmpty());
+        assertTrue(p.convert("9sh", "nope").isEmpty());
+        assertTrue(p.convert("sh", "d").isEmpty());
+    }
+
+    @Test
     void keysAndBlocks() {
         assertEquals(288, data.prices().key("Tempest").orElseThrow().minDeggs());
         // item names dont match the chart exactly
