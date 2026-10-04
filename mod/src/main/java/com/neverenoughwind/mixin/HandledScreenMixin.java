@@ -1,6 +1,7 @@
 package com.neverenoughwind.mixin;
 
 import com.neverenoughwind.feature.Highlighter;
+import com.neverenoughwind.feature.ItemDump;
 import com.neverenoughwind.feature.SidePanel;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -23,6 +24,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> {
     private void new$rememberHovered(DrawContext context, int x, int y, CallbackInfo ci) {
         boolean showing = handler.getCursorStack().isEmpty() && focusedSlot != null && focusedSlot.hasStack();
         SidePanel.hovered = showing ? focusedSlot.getStack() : null;
+        ItemDump.hovered = SidePanel.hovered;
     }
 
     // before the item, so the item is drawn on top of the line

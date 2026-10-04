@@ -103,7 +103,7 @@ public final class ConfigScreen {
                 .group(tags("Trade Banned", "Clans you do not trade with.", () -> c.tradebanned, v -> c.tradebanned = v));
 
         ConfigCategory.Builder other = ConfigCategory.createBuilder().name(Text.literal("Other"))
-                .option(toggle("Debug Info", "Extra rows in the side panel showing how an item was read, and worlds the mod does not know.",
+                .option(toggle("Debug Info", "For testers. Extra rows in the side panel showing how an item was read, worlds the mod does not know, and the Save Item Info key (set it under Controls): hover an item and press it to save and copy what the item looks like.",
                         d.debug, () -> c.debug, v -> c.debug = v));
 
         return YetAnotherConfigLib.createBuilder()
