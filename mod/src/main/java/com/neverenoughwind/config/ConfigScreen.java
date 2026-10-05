@@ -103,6 +103,10 @@ public final class ConfigScreen {
                 .group(tags("Trade Banned", "Clans you do not trade with.", () -> c.tradebanned, v -> c.tradebanned = v));
 
         ConfigCategory.Builder other = ConfigCategory.createBuilder().name(Text.literal("Other"))
+                .option(toggle("Inventory View", "Looking into another player's inventory shows it laid out like a real inventory instead of a chest, without your own items underneath.",
+                        d.inventoryView, () -> c.inventoryView, v -> c.inventoryView = v))
+                .option(toggle("Tidy Join Dates", "Profiles of players who joined before the merge say \"pre-merge\" instead of twenty thousand days.",
+                        d.fixJoinDate, () -> c.fixJoinDate, v -> c.fixJoinDate = v))
                 .option(toggle("Debug Info", "For testers. Extra rows in the side panel showing how an item was read, worlds the mod does not know, and the Save Item Info key (set it under Controls): hover an item and press it to save and copy what the item looks like.",
                         d.debug, () -> c.debug, v -> c.debug = v));
 

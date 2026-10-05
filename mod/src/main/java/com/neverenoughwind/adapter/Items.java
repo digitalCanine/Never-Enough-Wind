@@ -4,6 +4,7 @@ import com.neverenoughwind.NeverEnoughWind;
 import com.neverenoughwind.parse.ItemInfo;
 import com.neverenoughwind.parse.ItemSnapshot;
 import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ContainerComponent;
 import net.minecraft.component.type.LoreComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -47,6 +48,18 @@ public final class Items {
         stack.getEnchantments().getEnchantmentEntries()
                 .forEach(e -> enchants.put(e.getKey().getIdAsString(), e.getIntValue()));
         return new ItemSnapshot(id, stack.getName().getString(), custom != null && hasColor(custom), lore, enchants);
+    }
+
+    // a shegg: a shulker box with all 27 slots holding a full stack of dragon eggs. one egg short and it isnt one
+    public static boolean isShegg(ItemStack stack) {
+        ContainerComponent box = stack.get(DataComponentTypes.CONTAINER);
+        if (box == null || !Registries.ITEM.getId(stack.getItem()).getPath().endsWith("shulker_box")) return false;
+        int full = 0;
+        for (ItemStack inside : box.iterateNonEmpty()) {
+            if (!inside.isOf(net.minecraft.item.Items.DRAGON_EGG) || inside.getCount() != 64) return false;
+            full++;
+        }
+        return full == 27;
     }
 
     // server names always carry a color, anvil renames never do

@@ -61,7 +61,8 @@ public abstract class HudWidget {
         int w = Math.round(c.width() * cfg.scale), h = Math.round(c.height() * cfg.scale);
         int[] at;
         if (cfg.moved) {
-            HudPos pos = new HudPos(cfg.anchorX, cfg.anchorY, cfg.offsetX, cfg.offsetY);
+            HudPos pos = new HudPos(cfg.anchorX, cfg.anchorY, cfg.offsetX, cfg.offsetY,
+                    cfg.pivotX < 0 ? cfg.anchorX : cfg.pivotX, cfg.pivotY < 0 ? cfg.anchorY : cfg.pivotY);
             at = new int[]{pos.x(sw, w), pos.y(sh, h)};
         } else {
             at = home(sw, sh, w, h);

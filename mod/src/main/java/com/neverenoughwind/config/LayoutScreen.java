@@ -16,6 +16,8 @@ public final class LayoutScreen extends ChatScreen {
     public static final float MIN_SCALE = 0.5f, MAX_SCALE = 3f;
     // the square on a widget's bottom right corner
     private static final int HANDLE = 5;
+    // this close to a screen edge counts as against it
+    private static final int EDGE = 8;
     private static final int WHITE = 0xFFFFFFFF, FAINT = 0x80FFFFFF, OFF = 0xFFFF5555, GRAY = 0xFFAAAAAA;
 
     private final Screen parent;
@@ -158,12 +160,16 @@ public final class LayoutScreen extends ChatScreen {
         return true;
     }
 
-    // hold on to the nearest edge or the middle, so it stays put on any window size
+    // hold on to the nearest edge or the middle of the screen, so it stays put on any window size
     private void pin(Config.Widget cfg, int x, int y, int w, int h) {
         cfg.anchorX = anchor(x + w / 2, width);
         cfg.anchorY = anchor(y + h / 2, height);
-        cfg.offsetX = x - Math.round((width - w) * cfg.anchorX);
-        cfg.offsetY = y - Math.round((height - h) * cfg.anchorY);
+        // and decide what stays put when the content changes size: a widget against a screen edge keeps that edge,
+        // anything else keeps its middle, so text of any length stays centered where you put it. lists grow downward
+        cfg.pivotX = x <= EDGE ? 0f : x + w >= width - EDGE ? 1f : 0.5f;
+        cfg.pivotY = y + h >= height - EDGE ? 1f : 0f;
+        cfg.offsetX = x + Math.round(w * cfg.pivotX) - Math.round(width * cfg.anchorX);
+        cfg.offsetY = y + Math.round(h * cfg.pivotY) - Math.round(height * cfg.anchorY);
         cfg.moved = true;
     }
 

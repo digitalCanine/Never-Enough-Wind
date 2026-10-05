@@ -33,6 +33,8 @@ public final class Config {
         public boolean moved;
         public float anchorX, anchorY;
         public int offsetX, offsetY;
+        // which part of the widget is held in place, -1 = same as the anchor (files from before this existed)
+        public float pivotX = -1, pivotY = -1;
         public float scale = 1f;
     }
 
@@ -57,6 +59,10 @@ public final class Config {
     public boolean nameColors = false;
     public List<String> own = new ArrayList<>(), ally = new ArrayList<>(), enemy = new ArrayList<>(), tradebanned = new ArrayList<>();
     public int ownColor = 0x55FF55, allyColor = 0x55AAFF, enemyColor = 0xFF5555, tradebannedColor = 0xFFAA00, neutralColor = 0xAAAAAA;
+
+    // server oddities the mod tidies up
+    public boolean fixJoinDate = true;
+    public boolean inventoryView = true;
 
     // the debug rows in the side panel and unknown worlds on the hud
     public boolean debug = false;

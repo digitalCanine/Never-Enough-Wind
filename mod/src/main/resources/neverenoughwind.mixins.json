@@ -7,10 +7,13 @@
     "BiomeAccessAccessor",
     "ClientPlayNetworkHandlerMixin",
     "DrawContextMixin",
+    "EntityRendererMixin",
+    "GenericContainerScreenMixin",
     "HandledScreenMixin",
     "InGameHudMixin",
     "PlayerListHudAccessor",
-    "PlayerEntityRendererMixin"
+    "PlayerEntityRendererMixin",
+    "SlotAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

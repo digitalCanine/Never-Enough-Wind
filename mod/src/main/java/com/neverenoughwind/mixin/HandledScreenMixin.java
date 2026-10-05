@@ -5,6 +5,7 @@ import com.neverenoughwind.feature.ItemDump;
 import com.neverenoughwind.feature.SidePanel;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import org.spongepowered.asm.mixin.Final;
@@ -27,9 +28,14 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> {
         ItemDump.hovered = SidePanel.hovered;
     }
 
-    // before the item, so the item is drawn on top of the line
-    @Inject(method = "drawSlot", at = @At("HEAD"))
-    private void new$border(DrawContext context, Slot slot, CallbackInfo ci) {
-        Highlighter.draw(context, slot.getStack(), slot.x, slot.y);
+    // the item stuck to the cursor has no slot around it, so it gets no border
+    @Inject(method = "drawItem", at = @At("HEAD"))
+    private void new$cursorItemStart(DrawContext context, ItemStack stack, int x, int y, String amountText, CallbackInfo ci) {
+        Highlighter.paused = true;
+    }
+
+    @Inject(method = "drawItem", at = @At("RETURN"))
+    private void new$cursorItemEnd(DrawContext context, ItemStack stack, int x, int y, String amountText, CallbackInfo ci) {
+        Highlighter.paused = false;
     }
 }

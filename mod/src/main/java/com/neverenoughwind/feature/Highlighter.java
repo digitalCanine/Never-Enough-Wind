@@ -7,18 +7,23 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.ItemStack;
 import org.joml.Matrix3x2fStack;
 
-// thin gradient outline on the slot frame, by item type. gear is left alone
+// thin gradient outline around an item wherever it is drawn in a menu or on the hud, by item type. gear is left alone
 public final class Highlighter {
     // how dark the bottom gets, and how strong the inner line is (0-255)
     private static final double DARKEN = 0.65;
     private static final int GLOW = 0x66;
 
+    // set while something draws an item that should stay bare, like the one on the cursor
+    public static boolean paused;
+
     private Highlighter() {}
 
     // x, y = where the item is drawn (its top left corner)
     public static void draw(DrawContext ctx, ItemStack stack, int x, int y) {
-        if (stack == null || stack.isEmpty() || !Config.get().borders) return;
+        if (paused || stack == null || stack.isEmpty() || !Config.get().borders) return;
         Integer rgb = Config.get().borderColors.get(String.valueOf(Items.info(stack).category()));
+        // a full box of dragon eggs is money too
+        if (rgb == null && Items.isShegg(stack)) rgb = Config.get().borderColors.get("currency");
         if (rgb == null) return;
         int color = 0xFF000000 | rgb;
         int dark = darker(color);
