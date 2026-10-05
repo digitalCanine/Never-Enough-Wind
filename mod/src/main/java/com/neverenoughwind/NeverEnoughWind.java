@@ -4,11 +4,13 @@ import com.neverenoughwind.config.Config;
 import com.neverenoughwind.dao.Data;
 import com.neverenoughwind.adapter.Chat;
 import com.neverenoughwind.feature.ClanRefresh;
+import com.neverenoughwind.feature.Browser;
 import com.neverenoughwind.feature.Clans;
 import com.neverenoughwind.feature.Dailies;
 import com.neverenoughwind.feature.ItemDump;
 import com.neverenoughwind.feature.NameColor;
 import com.neverenoughwind.feature.WindCommands;
+import com.neverenoughwind.feature.discord.Presence;
 import com.neverenoughwind.feature.hud.EventWidgets;
 import com.neverenoughwind.feature.hud.Notifications;
 import com.neverenoughwind.feature.hud.PartyWidget;
@@ -51,6 +53,8 @@ public class NeverEnoughWind implements ClientModInitializer {
             ClanRefresh.register();
             WindCommands.register();
             ItemDump.register();
+            Browser.register();
+            Presence.register();
             LOG.info("data loaded: {} essences, {} auction items, {} item types",
                     data.essences().all().size(), data.auctionItems().all().size(), data.itemRules().types().size());
         } catch (RuntimeException e) {

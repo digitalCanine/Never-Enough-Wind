@@ -106,6 +106,18 @@ public final class ConfigScreen {
                 .group(tags("Enemies", null, () -> c.enemy, v -> c.enemy = v))
                 .group(tags("Trade Banned", "Clans you do not trade with.", () -> c.tradebanned, v -> c.tradebanned = v));
 
+        ConfigCategory.Builder discord = ConfigCategory.createBuilder().name(Text.literal("Discord"))
+                .option(toggle("Show on Discord", "Show that you are playing Minewind on your Discord profile. Off unless you turn it on, and you choose every part of it below. The mod only talks to the Discord app on your computer.",
+                        d.discord, () -> c.discord, v -> c.discord = v))
+                .option(line("First Line", d.discordLine1, () -> c.discordLine1, v -> c.discordLine1 = v))
+                .option(line("Second Line", d.discordLine2, () -> c.discordLine2, v -> c.discordLine2 = v))
+                .option(picture("Big Picture", "The player head and the server icon are loaded by Discord from outside websites, using your username or the server address.",
+                        d.discordBigPicture, () -> c.discordBigPicture, v -> c.discordBigPicture = v))
+                .option(picture("Small Picture", "The small one in the corner of the big picture.",
+                        d.discordSmallPicture, () -> c.discordSmallPicture, v -> c.discordSmallPicture = v))
+                .option(toggle("Time Played", "Show how long you have been on.",
+                        d.discordElapsed, () -> c.discordElapsed, v -> c.discordElapsed = v));
+
         ConfigCategory.Builder other = ConfigCategory.createBuilder().name(Text.literal("Other"))
                 .option(toggle("Inventory View", "Looking into another player's inventory shows it laid out like a real inventory instead of a chest, without your own items underneath.",
                         d.inventoryView, () -> c.inventoryView, v -> c.inventoryView = v))
@@ -119,6 +131,7 @@ public final class ConfigScreen {
                 .category(items.build())
                 .category(hud.build())
                 .category(clans.build())
+                .category(discord.build())
                 .category(other.build())
                 .save(() -> {
                     Config.save();
@@ -126,6 +139,22 @@ public final class ConfigScreen {
                 })
                 .build()
                 .generateScreen(parent);
+    }
+
+    private static Option<Config.DiscordLine> line(String name, Config.DiscordLine def, Supplier<Config.DiscordLine> get, Consumer<Config.DiscordLine> set) {
+        return Option.<Config.DiscordLine>createBuilder().name(Text.literal(name))
+                .description(about("A line that has nothing to say right now, like the party size when you are alone, is left out."))
+                .binding(def, get, set)
+                .controller(o -> EnumControllerBuilder.create(o).enumClass(Config.DiscordLine.class).formatValue(v -> Text.literal(v.label)))
+                .build();
+    }
+
+    private static Option<Config.DiscordPicture> picture(String name, String about, Config.DiscordPicture def,
+                                                         Supplier<Config.DiscordPicture> get, Consumer<Config.DiscordPicture> set) {
+        return Option.<Config.DiscordPicture>createBuilder().name(Text.literal(name)).description(about(about))
+                .binding(def, get, set)
+                .controller(o -> EnumControllerBuilder.create(o).enumClass(Config.DiscordPicture.class).formatValue(v -> Text.literal(v.label)))
+                .build();
     }
 
     private static OptionDescription about(String text) {

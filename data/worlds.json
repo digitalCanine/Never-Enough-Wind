@@ -5,7 +5,8 @@
     "seeds are strings, too big for some json readers",
     "assumed = not visited, same seed as the rest of that subserver",
     "unknown seed: hide",
-    "icon = icon file when its not the name. server = which subserver its part of when its not the name"
+    "icon = icon file when its not the name. server = which subserver its part of when its not the name",
+    "hashed_seed \"*\" = any seed, matched on the dimension alone: event worlds, which only exist on one server"
   ],
   "worlds": [
     {
@@ -228,6 +229,23 @@
       "server": "Limbo",
       "status": "confirmed",
       "note": "waiting room while a subserver restarts. only lists the overworld, 400 max players"
+    },
+    {
+      "name": "Abyssal",
+      "hashed_seed": "*",
+      "dimension": "minecraft:abyss_minewind",
+      "icon": "aqua",
+      "server": "Spawn",
+      "status": "confirmed",
+      "note": "abyssal event, reached from spawn. seed seen once: -4074711844730097401"
+    },
+    {
+      "name": "Abyssal",
+      "hashed_seed": "*",
+      "dimension": "minecraft:abyss_minewind_city",
+      "icon": "aqua",
+      "server": "Spawn",
+      "status": "assumed"
     }
   ],
   "if_unsure": "throne only on spawn -11 64 269, else azure",

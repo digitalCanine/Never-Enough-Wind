@@ -1,4 +1,5 @@
 {
   "key.categories.neverenoughwind": "Never Enough Wind",
-  "key.neverenoughwind.dump_item": "Save Item Info (Debug)"
+  "key.neverenoughwind.dump_item": "Save Item Info (Debug)",
+  "key.neverenoughwind.browser": "Open Item Browser"
 }

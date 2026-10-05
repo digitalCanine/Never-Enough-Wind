@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "notes": [
+    "application_id = the discord application the presence shows under, empty = the feature stays off",
+    "subserver pictures are art assets uploaded to that application, named like the icon files (aqua, arch, azure, era, moon, spawn, sun, terra, throne)",
+    "the two urls are fetched by discord itself, never by the mod"
+  ],
+  "application_id": "1556783359903011027",
+  "head_url": "https://mc-heads.net/avatar/{uuid}/128",
+  "server_icon_url": "https://api.mcsrvstat.us/icon/{address}"
+}

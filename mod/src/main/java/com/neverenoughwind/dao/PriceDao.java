@@ -17,6 +17,9 @@ public final class PriceDao {
     private final Map<String, PriceTier> blockTiers = new HashMap<>();
     private final Map<String, KeyPrice> keys = new HashMap<>();
     private final Map<String, BlockPrice> blocks = new HashMap<>();
+    // the same keys and blocks in the chart's own order, for the browser
+    private final List<KeyPrice> keyList = new java.util.ArrayList<>();
+    private final List<BlockPrice> blockList = new java.util.ArrayList<>();
     private final Map<Integer, Integer> sharpenCost = new HashMap<>();
     private List<String> blockNotes = List.of();
     // unit -> deggs: ember 0.25, d 1, s 64, sh 1728, ch 46656
@@ -33,11 +36,17 @@ public final class PriceDao {
         for (JsonObject o : Json.objects(root.get("keys"))) {
             Integer[] d = Json.deggs(o);
             String name = Json.str(o, "name");
-            if (name != null) dao.keys.put(Json.key(name), new KeyPrice(name, Json.str(o, "price"), d[0], d[1]));
+            if (name == null) continue;
+            KeyPrice key = new KeyPrice(name, Json.str(o, "price"), d[0], d[1]);
+            dao.keys.put(Json.key(name), key);
+            dao.keyList.add(key);
         }
         for (JsonObject o : Json.objects(root.get("blocks"))) {
             String item = Json.str(o, "item");
-            if (item != null) dao.blocks.put(item, new BlockPrice(Json.str(o, "name"), item, Json.str(o, "category"), Json.str(o, "tier")));
+            if (item == null) continue;
+            BlockPrice block = new BlockPrice(Json.str(o, "name"), item, Json.str(o, "category"), Json.str(o, "tier"));
+            dao.blocks.put(item, block);
+            dao.blockList.add(block);
         }
         JsonObject sharpen = root.getAsJsonObject("sharpen_cost");
         if (sharpen != null) {
@@ -92,6 +101,14 @@ public final class PriceDao {
             if (k != null) return Optional.of(k);
         }
         return Optional.empty();
+    }
+
+    public List<KeyPrice> allKeys() {
+        return List.copyOf(keyList);
+    }
+
+    public List<BlockPrice> allBlocks() {
+        return List.copyOf(blockList);
     }
 
     public Optional<BlockPrice> block(String itemId) {

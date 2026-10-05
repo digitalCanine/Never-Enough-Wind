@@ -19,6 +19,8 @@ public final class WorldDao {
     // seed + dimension -> the subservers that have it, almost always one
     private final Map<String, List<World>> byKey = new HashMap<>();
     private final List<World> all = new ArrayList<>();
+    // worlds listed with seed "*": event worlds, known by their dimension whatever the seed is
+    private final Map<String, World> byDimension = new HashMap<>();
     private final Map<String, String> fallback;
 
     private WorldDao(Map<String, String> fallback) {
@@ -41,6 +43,10 @@ public final class WorldDao {
             if (icon == null) icon = name.toLowerCase(Locale.ROOT);
             String server = Json.str(o, "server");
             World world = new World(name, seed, dim, spawn, icon, server == null ? name : server, Json.str(o, "status"));
+            if (seed.equals("*")) {
+                dao.byDimension.put(dim, world);
+                continue;
+            }
             dao.byKey.computeIfAbsent(seed + " " + dim, k -> new ArrayList<>()).add(world);
             dao.all.add(world);
         }
@@ -50,7 +56,7 @@ public final class WorldDao {
     // best answer from seed and dimension alone. empty = unknown world
     public Optional<World> find(long hashedSeed, String dimension) {
         List<World> hits = byKey.get(hashedSeed + " " + dimension);
-        if (hits == null) return Optional.empty();
+        if (hits == null) return Optional.ofNullable(byDimension.get(dimension));
         if (hits.size() == 1) return Optional.of(hits.get(0));
         String name = fallback.get(String.valueOf(hashedSeed));
         return Optional.of(hits.stream().filter(w -> w.name().equals(name)).findFirst().orElse(hits.get(0)));

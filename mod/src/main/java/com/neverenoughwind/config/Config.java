@@ -63,6 +63,33 @@ public final class Config {
     public List<String> own = new ArrayList<>(), ally = new ArrayList<>(), enemy = new ArrayList<>(), tradebanned = new ArrayList<>();
     public int ownColor = 0x55FF55, allyColor = 0x55AAFF, enemyColor = 0xFF5555, tradebannedColor = 0xFFAA00, neutralColor = 0xAAAAAA;
 
+    // discord rich presence, off until the player turns it on. each line and picture is their pick
+    public enum DiscordLine {
+        NOTHING("Nothing"), SUBSERVER("Subserver"), CLAN("Clan and rank"), NAME_CLAN("Name, clan and rank"), NAME("Player name"),
+        EVENT("Event"), PARTY("Party size"), HELD_ITEM("Held item");
+
+        public final String label;
+
+        DiscordLine(String label) {
+            this.label = label;
+        }
+    }
+
+    public enum DiscordPicture {
+        NOTHING("Nothing"), SUBSERVER("Subserver icon"), HEAD("Your player head"), SERVER_ICON("Minewind server icon");
+
+        public final String label;
+
+        DiscordPicture(String label) {
+            this.label = label;
+        }
+    }
+
+    public boolean discord = false;
+    public DiscordLine discordLine1 = DiscordLine.SUBSERVER, discordLine2 = DiscordLine.EVENT;
+    public DiscordPicture discordBigPicture = DiscordPicture.SUBSERVER, discordSmallPicture = DiscordPicture.NOTHING;
+    public boolean discordElapsed = true;
+
     // server oddities the mod tidies up
     public boolean fixJoinDate = true;
     public boolean inventoryView = true;
@@ -98,6 +125,10 @@ public final class Config {
     // a file written by an older version can miss things
     private Config filled() {
         if (sidePanel == null) sidePanel = PanelMode.ALWAYS;
+        if (discordLine1 == null) discordLine1 = DiscordLine.SUBSERVER;
+        if (discordLine2 == null) discordLine2 = DiscordLine.EVENT;
+        if (discordBigPicture == null) discordBigPicture = DiscordPicture.SUBSERVER;
+        if (discordSmallPicture == null) discordSmallPicture = DiscordPicture.NOTHING;
         if (borderColors == null) borderColors = new LinkedHashMap<>();
         defaultBorderColors().forEach(borderColors::putIfAbsent);
         if (widgets == null) widgets = new LinkedHashMap<>();

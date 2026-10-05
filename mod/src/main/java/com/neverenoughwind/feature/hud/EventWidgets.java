@@ -16,6 +16,7 @@ public final class EventWidgets {
     private static final int WHITE = 0xFFFFFFFF, GRAY = 0xFFAAAAAA, GOLD = 0xFFFFAA00;
 
     private static final Reminder reminder = new Reminder();
+    private static EventParser.Upcoming upcoming;
 
     private EventWidgets() {}
 
@@ -24,11 +25,17 @@ public final class EventWidgets {
         new ScoreWidget().add();
     }
 
+    // the event in the tab list header, read once a second. null when there is none
+    public static EventParser.Upcoming upcoming() {
+        return Worlds.onMinewind() ? upcoming : null;
+    }
+
     private static void tick(MinecraftClient mc) {
         // once a second is plenty, the header changes once a minute
         if (mc.world == null || mc.world.getTime() % 20 != 0 || !Worlds.onMinewind()) return;
         Text header = ((PlayerListHudAccessor) mc.inGameHud.getPlayerListHud()).new$header();
         EventParser.Upcoming next = EventParser.header(header == null ? null : header.getString());
+        upcoming = next;
         // the marks are still tracked while reminders are off, so turning them on mid-countdown doesnt replay old ones
         if (reminder.reached(next) && Config.get().eventReminders) Notifications.show(next.event() + " in " + next.minutes() + " min");
     }

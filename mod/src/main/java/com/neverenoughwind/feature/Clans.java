@@ -10,6 +10,7 @@ import com.neverenoughwind.state.Relations;
 import com.neverenoughwind.state.Roster;
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.PlainTextContent;
 import net.minecraft.text.Text;
@@ -127,6 +128,16 @@ public final class Clans {
             line.append(Text.literal(" " + rank).styled(s -> s.withColor(RANK_COLOR)));
         }
         return line;
+    }
+
+    // your own clan and rank, "AXE Leader". null when the roster doesnt have you
+    public static String ownClan() {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        if (mc.player == null) return null;
+        List<Roster.Membership> clans = roster.of(mc.player.getNameForScoreboard());
+        if (clans.isEmpty()) return null;
+        Roster.Membership m = clans.get(0);
+        return m.tag() + " " + Character.toUpperCase(m.rank().charAt(0)) + m.rank().substring(1);
     }
 
     // the name on a nametag, in the color of that player's clan. neutral players keep the server's color

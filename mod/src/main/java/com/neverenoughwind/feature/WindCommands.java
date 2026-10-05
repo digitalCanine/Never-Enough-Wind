@@ -56,6 +56,10 @@ public final class WindCommands {
                     return 1;
                 }))
                 .then(dailies())
+                .then(literal("browse")
+                        .executes(c -> browse(c.getSource().getClient(), null))
+                        .then(argument("search", StringArgumentType.greedyString())
+                                .executes(c -> browse(c.getSource().getClient(), StringArgumentType.getString(c, "search")))))
                 .then(literal("config").executes(c -> {
                     // a tick later, the chat screen is still closing right now
                     MinecraftClient mc = c.getSource().getClient();
@@ -65,6 +69,12 @@ public final class WindCommands {
                     }
                     return 1;
                 }))));
+    }
+
+    // a tick later, the chat screen is still closing right now
+    private static int browse(MinecraftClient mc, String search) {
+        mc.send(() -> Browser.open(search));
+        return 1;
     }
 
     // /wind dailies, and /wind dailies <which> done|reset to correct one by hand
