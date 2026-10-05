@@ -29,7 +29,7 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-// the daily boss key, /daily, /weekly and the daily wild key: when each can be done again.
+// the daily boss key, /daily, /weekly, the daily wild key and votes: when each can be done again.
 // everything comes from lines the server prints to you and from your own inventory
 public final class Dailies {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
@@ -103,6 +103,18 @@ public final class Dailies {
             }
             // asking while its not ready gives the exact time left
             case "daily_cooldown" -> timers.sync(Kind.DAILY, Integer.parseInt(m.get("minutes")), now);
+            // one vote pays out several of these lines in a row, the last one sets the time
+            case "vote" -> {
+                if (!loadedFor.equals(m.get("name"))) return;
+                timers.claimed(Kind.VOTE, now);
+            }
+            case "vote_ready" -> timers.reset(Kind.VOTE, now);
+            // fewer votes than sites means one can be voted on right now, else wait for the first to come back
+            case "vote_time" -> {
+                int least = DailyTimers.leastMinutes(m.get("rows"));
+                if (!m.get("done").equals(m.get("sites")) || least < 0) timers.reset(Kind.VOTE, now);
+                else timers.sync(Kind.VOTE, least, now);
+            }
             case "weekly_cooldown" -> timers.sync(Kind.WEEKLY, Integer.parseInt(m.get("minutes")), now);
             default -> {
                 return;
@@ -120,7 +132,7 @@ public final class Dailies {
         // once a second is plenty
         if (mc.world == null || mc.world.getTime() % 20 != 0) return;
         for (Kind kind : timers.justReady(System.currentTimeMillis())) {
-            if (Config.get().dailyReminders) Notifications.show(kind.label + " is ready");
+            if (Config.get().dailyReminders) Notifications.show(kind.readyText);
         }
     }
 
@@ -187,6 +199,7 @@ public final class Dailies {
                     case DAILY -> "Not seen yet. Run /daily once.";
                     case WEEKLY -> "Not seen yet. Run /weekly once.";
                     case WILD -> "Not seen yet. Starts with your next daily wild key.";
+                    case VOTE -> "Not seen yet. Run /votetime once.";
                 }).formatted(Formatting.DARK_GRAY));
             }
         }

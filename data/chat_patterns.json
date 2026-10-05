@@ -89,6 +89,8 @@
     {"id": "boss_daily", "category": "system", "regex": "^Claimed mail: Fresh Blood! \\[(?<reward>.+)\\]$", "status": "confirmed", "note": "starts the 24h boss timer"},
     {"id": "daily_reward", "category": "system", "regex": "^(?<name>[A-Za-z0-9_]{2,16}) <- Star Remnant and Gold Coin$", "status": "confirmed", "note": "first line of the /daily reward, starts the 24h daily timer"},
     {"id": "daily_cooldown", "category": "system", "regex": "^Daily cooldown: (?<minutes>\\d+) min$", "status": "unverified", "note": "guessed from the weekly line, not seen yet"},
+    {"id": "vote_ready", "category": "system", "regex": "^You haven't voted recently!$", "status": "confirmed", "note": "what /votetime says when no site is on cooldown"},
+    {"id": "vote_time", "category": "system", "regex": "^Recent votes: (?<done>\\d+)/(?<sites>\\d+)(?<rows>(?:\\n.*)*)$", "status": "confirmed", "note": "/votetime with votes on cooldown: one row per site, 'site: 1438 min'. 24h per site"},
     {"id": "weekly_cooldown", "category": "system", "regex": "^Weekly cooldown: (?<minutes>\\d+) min$", "status": "confirmed", "note": "what /weekly says while its not ready"},
     {"id": "clan_find", "category": "system", "regex": "^(?<clanName>[^\\n]+) \\((?<clan>[A-Za-z0-9_]{1,4})\\)\\nleader: ?(?<leader>\\S*)(?:\\nofficers: ?(?<officers>[^\\n]*))?(?:\\nmembers: ?(?<members>[^\\n]*))?(?:\\nrecruits: ?(?<recruits>[^\\n]*))?$", "status": "confirmed", "note": "one message, rows split by \\n, empty rows left out. green name = online"},
     {"id": "clan_find_not_found", "category": "system", "regex": "^Clan tag \"(?<clan>[^\"]+)\" not found$", "status": "confirmed"},

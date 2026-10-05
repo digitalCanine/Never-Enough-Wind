@@ -70,7 +70,7 @@ public final class ConfigScreen {
         }
         hud.option(toggle("Event Reminders", "A notification when an event is 60, 30, 15, 5 and 1 minute away.",
                         d.eventReminders, () -> c.eventReminders, v -> c.eventReminders = v))
-                .option(toggle("Daily Reminders", "A notification when your daily boss key, /daily, /weekly or daily wild key can be done again. /wind dailies lists them all.",
+                .option(toggle("Daily Reminders", "A notification when your daily boss key, /daily, /weekly, daily wild key or vote can be done again. /wind dailies lists them all.",
                         d.dailyReminders, () -> c.dailyReminders, v -> c.dailyReminders = v));
         hud.option(toggle("Subserver Name", "Show the name next to the subserver icon.",
                         d.subserverName, () -> c.subserverName, v -> c.subserverName = v))

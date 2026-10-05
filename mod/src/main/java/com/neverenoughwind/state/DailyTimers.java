@@ -12,15 +12,22 @@ import java.util.Set;
 // when each daily can be done again. times are passed in so tests can pick them
 public final class DailyTimers {
     private static final long HOUR = 3_600_000L;
+    private static final java.util.regex.Pattern MINUTES = java.util.regex.Pattern.compile(": (\\d{1,6}) min");
 
     public enum Kind {
-        BOSS("Daily boss", 24 * HOUR), DAILY("/daily", 24 * HOUR), WEEKLY("/weekly", 7 * 24 * HOUR), WILD("Wild key", 24 * HOUR);
+        BOSS("Daily boss", "Daily boss is ready", 24 * HOUR),
+        DAILY("/daily", "/daily is ready", 24 * HOUR),
+        WEEKLY("/weekly", "/weekly is ready", 7 * 24 * HOUR),
+        WILD("Wild key", "Wild key is ready", 24 * HOUR),
+        // every vote site has its own 24 h wait. the timer is for the first one that comes back
+        VOTE("Votes", "You can vote again", 24 * HOUR);
 
-        public final String label;
+        public final String label, readyText;
         public final long cooldown;
 
-        Kind(String label, long cooldown) {
+        Kind(String label, String readyText, long cooldown) {
             this.label = label;
+            this.readyText = readyText;
             this.cooldown = cooldown;
         }
 
@@ -70,6 +77,18 @@ public final class DailyTimers {
             else if (s == State.READY && watched.remove(kind)) out.add(kind);
         }
         return out;
+    }
+
+    // the /votetime rows, "site: 1438 min" each: the shortest wait among them, -1 when there is none
+    public static int leastMinutes(String rows) {
+        int least = -1;
+        if (rows == null) return least;
+        java.util.regex.Matcher m = MINUTES.matcher(rows);
+        while (m.find()) {
+            int min = Integer.parseInt(m.group(1));
+            if (least < 0 || min < least) least = min;
+        }
+        return least;
     }
 
     // "2 d 3 h", "5 h 12 min", "12 min", "under a minute"

@@ -61,6 +61,12 @@ class DailyTimersTest {
     }
 
     @Test
+    void votesWaitForTheFirstSiteToComeBack() {
+        assertEquals(1438, DailyTimers.leastMinutes("\nminecraft-serverlist-com: 1438 min\ncurseforge: 1439 min\n"));
+        assertEquals(-1, DailyTimers.leastMinutes(""));
+    }
+
+    @Test
     void savesAndComesBack() {
         DailyTimers t = new DailyTimers();
         t.claimed(Kind.BOSS, 0);
