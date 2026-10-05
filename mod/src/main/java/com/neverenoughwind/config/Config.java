@@ -50,7 +50,10 @@ public final class Config {
     public boolean subserverName = true;
     // 1 = as drawn, in line with the text. 2 and 3 are that many times bigger
     public int subserverIconSize = 1;
+    // how long a notification stays, and which kinds show up
     public int reminderSeconds = 10;
+    public boolean eventReminders = true;
+    public boolean dailyReminders = true;
 
     // clans
     public boolean nametagTags = true;

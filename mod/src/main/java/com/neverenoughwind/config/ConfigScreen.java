@@ -68,6 +68,10 @@ public final class ConfigScreen {
                             .build())
                     .build());
         }
+        hud.option(toggle("Event Reminders", "A notification when an event is 60, 30, 15, 5 and 1 minute away.",
+                        d.eventReminders, () -> c.eventReminders, v -> c.eventReminders = v))
+                .option(toggle("Daily Reminders", "A notification when your daily boss key, /daily, /weekly or daily wild key can be done again. /wind dailies lists them all.",
+                        d.dailyReminders, () -> c.dailyReminders, v -> c.dailyReminders = v));
         hud.option(toggle("Subserver Name", "Show the name next to the subserver icon.",
                         d.subserverName, () -> c.subserverName, v -> c.subserverName = v))
                 .option(Option.<Integer>createBuilder()
@@ -77,8 +81,8 @@ public final class ConfigScreen {
                         .controller(o -> IntegerSliderControllerBuilder.create(o).range(1, 3).step(1).formatValue(v -> Text.literal(v + "x")))
                         .build())
                 .option(Option.<Integer>createBuilder()
-                        .name(Text.literal("Reminder Time"))
-                        .description(about("How long an event reminder stays on screen."))
+                        .name(Text.literal("Notification Time"))
+                        .description(about("How long a notification stays on screen."))
                         .binding(d.reminderSeconds, () -> c.reminderSeconds, v -> c.reminderSeconds = v)
                         .controller(o -> IntegerSliderControllerBuilder.create(o).range(3, 30).step(1).formatValue(v -> Text.literal(v + " s")))
                         .build());

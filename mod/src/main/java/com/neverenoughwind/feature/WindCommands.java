@@ -4,7 +4,10 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.neverenoughwind.NeverEnoughWind;
 import com.neverenoughwind.config.LayoutScreen;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.neverenoughwind.dao.PriceDao;
+import com.neverenoughwind.state.DailyTimers;
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
@@ -52,6 +55,7 @@ public final class WindCommands {
                     c.getSource().sendFeedback(Text.literal("Reloaded your settings and clan file.").formatted(Formatting.GREEN));
                     return 1;
                 }))
+                .then(dailies())
                 .then(literal("config").executes(c -> {
                     // a tick later, the chat screen is still closing right now
                     MinecraftClient mc = c.getSource().getClient();
@@ -61,6 +65,26 @@ public final class WindCommands {
                     }
                     return 1;
                 }))));
+    }
+
+    // /wind dailies, and /wind dailies <which> done|reset to correct one by hand
+    private static LiteralArgumentBuilder<FabricClientCommandSource> dailies() {
+        LiteralArgumentBuilder<FabricClientCommandSource> node = literal("dailies").executes(c -> {
+            c.getSource().sendFeedback(Dailies.report());
+            return 1;
+        });
+        for (DailyTimers.Kind kind : DailyTimers.Kind.values()) {
+            node.then(literal(kind.key())
+                    .then(literal("done").executes(c -> {
+                        c.getSource().sendFeedback(Dailies.set(kind, true));
+                        return 1;
+                    }))
+                    .then(literal("reset").executes(c -> {
+                        c.getSource().sendFeedback(Dailies.set(kind, false));
+                        return 1;
+                    })));
+        }
+        return node;
     }
 
     // "9sh" "d" -> "9sh = 15,552d"
