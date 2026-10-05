@@ -6,6 +6,7 @@ import com.neverenoughwind.config.Config;
 import net.minecraft.client.gui.screen.Screen;
 import com.neverenoughwind.adapter.Loadout;
 import com.neverenoughwind.dao.PriceDao;
+import com.neverenoughwind.model.AuctionItem;
 import com.neverenoughwind.model.PriceTier;
 import com.neverenoughwind.parse.Damage;
 import com.neverenoughwind.parse.DamageCalc;
@@ -123,6 +124,18 @@ public final class SidePanel {
         PriceDao prices = NeverEnoughWind.data().prices();
 
         if ("magic".equals(info.category())) spellRows(out, info);
+        // auction gear: what it does and where it comes from. drafts stay hidden until someone has checked them
+        AuctionItem gear = info.auction();
+        if (gear != null && (!gear.infoDraft() || Config.get().debug)) {
+            if (gear.does() != null) out.add(Row.of(Text.literal(gear.does()).formatted(Formatting.GRAY)));
+            if (!gear.source().isEmpty()) {
+                out.add(Row.of(Text.literal("From: ").formatted(Formatting.YELLOW)
+                        .append(Text.literal(String.join(", ", gear.source())).formatted(Formatting.WHITE))));
+            }
+            if (gear.infoDraft() && (gear.does() != null || !gear.source().isEmpty())) {
+                out.add(Row.of(Text.literal("Draft, not checked yet").formatted(Formatting.DARK_GRAY)));
+            }
+        }
         // currencies and other listed items: what its for, when the data says
         NeverEnoughWind.data().itemRules().type(info.category()).ifPresent(type -> type.items().stream()
                 .filter(k -> k.use() != null && k.name().equals(info.detail())).findFirst()

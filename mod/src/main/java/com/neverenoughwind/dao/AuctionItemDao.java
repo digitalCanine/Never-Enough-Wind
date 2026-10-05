@@ -28,7 +28,8 @@ public final class AuctionItemDao {
             String name = Json.str(o, "name");
             if (name == null || flavor.isEmpty()) continue;
             AuctionItem item = new AuctionItem(name, Json.str(o, "item"), Json.str(o, "type"), flavor,
-                    style(o.get("style")), Json.intOrNull(o, "sharpness"), Json.bool(o, "needs_item_id"), Json.str(o, "status"));
+                    style(o.get("style")), Json.intOrNull(o, "sharpness"), Json.bool(o, "needs_item_id"), Json.str(o, "status"),
+                    Json.str(o, "does"), Json.strings(o, "source"), "draft".equals(Json.str(o, "info")));
             dao.all.add(item);
             dao.byFlavor.computeIfAbsent(flavorKey(flavor), k -> new ArrayList<>()).add(item);
         }

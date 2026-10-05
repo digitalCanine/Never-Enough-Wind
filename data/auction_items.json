@@ -6,7 +6,8 @@
     "needs_item_id: tell apart by tool type, not material",
     "restyle the current name, gradient = first to last color",
     "sharpness = what it drops with, only levels above it count as spent",
-    "status wiki = from the wiki, no style, flavor may be slightly off"
+    "status wiki = from the wiki, no style, flavor may be slightly off",
+    "does = what it does, source = where it comes from, info draft = written from the wiki and not checked by a player yet (hidden unless debug is on)"
   ],
   "items": [
     {
@@ -23,7 +24,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Creates a large pit of lava. Uses a Fire Soul.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Cupid's Bow",
@@ -37,7 +43,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Arrows give regeneration to whoever they hit. Used to heal teammates.",
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Falken Blitz",
@@ -50,7 +61,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shoots several arrows at once in a slight spread. Works from the off hand.",
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Frost Bow",
@@ -69,7 +85,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shoots almost instantly. Each shot uses an Ice Soul.",
+      "source": [
+        "Demon Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ichaival",
@@ -82,7 +103,14 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "No special ability. Has a kill counter.",
+      "source": [
+        "Attack on Giant event",
+        "Villager trading",
+        "Weapon Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Indra",
@@ -96,7 +124,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Arrows strike lightning on impact: one bolt in clear weather, a cluster in the rain.",
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Minibow",
@@ -118,7 +151,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shoots extremely fast and burns through arrows.",
+      "source": [
+        "Demon Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Nepenthes",
@@ -132,7 +170,13 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shoots charged creepers instead of arrows.",
+      "source": [
+        "Legendary Key",
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ragnaros",
@@ -146,7 +190,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Arrows leave lava where they land.",
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Robin's Bow",
@@ -178,7 +227,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shoots snowballs that explode on impact. Needs one arrow in the inventory but uses none.",
+      "source": [
+        "Legendary Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Sicario",
@@ -191,7 +245,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Arrows bind and slow the target.",
+      "source": [
+        "Legendary Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Bloodmancer Boots",
@@ -236,7 +295,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Bloodmancer Chestplate",
@@ -284,7 +347,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Edge Lord's Leggings",
@@ -328,7 +395,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Headshot",
@@ -341,7 +412,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Crossbow that deals extra damage on headshots. Works from the off hand.",
+      "source": [
+        "Legendary Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Living Crossbow",
@@ -355,7 +431,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Hits block the target from casting spells for a moment. Works from the off hand.",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Avidity",
@@ -369,7 +450,13 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "No special ability. Has a kill counter.",
+      "source": [
+        "Tool Auctioneer",
+        "Attack on Giant event"
+      ],
+      "info": "draft"
     },
     {
       "name": "Lifestealer",
@@ -385,7 +472,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 16
+      "sharpness": 16,
+      "does": "Heals you for part of the damage you deal.",
+      "source": [
+        "Yruxul"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Sage Slayer",
@@ -400,7 +492,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 20
+      "sharpness": 20,
+      "does": "Deals more damage the more souls the target has. Works from the off hand.",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Frozen Boots",
@@ -413,7 +510,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Ded Moroz",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Sleipnir",
@@ -426,7 +528,13 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key",
+        "Armor Auctioneer",
+        "Wild looting"
+      ],
+      "info": "draft"
     },
     {
       "name": "Sponge Boots",
@@ -445,7 +553,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Soaks up any water you touch.",
+      "source": [
+        "Demon Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Assault Cuirass",
@@ -459,7 +572,13 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key",
+        "Armor Auctioneer",
+        "Wild looting"
+      ],
+      "info": "draft"
     },
     {
       "name": "Frozen Chestplate",
@@ -472,7 +591,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Ded Moroz"
+      ],
+      "info": "draft"
     },
     {
       "name": "Abyssal Helm",
@@ -486,7 +609,14 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Unlimited breath underwater.",
+      "source": [
+        "Villager trading",
+        "Attack on Giant event",
+        "Armor Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Frozen Helm",
@@ -500,7 +630,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Ded Moroz"
+      ],
+      "info": "draft"
     },
     {
       "name": "Warm and Cozy Helmet",
@@ -560,7 +694,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 12
+      "sharpness": 12,
+      "does": "Hits everything in a 3x3 area around the target. Has two open essence slots.",
+      "source": [
+        "Yruxul"
+      ],
+      "info": "draft"
     },
     {
       "name": "Death Scythe",
@@ -573,7 +712,13 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Poisons, blinds and nauseates the target. Works from the off hand.",
+      "source": [
+        "Attack on Giant event",
+        "Weapon Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Elder Phantom Staff",
@@ -604,7 +749,12 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Attack on Giant event",
+        "Armor Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Frozen Leggings",
@@ -617,7 +767,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Ded Moroz"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ice Tights",
@@ -630,7 +784,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Corrupted Diggity",
@@ -643,7 +801,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "A Diggity with Fortune X.",
+      "source": [
+        "Thims Calb"
+      ],
+      "info": "draft"
     },
     {
       "name": "Diggity",
@@ -658,7 +821,12 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Mines faster than any vanilla pickaxe.",
+      "source": [
+        "Tool Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Multipass",
@@ -676,7 +844,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 11
+      "sharpness": 11,
+      "does": "One tool that becomes a sword, pickaxe, axe, shovel, hoe, flint and steel, trident or shears as needed.",
+      "source": [
+        "Blood Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Obsidian Destroyer",
@@ -689,7 +862,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Mines blocks instantly. Works from the off hand.",
+      "source": [
+        "Thims Calb"
+      ],
+      "info": "draft"
     },
     {
       "name": "Shadow Swarm Pickaxe",
@@ -766,7 +944,14 @@
       ],
       "note": "vampiric copy had essences on it",
       "needs_item_id": false,
-      "sharpness": 24
+      "sharpness": 24,
+      "does": "A starter god sword with strong knockback.",
+      "source": [
+        "Attack on Giant event",
+        "Wild looting",
+        "Weapon Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ice Katana",
@@ -784,7 +969,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Hits freeze the target at full strength.",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mysteltainn",
@@ -801,7 +991,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 14
+      "sharpness": 14,
+      "does": "Inflicts Wither III on hit.",
+      "source": [
+        "Weapon Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Summon Skeleton Scout Sword",
@@ -834,7 +1029,14 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 19
+      "sharpness": 19,
+      "does": "Binds the target and builds strength with repeated hits. The bind does not stop teleports.",
+      "source": [
+        "Yruxul",
+        "Midas Key",
+        "Legendary Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Rift Dragon Head",
@@ -868,7 +1070,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mana Wings",
@@ -882,7 +1088,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Orc Hero Wings",
@@ -900,7 +1110,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Rift Dragon Wings",
@@ -948,7 +1162,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Makes the wearer invisible and resistant to explosions.",
+      "source": [
+        "Demon Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Wings of Blood",
@@ -965,7 +1184,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Salty",
@@ -978,7 +1201,13 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Fishing rod with Luck of the Sea X and Lure VIII.",
+      "source": [
+        "Tool Auctioneer",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ceremonial Axe",
@@ -992,7 +1221,14 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 30
+      "sharpness": 30,
+      "does": "Beheads players: a kill drops the victim's head.",
+      "source": [
+        "Yruxul",
+        "Midas Key",
+        "Legendary Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "War Bee Axe",
@@ -1025,7 +1261,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Greatly reduces magic damage taken.",
+      "source": [
+        "Giant Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Odin's Blessing",
@@ -1044,7 +1285,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shows invisible players as particles.",
+      "source": [
+        "Dimensional Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Glass Cannon",
@@ -1058,7 +1304,15 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shoots a ball that turns a small area into rainbow glass.",
+      "source": [
+        "Midas Key",
+        "Legendary Key",
+        "Villager trading",
+        "Love Struck Rabbit"
+      ],
+      "info": "draft"
     },
     {
       "name": "Honey Cannon",
@@ -1076,7 +1330,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 25
+      "sharpness": 25,
+      "does": "Creates a patch of honey blocks. Uses a Nature Soul.",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Bush Magic",
@@ -1203,7 +1462,15 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 19
+      "sharpness": 19,
+      "does": "Hits stop the target from eating.",
+      "source": [
+        "Midas Key",
+        "Legendary Key",
+        "Villager trading",
+        "Eramthgin"
+      ],
+      "info": "draft"
     },
     {
       "name": "Tornado Axe",
@@ -1253,7 +1520,11 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Death Marker Dagger Staff",
@@ -1307,7 +1578,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Turns you invisible when you teleport.",
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "ShadowSaw Staff",
@@ -1366,7 +1642,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Increases how many infinity blocks you place at once.",
+      "source": [
+        "Dimensional Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Death Marker Dagger Shovel",
@@ -1400,7 +1681,14 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 17
+      "sharpness": 17,
+      "does": "Deals double damage when hitting from behind. Works from the off hand.",
+      "source": [
+        "Ydahs Tar",
+        "Midas Key",
+        "Legendary Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Blessed Snow Sword",
@@ -1464,7 +1752,9 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 11
+      "sharpness": 11,
+      "does": "Hits block the target from casting spells for a moment.",
+      "info": "draft"
     },
     {
       "name": "Syba's Katana",
@@ -1479,7 +1769,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 11
+      "sharpness": 11,
+      "does": "Deals double damage on critical hits.",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Vexer Sword",
@@ -1512,7 +1807,12 @@
       },
       "status": "confirmed",
       "needs_item_id": false,
-      "sharpness": 23
+      "sharpness": 23,
+      "does": "Teleports you where you aim, using the souls it accumulates. Does not work inside Ice Domain.",
+      "source": [
+        "Yruxul"
+      ],
+      "info": "draft"
     },
     {
       "name": "Bandit's Boots",
@@ -1538,7 +1838,12 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Starter gear",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Nature's Flips",
@@ -1556,7 +1861,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Pyromancer's Boots",
@@ -1570,7 +1879,14 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key",
+        "Legendary Key",
+        "Villager trading",
+        "Oshen Ane"
+      ],
+      "info": "draft"
     },
     {
       "name": "Aegis",
@@ -1584,7 +1900,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "A relic from the past. The Aegis spellbook used to need it and no longer does.",
+      "source": [
+        "Edgy Cupid"
+      ],
+      "info": "draft"
     },
     {
       "name": "Divine Cloth",
@@ -1617,7 +1938,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Honey Master Chestplate",
@@ -1637,7 +1962,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Pyromancer's Tunic",
@@ -1651,7 +1980,14 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key",
+        "Legendary Key",
+        "Villager trading",
+        "Oshen Ane"
+      ],
+      "info": "draft"
     },
     {
       "name": "Robin's Tunic",
@@ -1685,7 +2021,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Leather of Talpa",
@@ -1699,7 +2039,12 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Strong regeneration. Cycles through colors.",
+      "source": [
+        "Armor Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Pyromancer's Hood",
@@ -1713,7 +2058,14 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key",
+        "Legendary Key",
+        "Villager trading",
+        "Oshen Ane"
+      ],
+      "info": "draft"
     },
     {
       "name": "Robin's Cap",
@@ -1747,7 +2099,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Lightning God Pajamas",
@@ -1764,7 +2120,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Nature's Slacks",
@@ -1780,7 +2140,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Pyromancer's Tights",
@@ -1794,7 +2158,14 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key",
+        "Legendary Key",
+        "Villager trading",
+        "Oshen Ane"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Jaguar Leggings",
@@ -1808,7 +2179,11 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ghastchan Axe",
@@ -1862,7 +2237,12 @@
         "bold": false
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Villager trading",
+        "Attack on Giant event"
+      ],
+      "info": "draft"
     },
     {
       "name": "Necromancer's Boots",
@@ -1876,7 +2256,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Gives absorption while standing on sacred blocks.",
+      "source": [
+        "Giant Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Necromancer's Chestplate",
@@ -1890,7 +2275,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Gives strength while standing on sacred blocks.",
+      "source": [
+        "Giant Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Ripper",
@@ -1907,7 +2297,9 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Teleports you behind your target. Stopped by bind and Ice Domain.",
+      "info": "draft"
     },
     {
       "name": "Tornado Staff",
@@ -1996,7 +2388,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Shears three to five stacks of wool from one sheep.",
+      "source": [
+        "Barburs Lazy Trainee"
+      ],
+      "info": "draft"
     },
     {
       "name": "Shadowmancer's Skull",
@@ -2010,7 +2407,11 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "source": [
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Giant Snowball",
@@ -2040,7 +2441,12 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Permanent night vision.",
+      "source": [
+        "Giant Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Isfet Nebu",
@@ -2078,7 +2484,13 @@
         "bold": true
       },
       "status": "confirmed",
-      "needs_item_id": false
+      "needs_item_id": false,
+      "does": "Each hit summons copies of the sword that fight for you. Only works at night.",
+      "source": [
+        "Yruxul",
+        "Midas Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Aku bani",
@@ -2086,7 +2498,12 @@
         "Made out of evil bunnies."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Attack on Giant event",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Alchemist's Lab Boots",
@@ -2094,7 +2511,11 @@
         "Contrary to popular belief, they don't protect you from acid."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Alchemist's Lab Hat",
@@ -2102,7 +2523,11 @@
         "It is said that wearing this hat increases your IQ by at least 20 points."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Alchemist's Lab Pants",
@@ -2110,7 +2535,11 @@
         "An ancient alchemist was awarded a noble prize inventing a dye so white."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Alchemist's Wings",
@@ -2118,7 +2547,12 @@
         "Developed by alchemist guild to aid with nether research."
       ],
       "type": "elytra",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "No bonus, but the most armor of any god elytra.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Angry broom",
@@ -2134,7 +2568,9 @@
         "Bow of unknown origin"
       ],
       "type": "bow",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "No longer obtainable.",
+      "info": "draft"
     },
     {
       "name": "Assassin's Blade",
@@ -2142,14 +2578,24 @@
         "Used to belong to a masked assasssin, who suffocated in a wall under mysterious circumstances."
       ],
       "sharpness": 17,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Teleports you away while blinding and slowing the target.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Assassin's Boots",
       "flavor": [
         "Dagger are hidden in these!"
       ],
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Full set: more backstab and melee damage, and sneaking makes you invisible.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Assassin's Hat",
@@ -2157,7 +2603,12 @@
         "Very tight hat, squeezing the brain made assassins think faster."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Full set: more backstab and melee damage, and sneaking makes you invisible.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Assassin's Shirt",
@@ -2165,7 +2616,12 @@
         "Sharp objects in secret compartments."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Full set: more backstab and melee damage, and sneaking makes you invisible.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Assassin's Tights",
@@ -2173,7 +2629,12 @@
         "Pockets stuffed with alchemic substances."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Full set: more backstab and melee damage, and sneaking makes you invisible.",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Azurite Helm",
@@ -2181,7 +2642,13 @@
         "We'll not be lured into the darkness so easily."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Armor Auctioneer",
+        "Attack on Giant event",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Bab-ilu",
@@ -2189,7 +2656,9 @@
         "The things we can't obtain are the most beautiful ones. -Gilgamesh"
       ],
       "sharpness": 37,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Shoots a barrage of magic daggers.",
+      "info": "draft"
     },
     {
       "name": "Bandit's Bow",
@@ -2197,7 +2666,12 @@
         "Standard issue Bandit bow. Stolen from a hunter village."
       ],
       "type": "bow",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Arrows slow and poison the target.",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Bandit's Glider",
@@ -2205,7 +2679,11 @@
         "Goes well with the Jump Rod!"
       ],
       "type": "elytra",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Brynhild",
@@ -2213,7 +2691,12 @@
         "An Armor which is made of a metal unknown in overworld."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Armor Auctioneer",
+        "Attack on Giant event"
+      ],
+      "info": "draft"
     },
     {
       "name": "Builder's Hat",
@@ -2221,7 +2704,9 @@
         "Enchanted with the lifeforce of spectral turtle dragons."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Grants creative flight.",
+      "info": "draft"
     },
     {
       "name": "Cursed Dragontooth",
@@ -2230,7 +2715,9 @@
       ],
       "type": "sword",
       "sharpness": 15,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "No special ability. Has Curse of Vanishing.",
+      "info": "draft"
     },
     {
       "name": "Devilfish",
@@ -2246,14 +2733,23 @@
         "The small Satan left and the great Satan came."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Dimension Anomaly Tools",
       "flavor": [
         "Creates endermatic anomaly seething with disdain for teleportation, warping the very fabric of space to punish those who dare to blink through dimensions."
       ],
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Summons a rift that catches anyone teleporting nearby and damages them heavily.",
+      "source": [
+        "Dimensional Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Dragon Knight's Boots",
@@ -2261,7 +2757,11 @@
         "These were used to tread across a million dead goblins."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Dragon Knight's Shield",
@@ -2269,7 +2769,9 @@
         "Crafted from top quality wood, iron and dragon scales, at Minewind blacksmite."
       ],
       "type": "shield",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Heals you when you block an attack.",
+      "info": "draft"
     },
     {
       "name": "Dragon Knight's Sword",
@@ -2278,7 +2780,12 @@
       ],
       "type": "sword",
       "sharpness": 9,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Shoots a fireball, using a Dragon Soul. Deals more damage while mounted.",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Dragon Knight's Wings",
@@ -2286,7 +2793,11 @@
         "The knight thought he defeated the dragon, but the serpent took him for a vessel."
       ],
       "type": "elytra",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Edge Lords Wings",
@@ -2294,7 +2805,11 @@
         "Razor blade shaped, very hip."
       ],
       "type": "elytra",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Empeiria",
@@ -2302,7 +2817,12 @@
         "Strength lies not in defence but in attack."
       ],
       "sharpness": 29,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Hits steal experience levels from the target.",
+      "source": [
+        "Shardi"
+      ],
+      "info": "draft"
     },
     {
       "name": "Exploding Seenk",
@@ -2310,7 +2830,12 @@
         "A dangerous contraption made by a crazed engineer. Straps live explosives to every arrow."
       ],
       "type": "crossbow",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Bolts explode and burn on impact.",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Fragarach",
@@ -2318,7 +2843,9 @@
         "That Which Comes Later Cuts First"
       ],
       "sharpness": 20,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "An event item from Christmas 2016.",
+      "info": "draft"
     },
     {
       "name": "Frosty Boots",
@@ -2326,7 +2853,12 @@
         "Mysterious shoes from the north pole."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Coldmaster Jif",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Gravitas",
@@ -2334,7 +2866,12 @@
         "Gravity explains the motions of the planets, but it cannot explain who sets the planets in motion."
       ],
       "type": "bow",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Arrows make the target levitate.",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Grug's Boots",
@@ -2342,7 +2879,11 @@
         "Grug like to go fast and also hard."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hawkwood's Chain Helm",
@@ -2350,7 +2891,11 @@
         "This helm makes you admire the power of dragons. You're not quite sure why."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hermes Boots",
@@ -2358,7 +2903,9 @@
         "Boots of the trickster god who prized cleverness and amusement above all else."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Grants flight.",
+      "info": "draft"
     },
     {
       "name": "Holy Cross",
@@ -2366,7 +2913,9 @@
         "Unholy things have been done to it."
       ],
       "sharpness": 7,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Like an Elder Branch that works day and night and summons wither skeletons.",
+      "info": "draft"
     },
     {
       "name": "Honey Master Boots",
@@ -2374,7 +2923,11 @@
         "Amber boots perpetually covered in Bee Juice. The Honey Master could not know smelling this good was both a blessing and a curse."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Honey Master Head",
@@ -2382,7 +2935,11 @@
         "The First Honey Master believed he was one of the bees. To become a Honey Amber was the greatest honor a Queen could bestow."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Honey Master Leggings",
@@ -2390,7 +2947,11 @@
         "Amber leggings woven from the intoxicating blood of a Queen Bee."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hunter's Bow",
@@ -2398,7 +2959,12 @@
         "Top quality bow from the hunter's village."
       ],
       "type": "bow",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Starter gear with no special ability.",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hunter's Elytra",
@@ -2406,7 +2972,11 @@
         "Passed down to the best marksmen from the hunters village."
       ],
       "type": "elytra",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hunter's Pupil Hat",
@@ -2414,7 +2984,12 @@
         "Made of the pupils first prey, a supple squarrel. This hat holds a secret skill of the hunter's village. Activate it to become a houndmaster."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Starter gear",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hunter's Pupil Pants",
@@ -2422,7 +2997,12 @@
         "Comfy fur from mountain goat. Unlock the hidden power of these pants! Mysterious hunter skill awaits. Master it to unleash improved mobility."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Starter gear",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Hunter's Pupil Shirt",
@@ -2430,7 +3010,12 @@
         "Skin used to belong to an extinct creature."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Starter gear",
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Infirmity",
@@ -2438,7 +3023,14 @@
         "A bow imbued with the sacred essence of death."
       ],
       "type": "bow",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Arrows cripple the target with slowness and weakness.",
+      "source": [
+        "Attack on Giant event",
+        "Villager trading",
+        "Weapon Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Kiga",
@@ -2446,7 +3038,14 @@
         "They that die by famine die by inches"
       ],
       "sharpness": 25,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Hits starve the target.",
+      "source": [
+        "Villager trading",
+        "Weapon Auctioneer",
+        "Attack on Giant event"
+      ],
+      "info": "draft"
     },
     {
       "name": "Lightbringer",
@@ -2462,7 +3061,11 @@
         "Zeus did not need these to fly, but it made him feel like a bird and a mortal."
       ],
       "type": "elytra",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Lightning God Robe",
@@ -2470,7 +3073,11 @@
         "Zeus prefers to bare his chest whenever possible, so he traded this modest-leaning heavenly robe to Herobrine for an unknown favor."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Lightning God Sandals",
@@ -2478,7 +3085,11 @@
         "Favorite heavenwear of Zeus that draw all focus onto his lightning-hard thighs."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Lightning Head Rod",
@@ -2486,7 +3097,11 @@
         "Nothing refreshes the memory like 300 million Volts to the brain. Plugs into your Neuralink socket, enhancing your feel for lightning."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Wild Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mage Apprentice Boots",
@@ -2494,7 +3109,11 @@
         "The best shoes an apprentice mage could afford."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mage Apprentice Hat",
@@ -2502,7 +3121,11 @@
         "Keeps you warm at night, and also contains fire magic."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mage Apprentice Tights",
@@ -2510,7 +3133,11 @@
         "Self cleaning magical pants, always smell like mana."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mage Apprentice Tunic",
@@ -2518,7 +3145,11 @@
         "Gifted by a great wizard upon accepting an apprentice."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Villager trading"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mani's Blessing",
@@ -2526,7 +3157,12 @@
         "A helm that is said to have been worn by the god of the moon"
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Attack on Giant event",
+        "Armor Auctioneer"
+      ],
+      "info": "draft"
     },
     {
       "name": "Mask of Aurelian",
@@ -2534,7 +3170,9 @@
         "A Golden Helmet once worn by the Restorer of the World during his blazing Conquests."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Repairs your items with every kill.",
+      "info": "draft"
     },
     {
       "name": "Misery",
@@ -2542,7 +3180,9 @@
         "No One Here Gets Out Alive"
       ],
       "sharpness": 30,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Cripples the target.",
+      "info": "draft"
     },
     {
       "name": "Nature's Elytra",
@@ -2558,7 +3198,11 @@
         "A living armor that was woven by trees themselves!"
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Nature's Headress",
@@ -2566,7 +3210,11 @@
         "Made of leaves but provides a connection with nature."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Necromancer's Leggings",
@@ -2574,7 +3222,12 @@
         "Used in countless wars against Ydahs Tar's tribe."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Gives regeneration while standing on sacred blocks.",
+      "source": [
+        "Giant Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Orc Fork",
@@ -2582,7 +3235,12 @@
         "A common orc sport is to see how much you can destroy with a single throw."
       ],
       "sharpness": 10,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Trident that explodes on impact.",
+      "source": [
+        "Summoner's Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Prison Shank",
@@ -2598,7 +3256,12 @@
         "Contains the soul of a demon thirsty for blood sauce. Forms a vampiric link with her master."
       ],
       "sharpness": 7,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Summons a friendly fox that fights for you. Uses two Blood Souls.",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Queen's Whip",
@@ -2614,7 +3277,12 @@
         "Devises by an adolescent Zeus in his angry years, for everything was scorched anyway. Lightning does more damage to wet things."
       ],
       "sharpness": 20,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Fires a line of lightning at the target. Only deals damage in rain or water. Uses two Nature Souls.",
+      "source": [
+        "Belphegor Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Stick of Truth",
@@ -2622,7 +3290,9 @@
         "Doesn't do anything"
       ],
       "sharpness": 30,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Mythical. Does nothing special.",
+      "info": "draft"
     },
     {
       "name": "Stone Dagger",
@@ -2631,7 +3301,12 @@
       ],
       "type": "sword",
       "sharpness": 7,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Starter gear with no special ability.",
+      "source": [
+        "Starter gear"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Pet Turtle",
@@ -2639,7 +3314,12 @@
         "When his master was in danger, Syba's Great Turtle heroically turned himself into a magical helmet."
       ],
       "type": "helmet",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "No special ability.",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Satan Shoes",
@@ -2647,14 +3327,23 @@
         "Syba's life force can still be felt, trapped in these boots."
       ],
       "type": "boots",
-      "status": "wiki"
+      "status": "wiki",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Touch",
       "flavor": [
         "So gentle, it can even pick up a spawner sometimes."
       ],
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Can pick up spawners, but not every time.",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Syba's Training Sword",
@@ -2663,7 +3352,12 @@
       ],
       "type": "sword",
       "sharpness": 31,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Hits pull your experience level and the target's closer together.",
+      "source": [
+        "Abyssal Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Telekinetic Multipass",
@@ -2671,7 +3365,12 @@
         "One Tool that lets you pass through anything. Also allows you to place blocks telepathically from your other hand."
       ],
       "sharpness": 11,
-      "status": "wiki"
+      "status": "wiki",
+      "does": "A Multipass that places off-hand blocks up to 16 blocks away, even in mid-air.",
+      "source": [
+        "Wizard Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Untouchable Chest",
@@ -2679,7 +3378,12 @@
         "Stylish Chest, makes the wearer irresistibly charming, causing enemies to hesitate and feel guilty for attacking such a mesmerizing figure."
       ],
       "type": "chestplate",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Attackers get Mining Fatigue IV for one second per level.",
+      "source": [
+        "Dimensional Key"
+      ],
+      "info": "draft"
     },
     {
       "name": "Untouchable Leggings",
@@ -2687,7 +3391,12 @@
         "Stylish Leggings, makes the wearer irresistibly charming, causing enemies to hesitate and feel guilty for attacking such a mesmerizing figure."
       ],
       "type": "leggings",
-      "status": "wiki"
+      "status": "wiki",
+      "does": "Attackers get Mining Fatigue IV for one second per level.",
+      "source": [
+        "Dimensional Key"
+      ],
+      "info": "draft"
     }
   ],
   "fallback": {
