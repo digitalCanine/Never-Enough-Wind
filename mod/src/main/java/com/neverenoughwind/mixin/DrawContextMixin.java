@@ -27,6 +27,13 @@ public abstract class DrawContextMixin {
         Highlighter.draw((DrawContext) (Object) this, stack, x, y);
     }
 
+    // an item tooltip asked for by anything other than an inventory slot, like the items inside a shulker preview:
+    // remember the item so the side panel shows up next to that tooltip too
+    @Inject(method = "drawItemTooltip", at = @At("HEAD"))
+    private void new$rememberItem(TextRenderer textRenderer, ItemStack stack, int x, int y, CallbackInfo ci) {
+        SidePanel.hovered = stack;
+    }
+
     @Inject(method = "drawTooltipImmediately", at = @At("TAIL"))
     private void new$sidePanel(TextRenderer textRenderer, List<TooltipComponent> components, int x, int y,
                                TooltipPositioner positioner, Identifier texture, CallbackInfo ci) {
