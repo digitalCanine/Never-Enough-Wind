@@ -49,6 +49,12 @@ public final class Worlds {
         return dao.shared(seed(world), dimension(world)) && dao.onServer(seed(world), dimension(world), server).isEmpty();
     }
 
+    // true in that dimension on minewind, whatever the seed
+    public static boolean in(String dimension) {
+        ClientWorld world = MinecraftClient.getInstance().world;
+        return world != null && onMinewind() && dimension(world).equals(dimension);
+    }
+
     // "seed dimension" of the current world, for the debug line
     public static String raw() {
         ClientWorld world = MinecraftClient.getInstance().world;

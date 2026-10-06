@@ -17,27 +17,57 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// the item browser: sections on the left, a searchable list in the middle, the picked entry on the right
+// the item browser: sections on the left, a searchable list, the picked entry, and the filters as drop-down menus on the right
 public final class BrowserScreen extends Screen {
-    private static final int ROW = 18, TABS = 64, GAP = 6, LINE = 10;
+    private static final int ROW = 18, TABS = 64, GAP = 6, LINE = 10, FILTER = 16, FILTERS = 104, OPTION = 11;
     private static final int PANEL = 0xB0101010, HOVER = 0x30FFFFFF, PICKED = 0x50FFFFFF;
     private static final int WHITE = 0xFFFFFFFF, GRAY = 0xFFAAAAAA, DIM = 0xFF808080, GOLD = 0xFFFFAA00, YELLOW = 0xFFFFFF55, GREEN = 0xFF55FF55;
 
     // which section and search were open last, so reopening picks up where you left
     private static int lastSection;
     private static String lastQuery = "";
+    // the filters and sorting picked in each section, by section name. a filter that isnt in the map shows everything
+    private static final Map<String, Map<String, String>> pickedFilters = new HashMap<>();
+    private static final Map<String, Catalog.Sort> pickedSort = new HashMap<>();
 
     private final List<Catalog.Section> sections;
     private final Map<String, ItemStack> icons = new HashMap<>();
     private final String startQuery;
     private final List<ButtonWidget> tabs = new ArrayList<>();
+    // one drop-down per filter. options[0] is "everything", at = which one is picked
+    private final class Menu {
+        final String name;
+        final List<String> options;
+        final java.util.function.IntSupplier at;
+        final java.util.function.IntConsumer set;
+        ButtonWidget button;
+
+        Menu(String name, List<String> options, java.util.function.IntSupplier at, java.util.function.IntConsumer set) {
+            this.name = name;
+            this.options = options;
+            this.at = at;
+            this.set = set;
+        }
+
+        void pick(int index) {
+            int size = options.size();
+            set.accept((index % size + size) % size);
+            button.setMessage(Text.literal(name + ": " + options.get(at.getAsInt())));
+            refilter();
+        }
+    }
+
+    private final List<Menu> menus = new ArrayList<>();
+    // the drop-down that is open, null for none, and how far its list is scrolled
+    private Menu open;
+    private int menuScroll;
     private TextFieldWidget search;
     private List<Catalog.Entry> shown = List.of();
     private Catalog.Entry picked;
     private int section;
     private double listScroll, detailScroll;
     // edges of the three columns
-    private int left, top, bottom, listX, listW, listTop, detailX, detailW;
+    private int left, top, bottom, listX, listW, listTop, detailX, detailW, filterX;
 
     // query = what to search for right away, null to keep the last search
     public BrowserScreen(List<Catalog.Section> sections, String query) {
@@ -49,15 +79,20 @@ public final class BrowserScreen extends Screen {
 
     @Override
     protected void init() {
-        int total = Math.min(width - 20, 480);
+        Catalog.Section current = sections.get(section);
+        boolean filters = !current.filters().isEmpty() || current.hasPrices();
+        int total = Math.min(width - 20, filters ? 480 + FILTERS + GAP : 480);
         left = (width - total) / 2;
         top = 30;
         bottom = height - 14;
         listX = left + TABS + GAP;
-        listW = (left + total - listX - GAP) * 45 / 100;
+        // the filters get their own column at the far right, the rest is shared like before
+        int right = filters ? left + total - FILTERS - GAP : left + total;
+        filterX = right + GAP;
+        listW = (right - listX - GAP) * 45 / 100;
         listTop = top + 20;
         detailX = listX + listW + GAP;
-        detailW = left + total - detailX;
+        detailW = right - detailX;
 
         tabs.clear();
         for (int i = 0; i < sections.size(); i++) {
@@ -73,24 +108,70 @@ public final class BrowserScreen extends Screen {
         search.setText(text);
         search.setChangedListener(q -> refilter());
         addDrawableChild(search);
-        open(section);
+
+        menus.clear();
+        open = null;
+        Map<String, String> chosen = pickedFilters.computeIfAbsent(current.name(), k -> new HashMap<>());
+        for (Catalog.Filter filter : current.filters()) {
+            List<String> options = new ArrayList<>();
+            options.add("All");
+            options.addAll(filter.options());
+            addMenu(new Menu(filter.name(), options,
+                    () -> chosen.get(filter.name()) == null ? 0 : Math.max(0, options.indexOf(chosen.get(filter.name()))),
+                    index -> chosen.put(filter.name(), index == 0 ? null : options.get(index))));
+        }
+        if (current.hasPrices()) {
+            List<String> options = new ArrayList<>();
+            for (Catalog.Sort sort : Catalog.Sort.values()) options.add(sort.label);
+            addMenu(new Menu("Sort", options,
+                    () -> pickedSort.getOrDefault(current.name(), Catalog.Sort.DEFAULT).ordinal(),
+                    index -> pickedSort.put(current.name(), Catalog.Sort.values()[index])));
+        }
+        for (int i = 0; i < tabs.size(); i++) tabs.get(i).active = i != section;
+        refilter();
     }
 
-    @Override
-    protected void setInitialFocus() {
-        setInitialFocus(search);
+    private void addMenu(Menu menu) {
+        int y = top + menus.size() * (FILTER + 2);
+        menu.button = addDrawableChild(ButtonWidget.builder(Text.literal(menu.name + ": " + menu.options.get(menu.at.getAsInt())), b -> {
+            // a click opens the list under the button, a second one puts it away
+            open = open == menu ? null : menu;
+            menuScroll = 0;
+        }).dimensions(filterX, y, FILTERS, FILTER).build());
+        menus.add(menu);
     }
 
+    private Menu menuAt(double x, double y) {
+        for (Menu m : menus) {
+            if (m.button.isMouseOver(x, y)) return m;
+        }
+        return null;
+    }
+
+    // where the open drop-down is drawn: right under its button, as tall as its options or the room there is
+    private int[] menuBox() {
+        int y = open.button.getY() + FILTER, rows = Math.min(open.options.size(), Math.max(3, (bottom - y - 2) / OPTION));
+        return new int[]{filterX, y, filterX + FILTERS, y + rows * OPTION + 2, rows};
+    }
+
+    private boolean inMenu(double x, double y) {
+        if (open == null) return false;
+        int[] box = menuBox();
+        return x >= box[0] && x < box[2] && y >= box[1] && y < box[3];
+    }
+
+    // another section has other filters, so the whole screen is laid out again
     private void open(int index) {
         section = index;
         lastSection = index;
-        for (int i = 0; i < tabs.size(); i++) tabs.get(i).active = i != index;
-        refilter();
+        clearAndInit();
     }
 
     private void refilter() {
         lastQuery = search.getText();
-        shown = sections.get(section).search(search.getText());
+        Catalog.Section current = sections.get(section);
+        shown = current.search(search.getText(), pickedFilters.getOrDefault(current.name(), Map.of()),
+                pickedSort.getOrDefault(current.name(), Catalog.Sort.DEFAULT));
         listScroll = 0;
         if (!shown.contains(picked)) pick(shown.isEmpty() ? null : shown.get(0));
     }
@@ -134,7 +215,10 @@ public final class BrowserScreen extends Screen {
 
         // the picked entry
         ctx.fill(detailX, top, detailX + detailW, bottom, PANEL);
-        if (picked == null) return;
+        if (picked == null) {
+            drawMenu(ctx, mouseX, mouseY);
+            return;
+        }
         ctx.enableScissor(detailX, top, detailX + detailW, bottom);
         int y = top + 6 - (int) detailScroll, inner = detailW - 12;
         boolean head = true;
@@ -176,6 +260,26 @@ public final class BrowserScreen extends Screen {
         ctx.disableScissor();
         detailHeight = y + (int) detailScroll - top + 6;
         scrollbar(ctx, detailX + detailW - 2, top, bottom, detailScroll, detailHeight);
+        drawMenu(ctx, mouseX, mouseY);
+    }
+
+    private void drawMenu(DrawContext ctx, int mouseX, int mouseY) {
+        if (open == null) return;
+        // above the buttons under it
+        ctx.createNewRootLayer();
+        int[] box = menuBox();
+        ctx.fill(box[0], box[1], box[2], box[3], 0xFF000000);
+        ctx.fill(box[0] + 1, box[1], box[2] - 1, box[3] - 1, 0xFF1E1E1E);
+        ctx.enableScissor(box[0] + 1, box[1], box[2] - 1, box[3] - 1);
+        for (int i = menuScroll; i < Math.min(open.options.size(), menuScroll + box[4]); i++) {
+            int oy = box[1] + 1 + (i - menuScroll) * OPTION;
+            boolean hover = mouseX >= box[0] && mouseX < box[2] && mouseY >= oy && mouseY < oy + OPTION;
+            if (hover) ctx.fill(box[0] + 1, oy, box[2] - 1, oy + OPTION, HOVER);
+            ctx.drawTextWithShadow(textRenderer, fit(open.options.get(i), FILTERS - 10), box[0] + 4, oy + 1,
+                    i == open.at.getAsInt() ? YELLOW : WHITE);
+        }
+        ctx.disableScissor();
+        scrollbar(ctx, box[2] - 3, box[1] + 1, box[3] - 1, menuScroll * OPTION, open.options.size() * OPTION);
     }
 
     // how tall the picked entry came out last frame, for scrolling it
@@ -211,6 +315,20 @@ public final class BrowserScreen extends Screen {
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double horizontal, double vertical) {
+        if (open != null) {
+            // the open list scrolls, everything else waits
+            if (inMenu(mouseX, mouseY)) {
+                int rows = menuBox()[4];
+                menuScroll = Math.max(0, Math.min(open.options.size() - rows, menuScroll + (vertical < 0 ? 3 : -3)));
+            }
+            return true;
+        }
+        // scrolling over a closed drop-down steps through it without opening
+        Menu over = menuAt(mouseX, mouseY);
+        if (over != null && vertical != 0) {
+            over.pick(over.at.getAsInt() + (vertical < 0 ? 1 : -1));
+            return true;
+        }
         if (mouseX >= detailX && mouseX < detailX + detailW) {
             detailScroll = clamp(detailScroll - vertical * LINE * 3, detailHeight, bottom - top);
         } else if (mouseX >= listX && mouseX < listX + listW) {
@@ -221,6 +339,21 @@ public final class BrowserScreen extends Screen {
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (open != null) {
+            Menu menu = open;
+            if (inMenu(mouseX, mouseY)) {
+                int[] box = menuBox();
+                int index = menuScroll + (int) ((mouseY - box[1] - 1) / OPTION);
+                open = null;
+                if (index >= 0 && index < menu.options.size()) menu.pick(index);
+                return true;
+            }
+            // a click anywhere else only puts the list away, except on its own button, which does that itself
+            if (!menu.button.isMouseOver(mouseX, mouseY)) {
+                open = null;
+                return true;
+            }
+        }
         if (button == 0 && mouseX >= listX && mouseX < listX + listW && mouseY >= listTop && mouseY < bottom) {
             int index = (int) ((mouseY - listTop + listScroll) / ROW);
             if (index >= 0 && index < shown.size()) pick(shown.get(index));
@@ -232,6 +365,10 @@ public final class BrowserScreen extends Screen {
     // up and down walk the list while the search box keeps the typing
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        if (open != null && keyCode == GLFW.GLFW_KEY_ESCAPE) {
+            open = null;
+            return true;
+        }
         if ((keyCode == GLFW.GLFW_KEY_DOWN || keyCode == GLFW.GLFW_KEY_UP) && !shown.isEmpty()) {
             int index = Math.max(0, Math.min(shown.size() - 1, shown.indexOf(picked) + (keyCode == GLFW.GLFW_KEY_DOWN ? 1 : -1)));
             pick(shown.get(index));

@@ -151,6 +151,16 @@ public final class Clans {
         return original;
     }
 
+    // the outline of a player who already glows, in the color of their clan. neutral players keep the server's color
+    public static int glowColor(String player, int original) {
+        if (!Config.get().glowColors || !Worlds.onMinewind() || player == null) return original;
+        for (Roster.Membership m : roster.of(player)) {
+            if (relations.of(m.tag()) == Relations.Kind.NEUTRAL) continue;
+            return color(m.tag()).getRgb();
+        }
+        return original;
+    }
+
     // chat: color the tag the line itself carries. the speaker can be nicked, so the tag is all we go by
     private static Text recolorChat(Text message) {
         try {

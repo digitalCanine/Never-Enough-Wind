@@ -9,8 +9,11 @@ import com.neverenoughwind.model.PriceTier;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -34,36 +37,87 @@ public final class Catalog {
         }
     }
 
-    // icon = item id, tag = the short text at the end of the list row, haystack = what the search looks through
-    public record Entry(String name, String icon, String tag, List<Line> lines, String haystack) {
+    // icon = item id, tag = the short text at the end of the list row, haystack = what the search looks through.
+    // facets = what the filters go by, filter name -> the values this entry has. price = cheapest in deggs, -1 unknown
+    public record Entry(String name, String icon, String tag, List<Line> lines, String haystack,
+                        Map<String, Set<String>> facets, int price) {
     }
 
-    public record Section(String name, List<Entry> entries) {
-        // every word of the query has to be somewhere in the entry
+    // one filter button: its name and the values it cycles through
+    public record Filter(String name, List<String> options) {
+    }
+
+    public enum Sort {
+        DEFAULT("Default"), CHEAP("Cheapest"), COSTLY("Priciest");
+
+        public final String label;
+
+        Sort(String label) {
+            this.label = label;
+        }
+    }
+
+    public record Section(String name, List<Entry> entries, List<Filter> filters) {
         public List<Entry> search(String query) {
+            return search(query, Map.of(), Sort.DEFAULT);
+        }
+
+        // every word of the query has to be somewhere in the entry, and every picked filter value has to be one of its own
+        public List<Entry> search(String query, Map<String, String> picked, Sort sort) {
             String[] words = query == null ? new String[0] : query.toLowerCase(Locale.ROOT).trim().split("\\s+");
             List<Entry> out = new ArrayList<>();
             for (Entry e : entries) {
                 boolean all = true;
                 for (String w : words) all &= w.isEmpty() || e.haystack().contains(w);
+                for (Map.Entry<String, String> f : picked.entrySet()) {
+                    all &= f.getValue() == null || e.facets().getOrDefault(f.getKey(), Set.of()).contains(f.getValue());
+                }
                 if (all) out.add(e);
             }
+            // things without a known price always go last
+            if (sort == Sort.CHEAP) out.sort(Comparator.comparingInt(e -> e.price() < 0 ? Integer.MAX_VALUE : e.price()));
+            if (sort == Sort.COSTLY) out.sort(Comparator.comparingInt(e -> e.price() < 0 ? Integer.MAX_VALUE : -e.price()));
             return out;
+        }
+
+        public boolean hasPrices() {
+            return entries.stream().anyMatch(e -> e.price() >= 0);
         }
     }
 
     private static final Set<String> IRON = Set.of("sword", "axe", "pickaxe", "shovel", "hoe", "helmet", "chestplate", "leggings", "boots");
+    private static final List<String> TYPES = List.of("Spell", "Buff", "Attack", "Armor", "Weapons");
     private static final Set<String> AS_IS = Set.of("bow", "crossbow", "elytra", "shield", "trident", "stick", "shears");
 
     private Catalog() {}
 
     // showDrafts = also show gear texts nobody has checked yet
     public static List<Section> build(Data data, boolean showDrafts) {
+        // tier letters from cheap to expensive, the ones without a number at the end
+        Comparator<String> essenceTiers = Comparator.comparingInt(l -> data.prices().essenceTier(l).filter(PriceTier::hasNumber).map(PriceTier::minDeggs).orElse(Integer.MAX_VALUE));
+        Comparator<String> blockTiers = Comparator.comparingInt(l -> data.prices().blockTier(l).filter(PriceTier::hasNumber).map(PriceTier::minDeggs).orElse(Integer.MAX_VALUE));
+        List<Entry> essences = essences(data), blocks = blocks(data), keys = keys(data, showDrafts), gear = gear(data, showDrafts);
         return List.of(
-                new Section("Essences", essences(data)),
-                new Section("Blocks", blocks(data)),
-                new Section("Keys", keys(data, showDrafts)),
-                new Section("Gear", gear(data, showDrafts)));
+                new Section("Essences", essences, List.of(
+                        filter(essences, "Type", Comparator.comparingInt(TYPES::indexOf)),
+                        filter(essences, "Key", Comparator.naturalOrder()),
+                        filter(essences, "Levels", Comparator.comparingInt(Catalog::number)),
+                        filter(essences, "Tier", essenceTiers))),
+                new Section("Blocks", blocks, List.of(
+                        filter(blocks, "Category", Comparator.naturalOrder()),
+                        filter(blocks, "Tier", blockTiers))),
+                new Section("Keys", keys, List.of()),
+                new Section("Gear", gear, List.of(
+                        filter(gear, "Kind", Comparator.naturalOrder()),
+                        filter(gear, "From", Comparator.naturalOrder()),
+                        filter(gear, "Special", Comparator.naturalOrder()))));
+    }
+
+    // every value the entries have for this filter, in the given order
+    private static Filter filter(List<Entry> entries, String name, Comparator<String> order) {
+        Set<String> values = new LinkedHashSet<>();
+        for (Entry e : entries) values.addAll(e.facets().getOrDefault(name, Set.of()));
+        return new Filter(name, values.stream().sorted(order).toList());
     }
 
     private static List<Entry> essences(Data data) {
@@ -83,6 +137,8 @@ public final class Catalog {
 
             List<String> levels = e.price().keySet().stream().sorted(Comparator.comparingInt(Catalog::number)).toList();
             String first = null, last = null;
+            Set<String> letters = new LinkedHashSet<>();
+            int cheapest = -1;
             if (!levels.isEmpty() || !e.levelText().isEmpty()) lines.add(Line.gap());
             for (String level : levels) {
                 Optional<PriceTier> tier = data.prices().essencePrice(e, number(level));
@@ -90,6 +146,8 @@ public final class Catalog {
                 if (tier.isPresent()) {
                     if (first == null) first = tier.get().letter();
                     last = tier.get().letter();
+                    letters.add(tier.get().letter());
+                    if (tier.get().hasNumber() && (cheapest < 0 || tier.get().minDeggs() < cheapest)) cheapest = tier.get().minDeggs();
                 }
                 boolean single = levels.size() == 1 && (e.maxLevel() == null || e.maxLevel() <= 1);
                 lines.add(Line.row(single ? "Price" : "Level " + Roman.of(number(level)), price));
@@ -106,7 +164,16 @@ public final class Catalog {
             String tag = first == null ? "" : first.equals(last) ? first : first + " - " + last;
             String hay = String.join(" ", e.name(), String.join(" ", e.alsoCalled()), text(e.description()), text(kind),
                     e.key() == null ? "" : e.key() + " key");
-            out.add(new Entry(e.name(), "minecraft:knowledge_book", tag, lines, hay.toLowerCase(Locale.ROOT)));
+            Set<String> types = new LinkedHashSet<>();
+            if (e.kind() != null) types.add(title(e.kind()));
+            if (e.appliesTo().contains("armor")) types.add("Armor");
+            if (e.appliesTo().contains("weapon_tool")) types.add("Weapons");
+            Map<String, Set<String>> facets = new HashMap<>();
+            facets.put("Type", types);
+            if (e.key() != null) facets.put("Key", Set.of(title(e.key())));
+            facets.put("Levels", Set.of(String.valueOf(e.maxLevel() == null ? 1 : e.maxLevel())));
+            facets.put("Tier", letters);
+            out.add(new Entry(e.name(), "minecraft:knowledge_book", tag, lines, hay.toLowerCase(Locale.ROOT), facets, cheapest));
         }
         out.sort(Comparator.comparing(x -> x.name().toLowerCase(Locale.ROOT)));
         return out;
@@ -132,8 +199,12 @@ public final class Catalog {
             if (b.category() != null) lines.add(Line.of(b.category(), Tone.DIM));
             lines.add(Line.gap());
             lines.add(Line.row("Price", tier.map(t -> t.letter() + " " + t.text()).orElse("No price known")));
+            Map<String, Set<String>> facets = new HashMap<>();
+            if (b.category() != null) facets.put("Category", Set.of(b.category()));
+            if (tier.isPresent()) facets.put("Tier", Set.of(tier.get().letter()));
             out.add(new Entry(b.name(), b.item(), tier.map(PriceTier::text).orElse(""), lines,
-                    (b.name() + " " + text(b.category()) + " " + text(b.tier())).toLowerCase(Locale.ROOT)));
+                    (b.name() + " " + text(b.category()) + " " + text(b.tier())).toLowerCase(Locale.ROOT),
+                    facets, tier.filter(PriceTier::hasNumber).map(PriceTier::minDeggs).orElse(-1)));
         }
         return out;
     }
@@ -162,7 +233,7 @@ public final class Catalog {
                 lines.add(Line.of(String.join(", ", gear), Tone.TEXT));
             }
             out.add(new Entry(k.name(), "minecraft:tripwire_hook", text(k.text()), lines,
-                    (k.name() + " " + String.join(" ", gear)).toLowerCase(Locale.ROOT)));
+                    (k.name() + " " + String.join(" ", gear)).toLowerCase(Locale.ROOT), Map.of(), k.minDeggs() == null ? -1 : k.minDeggs()));
         }
         return out;
     }
@@ -183,9 +254,13 @@ public final class Catalog {
             if (info && a.infoDraft() && (does != null || !source.isEmpty())) lines.add(Line.of("Draft, not checked yet", Tone.DIM));
 
             boolean mythical = a.does() != null && a.does().startsWith("Mythical");
+            Map<String, Set<String>> facets = new HashMap<>();
+            if (a.toolType() != null) facets.put("Kind", Set.of(title(a.toolType().replace('_', ' '))));
+            if (!source.isEmpty()) facets.put("From", Set.copyOf(source));
+            if (mythical) facets.put("Special", Set.of("Mythical"));
             out.add(new Entry(a.name(), icon(a), mythical ? "Mythical" : "", lines,
                     String.join(" ", a.name(), String.join(" ", a.flavor()), text(does), String.join(" ", source),
-                            text(a.toolType()), mythical ? "mythical" : "").toLowerCase(Locale.ROOT)));
+                            text(a.toolType()), mythical ? "mythical" : "").toLowerCase(Locale.ROOT), facets, -1));
         }
         out.sort(Comparator.comparing(x -> x.name().toLowerCase(Locale.ROOT)));
         return out;

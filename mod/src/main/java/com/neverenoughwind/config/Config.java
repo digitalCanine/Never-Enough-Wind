@@ -60,6 +60,7 @@ public final class Config {
     public boolean chatColors = true;
     // nametags only: the player's name takes the clan color too. chat names are never touched
     public boolean nameColors = false;
+    public boolean glowColors = true;
     public List<String> own = new ArrayList<>(), ally = new ArrayList<>(), enemy = new ArrayList<>(), tradebanned = new ArrayList<>();
     public int ownColor = 0x55FF55, allyColor = 0x55AAFF, enemyColor = 0xFF5555, tradebannedColor = 0xFFAA00, neutralColor = 0xAAAAAA;
 
@@ -94,8 +95,14 @@ public final class Config {
     public boolean fixJoinDate = true;
     public boolean inventoryView = true;
 
+    // an outline on labyrinth chests the player already opened
+    public boolean labyrinthMarks = true;
+    public int labyrinthColor = 0xFF5555;
+
     // the debug rows in the side panel and unknown worlds on the hud
     public boolean debug = false;
+    // for filming: our widgets stay while f1 hides the rest of the hud
+    public boolean trailer = false;
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static Config current = new Config().filled();

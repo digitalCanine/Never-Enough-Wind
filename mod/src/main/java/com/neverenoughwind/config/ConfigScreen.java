@@ -94,6 +94,8 @@ public final class ConfigScreen {
                         d.chatColors, () -> c.chatColors, v -> c.chatColors = v))
                 .option(toggle("Color Names Above Heads", "The name above a player's head takes their clan's color, so you can tell friend from enemy at a glance. Names in chat keep their own colors.",
                         d.nameColors, () -> c.nameColors, v -> c.nameColors = v))
+                .option(toggle("Clan Colors on Glowing Players", "A player who is glowing, from a spectral arrow for example, glows in their clan's color. It never makes anyone glow.",
+                        d.glowColors, () -> c.glowColors, v -> c.glowColors = v))
                 .group(OptionGroup.createBuilder().name(Text.literal("Colors"))
                         .option(color("Your Clans", null, d.ownColor, () -> c.ownColor, v -> c.ownColor = v))
                         .option(color("Allies", null, d.allyColor, () -> c.allyColor, v -> c.allyColor = v))
@@ -123,6 +125,11 @@ public final class ConfigScreen {
                         d.inventoryView, () -> c.inventoryView, v -> c.inventoryView = v))
                 .option(toggle("Tidy Join Dates", "Profiles of players who joined before the merge say \"pre-merge\" instead of twenty thousand days.",
                         d.fixJoinDate, () -> c.fixJoinDate, v -> c.fixJoinDate = v))
+                .option(toggle("Labyrinth Chest Marks", "During the Labyrinth event, chests you have already opened get a thin outline, so you do not open them twice.",
+                        d.labyrinthMarks, () -> c.labyrinthMarks, v -> c.labyrinthMarks = v))
+                .option(color("Chest Mark Color", null, d.labyrinthColor, () -> c.labyrinthColor, v -> c.labyrinthColor = v))
+                .option(toggle("Trailer Mode", "For filming. Hiding the HUD with F1 keeps the mod's own widgets on screen.",
+                        d.trailer, () -> c.trailer, v -> c.trailer = v))
                 .option(toggle("Debug Info", "For testers. Extra rows in the side panel showing how an item was read, worlds the mod does not know, and the Save Item Info key (set it under Controls): hover an item and press it to save and copy what the item looks like.",
                         d.debug, () -> c.debug, v -> c.debug = v));
 

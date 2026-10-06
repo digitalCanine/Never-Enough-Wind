@@ -82,8 +82,13 @@ public abstract class HudWidget {
     private void renderHud(DrawContext ctx) {
         MinecraftClient mc = MinecraftClient.getInstance();
         // the layout screen draws the widgets itself
-        if (mc.options.hudHidden || mc.world == null || mc.currentScreen instanceof LayoutScreen || !config().enabled) return;
+        if (mc.world == null || mc.currentScreen instanceof LayoutScreen || !config().enabled) return;
         Placed p = place(mc.textRenderer, ctx.getScaledWindowWidth(), ctx.getScaledWindowHeight(), false);
         if (p != null) draw(ctx, p);
+    }
+
+    // trailer mode: the game skips the whole hud in f1, so the widgets get drawn from here
+    public static void renderHidden(DrawContext ctx) {
+        for (HudWidget w : ALL) w.renderHud(ctx);
     }
 }

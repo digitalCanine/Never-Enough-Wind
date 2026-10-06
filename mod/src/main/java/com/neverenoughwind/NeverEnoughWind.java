@@ -8,6 +8,7 @@ import com.neverenoughwind.feature.Browser;
 import com.neverenoughwind.feature.Clans;
 import com.neverenoughwind.feature.Dailies;
 import com.neverenoughwind.feature.ItemDump;
+import com.neverenoughwind.feature.Labyrinth;
 import com.neverenoughwind.feature.NameColor;
 import com.neverenoughwind.feature.WindCommands;
 import com.neverenoughwind.feature.discord.Presence;
@@ -54,6 +55,7 @@ public class NeverEnoughWind implements ClientModInitializer {
             WindCommands.register();
             ItemDump.register();
             Browser.register();
+            Labyrinth.register();
             Presence.register();
             LOG.info("data loaded: {} essences, {} auction items, {} item types",
                     data.essences().all().size(), data.auctionItems().all().size(), data.itemRules().types().size());

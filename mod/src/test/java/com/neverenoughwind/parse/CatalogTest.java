@@ -50,6 +50,24 @@ class CatalogTest {
     }
 
     @Test
+    void filtersNarrowTheListAndSortingOrdersIt() {
+        Catalog.Section essences = section(Catalog.build(data, false), "Essences");
+        Catalog.Filter key = essences.filters().stream().filter(f -> f.name().equals("Key")).findFirst().orElseThrow();
+        assertEquals(5, key.options().size());
+        List<Catalog.Entry> paradox = essences.search("", java.util.Map.of("Key", "Paradox"), Catalog.Sort.DEFAULT);
+        assertEquals(21, paradox.size());
+        // a filter left on "All" is stored as null and lets everything through
+        java.util.Map<String, String> all = new java.util.HashMap<>();
+        all.put("Key", null);
+        assertEquals(258, essences.search("", all, Catalog.Sort.DEFAULT).size());
+        List<Catalog.Entry> cheap = essences.search("", java.util.Map.of(), Catalog.Sort.CHEAP);
+        List<Catalog.Entry> costly = essences.search("", java.util.Map.of(), Catalog.Sort.COSTLY);
+        assertTrue(cheap.get(0).price() >= 0 && cheap.get(0).price() <= costly.get(0).price());
+        // whatever has no price ends up last either way
+        assertTrue(cheap.get(cheap.size() - 1).price() < 0 || cheap.stream().allMatch(e -> e.price() >= 0));
+    }
+
+    @Test
     void draftsOnlyShowWhenAsked() {
         Catalog.Entry hidden = section(Catalog.build(data, false), "Gear").search("sicario").get(0);
         Catalog.Entry shown = section(Catalog.build(data, true), "Gear").search("sicario").get(0);

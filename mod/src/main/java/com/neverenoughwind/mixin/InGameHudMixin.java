@@ -3,17 +3,22 @@ package com.neverenoughwind.mixin;
 import com.neverenoughwind.adapter.Items;
 import com.neverenoughwind.config.Config;
 import com.neverenoughwind.feature.NameColor;
+import com.neverenoughwind.feature.hud.HudWidget;
 import com.neverenoughwind.parse.ItemInfo;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
@@ -32,6 +37,12 @@ public abstract class InGameHudMixin {
         if (currentStack == null || currentStack.isEmpty() || !Config.get().originalNames) return null;
         ItemInfo info = Items.info(currentStack);
         return info.restoreStyle() == null ? null : NameColor.paint(currentStack.getName().getString(), info.restoreStyle());
+    }
+
+    @Inject(method = "render", at = @At("TAIL"))
+    private void new$trailer(DrawContext ctx, RenderTickCounter tick, CallbackInfo ci) {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        if (mc.options.hudHidden && Config.get().trailer) HudWidget.renderHidden(ctx);
     }
 
     @ModifyArg(method = "renderHeldItemTooltip", at = @At(value = "INVOKE", target = DRAW_NAME), index = 1)
