@@ -102,6 +102,12 @@ public final class Config {
     public DiscordPicture discordBigPicture = DiscordPicture.SUBSERVER, discordSmallPicture = DiscordPicture.NOTHING;
     public boolean discordElapsed = true;
 
+    // chat tabs. poppedTabs = tabs shown in a window of their own instead of in the chat box
+    public boolean chatTabs = true;
+    public boolean clanInMain = true, whispersInMain = true;
+    public boolean chatPrefill = true;
+    public List<String> poppedTabs = new ArrayList<>();
+
     // server oddities the mod tidies up
     public boolean fixJoinDate = true;
     public boolean inventoryView = true;
@@ -155,6 +161,7 @@ public final class Config {
         if (ally == null) ally = new ArrayList<>();
         if (enemy == null) enemy = new ArrayList<>();
         if (tradebanned == null) tradebanned = new ArrayList<>();
+        if (poppedTabs == null) poppedTabs = new ArrayList<>();
         return this;
     }
 

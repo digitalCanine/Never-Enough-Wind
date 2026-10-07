@@ -12,6 +12,7 @@ import com.neverenoughwind.feature.Labyrinth;
 import com.neverenoughwind.feature.NameColor;
 import com.neverenoughwind.feature.WindCommands;
 import com.neverenoughwind.feature.discord.Presence;
+import com.neverenoughwind.feature.hud.ChatWindow;
 import com.neverenoughwind.feature.hud.EventWidgets;
 import com.neverenoughwind.feature.hud.Notifications;
 import com.neverenoughwind.feature.hud.PartyWidget;
@@ -56,6 +57,7 @@ public class NeverEnoughWind implements ClientModInitializer {
             ItemDump.register();
             Browser.register();
             Labyrinth.register();
+            ChatWindow.register();
             Presence.register();
             LOG.info("data loaded: {} essences, {} auction items, {} item types",
                     data.essences().all().size(), data.auctionItems().all().size(), data.itemRules().types().size());

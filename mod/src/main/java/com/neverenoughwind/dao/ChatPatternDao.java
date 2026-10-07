@@ -17,6 +17,8 @@ import java.util.regex.Pattern;
 public final class ChatPatternDao {
     // sorted by category_order, then file order: specific lines before the catch-alls
     private final List<ChatPattern> patterns = new ArrayList<>();
+    // chat tab -> what an empty chat box starts with on that tab
+    private final Map<String, String> prefill = new HashMap<>();
 
     public static ChatPatternDao load() {
         ChatPatternDao dao = new ChatPatternDao();
@@ -32,12 +34,30 @@ public final class ChatPatternDao {
                 NeverEnoughWind.LOG.warn("skipped a bad chat pattern {}: {}", Json.str(o, "id"), e.toString());
             }
         }
+        // deaths are a plain list of wordings, nothing to pull out of them
+        JsonObject deaths = root.getAsJsonObject("death_patterns");
+        if (deaths != null) {
+            int n = 0;
+            for (String regex : Json.strings(deaths, "regexes")) {
+                try {
+                    dao.patterns.add(new ChatPattern("death_" + n++, "death", null, Pattern.compile(regex), Json.str(deaths, "status")));
+                } catch (RuntimeException e) {
+                    NeverEnoughWind.LOG.warn("skipped a bad death pattern {}: {}", regex, e.toString());
+                }
+            }
+        }
+        JsonObject prefill = root.getAsJsonObject("tab_prefill");
+        if (prefill != null) prefill.entrySet().forEach(e -> dao.prefill.put(e.getKey(), e.getValue().getAsString()));
         // stable sort, so file order holds inside a category
         dao.patterns.sort(Comparator.comparingInt(p -> {
             int at = order.indexOf(p.category());
             return at < 0 ? Integer.MAX_VALUE : at;
         }));
         return dao;
+    }
+
+    public String prefill(String tab) {
+        return prefill.get(tab);
     }
 
     public int size() {

@@ -1,6 +1,7 @@
 package com.neverenoughwind.config;
 
 import com.neverenoughwind.feature.Clans;
+import com.neverenoughwind.feature.chat.Tabs;
 import com.neverenoughwind.feature.hud.HudWidget;
 import dev.isxander.yacl3.api.ButtonOption;
 import dev.isxander.yacl3.api.ConfigCategory;
@@ -114,6 +115,16 @@ public final class ConfigScreen {
                 .group(tags("Enemies", null, () -> c.enemy, v -> c.enemy = v))
                 .group(tags("Trade Banned", "Clans you do not trade with.", () -> c.tradebanned, v -> c.tradebanned = v));
 
+        ConfigCategory.Builder chat = ConfigCategory.createBuilder().name(Text.literal("Chat"))
+                .option(toggle("Chat Tabs", "Tabs over the chat box: Main, Clan, Whispers, Events and System. Click a tab to open it, right click it to give it a window of its own.",
+                        d.chatTabs, () -> c.chatTabs, v -> c.chatTabs = v))
+                .option(toggle("Clan Chat in Main", "Clan chat also shows in the Main tab.",
+                        d.clanInMain, () -> c.clanInMain, v -> c.clanInMain = v))
+                .option(toggle("Whispers in Main", "Whispers also show in the Main tab.",
+                        d.whispersInMain, () -> c.whispersInMain, v -> c.whispersInMain = v))
+                .option(toggle("Start Messages for the Tab", "Opening chat on the Clan or Whispers tab starts your message with that tab's command. You still send it yourself.",
+                        d.chatPrefill, () -> c.chatPrefill, v -> c.chatPrefill = v));
+
         ConfigCategory.Builder discord = ConfigCategory.createBuilder().name(Text.literal("Discord"))
                 .option(toggle("Show on Discord", "Show that you are playing Minewind on your Discord profile. Off unless you turn it on, and you choose every part of it below. The mod only talks to the Discord app on your computer.",
                         d.discord, () -> c.discord, v -> c.discord = v))
@@ -144,11 +155,13 @@ public final class ConfigScreen {
                 .category(items.build())
                 .category(hud.build())
                 .category(clans.build())
+                .category(chat.build())
                 .category(discord.build())
                 .category(other.build())
                 .save(() -> {
                     Config.save();
                     Clans.applyConfig();
+                    Tabs.refresh();
                 })
                 .build()
                 .generateScreen(parent);

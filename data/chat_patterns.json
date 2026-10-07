@@ -6,6 +6,10 @@
     "flag_i": "case insensitive",
     "order": "category_order"
   },
+  "tab_prefill": {
+    "clan": "/c ",
+    "whispers": "/r "
+  },
   "category_order": [
     "dm_received",
     "dm_sent",
