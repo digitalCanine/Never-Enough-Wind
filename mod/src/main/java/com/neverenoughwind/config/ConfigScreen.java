@@ -90,6 +90,12 @@ public final class ConfigScreen {
         ConfigCategory.Builder clans = ConfigCategory.createBuilder().name(Text.literal("Clans"))
                 .option(toggle("Clan Above Names", "Show a player's clan and rank above their name.",
                         d.nametagTags, () -> c.nametagTags, v -> c.nametagTags = v))
+                .option(Option.<Config.TagStyle>createBuilder()
+                        .name(Text.literal("Clan Line Style"))
+                        .description(about("How the clan and rank above a name are written."))
+                        .binding(d.tagStyle, () -> c.tagStyle, v -> c.tagStyle = v)
+                        .controller(o -> EnumControllerBuilder.create(o).enumClass(Config.TagStyle.class).formatValue(v -> Text.literal(v.label)))
+                        .build())
                 .option(toggle("Clan Colors in Chat", "Color the clan tags in chat by how you stand with that clan.",
                         d.chatColors, () -> c.chatColors, v -> c.chatColors = v))
                 .option(toggle("Color Names Above Heads", "The name above a player's head takes their clan's color, so you can tell friend from enemy at a glance. Names in chat keep their own colors.",

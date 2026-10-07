@@ -18,6 +18,9 @@ public final class ItemParser {
     // minewind writes enchants as lore lines, they arent part of the description
     private static final Pattern ENCHANT_LINE = Pattern.compile(
             "^[A-Z][A-Za-z' ]+ [IVXLC]+$|^(Curse of .+|Mending|Silk Touch|Infinity|Aqua Affinity|Flame|Channeling|Multishot)$");
+    // "August 2022", "Summer 2017": when that copy was made, differs from copy to copy
+    private static final Pattern DATE_LINE = Pattern.compile(
+            "^(January|February|March|April|May|June|July|August|September|October|November|December|Summer|Winter|Spring|Autumn|Fall) \\d{4}$");
     private static final Pattern SHARPNESS_LINE = Pattern.compile("^Sharpness ([IVXLC]+)$");
 
     private final Data data;
@@ -50,7 +53,7 @@ public final class ItemParser {
                 Essence spell = spellNamed(detail);
                 if (spell != null) essences = List.of(new EssenceEntry(spell.name(), 0, spell, null, null));
             }
-            return new ItemInfo(type.id(), detail, essences, souls(lore), List.of(), null, false, null, null);
+            return new ItemInfo(type.id(), detail, essences, souls(lore), List.of(), null, false, null, null, date(lore));
         }
 
         List<EssenceEntry> essences = gearEssences(lore);
@@ -67,7 +70,7 @@ public final class ItemParser {
             if (auction != null && auction.style() != null) restore = auction.style();
             else if (gearType && !flavor.isEmpty() && !isDuped(lore)) restore = data.auctionItems().fallbackStyle();
         }
-        return new ItemInfo("gear", auction == null ? null : auction.name(), essences, souls, flavor, auction, renamed, restore, sharpness(item));
+        return new ItemInfo("gear", auction == null ? null : auction.name(), essences, souls, flavor, auction, renamed, restore, sharpness(item), date(lore));
     }
 
     // null = not this type, otherwise a short detail (key name, block, aura...) or ""
@@ -210,15 +213,23 @@ public final class ItemParser {
         return List.copyOf(out);
     }
 
-    // the fixed description: lines before souls / Essence / Player Kills, minus enchant lines and blanks
+    // the fixed description: lines before souls / Essence / Player Kills, minus enchant lines, blanks, dates and soulbound names
     static List<String> flavor(List<String> lore) {
         List<String> out = new ArrayList<>();
         for (String line : lore) {
             if (line.startsWith("- ") || line.equals("Essence") || line.startsWith("Player Kills")) break;
             if (line.isBlank() || ENCHANT_LINE.matcher(line).matches()) continue;
+            if (DATE_LINE.matcher(line.trim()).matches() || line.startsWith("Soulbound:")) continue;
             out.add(line);
         }
         return List.copyOf(out);
+    }
+
+    static String date(List<String> lore) {
+        for (String line : lore) {
+            if (DATE_LINE.matcher(line.trim()).matches()) return line.trim();
+        }
+        return null;
     }
 
     private static boolean isDuped(List<String> lore) {

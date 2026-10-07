@@ -114,7 +114,7 @@ public final class Clans {
         });
     }
 
-    // the line above a player's name: "AXE Leader", or every listed clan when the roster isnt sure. null = no line
+    // the line above a player's name: "WOOL Leader", or every listed clan when the roster isnt sure. null = no line
     public static Text nametagLine(String player) {
         if (!Config.get().nametagTags || !Worlds.onMinewind()) return null;
         List<Roster.Membership> clans = roster.of(player);
@@ -123,14 +123,24 @@ public final class Clans {
         for (int i = 0; i < clans.size(); i++) {
             Roster.Membership m = clans.get(i);
             if (i > 0) line.append(Text.literal(" · ").styled(s -> s.withColor(RANK_COLOR)));
-            line.append(Text.literal(m.tag()).styled(s -> s.withColor(color(m.tag()))));
+            Text tag = Text.literal(m.tag()).styled(s -> s.withColor(color(m.tag())));
             String rank = Character.toUpperCase(m.rank().charAt(0)) + m.rank().substring(1);
-            line.append(Text.literal(" " + rank).styled(s -> s.withColor(RANK_COLOR)));
+            // only the tag takes the clan's color
+            switch (Config.get().tagStyle) {
+                case TAG_RANK -> line.append(tag).append(gray(" " + rank));
+                case RANK_OF_TAG -> line.append(gray(rank + " of ")).append(tag);
+                case BRACKETS -> line.append(gray("[")).append(tag).append(gray("] " + rank));
+                case TAG -> line.append(tag);
+            }
         }
         return line;
     }
 
-    // your own clan and rank, "AXE Leader". null when the roster doesnt have you
+    private static Text gray(String text) {
+        return Text.literal(text).styled(s -> s.withColor(RANK_COLOR));
+    }
+
+    // your own clan and rank, "WOOL Leader". null when the roster doesnt have you
     public static String ownClan() {
         MinecraftClient mc = MinecraftClient.getInstance();
         if (mc.player == null) return null;

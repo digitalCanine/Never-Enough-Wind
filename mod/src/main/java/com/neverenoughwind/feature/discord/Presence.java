@@ -160,7 +160,7 @@ public final class Presence {
         return text.length() > 128 ? text.substring(0, 125) + "..." : text;
     }
 
-    // "digitalCanine, AXE Leader", or only the name without a clan
+    // "name, WOOL Leader", or only the name without a clan
     private static String nameAndClan(MinecraftClient mc) {
         String clan = Clans.ownClan();
         return clan == null ? mc.getSession().getUsername() : mc.getSession().getUsername() + ", " + clan;

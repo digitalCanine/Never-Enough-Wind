@@ -178,6 +178,30 @@
           "name": "Level UP Potion",
           "lore": "Gives 9001 EXP",
           "use": "Bought with Ancient Gold Powder from the Powder Enthusiast."
+        },
+        {
+          "item": "minecraft:potion",
+          "name": "+1 Ender Tab Potion",
+          "lore": "Adds 1 more Tab to your Ender Chest.",
+          "use": "Adds one more tab to your ender chest.",
+          "note": "a player quoted 6 to 7 steggs in chat on 2026-10-06, not a chart price"
+        },
+        {
+          "item": "minecraft:golden_helmet",
+          "name": "Summer Helmet",
+          "lore": "- Godlike Regeneration",
+          "event": true
+        },
+        {
+          "item": "minecraft:cooked_beef",
+          "name": "Medium Rare Beef",
+          "lore": "Leftover food from the Minewind inn.",
+          "event": true
+        },
+        {
+          "item": "minecraft:beetroot",
+          "name": "Player Heart",
+          "lore": "Eat their heart to gain their courage."
         }
       ]
     },

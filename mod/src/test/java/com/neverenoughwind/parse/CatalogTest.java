@@ -28,7 +28,7 @@ class CatalogTest {
         assertEquals(258, section(all, "Essences").entries().size());
         assertEquals(351, section(all, "Blocks").entries().size());
         assertEquals(18, section(all, "Keys").entries().size());
-        assertEquals(203, section(all, "Gear").entries().size());
+        assertEquals(237, section(all, "Gear").entries().size());
     }
 
     @Test

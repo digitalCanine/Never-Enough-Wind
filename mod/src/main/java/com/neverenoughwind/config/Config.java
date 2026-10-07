@@ -56,7 +56,18 @@ public final class Config {
     public boolean dailyReminders = true;
 
     // clans
+    public enum TagStyle {
+        TAG_RANK("WOOL Officer"), RANK_OF_TAG("Officer of WOOL"), BRACKETS("[WOOL] Officer"), TAG("WOOL");
+
+        public final String label;
+
+        TagStyle(String label) {
+            this.label = label;
+        }
+    }
+
     public boolean nametagTags = true;
+    public TagStyle tagStyle = TagStyle.TAG_RANK;
     public boolean chatColors = true;
     // nametags only: the player's name takes the clan color too. chat names are never touched
     public boolean nameColors = false;

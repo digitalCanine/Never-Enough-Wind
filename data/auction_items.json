@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "notes": [
-    "flavor = lore lines before souls / Essence / Player Kills, skipping enchant lines and blanks",
+    "flavor = lore lines before souls / Essence / Player Kills, skipping enchant lines, blanks, date lines and soulbound lines",
     "match: join the flavor lines with spaces, compare letters and digits only",
     "needs_item_id: tell apart by tool type, not material",
     "restyle the current name, gradient = first to last color",
@@ -140,8 +140,7 @@
         "on Raider Caravels.",
         "Works by accelerating time around the bow,",
         "which is more energy efficient than reversing time,",
-        "but does not conserve the arrows.",
-        "December 2022"
+        "but does not conserve the arrows."
       ],
       "style": {
         "gradient": [
@@ -1724,8 +1723,7 @@
       "name": "Noegrus",
       "item": "minecraft:iron_sword",
       "flavor": [
-        "Cut my heart into pieces!",
-        "July 2026"
+        "Cut my heart into pieces!"
       ],
       "style": {
         "gradient": [
@@ -1913,8 +1911,7 @@
       "flavor": [
         "A holy garment that",
         "was produced through",
-        "series of religious rituals",
-        "August 2025"
+        "series of religious rituals"
       ],
       "style": {
         "color": "white",
@@ -2875,15 +2872,23 @@
     },
     {
       "name": "Grug's Boots",
+      "item": "minecraft:leather_boots",
       "flavor": [
         "Grug like to go fast and also hard."
       ],
-      "type": "boots",
-      "status": "wiki",
+      "style": {
+        "gradient": [
+          "#28D13B",
+          "#079A1A"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
       "source": [
         "Summoner's Key"
       ],
-      "info": "draft"
+      "info": "draft",
+      "needs_item_id": false
     },
     {
       "name": "Hawkwood's Chain Helm",
@@ -2931,15 +2936,26 @@
     },
     {
       "name": "Honey Master Head",
+      "item": "minecraft:honey_block",
       "flavor": [
-        "The First Honey Master believed he was one of the bees. To become a Honey Amber was the greatest honor a Queen could bestow."
+        "The First Honey Master believed",
+        "he was one of the bees.",
+        "To become a Honey Amber was the",
+        "greatest honor a Queen could bestow."
       ],
-      "type": "helmet",
-      "status": "wiki",
+      "style": {
+        "gradient": [
+          "#FEB204",
+          "#DE4204"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
       "source": [
         "Belphegor Key"
       ],
-      "info": "draft"
+      "info": "draft",
+      "needs_item_id": false
     },
     {
       "name": "Honey Master Leggings",
@@ -3335,15 +3351,22 @@
     },
     {
       "name": "Syba's Touch",
+      "item": "minecraft:golden_pickaxe",
       "flavor": [
-        "So gentle, it can even pick up a spawner sometimes."
+        "So gentle, it can even",
+        "pick up a spawner sometimes."
       ],
-      "status": "wiki",
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
       "does": "Can pick up spawners, but not every time.",
       "source": [
         "Abyssal Key"
       ],
-      "info": "draft"
+      "info": "draft",
+      "needs_item_id": false
     },
     {
       "name": "Syba's Training Sword",
@@ -3397,6 +3420,695 @@
         "Dimensional Key"
       ],
       "info": "draft"
+    },
+    {
+      "name": "Death Marker Dagger Pickaxe",
+      "item": "minecraft:netherite_pickaxe",
+      "flavor": [
+        "Coated in material so radioactive,",
+        "those who are struck glow through walls",
+        "in addition to being very poisoned."
+      ],
+      "style": {
+        "gradient": [
+          "#7A11FF",
+          "#2C797D"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true
+    },
+    {
+      "name": "Jump Rod",
+      "item": "minecraft:fishing_rod",
+      "flavor": [
+        "Filled with jumping gas.",
+        "This rod contains a hidden ability,",
+        "master it to become the great assassin."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Life Swap Staff",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "A cursed artifact created by the god Loki,",
+        "to assassinate his brother Odin.",
+        "The plan backfired when he miscast it",
+        "upon one of Odin's parrots.",
+        "Requires the power of a dragon egg to cast."
+      ],
+      "style": {
+        "gradient": [
+          "#BFFF00",
+          "#F75700"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Kathodos",
+      "item": "minecraft:netherite_sword",
+      "flavor": [
+        "Summons a heavy gravity well",
+        "that overloads gravity in an area.",
+        "A rare spell that manipulates gravity",
+        "in multiple stages, by summoning a",
+        "brief singularity that implodes",
+        "into a gravity overload.",
+        "Invented by a wizard who wanted to",
+        "spend some time getting revenge",
+        "on the Elytra Bandits who raided his",
+        "crystal farms for many months,",
+        "and also stole and ate all of his goats."
+      ],
+      "style": {
+        "gradient": [
+          "#00A5FF",
+          "#00F273"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Helmet of Fast Infinity",
+      "item": "minecraft:leather_helmet",
+      "flavor": [
+        "Worn by the followers of Malphas,",
+        "these infinity threads strengthen the wearer's",
+        "understanding of infinity when touched."
+      ],
+      "style": {
+        "gradient": [
+          "#0021FF",
+          "#00E7E9"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Pakshi Naama",
+      "item": "minecraft:iron_shovel",
+      "flavor": [
+        "Turns oneself into a parrot.",
+        "Click attack to fly forward or land anywhere.",
+        "Used by Shiva the Destroyer",
+        "to spy on his enemies,",
+        "and make villagers laugh from time to time."
+      ],
+      "style": {
+        "gradient": [
+          "#00FF1D",
+          "#C6FF07"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Healthy Strike Pickaxe",
+      "item": "minecraft:netherite_pickaxe",
+      "flavor": [
+        "This Pickaxe likes when its wielder is healthy,",
+        "increasing damage while its owner is unharmed."
+      ],
+      "style": {
+        "gradient": [
+          "#FF0400",
+          "#FF04E7"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "note": "name colors differ from copy to copy"
+    },
+    {
+      "name": "Shadow Mirror",
+      "item": "minecraft:shield",
+      "flavor": [
+        "A mirror that reflects the self when struck.",
+        "Exotic and daring move used by the shadow assassins",
+        "who are not afraid to get stuck in a wall.",
+        "Quick reflexes are essential to handle this relic."
+      ],
+      "style": {
+        "gradient": [
+          "#FF1500",
+          "#FF09CC"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "note": "name colors differ from copy to copy"
+    },
+    {
+      "name": "Anthosia",
+      "item": "minecraft:leather_boots",
+      "flavor": [
+        "Allows flowers to give their life",
+        "to the wearer.",
+        "With so many brave heroes fallen",
+        "over the aeons,",
+        "it is no wonder that even the flowers",
+        "growing from their bones",
+        "want to defend those in need",
+        "with their own life force."
+      ],
+      "style": {
+        "gradient": [
+          "#FAFF00",
+          "#FA2600"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Gleipnir",
+      "item": "minecraft:stone_shovel",
+      "flavor": [
+        "Shovel of Odin the Allfather.",
+        "Yanks on the soul chain",
+        "of any creature.",
+        "Legends say the chain was used to bind",
+        "the giant wolf god Fenrir,",
+        "but it is not known where the wolf is now."
+      ],
+      "style": {
+        "gradient": [
+          "#00FF72",
+          "#77FF10"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Helmet of Increased Infinity Placed",
+      "item": "minecraft:netherite_helmet",
+      "flavor": [
+        "Bestowed by Malphas upon his trusted builders,",
+        "the ceremonial Helmet strengthens their connection",
+        "to infinity."
+      ],
+      "style": {
+        "gradient": [
+          "#00B6FF",
+          "#00FA55"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Stability Field Helmet",
+      "item": "minecraft:chainmail_helmet",
+      "flavor": [
+        "Woven from the threads of cosmic chaos",
+        "and the screaming echoes of forgotten gods.",
+        "Distorts the very fabric of reality",
+        "to diminish the devastation of explosions around its bearer."
+      ],
+      "style": {
+        "gradient": [
+          "#FF00AE",
+          "#6C00ED"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "note": "name colors differ from copy to copy"
+    },
+    {
+      "name": "Ambarithill",
+      "item": "minecraft:diamond_sword",
+      "flavor": [
+        "Carved from a crystal from the Frozen dimension,",
+        "where time itself does not exist.",
+        "Freezes everyone in front of you briefly.",
+        "Advanced ice spell that",
+        "the academy wizards love to cast",
+        "when they're losing an argument."
+      ],
+      "style": {
+        "gradient": [
+          "#FF5D00",
+          "#FF0D8C"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "note": "name colors differ from copy to copy"
+    },
+    {
+      "name": "Azur Dragon Wings",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Wings of a blue dragon,",
+        "stolen by a ruthless barbarian",
+        "when he ate his heart."
+      ],
+      "style": {
+        "color": "blue",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Logi",
+      "item": "minecraft:golden_axe",
+      "flavor": [
+        "Axe of the fire giant Surtr,",
+        "who ignited the world,",
+        "ending the Age of Gods, and resuming time.",
+        "Regular attacks spread magma,",
+        "and critical hits are empowered by",
+        "magma around the target."
+      ],
+      "style": {
+        "gradient": [
+          "#D0FF00",
+          "#F16300"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Unstoppable Helmet",
+      "item": "minecraft:netherite_helmet",
+      "flavor": [
+        "Infused with the spirit of Grug",
+        "like the finest orc perfume,",
+        "makes the wearer resistant to slowness."
+      ],
+      "style": {
+        "gradient": [
+          "#FFFF00",
+          "#FF1100"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Healthy Strike Shovel",
+      "item": "minecraft:diamond_shovel",
+      "flavor": [
+        "This Shovel likes when its wielder is healthy,",
+        "increasing damage while its owner is unharmed."
+      ],
+      "style": {
+        "gradient": [
+          "#FFC700",
+          "#FF1328"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Ice Coffin Sword",
+      "item": "minecraft:netherite_sword",
+      "flavor": [
+        "This Sword likes to entomb its victims",
+        "in pure ice when it deals a critical strike.",
+        "A forgotten relic of cold master Jif."
+      ],
+      "style": {
+        "gradient": [
+          "#0050FF",
+          "#00E6B4"
+        ],
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Blizzard Wand",
+      "item": "minecraft:white_tulip",
+      "flavor": [
+        "Summons a magical storm that",
+        "powderizes most solids on a molecular level,",
+        "and turns your enemies' blood into ice."
+      ],
+      "style": {
+        "color": "white",
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Chest of Reverse Bleeding",
+      "item": "minecraft:chainmail_chestplate",
+      "flavor": [
+        "Absorbs puddles of blood ground back into its wearer.",
+        "Vampires are widely believed to be immortal,",
+        "provided a steady supply of blood."
+      ],
+      "style": {
+        "gradient": [
+          "#FF8800",
+          "#FF1060"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Frosty Pillar Leggings",
+      "item": "minecraft:netherite_leggings",
+      "flavor": [
+        "Puts the wearer on a nice Ice Pedestal",
+        "whenever they teleport.",
+        "Invented by a meek Ice Sorceress,",
+        "when her fiery friends all agreed",
+        "that striking a playful pose before casting",
+        "makes you more memorable.",
+        "This one is generally used to",
+        "stand above others,",
+        "but is considered slippery",
+        "by apprentice wizards."
+      ],
+      "style": {
+        "gradient": [
+          "#0061FF",
+          "#00F4AB"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Totsuka no Tsurugi",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "Known only as the Staff of Ten Hands,",
+        "not much is known about its origin.",
+        "Cuts using a wave of sound,",
+        "not unlike the psychic attack of the depth demons.",
+        "Runes embedded deep in the staff",
+        "voice the forbidden Death Harmony."
+      ],
+      "style": {
+        "gradient": [
+          "#00FFED",
+          "#00FF10"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Flame Aegis Sword",
+      "item": "minecraft:netherite_sword",
+      "flavor": [
+        "A powerful spell that repels",
+        "all explosion damage for a short duration.",
+        "The increasing lethality of wizards",
+        "frightened even the Sun Demon Sorath,",
+        "so he cunningly created a spell that",
+        "counters his own explosive magic in hopes",
+        "that mages will stop trying to enslave him.",
+        "Needless to say, he got imprisoned",
+        "in an unknown wizard's lamp like a simple",
+        "Fire Djin to act as its light source."
+      ],
+      "style": {
+        "gradient": [
+          "#FF6000",
+          "#FFE040"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Multiflame Staff",
+      "item": "minecraft:iron_hoe",
+      "flavor": [
+        "At 1200 fireballs per minute,",
+        "this bad boy practically",
+        "melts your enemies through walls.",
+        "An alien Soul Splitter divides",
+        "a Fire Soul into many fireballs,",
+        "causing a near-continuous steam of death.",
+        "Used by the legendary Commander Set",
+        "in his heroic last stand against the Roach Swarm.",
+        "His resurrection as a vampire",
+        "made him evermore serene, and so he",
+        "began working on the Heavenly Floating Gardens",
+        "he saw in his death dreams."
+      ],
+      "style": {
+        "gradient": [
+          "#FF6000",
+          "#FFE73C"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Sword of Ancient Entanglement",
+      "item": "minecraft:wooden_sword",
+      "flavor": [
+        "Summons quick, grabby roots",
+        "directly from your feet. Like a tree.",
+        "Originally invented by ancient druids",
+        "to bridge the towering Elder Trees with ease.",
+        "The roots also seek to wrap around and suspend",
+        "all living things, as if to protect them."
+      ],
+      "style": {
+        "gradient": [
+          "#00FF61",
+          "#8CFF0D"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Umbraos",
+      "item": "minecraft:iron_axe",
+      "flavor": [
+        "Summons ghost fangs with regular attacks.",
+        "When the axe strikes,",
+        "it briefly stains the victim's soul",
+        "with shadow energy,",
+        "luring the nearby Shadow Dimension lurkers",
+        "to consume them."
+      ],
+      "style": {
+        "gradient": [
+          "#FF0026",
+          "#E100E0"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Kagetsu Boots",
+      "item": "minecraft:iron_boots",
+      "flavor": [
+        "Boots of unknown origin.",
+        "Blinds all nearby.",
+        "The ninjas are the best at keeping secrets,",
+        "even from themselves.",
+        "Unlike most objects, no trace of life force",
+        "clings to the shadowy Boots."
+      ],
+      "style": {
+        "gradient": [
+          "#21FF00",
+          "#EDE700"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Leggings of Extra-dimensional Healing",
+      "item": "minecraft:iron_leggings",
+      "flavor": [
+        "Heals the wearer whenever they teleport.",
+        "The Dimension Wizards discovered the cure for all diseases",
+        "locked away in a parallel realm,",
+        "known as the Ocean of Healing.",
+        "Its limits are unknown, but seem to stretch",
+        "unto infinity in its own dimension.",
+        "Unknown helpful bacteria may be carried over",
+        "with dimension travel."
+      ],
+      "style": {
+        "gradient": [
+          "#59FF00",
+          "#FBA500"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Leggings of Yama",
+      "item": "minecraft:netherite_leggings",
+      "flavor": [
+        "Woven by Priest Ukkaf from holy scriptures,",
+        "and solidified with an incantation of light.",
+        "Provides wither damage reduction.",
+        "Ukkaf's quest to conquer necromancy",
+        "has led him to distant lands,",
+        "where friendly Death Monks taught him",
+        "how to resist the Sacred Disorder.",
+        "They insisted that defence against slow death",
+        "is vital when facing the undead,",
+        "who have endless endurance",
+        "until their summoner is killed."
+      ],
+      "style": {
+        "gradient": [
+          "#E5FF00",
+          "#F42D00"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true
+    },
+    {
+      "name": "Helmet of Yama",
+      "item": "minecraft:netherite_helmet",
+      "flavor": [
+        "Woven by Priest Ukkaf from holy scriptures,",
+        "and solidified with an incantation of light.",
+        "Provides wither damage reduction.",
+        "Ukkaf's quest to conquer necromancy",
+        "has led him to distant lands,",
+        "where friendly Death Monks taught him",
+        "how to resist the Sacred Disorder.",
+        "They insisted that defence against slow death",
+        "is vital when facing the undead,",
+        "who have endless endurance",
+        "until their summoner is killed."
+      ],
+      "style": {
+        "gradient": [
+          "#FF3200",
+          "#FF0BB6"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": true
+    },
+    {
+      "name": "Freyja's Blessing",
+      "item": "minecraft:elytra",
+      "flavor": [
+        "Elytra wings that mysteriously become part of the body",
+        "and come alive.",
+        "Allows you to sneak during flight to flap your wings.",
+        "A faint but unforgettable scent",
+        "of a Valkyrie's wings",
+        "descends upon mortals with each flap,",
+        "bringing the weaker ones to their knees."
+      ],
+      "style": {
+        "gradient": [
+          "#FF1900",
+          "#FF09D0"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "note": "name colors differ from copy to copy"
+    },
+    {
+      "name": "Fishfriend Shield",
+      "item": "minecraft:shield",
+      "flavor": [
+        "Blocks attacks and turns attackers into fish!",
+        "Within Poseidon's domain,",
+        "being turned into a beautiful fish",
+        "is considered a blessing instead of a curse.",
+        "Poseidon is a peaceful god at heart,",
+        "and always carries some fancy fish food in his straps",
+        "to make sure the fish know he's the best."
+      ],
+      "style": {
+        "gradient": [
+          "#00FF3F",
+          "#B0FF0F"
+        ],
+        "bold": true
+      },
+      "status": "confirmed",
+      "needs_item_id": false
+    },
+    {
+      "name": "Jump Rod",
+      "item": "minecraft:fishing_rod",
+      "flavor": [
+        "Filled with jumping gas."
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false,
+      "note": "older lore, seen on a 2022 copy that was renamed"
+    },
+    {
+      "name": "Alchemist's Greater Healing Potion",
+      "item": "minecraft:splash_potion",
+      "flavor": [
+        "Replenishes 4"
+      ],
+      "style": {
+        "color": "green",
+        "bold": false
+      },
+      "status": "confirmed",
+      "needs_item_id": false
     }
   ],
   "fallback": {

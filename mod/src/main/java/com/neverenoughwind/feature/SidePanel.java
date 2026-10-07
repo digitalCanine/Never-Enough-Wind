@@ -138,8 +138,14 @@ public final class SidePanel {
         }
         // currencies and other listed items: what its for, when the data says
         NeverEnoughWind.data().itemRules().type(info.category()).ifPresent(type -> type.items().stream()
-                .filter(k -> k.use() != null && k.name().equals(info.detail())).findFirst()
-                .ifPresent(k -> out.add(Row.of(Text.literal(k.use()).formatted(Formatting.GRAY)))));
+                .filter(k -> k.name().equals(info.detail())).findFirst()
+                .ifPresent(k -> {
+                    if (k.use() != null) out.add(Row.of(Text.literal(k.use()).formatted(Formatting.GRAY)));
+                    if (k.event() && info.date() != null) {
+                        String what = itemId != null && NeverEnoughWind.data().auctionItems().isGearType(itemId) ? "Event gear" : "Event item";
+                        out.add(Row.of(Text.literal(what + " from " + info.date() + ".").formatted(Formatting.GRAY)));
+                    }
+                }));
         if ("keys".equals(info.category())) {
             prices.key(info.detail()).ifPresent(k -> out.add(
                     new Row(Text.literal("Price").formatted(Formatting.YELLOW), Text.literal(k.text()).formatted(Formatting.WHITE))));
