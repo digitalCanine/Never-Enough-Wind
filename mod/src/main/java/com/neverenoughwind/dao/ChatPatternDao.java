@@ -8,15 +8,20 @@ import com.neverenoughwind.parse.ChatMatch;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class ChatPatternDao {
     // sorted by category_order, then file order: specific lines before the catch-alls
     private final List<ChatPattern> patterns = new ArrayList<>();
+    private static final Pattern WORD = Pattern.compile("[A-Za-z]{2,}");
+    // the words death lines are written with, so none of them gets taken for a player
+    private final Set<String> deathWords = new HashSet<>();
     // chat tab -> what an empty chat box starts with on that tab
     private final Map<String, String> prefill = new HashMap<>();
 
@@ -41,6 +46,8 @@ public final class ChatPatternDao {
             for (String regex : Json.strings(deaths, "regexes")) {
                 try {
                     dao.patterns.add(new ChatPattern("death_" + n++, "death", null, Pattern.compile(regex), Json.str(deaths, "status")));
+                    Matcher words = WORD.matcher(regex);
+                    while (words.find()) dao.deathWords.add(words.group());
                 } catch (RuntimeException e) {
                     NeverEnoughWind.LOG.warn("skipped a bad death pattern {}: {}", regex, e.toString());
                 }
@@ -58,6 +65,10 @@ public final class ChatPatternDao {
 
     public String prefill(String tab) {
         return prefill.get(tab);
+    }
+
+    public boolean deathWord(String word) {
+        return deathWords.contains(word);
     }
 
     public int size() {

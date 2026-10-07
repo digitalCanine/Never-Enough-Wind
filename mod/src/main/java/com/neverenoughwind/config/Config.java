@@ -42,6 +42,7 @@ public final class Config {
     public PanelMode sidePanel = PanelMode.ALWAYS;
     public boolean originalNames = true;
     public boolean borders = true;
+    public boolean worthTotal = true;
     // rgb by item type
     public Map<String, Integer> borderColors = new LinkedHashMap<>();
 
@@ -72,6 +73,7 @@ public final class Config {
     // nametags only: the player's name takes the clan color too. chat names are never touched
     public boolean nameColors = false;
     public boolean glowColors = true;
+    public boolean killColors = true;
     public List<String> own = new ArrayList<>(), ally = new ArrayList<>(), enemy = new ArrayList<>(), tradebanned = new ArrayList<>();
     public int ownColor = 0x55FF55, allyColor = 0x55AAFF, enemyColor = 0xFF5555, tradebannedColor = 0xFFAA00, neutralColor = 0xAAAAAA;
 

@@ -43,7 +43,9 @@ public final class ConfigScreen {
                 .option(toggle("Original Item Names", "Renamed auction gear shows the name color it had when it was made.",
                         d.originalNames, () -> c.originalNames, v -> c.originalNames = v))
                 .option(toggle("Item Borders", "A thin colored frame around essences, keys, currencies and other Minewind items.",
-                        d.borders, () -> c.borders, v -> c.borders = v));
+                        d.borders, () -> c.borders, v -> c.borders = v))
+                .option(toggle("Container Worth", "Under an open chest, shulker box or inspected inventory: what its dragon eggs, keys, essences and infinity blocks add up to.",
+                        d.worthTotal, () -> c.worthTotal, v -> c.worthTotal = v));
         OptionGroup.Builder borderColors = OptionGroup.createBuilder().name(Text.literal("Border Colors")).collapsed(true);
         Config.defaultBorderColors().forEach((type, def) -> borderColors.option(color(
                 Character.toUpperCase(type.charAt(0)) + type.substring(1), null, def,
@@ -101,6 +103,8 @@ public final class ConfigScreen {
                         d.chatColors, () -> c.chatColors, v -> c.chatColors = v))
                 .option(toggle("Color Names Above Heads", "The name above a player's head takes their clan's color, so you can tell friend from enemy at a glance. Names in chat keep their own colors.",
                         d.nameColors, () -> c.nameColors, v -> c.nameColors = v))
+                .option(toggle("Clan Colors in Kill Messages", "Names in kill and death messages take their clan's color.",
+                        d.killColors, () -> c.killColors, v -> c.killColors = v))
                 .option(toggle("Clan Colors on Glowing Players", "A player who is glowing, from a spectral arrow for example, glows in their clan's color. It never makes anyone glow.",
                         d.glowColors, () -> c.glowColors, v -> c.glowColors = v))
                 .group(OptionGroup.createBuilder().name(Text.literal("Colors"))

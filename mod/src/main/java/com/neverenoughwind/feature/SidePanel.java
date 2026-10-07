@@ -208,6 +208,14 @@ public final class SidePanel {
             out.add(Row.of(Text.empty()));
             out.add(new Row(Text.literal("Essences").formatted(Formatting.YELLOW), Text.literal(total).formatted(Formatting.WHITE)));
         }
+        // deggs put into sharpening it past what it drops with. only when the data knows where that item starts
+        if ("gear".equals(info.category()) && info.sharpness() != null && info.auction() != null && info.auction().sharpness() != null) {
+            int spent = prices.sharpenCost(info.auction().sharpness(), info.sharpness());
+            if (spent > 0) {
+                if (info.essences().isEmpty() && !out.isEmpty()) out.add(Row.of(Text.empty()));
+                out.add(new Row(Text.literal("Sharpening").formatted(Formatting.YELLOW), Text.literal(PriceDao.text(spent)).formatted(Formatting.WHITE)));
+            }
+        }
 
         if (dmg != null) {
             Damage d = dmg.damage();

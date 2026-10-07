@@ -3,6 +3,7 @@ package com.neverenoughwind.mixin;
 import com.neverenoughwind.feature.Highlighter;
 import com.neverenoughwind.feature.ItemDump;
 import com.neverenoughwind.feature.SidePanel;
+import com.neverenoughwind.feature.Worth;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.item.ItemStack;
@@ -19,6 +20,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class HandledScreenMixin<T extends ScreenHandler> {
     @Shadow @Final protected T handler;
     @Shadow protected Slot focusedSlot;
+    @Shadow protected int x;
+    @Shadow protected int y;
+    @Shadow protected int backgroundWidth;
+    @Shadow protected int backgroundHeight;
+
+    @Inject(method = "render", at = @At("TAIL"))
+    private void new$worth(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) {
+        Worth.draw(context, handler, x + backgroundWidth, y + backgroundHeight);
+    }
 
     // same check vanilla does before it shows an item tooltip
     @Inject(method = "drawMouseoverTooltip", at = @At("HEAD"))

@@ -36,6 +36,11 @@ class ChatTabsTest {
         assertEquals(Tab.SYSTEM, tab("Welcome Steve!"));
         assertEquals(Tab.SYSTEM, tab("Steve rolled need 51!"));
         assertEquals(Tab.SYSTEM, tab("Steve drowned"));
+        assertEquals(Tab.SYSTEM, tab("Steve joined the game"));
+        assertEquals(Tab.SYSTEM, tab("Steve has escaped the labyrinth!"));
+        // answers to your own commands stay where you are looking
+        assertEquals(Tab.MAIN, tab("Daily cooldown: 1380 min"));
+        assertEquals(Tab.MAIN, tab("Unknown command. Type \"/help\" for help."));
     }
 
     @Test

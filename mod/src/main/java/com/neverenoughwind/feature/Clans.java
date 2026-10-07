@@ -20,6 +20,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 // clan tags on nametags and in chat, colored by how the player stands with that clan
 public final class Clans {
@@ -174,15 +176,50 @@ public final class Clans {
     // chat: color the tag the line itself carries. the speaker can be nicked, so the tag is all we go by
     private static Text recolorChat(Text message) {
         try {
-            if (NeverEnoughWind.data() == null || !Config.get().chatColors || !Worlds.onMinewind()) return message;
+            if (NeverEnoughWind.data() == null || !Worlds.onMinewind()) return message;
             ChatMatch m = NeverEnoughWind.data().chat().match(message.getString()).orElse(null);
-            if (m == null || !m.id().equals("public_chat") || m.get("clan") == null) return message;
+            if (m != null && m.category().equals("death")) return Config.get().killColors ? recolorNames(message) : message;
+            if (m == null || !Config.get().chatColors || !m.id().equals("public_chat") || m.get("clan") == null) return message;
             if (relations.of(m.get("clan")) == Relations.Kind.NEUTRAL) return message;
             // only the tag. the name keeps its rank or custom color
             return recolor(message, m.get("clan") + ".", color(m.get("clan")), new boolean[]{false});
         } catch (RuntimeException e) {
             return message;
         }
+    }
+
+    private static final Pattern NAME = Pattern.compile("[A-Za-z0-9_]{2,16}");
+
+    // kill and death lines use real names: every name of a clan you have a stance on takes that clan's color
+    private static Text recolorNames(Text text) {
+        MutableText copy;
+        if (text.getContent() instanceof PlainTextContent plain) {
+            copy = Text.empty().setStyle(text.getStyle());
+            String s = plain.string();
+            Matcher m = NAME.matcher(s);
+            int from = 0;
+            while (m.find()) {
+                TextColor color = relationColor(m.group());
+                if (color == null) continue;
+                copy.append(Text.literal(s.substring(from, m.start())));
+                copy.append(Text.literal(m.group()).styled(st -> st.withColor(color)));
+                from = m.end();
+            }
+            copy.append(Text.literal(s.substring(from)));
+        } else {
+            copy = text.copyContentOnly().setStyle(text.getStyle());
+        }
+        for (Text sibling : text.getSiblings()) copy.append(recolorNames(sibling));
+        return copy;
+    }
+
+    // null for players without a clan you have a stance on
+    private static TextColor relationColor(String player) {
+        if (NeverEnoughWind.data().chat().deathWord(player)) return null;
+        for (Roster.Membership m : roster.of(player)) {
+            if (relations.of(m.tag()) != Relations.Kind.NEUTRAL) return color(m.tag());
+        }
+        return null;
     }
 
     // copies the text, repainting the first piece that is exactly the token

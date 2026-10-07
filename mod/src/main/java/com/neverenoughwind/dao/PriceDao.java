@@ -124,6 +124,13 @@ public final class PriceDao {
         return range == null ? Optional.empty() : Optional.of(range[0] + "d - " + range[1] + "d");
     }
 
+    // the same in dragon eggs, lowest and highest. empty when the chart gives no number
+    public Optional<int[]> infinityDeggs(String itemId) {
+        Optional<PriceTier> tier = block(itemId).flatMap(b -> blockTier(b.tier()));
+        if (tier.isPresent()) return tier.get().hasNumber() ? Optional.of(new int[]{tier.get().minDeggs(), tier.get().maxDeggs()}) : Optional.empty();
+        return Optional.ofNullable(blockGroups.get(itemId.substring(itemId.lastIndexOf('_') + 1)));
+    }
+
     public List<String> blockNotes() {
         return blockNotes;
     }

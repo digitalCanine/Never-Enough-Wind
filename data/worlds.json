@@ -246,6 +246,15 @@
       "icon": "aqua",
       "server": "Spawn",
       "status": "assumed"
+    },
+    {
+      "name": "Labyrinth",
+      "hashed_seed": "*",
+      "dimension": "minecraft:lab",
+      "icon": "spawn",
+      "server": "Spawn",
+      "status": "confirmed",
+      "note": "labyrinth event, reached from spawn. a new maze every event, so the seed means nothing"
     }
   ],
   "if_unsure": "throne only on spawn -11 64 269, else azure",

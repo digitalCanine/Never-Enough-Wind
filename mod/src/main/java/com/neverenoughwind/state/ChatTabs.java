@@ -28,7 +28,7 @@ public final class ChatTabs {
 
     private ChatTabs() {}
 
-    // people talking and anything the patterns dont know stay in main
+    // people talking, answers to your own commands (category reply) and anything the patterns dont know stay in main
     public static Tab of(String category) {
         if (category != null) {
             for (Tab t : Tab.values()) {
