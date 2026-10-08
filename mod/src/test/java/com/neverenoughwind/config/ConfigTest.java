@@ -23,10 +23,10 @@ class ConfigTest {
     @Test
     void takesOverTheOldRelationsFile(@TempDir Path dir) throws Exception {
         Files.writeString(dir.resolve("relations.json"),
-                "{\"own\":[\"hoes\",\"axe\"],\"enemy\":[\"srmp\"],\"tradebanned\":[\"done\"],\"colors\":{\"ally\":\"#112233\"}}");
+                "{\"own\":[\"wool\",\"lamb\"],\"enemy\":[\"wolf\"],\"tradebanned\":[\"bear\"],\"colors\":{\"ally\":\"#112233\"}}");
         Config.load(dir);
-        assertEquals(List.of("hoes", "axe"), Config.get().own);
-        assertEquals(List.of("done"), Config.get().tradebanned);
+        assertEquals(List.of("wool", "lamb"), Config.get().own);
+        assertEquals(List.of("bear"), Config.get().tradebanned);
         assertEquals(0x112233, Config.get().allyColor);
         assertTrue(Files.exists(dir.resolve("config.json")));
     }

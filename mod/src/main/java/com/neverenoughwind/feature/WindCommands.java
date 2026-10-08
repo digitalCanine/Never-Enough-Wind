@@ -3,6 +3,7 @@ package com.neverenoughwind.feature;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.neverenoughwind.NeverEnoughWind;
+import com.neverenoughwind.config.EnderColorsScreen;
 import com.neverenoughwind.config.LayoutScreen;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.neverenoughwind.dao.PriceDao;
@@ -60,6 +61,11 @@ public final class WindCommands {
                         .executes(c -> browse(c.getSource().getClient(), null))
                         .then(argument("search", StringArgumentType.greedyString())
                                 .executes(c -> browse(c.getSource().getClient(), StringArgumentType.getString(c, "search")))))
+                .then(literal("echest").executes(c -> {
+                    MinecraftClient mc = c.getSource().getClient();
+                    mc.send(() -> mc.setScreen(new EnderColorsScreen(null)));
+                    return 1;
+                }))
                 .then(literal("config").executes(c -> {
                     // a tick later, the chat screen is still closing right now
                     MinecraftClient mc = c.getSource().getClient();

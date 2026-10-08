@@ -87,7 +87,7 @@ public final class ChatPatternDao {
                 String value = m.group(name);
                 if (value != null) groups.put(name, value);
             }
-            return Optional.of(new ChatMatch(p.id(), p.category(), p.event(), Map.copyOf(groups)));
+            return Optional.of(new ChatMatch(p.id(), p.category(), p.event(), Map.copyOf(groups), clean));
         }
         return Optional.empty();
     }

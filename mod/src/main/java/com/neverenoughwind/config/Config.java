@@ -114,6 +114,23 @@ public final class Config {
     public boolean fixJoinDate = true;
     public boolean inventoryView = true;
 
+    // the player's colors behind ender chest slots. enderTabs = tab id ("1-2") -> the name the player gave it,
+    // enderSlots = tab id -> slot number -> rgb
+    public boolean enderColors = true;
+    // what a color stands for, keyed by the color as "FF5555". kind = one of EnderChest.KINDS or null, name = text or a pattern or null
+    public static final class EnderRule {
+        public String kind, name;
+    }
+
+    public Map<String, EnderRule> enderRules = new LinkedHashMap<>();
+    // shift click an item into the ender chest and it goes to a free slot of its color. the one place the mod clicks for the player
+    public boolean enderSort = false;
+    public Map<String, String> enderTabs = new LinkedHashMap<>();
+    public Map<String, Map<String, Integer>> enderSlots = new LinkedHashMap<>();
+
+    // kills and deaths seen in chat, shown on /pf profiles
+    public boolean seenKills = true;
+
     // an outline on labyrinth chests the player already opened
     public boolean labyrinthMarks = true;
     public int labyrinthColor = 0xFF5555;
@@ -164,6 +181,10 @@ public final class Config {
         if (enemy == null) enemy = new ArrayList<>();
         if (tradebanned == null) tradebanned = new ArrayList<>();
         if (poppedTabs == null) poppedTabs = new ArrayList<>();
+        if (enderTabs == null) enderTabs = new LinkedHashMap<>();
+        if (enderSlots == null) enderSlots = new LinkedHashMap<>();
+        if (enderRules == null) enderRules = new LinkedHashMap<>();
+        enderRules.values().removeIf(r -> r == null);
         return this;
     }
 

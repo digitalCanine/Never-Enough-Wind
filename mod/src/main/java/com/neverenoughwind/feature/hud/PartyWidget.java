@@ -45,10 +45,10 @@ public final class PartyWidget extends HudWidget {
         String bonus, leader;
         if (members.isEmpty()) {
             if (!sample) return null;
-            members = List.of("Steve", "Alex", "Notch");
+            members = List.of("Solaresque", "Nowher", "Dogeram");
             rollTexts = List.of("Need 87", "Greed 42", "Pass");
             bonus = "20%";
-            leader = "Steve";
+            leader = "Solaresque";
         } else {
             // someone who rolled and isnt on the roster anymore still gets a line
             for (String roller : party.rolls().keySet()) {

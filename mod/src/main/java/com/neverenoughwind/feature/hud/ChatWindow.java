@@ -34,10 +34,10 @@ public final class ChatWindow extends HudWidget {
     }
 
     public static void register() {
-        new ChatWindow(Tab.CLAN, 0, "[WOOL] Steve: anyone on?").add();
-        new ChatWindow(Tab.WHISPERS, 1, "Steve >> hey").add();
+        new ChatWindow(Tab.CLAN, 0, "[WOOL] Solaresque: anyone on?").add();
+        new ChatWindow(Tab.WHISPERS, 1, "Nowher >> hey").add();
         new ChatWindow(Tab.EVENTS, 2, "Bait event begins in 5 minutes.").add();
-        new ChatWindow(Tab.SYSTEM, 3, "Welcome Steve!").add();
+        new ChatWindow(Tab.SYSTEM, 3, "Welcome Dogeram!").add();
     }
 
     // same curve the chat box uses: full for most of ten seconds, then gone quickly

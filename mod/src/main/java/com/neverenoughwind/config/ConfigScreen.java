@@ -44,6 +44,16 @@ public final class ConfigScreen {
                         d.originalNames, () -> c.originalNames, v -> c.originalNames = v))
                 .option(toggle("Item Borders", "A thin colored frame around essences, keys, currencies and other Minewind items.",
                         d.borders, () -> c.borders, v -> c.borders = v))
+                .option(toggle("Ender Chest Colors", "Your own colors behind ender chest slots, a set for every ender tab.",
+                        d.enderColors, () -> c.enderColors, v -> c.enderColors = v))
+                .option(ButtonOption.createBuilder()
+                        .name(Text.literal("Color Ender Chest Slots"))
+                        .description(about("Pick which slots get which color. Open your ender chest and each of its tabs once first, so they show up."))
+                        .text(Text.literal("Open"))
+                        .action((screen, option) -> MinecraftClient.getInstance().setScreen(new EnderColorsScreen(screen)))
+                        .build())
+                .option(toggle("Ender Chest Sorting", "Shift clicking an item into your ender chest sends it to a free slot of the color you gave that kind of item. Colors get their meaning in Color Ender Chest Slots. Off unless you turn it on: it is the one thing the mod clicks for you.",
+                        d.enderSort, () -> c.enderSort, v -> c.enderSort = v))
                 .option(toggle("Container Worth", "Under an open chest, shulker box or inspected inventory: what its dragon eggs, keys, essences and infinity blocks add up to.",
                         d.worthTotal, () -> c.worthTotal, v -> c.worthTotal = v));
         OptionGroup.Builder borderColors = OptionGroup.createBuilder().name(Text.literal("Border Colors")).collapsed(true);
@@ -146,6 +156,8 @@ public final class ConfigScreen {
                         d.inventoryView, () -> c.inventoryView, v -> c.inventoryView = v))
                 .option(toggle("Tidy Join Dates", "Profiles of players who joined before the merge say \"pre-merge\" instead of twenty thousand days.",
                         d.fixJoinDate, () -> c.fixJoinDate, v -> c.fixJoinDate = v))
+                .option(toggle("Kills You Have Seen", "Counts the kills and deaths that go by in chat while you play, and adds them to a player's /pf profile as \"Seen by you\". Only what you were online for, not their real totals.",
+                        d.seenKills, () -> c.seenKills, v -> c.seenKills = v))
                 .option(toggle("Labyrinth Chest Marks", "During the Labyrinth event, chests you have already opened get a thin outline, so you do not open them twice.",
                         d.labyrinthMarks, () -> c.labyrinthMarks, v -> c.labyrinthMarks = v))
                 .option(color("Chest Mark Color", null, d.labyrinthColor, () -> c.labyrinthColor, v -> c.labyrinthColor = v))

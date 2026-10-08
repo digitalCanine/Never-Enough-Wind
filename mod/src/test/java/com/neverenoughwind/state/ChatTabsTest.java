@@ -27,17 +27,17 @@ class ChatTabsTest {
 
     @Test
     void linesLandInTheirTab() {
-        assertEquals(Tab.MAIN, tab("WOOL.Steve: hello"));
+        assertEquals(Tab.MAIN, tab("WOOL.Solaresque: hello"));
         assertEquals(Tab.MAIN, tab("something nobody has seen before"));
-        assertEquals(Tab.CLAN, tab("[WOOL] Steve: hello"));
-        assertEquals(Tab.WHISPERS, tab("Steve >> hello"));
-        assertEquals(Tab.WHISPERS, tab(">> Steve: hello"));
+        assertEquals(Tab.CLAN, tab("[WOOL] Solaresque: hello"));
+        assertEquals(Tab.WHISPERS, tab("Solaresque >> hello"));
+        assertEquals(Tab.WHISPERS, tab(">> Solaresque: hello"));
         assertEquals(Tab.EVENTS, tab("Team aqua wins the beef event!"));
-        assertEquals(Tab.SYSTEM, tab("Welcome Steve!"));
-        assertEquals(Tab.SYSTEM, tab("Steve rolled need 51!"));
-        assertEquals(Tab.SYSTEM, tab("Steve drowned"));
-        assertEquals(Tab.SYSTEM, tab("Steve joined the game"));
-        assertEquals(Tab.SYSTEM, tab("Steve has escaped the labyrinth!"));
+        assertEquals(Tab.SYSTEM, tab("Welcome Solaresque!"));
+        assertEquals(Tab.SYSTEM, tab("Solaresque rolled need 51!"));
+        assertEquals(Tab.SYSTEM, tab("Solaresque drowned"));
+        assertEquals(Tab.SYSTEM, tab("Solaresque joined the game"));
+        assertEquals(Tab.SYSTEM, tab("Solaresque has escaped the labyrinth!"));
         // answers to your own commands stay where you are looking
         assertEquals(Tab.MAIN, tab("Daily cooldown: 1380 min"));
         assertEquals(Tab.MAIN, tab("Unknown command. Type \"/help\" for help."));

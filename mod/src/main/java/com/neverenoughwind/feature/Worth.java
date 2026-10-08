@@ -51,7 +51,9 @@ public final class Worth {
         }
         if (max < 1) return;
         int lo = (int) Math.round(min), hi = (int) Math.round(max);
-        String amount = lo == hi || lo < 1 ? PriceDao.text(hi) : PriceDao.text(lo) + " - " + PriceDao.text(hi);
+        // two amounts can round to the same text ("1.2sh - 1.2sh"), then one is enough
+        String low = PriceDao.text(lo), high = PriceDao.text(hi);
+        String amount = lo < 1 || low.equals(high) ? high : low + " - " + high;
         Text line = Text.literal("Worth ").formatted(Formatting.GRAY).append(Text.literal(amount).formatted(Formatting.WHITE));
         TextRenderer tr = mc.textRenderer;
         ctx.drawTextWithShadow(tr, line, right - tr.getWidth(line), bottom + 2, 0xFFFFFFFF);
